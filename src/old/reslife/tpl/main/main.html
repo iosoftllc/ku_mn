@@ -1,0 +1,216 @@
+<html>
+
+<head>
+	<title>::::: CJ I'House 관리자 툴 ::::::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="ImageToolbar" content="No">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" href="../../css/style.css" type="text/css">
+	<link rel="stylesheet" href="../../css/print.css" type="text/css" media="print">
+	<script language="javascript" src="../../js/main.js"></script>
+</head>
+
+<script language="javascript">
+	var popup, main_count = {MAIN_MENU_COUNT}, main_menu = {MAIN_MENU_INDEX};
+</script>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="swapLayers({MAIN_MENU_INDEX}, 'visible');{ON_LOAD}">
+	<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+		<!-- BEGIN: header -->
+		<tr>
+			<td class="NoPrint">
+				<!-- BEGIN DYNAMIC BLOCK: div_menu_row -->
+				<div id="Layer{DIV_INDEX}" style="position:absolute; left:{DIV_LEFT}px; top:93px; width:{DIV_WIDTH}px; height:20px; overflow:hidden; visibility:hidden;" onMouseover="swapLayers({DIV_INDEX}, 'visible');" onMouseout="swapLayers({DIV_INDEX}, 'hidden');">
+					<table width="{DIV_WIDTH}" height="20" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td style="padding-top:2px;">{DIV_LIST}</td>
+						</tr>
+					</table>
+				</div>
+				<!-- END DYNAMIC BLOCK: div_menu_row -->
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td colspan="{MAIN_COLSPAN}"><a href="../../src/main/main.php"><img src="../../images/main/main_logo.jpg" width="240" height="72" border="0"></a></td>
+					</tr>
+					<tr>
+						<td colspan="{MAIN_COLSPAN}" height="1" bgcolor="#F0F0F0"></td>
+					</tr>
+					<tr>
+						<td width="2" nowrap><img src="../../images/menu/menu_left.jpg" width="2" height="20"></td>
+						<td width="70" height="20" align="center" background="../../images/menu/menu_back.jpg" style="padding-top:1px;" nowrap><a href="../../src/main/main.php">홈</a></td>
+						<td width="2" nowrap><img src="../../images/menu/menu_right.jpg" width="2" height="20"></td>
+						<!-- BEGIN DYNAMIC BLOCK: main_menu_row -->
+						<td width="2" nowrap><img src="../../images/menu/menu_left.jpg" width="2" height="20"></td>
+						<td width="120" height="20" align="center" background="../../images/menu/menu_back.jpg" style="padding-top:1px;" onMouseover="swapLayers({MAIN_MENU_INDEX}, 'visible');" onMouseout="swapLayers({MAIN_MENU_INDEX}, 'hidden');" nowrap><a href="{MAIN_MENU_URL}">{MAIN_MENU_NAME}</a></td>
+						<td width="2" nowrap><img src="../../images/menu/menu_right.jpg" width="2" height="20"></td>
+						<!-- END DYNAMIC BLOCK: main_menu_row -->
+						<td width="1" nowrap><img src="../../images/menu/menu_end.jpg" width="1" height="20"></td>
+						<td width="100%" height="20">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="100%" height="19" bgcolor="#E4E4E4"></td>
+								</tr>
+								<tr>
+									<td width="100%" height="1" bgcolor="#797979"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="{MAIN_COLSPAN}" height="20" bgcolor="#D1D1D1"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- END: header -->
+		<tr>
+			<td height="100%">
+				<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<!-- BEGIN: left -->
+						<td width="170" class="NoPrint" nowrap>
+							<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#EFEFEF">
+								<tr>
+									<td height="4"></td>
+								</tr>
+								<!-- BEGIN: login -->
+								<tr>
+									<td>
+										<table border="0" cellspacing="0" cellpadding="0" align="center">
+											<tr>
+												<td colspan="3" height="1" bgcolor="#D2CFC6"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#D2CFC6"></td>
+												<td width="160" height="52" align="center" bgcolor="#F0F0E8">{ADMIN_NAME}({ADMIN_ID})<br>님이 로그인하셨습니다.</td>
+												<td width="1" bgcolor="#FFFFFF"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#D2CFC6"></td>
+												<td height="22">
+													<table border="0" cellspacing="0" cellpadding="0">
+														<tr>
+															<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+															<td width="76" height="22" align="center" background="../../images/button/button_back.jpg" style="padding-top:3px;"><a href="../../src/main/check_pw.php">정보변경</td>
+															<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+															<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+															<td width="76" height="22" align="center" background="../../images/button/button_back.jpg" style="padding-top:3px;"><a href="javascript:logout();">로그아웃</a></td>
+															<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+														</tr>
+													</table>
+												</td>
+												<td width="1" bgcolor="#FFFFFF"></td>
+											</tr>
+											<tr>
+												<td width="1" height="1" bgcolor="#D2CFC6"></td>
+												<td colspan="2" height="1" bgcolor="#FFFFFF"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<!-- END: login -->
+								<tr>
+									<td height="4"></td>
+								</tr>
+								<!-- BEGIN: submenu -->
+								<tr>
+									<td height="100%" valign="top">
+										<table border="0" cellspacing="0" cellpadding="0" align="center">
+											<tr>
+												<td colspan="3" height="1" bgcolor="#D2CFC6"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#D2CFC6"></td>
+												<td height="20">
+													<table border="0" cellspacing="0" cellpadding="0">
+														<tr>
+															<td colspan="2" height="1" bgcolor="#F5F4F9"></td>
+															<td width="1" height="1" bgcolor="#EEEDF2"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="#F5F4F9"></td>
+															<td width="158" height="18" bgcolor="#EFEEF4"><img src="../../images/menu/main_front.jpg" width="17" height="18" align="absmiddle">{CURRENT_MAIN_MENU}</td>
+															<td width="1" bgcolor="#D5D4D9"></td>
+														</tr>
+														<tr>
+															<td width="1" height="1" bgcolor="#E9E8EE"></td>
+															<td colspan="2" height="1" bgcolor="#D5D4D9"></td>
+														</tr>
+														<!-- BEGIN DYNAMIC BLOCK: sub_menu_row -->
+														<tr>
+															<td colspan="3" height="22" bgcolor="#E9E8EE"><img src="../../images/menu/menu_dot.jpg" width="18" height="7" align="absmiddle"><a href="{SUB_MENU_URL}">{SUB_MENU_NAME}</a></td>
+														</tr>
+														<!-- END DYNAMIC BLOCK: sub_menu_row -->
+													</table>
+												</td>
+												<td width="1" bgcolor="#FFFFFF"></td>
+											</tr>
+											<tr>
+												<td width="1" height="1" bgcolor="#D2CFC6"></td>
+												<td colspan="2" height="1" bgcolor="#FFFFFF"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<!-- END: submenu -->
+							</table>
+						</td>
+						<!-- END: left -->
+						<!-- BEGIN: body -->
+						<td>
+							<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="10" class="NoPrint" nowrap></td>
+									<td height="30" style="padding-left:5px;" class="NoPrint"><a href="../../src/main/main.php">HOME</a>{MENU_PATH}</td>
+									<td width="10" class="NoPrint" nowrap></td>
+								</tr>
+								<tr>
+									<td width="10" class="NoPrint" nowrap></td>
+									<td valign="top" class="NoPrint">
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td colspan="2" height="1" bgcolor="#F3F4F8"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#F3F4F8" nowrap></td>
+												<td height="21" bgcolor="#ECEDF2" style="padding-top:3px;" nowrap><img src="../../images/main/title_front.jpg" width="18" height="18" align="absmiddle">{PAGE_NAME}</td>
+											</tr>
+											<tr>
+												<td width="1" height="1" bgcolor="#E5E8EF"></td>
+												<td height="1" bgcolor="#C9CFDF" height="21"></td>
+											</tr>
+										</table>
+									</td>
+									<td width="10" class="NoPrint" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="10" class="NoPrint"></td>
+								</tr>
+								<tr>
+									<td width="10" class="NoPrint" nowrap></td>
+									<td height="100%" valign="top" class="ForPrint">
+										<!-- NAME: content -->
+										{BODY}
+										<!-- END: content -->
+									</td>
+									<td width="10" class="NoPrint" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="10" class="NoPrint"></td>
+								</tr>
+							</table>
+						</td>
+						<!-- END: body -->
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- BEGIN: footer -->
+		<tr>
+			<td height="22" align="center" style="padding-top:3px;" bgcolor="#D1D1D1" class="NoPrint">Copyright ⓒ CJ I'House. All rights reserved.</td>
+		</tr>
+		<!-- END: footer -->
+	</table>
+</body>
+
+</html>

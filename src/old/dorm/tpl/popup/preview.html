@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<title>Preview Image</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="ImageToolbar" content="No">
+</head>
+
+<script language="javascript">
+	function preview(img_url, FImg) {
+		var cw = document.body.clientWidth;
+		var ch = document.body.clientHeight;
+		var sw = screen.width;
+		var sh = screen.height;
+
+		if (img_url == "") FImg.src = "../../images/main/spacer.gif";
+		if (FImg.width > 900) FImg.width = 900;
+		var imgw = FImg.width;
+		var imgh = FImg.height;
+//alert(cw + " " + ch);
+		window.moveTo((sw - imgw)/2, (sh - imgh)/2);
+		if (imgw == cw && imgh == ch) return;
+		window.resizeBy(imgw-cw, imgh-ch);
+	}
+</script>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="preview('{IMAGE_PATH}', document.getElementById('viewimg'));">
+	<table border="0" cellspacing="0" cellpadding="0">
+  	<tr>
+    	<td><a href="javascript:self.close();"><img id="viewimg" name="viewimg" src="{IMAGE_PATH}" border="0"></a></td>
+  	</tr>
+	</table>
+</body>
+
+</html>

@@ -1,0 +1,420 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/faculty.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="FacultyForm" action="" method="get" onSubmit="return checkSearchFaculty(this);">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<input type="hidden" name="s_dorm" value="{SEARCH_DORM}">
+		<input type="hidden" name="no" value="">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="email" value="">
+		<tr>
+			<td height="22" class="NoPrint">
+				<select name="s_term" onChange="viewList(document.FacultyForm);">
+					<option value="">기간별보기</option>
+					<option value="S">단기</option>
+					<option value="L">장기</option>
+				</select>
+				<select name="s_state" onChange="viewList(document.FacultyForm);">
+					<option value="">지원상태별보기</option>
+					<option value="IW">Applied</option>
+					<option value="AS">Assigned</option>
+					<option value="CC">Cancelled</option>
+					<option value="CF">Confirmed</option>
+					<option value="PR">Paid Rental Fee</option>
+					<option value="PD">Paid Deposit</option>
+					<option value="RF">Refund</option>
+					<option value="CO">Checked-out</option>
+					<option value="DR">Deposit Refunded</option>
+					<option value="PP">Payment Delayed</option>
+					<option value="WW">Waiting</option>
+				</select>
+				<select name="s_rate" onChange="viewList(document.FacultyForm);">
+					<option value="">입실형태별보기</option>
+					<!-- BEGIN DYNAMIC BLOCK: rate_row -->
+					<option value="{RATE_VALUE}">{RATE_NAME}</option>
+					<!-- END DYNAMIC BLOCK: rate_row -->
+				</select>
+				<select name="s_room" onChange="viewList(document.FacultyForm);">
+					<option value="">호실별보기</option>
+					<!-- BEGIN DYNAMIC BLOCK: room_row -->
+					<option value="{ROOM_VALUE}">{ROOM_NAME}</option>
+					<!-- END DYNAMIC BLOCK: room_row -->
+				</select>
+				<select name="s_grade" onChange="viewList(document.FacultyForm);">
+					<option value="">결재단계</option>
+					<option value="0">담당자결재대기</option>
+					<option value="1">과장결재대기</option>
+					<option value="2">팀장결재대기</option>
+					<option value="3">사감장결재대기</option>
+					<option value="4">사감장전결</option>
+				</select>
+				총 {TOTAL_COUNT}명 / {TOTAL_PAGE}페이지
+			</td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="22" class="NoPrint">
+							<table border="0" cellpadding="0" cellspacing="0" align="left">
+								<tr>
+									<td>사용목적:<input type="text" name="purpose" size="20"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:downloadExcel(document.FacultyForm);">지원다운로드</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+						<td height="22" class="NoPrint">
+							<table border="0" cellpadding="0" cellspacing="0" align="right">
+								<tr>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:postFaculty(document.FacultyForm, 'new');">추가</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:deleteFaculty(document.FacultyForm, '');">삭제</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:sendEmail(document.FacultyForm, 'fac');">전체공지메일</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:sendEmail(document.FacultyForm, 'list');">선택공지메일</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:downloadExcel1(document.FacultyForm);">입금다운로드</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="4" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<!-- BEGIN DYNAMIC BLOCK: title1_row -->
+					<tr>
+						<td width="2" nowrap><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="20" height="26" align="center" background="../../images/list/list_back.jpg" nowrap><input type="checkbox" name="select_all" onClick="selectAll(document.FacultyForm.list_no);"></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacultyForm, 'apply_no');">번 호</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacultyForm, 'lname');">이 름</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacultyForm, 'ref_email');">추천인이메일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacultyForm, 'arrival');">Check In</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacultyForm, 'departure');">Check Out</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacultyForm, 'apply_date');">지원일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacultyForm, 'state');">지원상태</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>미납액</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>호 실</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="40" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacultyForm, 'no_room');">호실수</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="2" nowrap><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: title1_row -->
+					<!-- BEGIN DYNAMIC BLOCK: title2_row -->
+					<tr>
+						<td width="2"><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="20" height="26" align="center" background="../../images/list/list_back.jpg"><input type="checkbox" name="select_all" onClick="selectAll(document.FacultyForm.list_no);"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList(document.FacultyForm, 'apply_no');">번 호</a></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList(document.FacultyForm, 'lname');">이 름</a></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList(document.FacultyForm, 'ref_email');">추천인이메일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList(document.FacultyForm, 'arrival');">Check In</a></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList(document.FacultyForm, 'departure');">Check Out</a></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList(document.FacultyForm, 'apply_date');">지원일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList(document.FacultyForm, 'state');">지원상태</a></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList(document.FacultyForm, 'dorm_code, unit');">호 실</a></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="40" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList(document.FacultyForm, 'no_room');">호실수</a></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="2"><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: title2_row -->
+					<!-- BEGIN DYNAMIC BLOCK: list1_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';">
+						<td width="2"></td>
+						<td width="20" height="23" align="center"><input type="checkbox" name="list_no" value="{LIST_NUMBER}"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center"><a href="javascript:viewFaculty(document.FacultyForm, '{LIST_NUMBER}');">{LIST_NUMBER}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center"><a href="javascript:viewFaculty(document.FacultyForm, '{LIST_NUMBER}');">{LIST_NAME}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center"><a href="javascript:sendEmail(document.FacultyForm, '{LIST_EMAIL}')">{LIST_EMAIL}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_CHECKIN}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_CHECKOUT}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_STATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_PAYMENT}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_ROOM}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="40" height="23" align="center">{LIST_ROOM_NO}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr>
+						<td colspan="43" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!--<input type="hidden" name="list_email" value="{LIST_EMAIL}">-->
+					<!-- END DYNAMIC BLOCK: list1_row -->
+					<!-- BEGIN DYNAMIC BLOCK: list2_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';">
+						<td width="2"></td>
+						<td width="20" height="23" align="center"><input type="checkbox" name="list_no" value="{LIST_NUMBER}"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center"><a href="javascript:viewFaculty(document.FacultyForm, '{LIST_NUMBER}');">{LIST_NUMBER}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center"><a href="javascript:viewFaculty(document.FacultyForm, '{LIST_NUMBER}');">{LIST_NAME}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center"><a href="javascript:sendEmail(document.FacultyForm, '{LIST_EMAIL}')">{LIST_EMAIL}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_CHECKIN}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_CHECKOUT}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_STATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_RATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="40" height="23" align="center">{LIST_ROOM_NO}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr>
+						<td colspan="43" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!--<input type="hidden" name="list_email" value="{LIST_EMAIL}">-->
+					<!-- END DYNAMIC BLOCK: list2_row -->
+					<tr>
+						<td colspan="43" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td height="35">
+							<a href="javascript:gotoPage(document.FacultyForm, '{PRE_PAGE}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+							<!-- BEGIN DYNAMIC BLOCK: page_row -->
+							{PAGE_VALUE}
+							<!-- END DYNAMIC BLOCK: page_row -->
+							<a href="javascript:gotoPage(document.FacultyForm, '{NEXT_PAGE}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td align="center" class="NoPrint">
+				<input type="checkbox" name="list_dorm" value="IFRH_CJ">CJ International House
+				<input type="checkbox" name="list_dorm" value="IFRH_FH">International Faculty Housing
+				<input type="checkbox" name="list_dorm" value="IFRH_ANAM">Anam International Housing
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td align="center" class="NoPrint">
+				<select name="s_year1" onChange="setDayList(document.FacultyForm.s_year1, document.FacultyForm.s_month1, document.FacultyForm.s_day1);">
+					<option value="">----</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_month1" onChange="setDayList(document.FacultyForm.s_year1, document.FacultyForm.s_month1, document.FacultyForm.s_day1);">
+					<option value="">--</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_day1">
+					<option value="">--</option>
+				</select>일 부터
+				<select name="s_year2" onChange="setDayList(document.FacultyForm.s_year2, document.FacultyForm.s_month2, document.FacultyForm.s_day2);">
+					<option value="">----</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_month2" onChange="setDayList(document.FacultyForm.s_year2, document.FacultyForm.s_month2, document.FacultyForm.s_day2);">
+					<option value="">--</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_day2">
+					<option value="">--</option>
+				</select>일 까지
+			</td>
+		</tr>
+		<tr>
+			<td height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td height="22" align="center">
+							<select name="s_type">
+								<option value="1">이름</option>
+								<option value="2">거주목적</option>
+								<option value="3">지원번호</option>
+								<option value="4">호실</option>
+								<option value="5">신청자이메일</option>
+								<option value="6">추천인이메일</option>
+							</select>
+							<input type="text" name="s_text" size="30" value="{SEARCH_TEXT}">
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:searchFaculty(document.FacultyForm);">검색</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setMultipleChecked(document.FacultyForm.list_dorm, '{SEARCH_DORM}');
+	setSelected(document.FacultyForm.s_term, '{SEARCH_TERM}');
+	setSelected(document.FacultyForm.s_state, '{SEARCH_STATE}');
+	setSelected(document.FacultyForm.s_grade, '{SEARCH_GRADE}');
+	setSelected(document.FacultyForm.s_rate, '{SEARCH_RATE}');
+	setSelected(document.FacultyForm.s_room, '{SEARCH_ROOM}');
+	setSelected(document.FacultyForm.s_type, '{SEARCH_TYPE}');
+	setSelected(document.FacultyForm.s_year1, '{SEARCH_YEAR1}');
+	setSelected(document.FacultyForm.s_month1, '{SEARCH_MONTH1}');
+	setDayList(document.FacultyForm.s_year1, document.FacultyForm.s_month1, document.FacultyForm.s_day1);
+	setSelected(document.FacultyForm.s_day1, '{SEARCH_DAY1}');
+	setSelected(document.FacultyForm.s_year2, '{SEARCH_YEAR2}');
+	setSelected(document.FacultyForm.s_month2, '{SEARCH_MONTH2}');
+	setDayList(document.FacultyForm.s_year2, document.FacultyForm.s_month2, document.FacultyForm.s_day2);
+	setSelected(document.FacultyForm.s_day2, '{SEARCH_DAY2}');
+</script>

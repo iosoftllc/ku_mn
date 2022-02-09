@@ -1,0 +1,70 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript">
+	function returnValue(Form) {
+		if (document.CheckStudentForm.use_flag.value == "1" && Form.apply_no.value) {
+			window.opener.document.DeferForm.apply_no.value = Form.apply_no.value;
+			window.opener.document.getElementById("emailItem").innerHTML = Form.email.value;
+			window.opener.document.getElementById("nameItem").innerHTML = Form.name.value;
+			window.opener.document.getElementById("studentItem").innerHTML = Form.student.value;
+			window.opener.document.getElementById("addressItem").innerHTML = Form.address.value;
+			window.opener.document.getElementById("degreeItem").innerHTML = Form.degree.value;
+			window.opener.document.getElementById("periodItem").innerHTML = Form.period.value;
+			window.opener.document.getElementById("amountItem").innerHTML = Form.amount.value;
+			window.opener.document.getElementById("payDateItem").innerHTML = Form.pay_dt.value;
+			this.close();
+		}
+	}
+	function checkApplyNo(Form) {
+		if (Form.apply_no.value == "") {
+			alert("지원번호를 입력하세요.");
+			Form.apply_no.focus();
+			return false;
+		} else if (!checkNumber(Form.apply_no.value)) {
+			alert("지원번호는 숫자만 입력가능합니다.");
+			Form.apply_no.focus();
+			return false;
+		}
+		return true;
+	}
+	function submitApplyNo(Form) {
+		if (checkApplyNo(Form)) Form.submit();
+	}
+</script>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+	<form name="CheckStudentForm" action="../../src/popup/student_info.php" method="get" onSubmit="return checkApplyNo(this);">
+		<input type="hidden" name="use_flag" value="{USE_FLAG}">
+		<input type="hidden" name="email" value="{INFO_EMAIL}">
+		<input type="hidden" name="name" value="{INFO_NAME}">
+		<input type="hidden" name="student" value="{INFO_STUDENT}">
+		<input type="hidden" name="address" value="{INFO_ADDRESS}">
+		<input type="hidden" name="degree" value="{INFO_DEGREE}">
+		<input type="hidden" name="period" value="{INFO_PERIOD}">
+		<input type="hidden" name="amount" value="{INFO_AMOUNT}">
+		<input type="hidden" name="pay_dt" value="{INFO_PAY_DATE}">
+		<tr>
+			<td height="30" align="center">{MESSAGE}</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td height="22" align="right">지원번호 : <input type="text" name="apply_no" size="10" maxlength="10" value="{APPLY_NUMBER}"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:submitApplyNo(document.CheckStudentForm);">정보확인</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:returnValue(document.CheckStudentForm);">사용하기</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>

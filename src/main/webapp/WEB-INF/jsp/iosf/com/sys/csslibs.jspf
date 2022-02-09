@@ -1,0 +1,17 @@
+<%@page pageEncoding="UTF-8"%>
+<%@ include file="taglibs.jspf"%>
+<%-- --%>
+<c:if test="${isFront }">
+	<link rel="stylesheet" type="text/css" href="${js_src}/iosf/jquery-ui/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="${js_src}/iosf/jquery-ui/jquery-ui.theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="${css_src}/iosf/front/reset.css">
+    <link rel="stylesheet" type="text/css" href="${css_src}/iosf/front/header.css">
+    <link rel="stylesheet" type="text/css" href="${css_src}/iosf/front/footer.css">
+	<c:if test="${!isMain }">
+    	<link rel="stylesheet" type="text/css" href="${css_src}/iosf/front/sub.css">
+	</c:if>
+	<c:if test="${isMain }">
+	    <link rel="stylesheet" type="text/css" href="${css_src}/iosf/front/main.css">
+	    <link rel="stylesheet" type="text/css" href="${css_src}/iosf/front/slick.css"/>
+	</c:if>
+</c:if>

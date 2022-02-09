@@ -1,0 +1,298 @@
+<html>
+	<head>
+		<title>::::: Invoice :::::</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+		<link rel="stylesheet" href="https://reslife.korea.ac.kr:5008/v1/css/print.css" type="text/css" media="print">
+		<style type="text/css">
+			table { font-family:Verdana; font-size:12px; text-decoration:none; line-height:14pt; color:#000000; letter-spacing:0.1mm; text-align:justify; line-height:14pt;letter-spacing:0.1mm; }
+			a, a:link { font-family:Verdana; font-size:12px; text-decoration:none; text-align:justify; color:#000000; letter-spacing:0.1mm; }
+			a:hover { font-family:Verdana; font-size:12px; text-decoration:underline; text-align:justify; color:#000000; letter-spacing:0.1mm; }
+		</style>
+		<script language="javascript">
+			function sendEmail(src) {
+				if (src) document.location.href = src;
+			}
+		</script>
+	</head>
+	<body bgcolor="#FFFFFF">
+		<table border="0" cellpadding="0" cellspacing="0" align="center">
+			<tr>
+				<td>
+					<table width="600" border="0" cellpadding="3" cellspacing="1" bgcolor="#000000">
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td>Korea University<br>Anam Residence Life<br>Anam-dong Seongbuk-gu<br>Seoul 02841</td>
+									</tr>
+									<tr>
+										<td align="center">Billing Statement<br>(For Student)</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td width="260" nowrap>KU Student ID:</td>
+										<td>{APPLY_STUDENT}</td>
+									</tr>
+									<tr>
+										<td width="260" nowrap>Name:</td>
+										<td>{APPLY_NAME}</td>
+									</tr>
+									<tr>
+										<td width="260" nowrap>Residence Application No.:</td>
+										<td>{APPLY_NUMBER}</td>
+									</tr>
+									<tr>
+										<td width="260" nowrap>Room No.:</td>
+										<td>{APPLY_ROOM}</td>
+									</tr>
+									<!--
+									<tr>
+										<td colspan="2">
+											<table width="100%" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td colspan="3">Payment History:</td>
+												</tr>
+												<!-- BEGIN DYNAMIC BLOCK: payment1_row -->
+												<tr>
+													<td width="80" nowrap>{PAYMENT1_DATE}</td>
+													<td>{PAYMENT1_DETAIL}</td>
+													<td width="120" align="right" nowrap>{PAYMENT1_PRICE} KRW</td>
+												</tr>
+												<!-- END DYNAMIC BLOCK: payment1_row -->
+											</table>
+										</td>
+									</tr>
+									-->
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td>Total Amount Due:</td>
+										<td align="right">{APPLY_TOTAL} KRW</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td width="260" valign="top" nowrap>The Amount due should be paid by:</td>
+										<td>{PAYMENT_PERIOD}</td>
+									</tr>
+									<!--
+									<tr>
+										<td width="170" valign="top" nowrap>Time:</td>
+										<td>between 9:30 am and 4:30 pm on weekdays, except holidays.</td>
+									</tr>
+									-->
+									<tr>
+										<td width="260" valign="top">Methods:</td>
+										<td>In person at any branches of Hana Bank, or; Online electronic fund transfer</td>
+									</tr>
+									<tr>
+										<td colspan="2" height="5" nowrap></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<table width="100%" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td></td>
+													<td align="right">수납인</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td>
+											<b>Payment should be made to:</b><br>
+											BANK NAME: Hana Bank, Godae Branch<br>
+											Bank Address: Korea University, Anam-dong, Seongbuk-gu, Seoul 02841, KOREA<br>
+											SWIFT CODE: KOEXKRSE<br>
+											ACCOUNT NO.: {APPLY_ACCOUNT}<br>
+											BENEFICIARY: Korea University International Residence<br>
+											(Note: The assigned bank account number for payment is different for each application.  This enables the residence life office to match the payment with the applicant as the given account number will be used only by that applicant.  To credit your account, make sure that you use the provided account number to you, not other account number provided to other applicant.)
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td height="5"></td>
+			</tr>
+			<tr>
+				<td>
+					<table width="600" border="0" cellpadding="3" cellspacing="1" bgcolor="#000000">
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td>고려대학교<br>안암학사<br>서울 성북구 안암동<br>02841</td>
+									</tr>
+									<tr>
+										<td align="center">수납원부<br>(For Bank, 하나은행 보관용)</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td width="170" nowrap>고려대 학번:</td>
+										<td>{APPLY_STUDENT}</td>
+									</tr>
+									<tr>
+										<td width="170" nowrap>학생 성명:</td>
+										<td>{APPLY_NAME}</td>
+									</tr>
+									<tr>
+										<td width="170" nowrap>지원번호:</td>
+										<td>{APPLY_NUMBER}</td>
+									</tr>
+									<tr>
+										<td width="170" nowrap>호실:</td>
+										<td>{APPLY_ROOM}</td>
+									</tr>
+									<!--
+									<tr>
+										<td colspan="2">
+											<table width="100%" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td colspan="3"><font color="#FFFFFF">내 역:</font></td>
+												</tr>
+												<!-- BEGIN DYNAMIC BLOCK: payment2_row -->
+												<tr>
+													<td width="80" nowrap>{PAYMENT2_DATE}</td>
+													<td>{PAYMENT2_DETAIL}</td>
+													<td width="120" align="right" nowrap>{PAYMENT2_PRICE} 원</td>
+												</tr>
+												<!-- END DYNAMIC BLOCK: payment2_row -->
+											</table>
+										</td>
+									</tr>
+									-->
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td>금 액:</td>
+										<td align="right">{APPLY_TOTAL} 원</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td width="170" valign="top" nowrap>납부기간:</td>
+										<td>{PAYMENT_PERIOD}</td>
+									</tr>
+									<!--
+									<tr>
+										<td width="190" valign="top" nowrap>시 간:</td>
+										<td>오전 9:30 - 오후 4:30</td>
+									</tr>
+									-->
+									<tr>
+										<td width="170" valign="top">납부방법:</td>
+										<td>하나은행 전국지점 및 가상계좌 이용</td>
+									</tr>
+									<tr>
+										<td colspan="2" height="5" nowrap></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<table width="100%" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td></td>
+													<td align="right">수납인</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<!--
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" height="70" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td align="center">은행담당자 참조(납부모점)하나은행(고대지점)<br>D820(학교코드:1261)<br>Tel: 929-6241~3</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						-->
+						<tr>
+							<td bgcolor="#FFFFFF">
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td>
+											하나은행 고대지점<br>
+											SWIFT CODE: KOEXKRSE<br>
+											고려대학교 국제학생기숙사<br>
+											입금계좌: {APPLY_ACCOUNT}
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- BEGIN DYNAMIC BLOCK: email_row -->
+			<tr>
+				<td height="5" class="NoPrint"></td>
+			</tr>
+			<tr>
+				<td class="NoPrint">
+					<table border="0" cellpadding="0" cellspacing="0" align="center">
+						<tr>
+							<td width="2"><img src="https://reslife.korea.ac.kr:5008/v1/images/button/button_left.jpg" width="2" height="22"></td>
+							<td width="48" height="22" align="center" style="padding-top:3px;" background="https://reslife.korea.ac.kr:5008/v1/images/button/button_back.jpg">
+								<a href="javascript:window.close();">닫기</a>
+							</td>
+							<td width="2"><img src="https://reslife.korea.ac.kr:5008/v1/images/button/button_right.jpg" width="2" height="22"></td>
+							<td width="2"></td>
+							<td width="2"><img src="https://reslife.korea.ac.kr:5008/v1/images/button/button_left.jpg" width="2" height="22"></td>
+							<td width="48" height="22" align="center" style="padding-top:3px;" background="https://reslife.korea.ac.kr:5008/v1/images/button/button_back.jpg">
+								<a href="javascript:window.print();">출력</a>
+							</td>
+							<td width="2"><img src="https://reslife.korea.ac.kr:5008/v1/images/button/button_right.jpg" width="2" height="22"></td>
+							<td width="2"></td>
+							<td width="2"><img src="https://reslife.korea.ac.kr:5008/v1/images/button/button_left.jpg" width="2" height="22"></td>
+							<td width="48" height="22" align="center" style="padding-top:3px;" background="https://reslife.korea.ac.kr:5008/v1/images/button/button_back.jpg">
+								<a href="javascript:sendEmail('../../src/popup/invoice_stu.php?mode=email&no={APPLY_NUMBER}');">이메일</a>
+							</td>
+							<td width="2"><img src="https://reslife.korea.ac.kr:5008/v1/images/button/button_right.jpg" width="2" height="22"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- END DYNAMIC BLOCK: email_row -->
+		</table>
+	</body>
+</html>

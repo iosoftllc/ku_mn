@@ -1,0 +1,211 @@
+
+$img: "../../../images/iosf/front/";
+
+@font-face {
+  	font-family: "NanumBarun";
+  	src: url("../../../font/NanumBarunGothic.eot");
+  	src: url("../../../font/NanumBarunGothic.eot?#iefix")
+      format("embedded-opentype"),
+    	url("../../../font/NanumBarunGothic.ttf") format("truetype"),
+    	url("../../../font/NanumBarunGothic.woff") format("woff"),
+    	url("../../../font/NanumBarunGothic.woff2") format("woff2");
+  	font-weight: normal;
+  	font-style: normal;
+}
+
+body{
+	font-family:"Malgun Gothic";
+	font-size:13px;
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration:none;
+}
+button{
+	cursor:pointer;
+}
+.login-comp{
+	width:568px;
+	margin:0 auto;
+	border:1px solid #dbdbdb;
+	.inner{
+		width:568px;
+		padding:30px;
+		border:5px solid #ece2d3;
+		box-sizing:border-box;
+		.note-top{
+			font:bold 17px/22px 'Malgun Gothic';
+			color:#000;
+			text-align:center;
+		}
+		.input-form{
+			padding-top:8px;
+			>span{
+				display:block;
+				width:100%;
+				height:44px;
+				margin-top:10px;
+				border:1px solid #d3d3d3;
+				box-sizing:border-box;
+				&.on{
+					border-color:#8f816a;
+					&.usernm:before{
+						background:url($img + 'icon/login_id_on_origin.png') no-repeat 0 0;
+						background-size:18px 18px;
+					}
+					&.pwd:before{
+						background:url($img + 'icon/login_pw_on_origin.png') no-repeat 0 0;
+						background-size:18px 18px;
+					}
+				}
+				&.usernm{
+					&:before{
+						content:'';
+						float:left;
+						width:18px;
+						height:18px;
+						margin:12px 0 0 13px;
+						background:url($img + 'icon/login_id_default_origin.png') no-repeat 0 0;
+						background-size:18px 18px;
+					}
+				}
+				&.pwd{
+					&:before{
+						content:'';
+						float:left;
+						width:18px;
+						height:18px;
+						margin:12px 0 0 13px;
+						background:url($img + 'icon/login_pw_default_origin.png') no-repeat 0 0;
+						background-size:18px 18px;
+					}
+				}
+				input{
+					height:40px;
+					width:calc(100% - 40px);
+					padding:10px;
+					outline:none;
+					box-sizing:border-box;
+					border:0;
+					color:#000;
+					&::-webkit-input-placeholder { 
+					  color: #b5b5b5;
+					  opacity:1;
+					}
+					&:-ms-input-placeholder { 
+					  color: #b5b5b5;
+					  opacity:1;
+					}
+					&::placeholder {
+					  color: #b5b5b5;
+					  opacity:1;
+					}
+				}
+			}
+			button{
+				display:block;
+				width:100%;
+				height:50px;
+				margin-top:20px;
+				border:1px solid #800120;
+				background:#910124;
+				font:bold 19px 'Malgun Gothic';
+				color:#fff;
+				text-shadow:1px 1px #440011;
+			}
+		}
+		.login-bottom{
+			margin-top:25px;
+			padding-top:25px;
+			border-top:1px solid #e6e6e6;
+			.notice-box{
+				.notice-top{
+					height:43px;
+					font:bold 15px 'Malgun Gothic';
+					color:#fff;
+					text-shadow:1px 1px #4a381c;
+					background:#8f816a;
+					border-top:1px solid #830020;
+					span{	
+						display:block;
+						margin:13px 0 0 15px;
+						padding-left:8px;
+						border-left:2px solid #e0d6c6;
+						line-height:15px;
+					}
+				}
+				.notice-bottom{
+					border-left:1px solid #e6e6e6;
+					border-right:1px solid #e6e6e6;
+					border-bottom:1px solid #c8c8c8;
+					>li{
+						display:table;
+						table-layout:fixed; 
+						padding:9px 7px;
+						box-sizing:border-box;
+						border-top:1px solid #e6e6e6;
+						color:#313131;
+						&:first-child{
+							border-top:0;
+						}
+						.status{
+							display:table-cell;
+							width:70px;
+							padding-right:14px;
+							vertical-align:middle;
+							>span{
+								display:inline-block;
+								width:70px;
+								height:28px;
+								box-sizing:border-box;
+								background:#6b6b6b;
+								border:1px solid #646464;
+								color:#fff;
+								text-shadow:1px 1px #505050;
+								text-align:center;
+								font:bold 13px/26px 'Malgun Gothic';
+								vertical-align:middle;
+							}
+							&.orange >span{
+								background:#d86f63;
+								border:1px solid #cc685d;
+								text-shadow:1px 1px #b85246;
+							}
+							&.brown >span{
+								background:#936c6a;
+								border:1px solid #8a6564;
+								text-shadow:1px 1px #67413f;
+							}
+							
+						}
+						.text{
+							display:table-cell;
+							line-height:20px;
+						}						
+					}
+				}
+			}
+		}
+	}
+}
+
+/* 480px */
+@media screen and (max-width:639px){
+	.login-comp{
+		width:438px;
+		.inner{
+			width:438px;
+		}
+	}
+}
+
+/* 320px */
+@media screen and (max-width:479px){
+	.login-comp{
+		width:308px;
+		.inner{
+			width:308px;
+		}
+	}
+}

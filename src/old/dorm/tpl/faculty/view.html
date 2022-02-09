@@ -1,0 +1,578 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/faculty.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="../../images/title/cnt_check_info.jpg" width="217" height="14"></td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="200" bgcolor="#EFEFEF" align="center" nowrap>Application Number</td>
+					<td width="10" nowrap></td>
+					<td height="21"><b>{FACULTY_NUMBER}</b></td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Application Status</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_STATE}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Staying Period</td>
+					<td width="10"></td>
+					<td height="21">From(Arrival) {FACULTY_ARRIVAL} - To(Departure) {FACULTY_DEPARTURE}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Type of Room</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_RATE}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Room Number</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_ROOM}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td><img src="../../images/title/cnt_apply12.jpg" width="250" height="14"></td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Name in Full (in English)</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_NAME}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Name in Korean (if available)</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_KOREAN}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Korea University Employee No.</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_EMPLOY}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Purpose of Stay</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_PURPOSE}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Inviting Korea University Organization (초청학과)</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_KDEPART} {FACULTY_KPOS}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Organization and Position Held at Home Country</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_HDEPART} {FACULTY_HPOS}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Nationality</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_NATION}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Date of Birth</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_DOB}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Country</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_COUNTRY}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Email Address</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_EMAIL}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Telephone Number</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_PHONE}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Payer (사비 납부자) - No credit card payment available</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_PAY}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Special Requests(비고)</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_REQUEST}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td><img src="../../images/title/cnt_apply11.jpg" width="250" height="14"></td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="200" bgcolor="#EFEFEF" align="center" nowrap>Name in full</td>
+					<td width="10" nowrap></td>
+					<td height="21">{FACULTY_RNAME}</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Department and Position Held at Korea University (추천인 학과)</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_RDEPART} {FACULTY_RPOS}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Email Address</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_REMAIL}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Telephone No.</td>
+					<td width="10"></td>
+					<td height="21">{FACULTY_RPHONE}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td><img src="../../images/title/cnt_apply9.jpg" width="108" height="14"></td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="9" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="7" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: payment_row -->
+				<tr>
+					<td width="1" nowrap></td>
+					<td width="9" nowrap></td>
+					<td width="130" height="21" nowrap>{PAYMENT_DATE}</td>
+					<td width="10" nowrap></td>
+					<td height="21" align="center">{PAYMENT_DETAIL}</td>
+					<td width="10" nowrap></td>
+					<td width="120" height="21" align="right" nowrap>{PAYMENT_PRICE} KRW</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: payment_row -->
+				<tr bgcolor="#EFEFEF">
+					<td width="1" nowrap></td>
+					<td width="9" nowrap></td>
+					<td width="130" height="21" nowrap></td>
+					<td width="10" nowrap></td>
+					<td height="21" align="center"><b>Total Due / (Overpaid)</b></td>
+					<td width="10" nowrap></td>
+					<td width="120" height="21" align="right" nowrap><b>{PAYMENT_TOTAL} KRW</b></td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="7" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="0" border="0" align="center">
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner1.jpg" width="7" height="12"></td>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner2.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="11" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+					<td width="30" align="center" valign="top" nowrap><img src="../../images/main/spacer.jpg" width="1" height="3"><br><img src="../../images/main/notice_dot.jpg" width="14" height="14"></td>
+					<td style="color:#765E35;">
+						Thank you for your on-line residence hall application.<br>
+						Your application number is <b>{FACULTY_NUMBER}</b>.<br>
+						Please print this page for your record.<br>
+						If you have any further questions, <br>please contact Residence Life at <a href="mailto:{CF_EMAIL_FACULTY}" style="color:#7C0019;">{CF_EMAIL_FACULTY}</a>.
+					</td>
+					<td width="20" nowrap></td>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner3.jpg" width="7" height="12"></td>
+					<td colspan="3" height="11" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner4.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="30"></td>
+	</tr>
+	<tr>
+		<td align="center">
+			<a href="javascript:printApplication('{FACULTY_NUMBER}');"><img src="../../images/button/btn_print.jpg" width="184" height="30" border="0"></a>
+			<!-- BEGIN DYNAMIC BLOCK: invoice_row -->
+			<a href="javascript:printInvoice('{FACULTY_NUMBER}');"><img src="../../images/button/btn_invoice.jpg" width="170" height="30" border="0"></a>
+			<!-- END DYNAMIC BLOCK: invoice_row -->
+		</td>
+	</tr>
+</table>

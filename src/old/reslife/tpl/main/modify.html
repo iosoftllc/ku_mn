@@ -1,0 +1,315 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript">
+	function checkPasswordInfo(Form) {
+		if (Form.cur_pw.value == "") {
+			alert("현재 사용중인 비밀번호를 입력하세요.");
+			Form.cur_pw.focus();
+			Form.cur_pw.select();
+			return false;
+		}
+		if (Form.cur_pw.value == Form.new_pw.value) {
+			alert("현재 사용하시는 비밀번호와 새로운 비밀번호가 같을 수 없습니다.");
+			Form.cur_pw.focus();
+			Form.cur_pw.select();
+			return false;
+		}
+		if (!checkPassword(Form.new_pw, Form.confirm_pw)) return false;
+		return true;
+	}
+	function checkAdminInfo(Form) {
+		if (Form.admin_nm.value == "") {
+			alert("이름을 입력해 주세요.");
+			return false;
+		}
+		if (Form.department.value == "") {
+			alert("부서명을 입력해 주세요.");
+			return false;
+		}
+		if (!checkEmail(Form.email)) return false;
+		return true;
+	}
+	
+	function changePassword(Form) {
+		if (checkPasswordInfo(Form)) Form.submit();
+	}
+
+	function changeAdminInfo(Form) {
+		if (checkAdminInfo(Form)) Form.submit();
+	}
+</script>
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr> 
+		<td height="25"><img src="../../images/main/title_dot.jpg" width="21" height="8" align="absmiddle">관리자비밀번호변경</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" cellpadding="0" cellspacing="0">
+				<form name="PasswordForm" action="../../src/main/action.php" method="post" onSubmit="return checkPasswordInfo(this);">
+					<tr>
+						<td colspan="10" height="1" bgcolor="#F8F8F8"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F8F8F8"></td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="176" height="22" bgcolor="#E6E6E6" align="center">현재 사용중인 비밀번호</td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+						<td width="1" bgcolor="#FFFFFF"></td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="300" height="22" bgcolor="#F5F5F5">
+							<input type="password" name="cur_pw" size="15" maxlength="15">
+							<input type="hidden" name="mode" value="pw">
+						</td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F8F8F8"></td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="176" height="44" bgcolor="#E6E6E6" align="center">새로운 비밀번호</td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+						<td width="1" bgcolor="#FFFFFF"></td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="300" height="44" bgcolor="#F5F5F5">
+							<input type="password" name="new_pw" size="15" maxlength="15"> (확인: <input type="password" name="confirm_pw" size="15" maxlength="15">)<br>
+							(4~15자이하 영문소문자, 숫자 조합가능)
+						</td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td colspan="10" height="5"></td>
+					</tr>
+					<tr>
+						<td colspan="10">
+							<table border="0" cellpadding="0" cellspacing="0" align="center">
+								<tr>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:changePassword(document.PasswordForm);">확인</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:history.go(-1);">취소</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr> 
+		<td height="25"><img src="../../images/main/title_dot.jpg" width="21" height="8" align="absmiddle">관리자정보수정</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" cellpadding="0" cellspacing="0">
+				<form name="AdminForm" action="../../src/main/action.php" method="post" onSubmit="return checkAdminInfo(this);">
+					<tr>
+						<td colspan="10" height="1" bgcolor="#F8F8F8"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F8F8F8"></td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="100" height="22" bgcolor="#E6E6E6" align="center">이 름</td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+						<td width="1" bgcolor="#FFFFFF"></td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="376" height="22" bgcolor="#F5F5F5">
+							<input type="text" name="admin_nm" size="20" value="{ADMIN_NAME}">
+							<input type="hidden" name="mode" value="edit">
+						</td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F8F8F8"></td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="100" height="22" bgcolor="#E6E6E6" align="center">부서명</td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+						<td width="1" bgcolor="#FFFFFF"></td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="376" height="22" bgcolor="#F5F5F5">
+							<input type="text" name="department" size="50" maxlength="100" value="{ADMIN_DEPARTMENT}">
+						</td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F8F8F8"></td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="100" height="22" bgcolor="#E6E6E6" align="center">이메일</td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+						<td width="1" bgcolor="#FFFFFF"></td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="376" height="22" bgcolor="#F5F5F5">
+							<input type="text" name="email" size="50" maxlength="100" value="{ADMIN_EMAIL}">
+						</td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td colspan="10" height="5"></td>
+					</tr>
+					<tr>
+						<td colspan="10">
+							<table border="0" cellpadding="0" cellspacing="0" align="center">
+								<tr>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:changeAdminInfo(document.AdminForm);">확인</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:history.go(-1);">취소</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</td>
+	</tr>
+</table>

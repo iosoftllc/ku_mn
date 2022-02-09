@@ -1,0 +1,144 @@
+<html>
+
+<head>
+	<title>::::: Invoice :::::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<style type="text/css">
+		table { font-family:Verdana; font-size:12px; text-decoration:none; line-height:14pt; color:#000000; letter-spacing:0.1mm; text-align:justify; line-height:14pt;letter-spacing:0.1mm; }
+		a, a:link { font-family:Verdana; font-size:12px; text-decoration:none; text-align:justify; color:#000000; letter-spacing:0.1mm; }
+		a:hover { font-family:Verdana; font-size:12px; text-decoration:underline; text-align:justify; color:#000000; letter-spacing:0.1mm; }
+	</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+	<table width="500" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="3" cellspacing="0" style="border:1 solid #000000;">
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td><b>Korea University<br>Anam Residence Life<br>International Residence</b><br>Anam-dong Seongbuk-gu<br>Seoul 02841</td>
+									<td align="right"><font style="font-size:13pt;"><b>INVOICE</b></font><br><br><br>Invoice No.:	{INVOICE_NUMBER}<br>Invoice Date: {INVOICE_DATE}</td>
+								</tr>
+								<tr>
+									<td colspan="2" height="5"></td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center"><b>To: {INVOICE_TO}</b></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border:2 solid #000000;">
+								<tr>
+									<td>Amount Due</td>
+									<td>Property</td>
+									<td>Unit</td>
+								</tr>
+								<tr>
+									<td>￦{INVOICE_TOTAL}</td>
+									<td>{INVOICE_PROPERTY}</td>
+									<td>{INVOICE_UNIT}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border:2 solid #000000;">
+								<tr>
+									<td>For the period</td>
+									<td>(From)</td>
+									<td>(To)</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>{INVOICE_CHECKIN}</td>
+									<td>{INVOICE_CHECKOUT}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border:2 solid #000000;">
+								<tr>
+									<td style="border-bottom:2 solid #000000;">Date</td>
+									<td style="border-bottom:2 solid #000000;">Description</td>
+									<td style="border-bottom:2 solid #000000;" align="right">Amount<br>Consumed</td>
+									<td style="border-bottom:2 solid #000000;" align="right">Amount<br>Due</td>
+								</tr>
+								<!--
+								<tr>
+									<td>PREVIOUS MONTH'S OUTSTANDING BALANCE</td>
+									<td align="right" valign="bottom">&nbsp;</td>
+									<td align="right" valign="bottom">-</td>
+								</tr>
+								-->
+								<!-- BEGIN DYNAMIC BLOCK: payment_row -->
+								<tr>
+									<td>{PAYMENT_DATE}</td>
+									<td>{PAYMENT_DETAIL}</td>
+									<td align="right" valign="bottom">&nbsp;</td>
+									<td align="right" valign="bottom">{PAYMENT_AMOUNT}</td>
+								</tr>
+								<!-- END DYNAMIC BLOCK: payment_row -->
+								<tr>
+									<td colspan="2" style="border-top:1 solid #000000;">Total</td>
+									<td style="border-top:1 solid #000000;" align="right" valign="bottom">&nbsp;</td>
+									<td style="border-top:1 solid #000000;" align="right" valign="bottom">{INVOICE_TOTAL}</td>
+								</tr>
+								<tr>
+									<td colspan="2" style="border-top:2 solid #000000;">Total, rounded down</td>
+									<td style="border-top:2 solid #000000;" align="right" valign="bottom">&nbsp;</td>
+									<td style="border-top:2 solid #000000;" align="right" valign="bottom">￦{INVOICE_TOTAL}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="2"><b>Methods of payment</b></td>
+								</tr>
+								<tr>
+									<td width="10" valign="top" nowrap>1.</td>
+									<td>Transfer to one of our accounts:</td>
+								</tr>
+								<tr>
+									<td width="10" valign="top" nowrap></td>
+										BANK: Hana Bank, Godae Branch<br>
+										RECIPIENT: Korea University Anam Residence Life<br>
+										SWIFT CODE: KOEXKRSE<br>
+										ACCOUNT No.: 391-910001-03204
+									<td>
+									</td>
+								</tr>
+								<tr>
+									<td width="10" valign="top" nowrap></td>
+									<td>Make sure enter your unit number in the reference field for recipient.</td>
+								</tr>
+								<!-- BEGIN DYNAMIC BLOCK: method_row -->
+								<tr>
+									<td width="10" valign="top" nowrap>2.</td>
+									<td>Deduction from your salary.<br>(Salary Deduction form is available at the Residence Life office.)</td>
+								</tr>
+								<!-- END DYNAMIC BLOCK: method_row -->
+								<tr>
+									<td colspan="2"><b>Payment must be made before check-in date to avoid a late fee of ￦50,000.</b></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>

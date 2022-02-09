@@ -1,0 +1,30 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td height="25">
+			접속정보 :
+			<select name="ct_year" onChange="gotoCounterStat();">
+				<!-- BEGIN DYNAMIC BLOCK: year_row -->
+				<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+				<!-- END DYNAMIC BLOCK: year_row -->
+			</select> 년
+			<select name="ct_month" onChange="gotoCounterStat();">
+				<!-- BEGIN DYNAMIC BLOCK: month_row -->
+				<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+				<!-- END DYNAMIC BLOCK: month_row -->
+			</select> 월
+			<select name="ct_day" onChange="gotoCounterStat();">
+				<!-- BEGIN DYNAMIC BLOCK: day_row -->
+				<option value="{DAY_VALUE}">{DAY_VALUE}</option>
+				<!-- END DYNAMIC BLOCK: day_row -->
+			</select> 일
+		</td>
+		<td height="25" align="right">
+			접속량 : {TOTAL_COUNT}명
+		</td>
+	</tr>
+</table>
+<script language="javascript">
+	setSelected(document.CounterForm.ct_year, '{SEL_YEAR}');
+	setSelected(document.CounterForm.ct_month, '{SEL_MONTH}');
+	setSelected(document.CounterForm.ct_day, '{SEL_DAY}');
+</script>

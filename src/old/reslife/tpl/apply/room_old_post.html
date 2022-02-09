@@ -1,0 +1,169 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/room_old.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="RoomForm" action="../../src/apply/room_old_action.php" method="post" onSubmit="return checkRoomInfo(this);">
+		<input type="hidden" name="mode" value="edit">
+		<input type="hidden" name="code" value="{ROOM_CODE}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_rate" value="{SEARCH_RATE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<tr>
+			<td colspan="20" height="1" bgcolor="#F8F8F8"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="120" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>호 실</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5">{ROOM_CODE}</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="120" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>입실형태</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5">{ROOM_RATE}</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="18" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="120" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>전화번호</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5">
+				<input type="text" name="phone" size="9" maxlength="9" value="{ROOM_PHONE}">
+			</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="120" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>IP주소</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5">
+				<input type="text" name="ip" size="15" maxlength="15" value="{ROOM_IP}">
+			</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td colspan="20" height="5"></td>
+		</tr>
+		<tr>
+			<td colspan="20">
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:submitRoom(document.RoomForm);">확인</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:history.go(-1);">취소</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>

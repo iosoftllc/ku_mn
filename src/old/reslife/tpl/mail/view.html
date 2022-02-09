@@ -1,0 +1,550 @@
+<script language="javascript" src="../../js/admin.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="AdminForm" action="" method="get">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="id" value="{ADMIN_ID}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="s_grade" value="{SEARCH_GRADE}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" bgcolor="#EAEAEA" nowrap></td>
+						<td width="100%" height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#E4E4E4"></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" bgcolor="#C4C4C4"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#D7D7D7"></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>관리자등급</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{ADMIN_GRADE}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>관리자아이디</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{ADMIN_ID}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>관리자이름</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{ADMIN_NAME}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>관리자이메일</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF"><a href="javascript:sendEmail(document.AdminForm, '{ADMIN_EMAIL}');">{ADMIN_EMAIL}</a></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>부서명</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{ADMIN_DEPARTMENT}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>등록일</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{ADMIN_DATE}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>최근 로그인 시간</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{ADMIN_LOGIN}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>최근 로그아웃 시간</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{ADMIN_LOGOUT}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>접속 IP</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{ADMIN_LOGIP}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>로그인 회수</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{ADMIN_COUNT}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" bgcolor="#EAEAEA" nowrap></td>
+						<td width="100%" height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#E4E4E4"></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" bgcolor="#C4C4C4"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#D7D7D7"></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:gotoList(document.AdminForm);">목록보기</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:postAdmin(document.AdminForm, 'new');">추가</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:postAdmin(document.AdminForm, 'edit');">수정</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:deleteAdmin(document.AdminForm, '{ADMIN_ID}');">삭제</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>

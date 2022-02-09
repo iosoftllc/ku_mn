@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<title>::::: Korea University :::::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="ImageToolbar" content="No">
+	<link rel="stylesheet" type="text/css" href="http://www.korea.ac.kr/english04/2005/css/eng.css">
+</head>
+
+<script language="javascript">
+	function setCookie(name, value, expiredays) {
+		var todayDate = new Date();
+		todayDate.setDate(todayDate.getDate() + expiredays);
+		document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+	}
+	function closeWin() {
+		setCookie("anam_contract", "1" , 1); 
+		self.close();
+	} 
+</script>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+	<table width="300" height="194" border="0" cellspacing="0" cellpadding="0">
+		<tr> 
+			<td><a href="javascript:window.open('http://dorm.korea.ac.kr/src/main/page.php?code=32');self.close();"><img src="../../images/popup/anam_contract.jpg" width="300" height="194" border="0"></a></td>
+		</tr>
+		<!--
+		<tr>
+			<td height="20" align="right"><input type="checkbox" name="popup" onClick="closeWin();"> Close for today.</td>
+		</tr>
+		-->
+	</table>
+</body>
+
+</html>

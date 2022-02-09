@@ -1,0 +1,337 @@
+<script language="javascript" src="../../js/slide1.js"></script>
+<script language="javascript" src="../../js/slide2.js"></script>
+<script language="javascript">
+	var width1 = {THUMBNAIL_WIDTH1}, totalCount1 = {ORIGINAL_COUNT1};
+	var width2 = {THUMBNAIL_WIDTH2}, totalCount2 = {ORIGINAL_COUNT2};
+	ctnt1[0] = "<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr>";
+	ctnt1[0] += "<td width=\"5\"></td>";
+	ctnt1[0] += "{THUMBNAIL_HTML1}";
+	ctnt1[0] += "<td width=\"5\"></td>";
+	ctnt1[0] += "</tr></table>";
+	ctnt1[1] = "<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr>";
+	ctnt1[1] += "<td width=\"5\"></td>";
+	ctnt1[1] += "{THUMBNAIL_HTML1}";
+	ctnt1[1] += "<td width=\"5\"></td>";
+	ctnt1[1] += "</tr></table>";
+	ctnt2[0] = "<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr>";
+	ctnt2[0] += "<td width=\"5\"></td>";
+	ctnt2[0] += "{THUMBNAIL_HTML2}";
+	ctnt2[0] += "<td width=\"5\"></td>";
+	ctnt2[0] += "</tr></table>";
+	ctnt2[1] = "<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr>";
+	ctnt2[1] += "<td width=\"5\"></td>";
+	ctnt2[1] += "{THUMBNAIL_HTML2}";
+	ctnt2[1] += "<td width=\"5\"></td>";
+	ctnt2[1] += "</tr></table>";
+	{ORIGINAL_PHOTO1}
+	{ORIGINAL_PHOTO2}
+	{PHOTO_DESC1}
+	{PHOTO_DESC2}
+</script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="../../images/title/cnt_ihouse.jpg" width="144" height="14"></td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="../../images/letter/letter_cj.jpg" width="40" height="19">International House is an air-conditioned, suite style facility for 230 
+			men and women. CJ International House offers doubles and singles and has semi-private baths. Bathroom facilities are connected to the suite 
+			and are shared by the suitemates.
+		</td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="0" border="0" align="center">
+				<tr>
+					<td>
+						<table border="0" cellspacing="0" cellpadding="0" align="center">
+							<tr>
+								<td><img src="../../images/slide/frame_corner1.jpg" width="20" height="19"></td>
+								<td><img src="../../images/slide/frame_side1.jpg" width="500" height="19"></td>
+								<td><img src="../../images/slide/frame_corner2.jpg" width="21" height="19"></td>
+							</tr>
+							<tr>
+								<td><img src="../../images/slide/frame_side2.jpg" width="20" height="335"></td>
+								<td><img id="photo1Image" src="../../images/slide/ihouse/{FIRST_PHOTO1}" width="500" height="335" border="0" style="filter: blendTrans(duration = 0.5);"></td>
+								<td><img src="../../images/slide/frame_side3.jpg" width="21" height="335"></td>
+							</tr>
+							<tr>
+								<td><img src="../../images/slide/frame_corner3.jpg" width="20" height="22"></td>
+								<td><img src="../../images/slide/frame_side4.jpg" width="500" height="22"></td>
+								<td><img src="../../images/slide/frame_corner4.jpg" width="21" height="22"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+							<tr>
+								<td colspan="13" height="10"></td>
+							</tr>
+							<tr>
+								<td width="10" nowrap></td>
+								<td width="27" nowrap><img src="../../images/slide/desc_left.jpg" width="27" height="25"></td>
+								<td width="100%" height="25" background="../../images/slide/desc_bg.jpg" style="color:#781921;" id="photo1Desc">{FIRST_DESC1}</td>
+								<td width="10" nowrap><img src="../../images/slide/desc_right.jpg" width="10" height="25"></td>
+								<td width="5" nowrap></td>
+								<td width="55" nowrap><a href="javascript:viewPrevious1();"><img src="../../images/slide/btn_previous.jpg" width="55" height="24" border="0"></a></td>
+								<td width="5" nowrap></td>
+								<td width="55" nowrap><a href="javascript:viewSlide1();"><img src="../../images/slide/btn_play.jpg" width="55" height="24" border="0"></a></td>
+								<td width="5" nowrap></td>
+								<td width="55" nowrap><a href="javascript:stopSlide1();"><img src="../../images/slide/btn_stop.jpg" width="55" height="24" border="0"></a></td>
+								<td width="5" nowrap></td>
+								<td width="55" nowrap><a href="javascript:viewNext1();"><img src="../../images/slide/btn_forward.jpg" width="55" height="24" border="0"></a></td>
+								<td width="10" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="13" height="20"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="526" border="0" cellspacing="0" cellpadding="0" align="center">
+							<tr>
+								<td><a href="javascript:scroll1_left();"><img src="../../images/slide/thumbnail_left.jpg" width="25" height="97" border="0"></a></td>
+								<td width="475" height="97" background="../../images/slide/thumbnail_back.jpg">
+									<div id="scroll1_div" style="width:475px;height:97px;position:relative;overflow:hidden;" onMouseover="mouse1=0" onMouseout="mouse1=1"><script language="javascript">startText1();</script></div>
+								</td>
+								<td><a href="javascript:scroll1_right();"><img src="../../images/slide/thumbnail_right.jpg" width="26" height="97" border="0"></a></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="30"></td>
+	</tr>
+	<tr>
+		<td height="1" background="../../images/main/hdot.jpg"></td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td><img src="../../images/title/cnt_anam_international.jpg"></td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="../../images/letter/letter_anam.jpg">International House is an air-conditioned, coded home for 350 men and women. Anam International House offers doubles and has semi-private baths. Bathroom facilities are installed in the room and are shared by the roommates.
+		</td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="0" border="0" align="center">
+				<tr>
+					<td>
+						<table border="0" cellspacing="0" cellpadding="0" align="center">
+							<tr>
+								<td><img src="../../images/slide/frame_corner1.jpg" width="20" height="19"></td>
+								<td><img src="../../images/slide/frame_side1.jpg" width="500" height="19"></td>
+								<td><img src="../../images/slide/frame_corner2.jpg" width="21" height="19"></td>
+							</tr>
+							<tr>
+								<td><img src="../../images/slide/frame_side2.jpg" width="20" height="335"></td>
+								<td><img id="photo2Image" src="../../images/slide/anam_international/{FIRST_PHOTO2}" width="500" height="335" border="0" style="filter: blendTrans(duration = 0.5);"></td>
+								<td><img src="../../images/slide/frame_side3.jpg" width="21" height="335"></td>
+							</tr>
+							<tr>
+								<td><img src="../../images/slide/frame_corner3.jpg" width="20" height="22"></td>
+								<td><img src="../../images/slide/frame_side4.jpg" width="500" height="22"></td>
+								<td><img src="../../images/slide/frame_corner4.jpg" width="21" height="22"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+							<tr>
+								<td colspan="13" height="10"></td>
+							</tr>
+							<tr>
+								<td width="10" nowrap></td>
+								<td width="27" nowrap><img src="../../images/slide/desc_left.jpg" width="27" height="25"></td>
+								<td width="100%" height="25" background="../../images/slide/desc_bg.jpg" style="color:#781921;" id="photo2Desc">{FIRST_DESC2}</td>
+								<td width="10" nowrap><img src="../../images/slide/desc_right.jpg" width="10" height="25"></td>
+								<td width="5" nowrap></td>
+								<td width="55" nowrap><a href="javascript:viewPrevious2();"><img src="../../images/slide/btn_previous.jpg" width="55" height="24" border="0"></a></td>
+								<td width="5" nowrap></td>
+								<td width="55" nowrap><a href="javascript:viewSlide2();"><img src="../../images/slide/btn_play.jpg" width="55" height="24" border="0"></a></td>
+								<td width="5" nowrap></td>
+								<td width="55" nowrap><a href="javascript:stopSlide2();"><img src="../../images/slide/btn_stop.jpg" width="55" height="24" border="0"></a></td>
+								<td width="5" nowrap></td>
+								<td width="55" nowrap><a href="javascript:viewNext2();"><img src="../../images/slide/btn_forward.jpg" width="55" height="24" border="0"></a></td>
+								<td width="10" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="13" height="20"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="526" border="0" cellspacing="0" cellpadding="0" align="center">
+							<tr>
+								<td><a href="javascript:scroll2_left();"><img src="../../images/slide/thumbnail_left.jpg" width="25" height="97" border="0"></a></td>
+								<td width="475" height="97" background="../../images/slide/thumbnail_back.jpg">
+									<div id="scroll2_div" style="width:475px;height:97px;position:relative;overflow:hidden;" onMouseover="mouse2=0" onMouseout="mouse2=1"><script language="javascript">startText2();</script></div>
+								</td>
+								<td><a href="javascript:scroll2_right();"><img src="../../images/slide/thumbnail_right.jpg" width="26" height="97" border="0"></a></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td height="1" background="../../images/main/hdot.jpg"></td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td align="center"><font color="#7C0019"><b>All halls and rooms are smoke free.</b></font></td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td><img src="../../images/title/cnt_amenty1.jpg" width="110" height="14"></td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>Although designed differently, each Residence Hall has the following basic elements:</td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;" align="center">
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner1.jpg" width="7" height="12"></td>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner2.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="11" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+					<td width="30" align="center" valign="top" nowrap><img src="../../images/main/spacer.jpg" width="1" height="3"><br><img src="../../images/main/notice_dot.jpg" width="14" height="14"></td>
+					<td style="color:#765E35;">
+						Bathroom facilities: Private for CJ International House<br>
+						Lounge/TV area<br>
+						Laundry room with coin operated washers and dryers<br>
+						Kitchen facilities equipped with refrigerator, microwave oven, gas range oven, water purifier, table and waste basket.<br>
+						Note: Individual student rooms are not equipped to accommodate the electrical and sanitary demands of cooking.
+					</td>
+					<td width="20" nowrap></td>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner3.jpg" width="7" height="12"></td>
+					<td colspan="3" height="11" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner4.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>Iron, Ironing board and Vacuum cleaner can be borrowed at the information desk in the CJ International House.</td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td><img src="../../images/title/cnt_amenty2.jpg" width="130" height="14"></td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>All Residence Hall rooms have:</td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;" align="center">
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner1.jpg" width="7" height="12"></td>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner2.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="11" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+					<td width="30" align="center" valign="top" nowrap><img src="../../images/main/spacer.jpg" width="1" height="3"><br><img src="../../images/main/notice_dot.jpg" width="14" height="14"></td>
+					<td style="color:#765E35;">
+						Standard twin-size bed(s)/bunk bed<br>
+						Desk(s) and Chair(s)<br>
+						Bookshelf<br>
+						Closet Space for each resident<br>
+						Telephone, for incoming calls only<br>
+						Air conditioner and Heater<br>
+						Curtains<br>
+						Waste basket<br>
+						Broom and dustpan
+					</td>
+					<td width="20" nowrap></td>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner3.jpg" width="7" height="12"></td>
+					<td colspan="3" height="11" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner4.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="30"></td>
+	</tr>
+	<tr>
+		<td align="center"><a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=rate"><img src="../../images/button/btn_view_room.jpg" width="184" height="30" border="0"></a></td>
+	</tr>
+</table>
+<script language="javascript">
+	preload1();
+	preload2();
+</script>

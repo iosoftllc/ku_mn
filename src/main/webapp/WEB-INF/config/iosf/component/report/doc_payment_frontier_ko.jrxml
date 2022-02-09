@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="doc_payment_frontier_ko" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87d8a6f1-c384-41b1-b58c-4bb0767087e5">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="안암학사"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="EVENT_SUBMIT_SEQ" class="java.lang.Long"/>
+	<parameter name="REPORT_SRC" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT DATE_FORMAT(NOW(), '%Y 년 %m 월 %d 일') NOW_DT 
+	, A.STD_ID
+	, A.USER_NM
+	, A.DEPT_NM
+	, B.`YEAR`
+	, FN_GET_CODE('school_term', B.TERM) TERM
+	, CONCAT(DATE_FORMAT(STR_TO_DATE(D.START_DT, '%Y%m%d'), '%Y-%m-%d'), ' (', SUBSTR( _UTF8'일월화수목금토', DAYOFWEEK(STR_TO_DATE(D.START_DT, '%Y%m%d')), 1), ')') START_DT
+	, CONCAT(DATE_FORMAT(STR_TO_DATE(D.END_DT, '%Y%m%d'), '%Y-%m-%d'), ' (', SUBSTR( _UTF8'일월화수목금토', DAYOFWEEK(STR_TO_DATE(D.START_DT, '%Y%m%d')), 1), ')') END_DT
+	, CONCAT(DATE_FORMAT(STR_TO_DATE(B.PAY_START_DT, '%Y%m%d%H%i%s'), '%Y-%m-%d'), ' (', SUBSTR( _UTF8'일월화수목금토', DAYOFWEEK(STR_TO_DATE(B.PAY_START_DT, '%Y%m%d%H%i%s')), 1), ') ', DATE_FORMAT(STR_TO_DATE(B.PAY_START_DT, '%Y%m%d%H%i%s'), '%H:%i')) PAY_START_DT
+	, CONCAT(DATE_FORMAT(STR_TO_DATE(B.PAY_END_DT, '%Y%m%d%H%i%s'), '%Y-%m-%d'), ' (', SUBSTR( _UTF8'일월화수목금토', DAYOFWEEK(STR_TO_DATE(B.PAY_END_DT, '%Y%m%d%H%i%s')), 1), ') ', DATE_FORMAT(STR_TO_DATE(B.PAY_END_DT, '%Y%m%d%H%i%s'), '%H:%i')) PAY_END_DT
+	, (SELECT FORMAT(PAY_PRICE, 0) FROM IOSF_EVENT_SUBMIT_INVOICE AA WHERE AA.EVENT_SUBMIT_SEQ = A.EVENT_SUBMIT_SEQ ORDER BY AA.EVENT_SUBMIT_INVOICE_SEQ LIMIT 1) PAY_PRICE
+	, CONCAT(DATE_FORMAT(DATE_ADD(STR_TO_DATE(B.PAY_END_DT, '%Y%m%d%H%i%s'), INTERVAL 1 DAY), '%Y-%m-%d'), ' (', SUBSTR( _UTF8'일월화수목금토', DAYOFWEEK(DATE_ADD(STR_TO_DATE(B.PAY_END_DT, '%Y%m%d%H%i%s'), INTERVAL 1 DAY)), 1), ')') PAY_NEXT_DT
+	, G.VACCOUNT_NO
+	, FORMAT(F.PRICE, 0) PRICE
+	, FORMAT((SELECT PAY_PRICE FROM IOSF_EVENT_SUBMIT_INVOICE AA WHERE AA.EVENT_SUBMIT_SEQ = A.EVENT_SUBMIT_SEQ ORDER BY AA.EVENT_SUBMIT_INVOICE_SEQ LIMIT 1) / F.PRICE, 0) DD
+FROM IOSF_EVENT_SUBMIT A
+INNER JOIN IOSF_EVENT B ON A.EVENT_SEQ = B.EVENT_SEQ
+INNER JOIN IOSF_EVENT_SUBMIT_ROOM_MAPP D ON A.EVENT_SUBMIT_SEQ = D.EVENT_SUBMIT_SEQ
+INNER JOIN IOSF_ROOM E ON D.ROOM_SEQ = E.ROOM_SEQ
+INNER JOIN IOSF_ROOM_TYPE F ON E.ROOM_TYPE_SEQ = F.ROOM_TYPE_SEQ
+INNER JOIN IOSF_VACCOUNT G ON A.EVENT_SUBMIT_SEQ = G.EVENT_SUBMIT_SEQ
+WHERE A.EVENT_SUBMIT_SEQ = $P{EVENT_SUBMIT_SEQ}]]>
+	</queryString>
+	<field name="NOW_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOW_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOW_DT"/>
+	</field>
+	<field name="STD_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="STD_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="STD_ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[학번/교번/수험번호]]></fieldDescription>
+	</field>
+	<field name="USER_NM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="USER_NM"/>
+		<property name="com.jaspersoft.studio.field.label" value="USER_NM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[사용자이름]]></fieldDescription>
+	</field>
+	<field name="DEPT_NM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DEPT_NM"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEPT_NM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[부서/학과명 과정명 포함]]></fieldDescription>
+	</field>
+	<field name="YEAR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="YEAR"/>
+		<property name="com.jaspersoft.studio.field.label" value="YEAR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT"/>
+		<fieldDescription><![CDATA[입사 기간을 위한 학사력]]></fieldDescription>
+	</field>
+	<field name="TERM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TERM"/>
+		<property name="com.jaspersoft.studio.field.label" value="TERM"/>
+	</field>
+	<field name="START_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="START_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="START_DT"/>
+	</field>
+	<field name="END_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="END_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="END_DT"/>
+	</field>
+	<field name="PAY_START_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PAY_START_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="PAY_START_DT"/>
+	</field>
+	<field name="PAY_END_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PAY_END_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="PAY_END_DT"/>
+	</field>
+	<field name="PAY_PRICE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PAY_PRICE"/>
+		<property name="com.jaspersoft.studio.field.label" value="PAY_PRICE"/>
+	</field>
+	<field name="PAY_NEXT_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PAY_NEXT_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="PAY_NEXT_DT"/>
+	</field>
+	<field name="VACCOUNT_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="VACCOUNT_NO"/>
+		<property name="com.jaspersoft.studio.field.label" value="VACCOUNT_NO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_VACCOUNT"/>
+		<fieldDescription><![CDATA[가상계좌번호]]></fieldDescription>
+	</field>
+	<field name="PRICE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PRICE"/>
+		<property name="com.jaspersoft.studio.field.label" value="PRICE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_ROOM_TYPE"/>
+		<fieldDescription><![CDATA[금액]]></fieldDescription>
+	</field>
+	<field name="DD" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="DD"/>
+		<property name="com.jaspersoft.studio.field.label" value="DD"/>
+	</field>
+	<title>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="100" uuid="074d1acc-72fd-4814-8667-4db067a4e9d8"/>
+				<box>
+					<pen lineColor="#A42C47"/>
+					<topPen lineWidth="5.0" lineStyle="Solid" lineColor="#A42C47"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MalgunGothic" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["에듀21고려대학교학생기숙사 (건물명:프런티어관, 건축방식:민자)"
++ "\n" + $F{YEAR} + "학년도 " + $F{TERM} + " 기숙사 관리비 납부통지서"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="685" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<frame>
+				<reportElement x="0" y="0" width="278" height="685" uuid="d289c727-e0df-4548-83f8-ceb28a4eb459">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<box padding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="50" height="43" uuid="2ca8999d-ef5e-431a-9d36-e4c935517ce1">
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="0" width="222" height="43" uuid="600b6491-4a4d-42e7-b9d3-ac6795c5b6fb">
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="4.5"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="272" height="43" uuid="af83b2ec-7e9a-4712-900b-f504d998fce7">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="0"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="2"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[<b>수   납   원   부</b>
+(학생보관용)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="43" width="50" height="43" uuid="a315c591-bf42-41bd-a88a-6a655825d7bd">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[학      번]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="43" width="222" height="43" uuid="dc956726-111a-4a0b-94a4-cfc0dca6a49e">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{STD_ID}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="86" width="50" height="43" uuid="97ccbf95-f88c-4e4b-b9b8-eb5bea87e6cf">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="2"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[학      과]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="86" width="222" height="43" uuid="d5452026-101e-493f-9514-4e2d6988c187">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="2"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DEPT_NM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="129" width="50" height="43" uuid="a315c591-bf42-41bd-a88a-6a655825d7bd">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="3"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[이      름]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="129" width="222" height="43" uuid="dc956726-111a-4a0b-94a4-cfc0dca6a49e">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="3"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{USER_NM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="172" width="50" height="43" uuid="851e99bf-209e-4ae3-9f8f-c2e71d8aa11d">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="4"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[납부총액]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="172" width="222" height="43" uuid="2656b853-809e-4a9c-a886-990964138cf6">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="4"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PAY_PRICE} + "원"
++ "\n(식비는 별도 입니다.)"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="215" width="50" height="43" uuid="41720c1b-2f08-48a3-aebd-3c1d8436a7ef">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="5"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[납부기간]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="215" width="222" height="43" uuid="b00f0d71-2742-4e3b-8585-48776d0fdecb">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="5"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PAY_START_DT} + " ~ " + $F{PAY_END_DT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="258" width="50" height="42" uuid="74306c5d-b1cf-4104-a0a2-63e949277b1a">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="6"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[납부방법]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="258" width="222" height="42" uuid="e65e260b-d4dd-4ede-ad78-3cf1ff6846b0">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="6"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[인터넷뱅킹, 폰(모바일)뱅킹, 은행납부, ATM 등]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="300" width="50" height="42" uuid="14fecf5c-34c6-4ba6-b7fb-cd3f726931da">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="7"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[가상계좌]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="300" width="222" height="42" uuid="6164c8a5-7f07-4421-b902-a6d3478d0f36">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="7"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA["하나은행 " + $F{VACCOUNT_NO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="342" width="50" height="126" uuid="73c917d4-47dc-4cba-8a9c-2e0a257a091c">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="8"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="3.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="2"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[유의사항]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="342" width="222" height="63" uuid="d8b50919-b1c9-45dd-a535-318677abd864">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="8"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[● 기한내 미납 시
+납부기한내 기숙사비를 납부하지 아니하면, 기숙사 포기자로 간주하며 미등록 잔여석으로 분류됩니다.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="405" width="222" height="63" uuid="7bbbfe99-d758-4754-95e2-7f7da1b1426c">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="9"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[● 입사후 중도퇴사 시 환불약관(요약)
+중도퇴사 시 환불액은 환불약관에 의거 환불함.
+다만, 잔여숙박일수가 만<font color='red'>28</font>박 이상 남지 않은 경우에는 중도퇴사 환불액이 없음.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="468" width="50" height="127" uuid="23f8562d-bd52-4719-99e9-5b71b6797dc5">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="10"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="3.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[입사후
+차년도
+입사 신청권 여부
+사전안내]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="468" width="222" height="127" uuid="2e17729e-bb15-4aae-8f68-c3ff30ae8061">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="10"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[프런티어관 선발규정에 의거 신입생으로 입사한 사생은 당해연도 입사권을 부여받은 것이며 차년도 입사권은 학점 및 벌점계산에 따라 선발정원에 따라 선발여부가 갈려집니다.
+차차년도 입사권은 부여되지 않습니다.
+다만, 여석이 발생한 경우, 잔여석 선발규정에 의거 입사자격을 갖춘 경우 입사할 수 있습니다.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="595" width="272" height="42" uuid="e6e2ad67-9e3a-4c53-8717-2eaf51c9d56b">
+						<property name="com.jaspersoft.layout.grid.colspan" value="2"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="11"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="136" height="42" uuid="80b9dd5b-6cf7-414e-84f1-03c2497dd858">
+							<property name="com.jaspersoft.layout.grid.x" value="0"/>
+							<property name="com.jaspersoft.layout.grid.y" value="11"/>
+							<property name="com.jaspersoft.layout.grid.weight.x" value="2.0"/>
+							<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.colspan" value="2"/>
+							<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+							<font fontName="MalgunGothic"/>
+						</textElement>
+						<text><![CDATA[에듀21고려대학교
+학생기숙사유한회사(인)]]></text>
+					</staticText>
+					<image hAlign="Center" vAlign="Middle">
+						<reportElement x="136" y="0" width="68" height="42" uuid="da60934d-d264-44bd-8c91-1b56461ba3fb">
+							<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.weight.y" value="0.5"/>
+							<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+						</reportElement>
+						<imageExpression><![CDATA[$P{REPORT_SRC} + "/images/sign-edu21.png"]]></imageExpression>
+					</image>
+					<staticText>
+						<reportElement x="204" y="0" width="68" height="42" uuid="0177c8a6-388a-43e2-acea-9fc3456ebae0">
+							<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.weight.y" value="0.5"/>
+							<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="MalgunGothic"/>
+						</textElement>
+						<text><![CDATA[수 납 인]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="0" y="637" width="272" height="42" uuid="277b0231-067b-4b75-ba16-e0f4ee5c95f6">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="12"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="2"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic" isBold="true"/>
+					</textElement>
+					<text><![CDATA[하나은행(고대지점) D820 (학교코드 : 1261) 
+하나은행(고대지점) ☏ 02-929-6241~3]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="278" y="0" width="277" height="685" uuid="10c72940-1aa1-46c1-8e8f-0fe3ccdc978a">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<box padding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="50" height="43" uuid="cdb3343e-c603-4ec3-bde7-e382fa634542">
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="0" width="221" height="43" uuid="fe81d1ac-a396-4725-a4d7-9a40e046a3f2">
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="4.5"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="271" height="43" uuid="19b5df76-c985-40c5-b8dc-3a41463cea0b">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="0"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="2"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[<b>수   납   원   부</b>
+(은행보관용)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="43" width="50" height="43" uuid="52057975-e5ee-4c48-ae06-8fcb9ae01e97">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[학      번]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="43" width="221" height="43" uuid="ad2bb989-58b1-4117-bff0-4fcfeb040366">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{STD_ID}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="86" width="50" height="43" uuid="2cfd5114-04aa-4fd8-b38d-12b9cda3d35a">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="2"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[학      과]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="86" width="221" height="43" uuid="68bc7880-45f3-4648-884a-6d30de8c1d55">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="2"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DEPT_NM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="129" width="50" height="43" uuid="e59bc1bd-9300-43c1-864a-27b5c6470918">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="3"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[이      름]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="129" width="221" height="43" uuid="1e482b43-45d0-4f11-9b5c-e520159bed70">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="3"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{USER_NM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="172" width="50" height="43" uuid="b5d83523-32f5-4916-a12c-385804421ed7">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="4"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[납부총액]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="172" width="221" height="43" uuid="6ac99ba8-90f7-4232-ac4a-42d34a20801a">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="4"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PAY_PRICE} + "원"
++ "\n(식비는 별도 입니다.)"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="215" width="50" height="43" uuid="9dc8d83b-1068-4243-a290-80a1dbf1c3b3">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="5"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[납부기간]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="215" width="221" height="43" uuid="366cce1e-fbc1-43f0-9866-3d8a5a7582c8">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="5"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PAY_START_DT} + " ~ " + $F{PAY_END_DT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="258" width="50" height="42" uuid="7500094b-65fc-42a3-b84e-4da34bb0041e">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="6"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[납부방법]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="258" width="221" height="42" uuid="5a4e0836-681e-47be-aafa-5b8c20093d23">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="6"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[인터넷뱅킹, 폰(모바일)뱅킹, 은행납부, ATM 등]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="300" width="50" height="42" uuid="5c01a46a-7ffa-4e32-b968-1cda2978cb03">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="7"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[가상계좌]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="300" width="221" height="42" uuid="c9b7877c-d6b4-4d44-b858-c7273d0ac669">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="7"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<textFieldExpression><![CDATA["하나은행 " + $F{VACCOUNT_NO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="342" width="50" height="126" uuid="08bd5a05-790c-4cc4-b3bd-6041c2228a46">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="8"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="3.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="2"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[유의사항]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="342" width="221" height="63" uuid="5eb9f85d-48da-4b64-ae31-74efa78f28cb">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="8"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[● 기한내 미납 시
+납부기한내 기숙사비를 납부하지 아니하면, 기숙사 포기자로 간주하며 미등록 잔여석으로 분류됩니다.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="405" width="221" height="63" uuid="21d58c28-6020-410a-8cb9-64aa7771c65b">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="9"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[● 입사후 중도퇴사 시 환불약관(요약)
+중도퇴사 시 환불액은 환불약관에 의거 환불함.
+다만, 잔여숙박일수가 만<font color='red'>28</font>박 이상 남지 않은 경우에는 중도퇴사 환불액이 없음.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="468" width="50" height="127" uuid="e830c8e4-1102-4511-a4ea-85b08e0b48ea">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="10"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="3.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[입사후
+차년도
+입사 신청권 여부
+사전안내]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="468" width="221" height="127" uuid="03759b9b-b974-4e0f-be1a-21593a7fad1f">
+						<property name="com.jaspersoft.layout.grid.x" value="1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="10"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MalgunGothic"/>
+					</textElement>
+					<text><![CDATA[프런티어관 선발규정에 의거 신입생으로 입사한 사생은 당해연도 입사권을 부여받은 것이며 차년도 입사권은 학점 및 벌점계산에 따라 선발정원에 따라 선발여부가 갈려집니다.
+차차년도 입사권은 부여되지 않습니다.
+다만, 여석이 발생한 경우, 잔여석 선발규정에 의거 입사자격을 갖춘 경우 입사할 수 있습니다.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="595" width="271" height="42" uuid="9eb162df-feda-48a6-9720-5b55a048ecfb">
+						<property name="com.jaspersoft.layout.grid.colspan" value="2"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="11"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="137" height="42" uuid="5fab2576-1f58-459a-9b81-d4985cd057b4">
+							<property name="com.jaspersoft.layout.grid.x" value="0"/>
+							<property name="com.jaspersoft.layout.grid.y" value="11"/>
+							<property name="com.jaspersoft.layout.grid.weight.x" value="2.0"/>
+							<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.colspan" value="2"/>
+							<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+							<font fontName="MalgunGothic"/>
+						</textElement>
+						<text><![CDATA[에듀21고려대학교
+학생기숙사유한회사(인)]]></text>
+					</staticText>
+					<image hAlign="Center" vAlign="Middle">
+						<reportElement x="137" y="0" width="67" height="42" uuid="25dcaf20-f28b-45c6-a301-a1d89149f34e">
+							<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.weight.y" value="0.5"/>
+							<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+						</reportElement>
+						<imageExpression><![CDATA[$P{REPORT_SRC} + "/images/sign-edu21.png"]]></imageExpression>
+					</image>
+					<staticText>
+						<reportElement x="204" y="0" width="67" height="42" uuid="0e34fc31-6b70-4bb0-ada4-8c48ae3f1a8c">
+							<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.weight.y" value="0.5"/>
+							<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="MalgunGothic"/>
+						</textElement>
+						<text><![CDATA[수 납 인]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="0" y="637" width="271" height="42" uuid="277b0130-b48e-46a3-9f22-efb0106193f5">
+						<property name="com.jaspersoft.layout.grid.x" value="0"/>
+						<property name="com.jaspersoft.layout.grid.y" value="12"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="2"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MalgunGothic" isBold="true"/>
+					</textElement>
+					<text><![CDATA[하나은행(고대지점) D820 (학교코드 : 1261) 
+하나은행(고대지점) ☏ 02-929-6241~3]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="64">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<break>
+				<reportElement x="0" y="0" width="555" height="1" uuid="9e9bec76-ac54-4774-9ef6-50ede6a6b7a4"/>
+			</break>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="555" height="64" uuid="32b0f46c-d83b-4864-993b-002ddf4479e3">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<box topPadding="30">
+					<pen lineWidth="5.0" lineColor="#A42C47"/>
+					<topPen lineWidth="5.0" lineStyle="Solid" lineColor="#A42C47"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement markup="styled">
+					<font fontName="MalgunGothic"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>1. " + $F{YEAR} + "년도 " + $F{TERM} + " 기숙사비(관리비) 납부 안내</b>"
++ "\n"  
++ "\n 가. 납부기간 : " + $F{PAY_START_DT} + " ~ " + $F{PAY_END_DT}
++ "\n 나. 기숙사 관리비 납부방법 : 은행계좌이체 / ATM / 스마트폰뱅킹 / 텔레뱅킹 등"
++ "\n 다. 기숙사 관리비 : " + $F{PAY_PRICE} + "원 (산출내역 " + $F{DD} + "박 × " + $F{PRICE} + "원 = " + $F{PAY_PRICE} + "원)"
++ "\n 라. 기숙사비 납부확인(별도 문자안내 없음)"
++ "\n      하나은행 홈페이지(www.kebhana.com) : “빠른계좌” 조회 화면창 상단에 “등록금빠른조회”를 선택한 후 학교명, 학번"
++ "\n      또는 수험번호, 학생명, 가상계좌번호를 입력하면 즉시조회 가능합니다."
++ "\n 마. 기숙사비는 연말정산 소득공제용 교육비가 아닙니다. 소득세법을 참고해주시기 바랍니다. 다만, 현금영수증 신청은 가능"
++ "\n      하며 12월 말 프런티어관 남자동 1층 사감보실 방문하여 서면 신청을 해주면 됩니다.(평일근무시간)"
++ "\n"
++ "\n"
++ "\n<b>2. " + $F{YEAR} + "년도 " + $F{TERM} + " 프런티어관(민자) 입사일정 안내</b>"
++ "\n"
++ "\n 가. " + $F{YEAR} + "년도 " + $F{TERM} + " 기숙사 총입사기간"
++ "\n      <u>" + $F{START_DT} + " ~ " + $F{END_DT} + "</u>"
++ "\n 나. 권장입사기간"
++ "\n      <u>" + $F{START_DT} + " ∼ 자유입사 (일과시간인 09시∼22시 입사해야 입사수속을 받을 수 있음)</u>"
++ "\n"
++ "\n"
++ "\n<b>3. 입사 시 준비물</b> (다음장에 자세히 나와있습니다.)"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

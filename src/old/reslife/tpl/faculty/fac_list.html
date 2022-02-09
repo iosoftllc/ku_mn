@@ -1,0 +1,323 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/facility.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="FacilityForm" action="" method="get" onSubmit="return checkSearchFacility(this);">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<input type="hidden" name="no" value="">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="email" value="">
+		<input type="hidden" name="s_room" value="{SEARCH_ROOM}">
+		<tr>
+			<td height="22" valign="bottom" class="NoPrint">
+				<select name="s_state" onChange="viewList(document.FacilityForm);">
+					<option value="">지원상태별보기</option>
+					<option value="IW">Applied</option>
+					<option value="AS">Assigned</option>
+					<option value="CC">Cancelled</option>
+					<option value="CF">Confirmed</option>
+					<option value="PR">Paid Rental Fee</option>
+					<option value="PB">Paid Breakfast</option>
+					<option value="PD">Paid Deposit</option>
+					<option value="RF">Refund</option>
+				</select>
+				<select name="s_grade" onChange="viewList(document.FacilityForm);">
+					<option value="">결재단계</option>
+					<option value="0">담당자결재대기</option>
+					<option value="1">과장결재대기</option>
+					<option value="2">팀장결재대기</option>
+					<option value="3">사감장결재대기</option>
+					<option value="4">사감장전결</option>
+				</select>
+				총 {TOTAL_COUNT}명 / {TOTAL_PAGE}페이지
+			</td>
+		</tr>
+		<tr>
+			<td height="22" class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<table border="0" cellpadding="0" cellspacing="0" align="left">
+								<tr>
+									<td>사용목적:<input type="text" name="purpose" size="20"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:downloadExcel(document.FacilityForm);">지원다운로드</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table border="0" cellpadding="0" cellspacing="0" align="right">
+								<tr>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:postFacility(document.FacilityForm, 'new');">추가</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:deleteFacility(document.FacilityForm, '');">삭제</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:sendEmail(document.FacilityForm, 'hall');">전체공지메일</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:sendEmail(document.FacilityForm, 'list');">선택공지메일</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="4" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr> 
+						<td width="2" nowrap><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="20" height="26" align="center" background="../../images/list/list_back.jpg"><input type="checkbox" name="select_all" onClick="selectAll(document.FacilityForm.list_no);"></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'apply_no');">번 호</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'event');">이벤트명</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'applicant');">신청자</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'email');">이메일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'phone');">전화번호</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'event_dt');">이벤트일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'apply_date');">지원일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'state');">지원상태</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'fee');">대여료</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'meal');">조식비</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'cancel');">취소비</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>신청실</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="35" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.FacilityForm, 'breakfast');">조 식</b></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="2" nowrap><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: list_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="2"></td>
+						<td width="20" height="23" align="center"><input type="checkbox" name="list_no" value="{LIST_NUMBER}"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center"><a href="javascript:viewFacility(document.FacilityForm, '{LIST_NUMBER}');">{LIST_NUMBER}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center"><a href="javascript:viewFacility(document.FacilityForm, '{LIST_NUMBER}');">{EVENT_NAME}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center"><a href="javascript:viewFacility(document.FacilityForm, '{LIST_NUMBER}');">{LIST_APPLICANT}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center"><a href="javascript:sendEmail(document.FacilityForm, '{LIST_EMAIL}')">{LIST_EMAIL}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_PHONE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{EVENT_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_APPLY}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_STATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_FEE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_MEAL}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{LIST_CANCEL}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_REQUEST}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="35" height="23" align="center">{LIST_BREAKFAST}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr> 
+						<td colspan="55" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!--<input type="hidden" name="list_email" value="{LIST_EMAIL}">-->
+					<!-- END DYNAMIC BLOCK: list_row -->
+					<tr> 
+						<td colspan="55" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr> 
+						<td height="35">
+							<a href="javascript:gotoPage(document.FacilityForm, '{PRE_PAGE}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+							<!-- BEGIN DYNAMIC BLOCK: page_row -->
+							{PAGE_VALUE}
+							<!-- END DYNAMIC BLOCK: page_row -->
+							<a href="javascript:gotoPage(document.FacilityForm, '{NEXT_PAGE}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td align="center" class="NoPrint">
+				<input type="checkbox" name="list_room" value="C1">컨퍼런스홀
+				<input type="checkbox" name="list_room" value="S1">세미나실(강현석)
+				<input type="checkbox" name="list_room" value="S2">세미나실(캘리포니아)
+				<input type="checkbox" name="list_room" value="R1">스터디룸(고려사자클럽)
+				<input type="checkbox" name="list_room" value="R2">스터디룸(최상용)
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td align="center" class="NoPrint">
+				<select name="s_year1" onChange="setDayList(document.FacilityForm.s_year1, document.FacilityForm.s_month1, document.FacilityForm.s_day1);">
+					<option value="">----</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_month1" onChange="setDayList(document.FacilityForm.s_year1, document.FacilityForm.s_month1, document.FacilityForm.s_day1);">
+					<option value="">--</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_day1">
+					<option value="">--</option>
+				</select>일 부터
+				<select name="s_year2" onChange="setDayList(document.FacilityForm.s_year2, document.FacilityForm.s_month2, document.FacilityForm.s_day2);">
+					<option value="">----</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_month2" onChange="setDayList(document.FacilityForm.s_year2, document.FacilityForm.s_month2, document.FacilityForm.s_day2);">
+					<option value="">--</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_day2">
+					<option value="">--</option>
+				</select>일 까지
+			</td>
+		</tr>
+		<tr>
+			<td height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td height="22" align="center">
+							<select name="s_type">
+								<option value="1">이벤트명</option>
+								<option value="2">신청자</option>
+								<option value="3">지원번호</option>
+								<option value="4">이메일</option>
+							</select>
+							<input type="text" name="s_text" size="30" value="{SEARCH_TEXT}">
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:searchFacility(document.FacilityForm);">검색</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setMultipleChecked(document.FacilityForm.list_room, '{SEARCH_ROOM}');
+	setSelected(document.FacilityForm.s_state, '{SEARCH_STATE}');
+	setSelected(document.FacilityForm.s_grade, '{SEARCH_GRADE}');
+	setSelected(document.FacilityForm.s_type, '{SEARCH_TYPE}');
+	setSelected(document.FacilityForm.s_year1, '{SEARCH_YEAR1}');
+	setSelected(document.FacilityForm.s_month1, '{SEARCH_MONTH1}');
+	setDayList(document.FacilityForm.s_year1, document.FacilityForm.s_month1, document.FacilityForm.s_day1);
+	setSelected(document.FacilityForm.s_day1, '{SEARCH_DAY1}');
+	setSelected(document.FacilityForm.s_year2, '{SEARCH_YEAR2}');
+	setSelected(document.FacilityForm.s_month2, '{SEARCH_MONTH2}');
+	setDayList(document.FacilityForm.s_year2, document.FacilityForm.s_month2, document.FacilityForm.s_day2);
+	setSelected(document.FacilityForm.s_day2, '{SEARCH_DAY2}');
+</script>

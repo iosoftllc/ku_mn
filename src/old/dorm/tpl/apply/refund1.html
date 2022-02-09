@@ -1,0 +1,491 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/refund.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+	<tr>
+		<td colspan="3" height="20"></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td width="299" rowspan="2" nowrap><img src="../../images/title/page_refund.jpg" width="299" height="23"></td>
+					<td width="100%" height="22"></td>
+					<td width="33" rowspan="2" nowrap><img src="../../images/title/page_end.jpg" width="33" height="23"></td>
+				</tr>
+				<tr>
+					<td height="1" bgcolor="#177394"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" height="20"></td>
+	</tr>
+	<tr>
+		<td colspan="3" height="10"></td>
+	</tr>
+	<tr>
+		<td width="10" nowrap></td>
+		<td>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+				<form name="RefundForm" action="https://reslife.korea.ac.kr:5008/v1/src/apply/action.php" method="post" onSubmit="return checkRefundInfo1(this);">
+					<input type="hidden" name="mode" value="refund1">
+					<input type="hidden" name="no" value="{APPLY_NUMBER}">
+					<tr>
+						<td><img src="../../images/title/cnt_refund5.jpg" width="200" height="14"></td>
+					</tr>
+					<tr>
+						<td height="5"></td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" nowrap></td>
+									<td style="padding-left:10px;padding-right:10px;">
+										<input type="radio" name="vacate_flag" value="Y">Vacated or 
+										<input type="radio" name="vacate_flag" value="N">will vacate residence unit on 
+										Year
+										<select name="vacate_yy" style="color:#9B9EA3;" onChange="setDayList(document.RefundForm.vacate_yy, document.RefundForm.vacate_mm, document.RefundForm.vacate_dd);">
+											<option value="">yyyy</option>
+											<!-- BEGIN DYNAMIC BLOCK: year_row -->
+											<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+											<!-- END DYNAMIC BLOCK: year_row -->
+										</select>
+										Month
+										<select name="vacate_mm" style="color:#9B9EA3;" onChange="setDayList(document.RefundForm.vacate_yy, document.RefundForm.vacate_mm, document.RefundForm.vacate_dd);">
+											<option value="">mm</option>
+											<!-- BEGIN DYNAMIC BLOCK: month_row -->
+											<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+											<!-- END DYNAMIC BLOCK: month_row -->
+										</select>
+										Day
+										<select name="vacate_dd" style="color:#9B9EA3;">
+											<option value="">dd</option>
+										</select>
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="15"></td>
+					</tr>
+					<tr>
+						<td><img src="../../images/title/cnt_refund6.jpg" width="200" height="14"></td>
+					</tr>
+					<tr>
+						<td height="5"></td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td style="padding-left:10px;padding-right:10px;">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td>
+													Are you requesting a Refund or Change of Semester?<br>
+													Note: Deposit will be refunded or carried forward after damage deductions, if any. If the deposit is carried forward less than the full amount, 
+													students will be billed for the difference.
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="radio" name="refund_flag" value="Y" onclick="document.getElementById('refund').style.display='block';document.getElementById('transfer').style.display='none';">Refund
+													<input type="radio" name="refund_flag" value="N" onclick="document.getElementById('refund').style.display='none';document.getElementById('transfer').style.display='block';">Change of Semester
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="15"></td>
+					</tr>
+					<tr>
+						<td id="refund" style="display:none">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td><img src="../../images/title/cnt_refund7.jpg" width="200" height="14"></td>
+								</tr>
+								<tr>
+									<td height="5"></td>
+								</tr>
+								<tr>
+									<td>
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" nowrap></td>
+												<td width="100%" style="padding-left:10px;padding-right:10px;">
+													<input type="radio" name="method_type" value="W" onclick="document.getElementById('wire1').style.display='block';document.getElementById('wire2').style.display='block';document.getElementById('money1').style.display='none';document.getElementById('money2').style.display='none';">Wire transfer (to Korean bank account in Korea only)
+													<input type="radio" name="method_type" value="M" onclick="document.getElementById('wire1').style.display='none';document.getElementById('wire2').style.display='none';document.getElementById('money1').style.display='block';document.getElementById('money2').style.display='block';">Money order
+												</td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="3" id="wire1" style="display:none">
+													<table width="100%" border="0" cellpadding="0" cellspacing="0">
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="#EFEFEF" nowrap></td>
+															<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Name of bank in Korea</td>
+															<td width="10" nowrap></td>
+															<td>
+																<input type="text" name="method_info1" size="30" maxlength="100" style="color:#9B9EA3;">
+															</td>
+															<td width="9" nowrap></td>
+															<td width="1" nowrap></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="#EFEFEF" nowrap></td>
+															<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Bank Account Number</td>
+															<td width="10" nowrap></td>
+															<td>
+																<input type="text" name="method_info2" size="30" maxlength="100" style="color:#9B9EA3;">
+															</td>
+															<td width="9" nowrap></td>
+															<td width="1" nowrap></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="#EFEFEF" nowrap></td>
+															<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Name of Beneficiary</td>
+															<td width="10" nowrap></td>
+															<td>
+																<input type="text" name="method_info3" size="30" maxlength="100" style="color:#9B9EA3;">
+															</td>
+															<td width="9" nowrap></td>
+															<td width="1" nowrap></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="3" id="money1" style="display:none">
+													<table width="100%" border="0" cellpadding="0" cellspacing="0">
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="#EFEFEF" nowrap></td>
+															<td width="400" bgcolor="#EFEFEF" align="center" nowrap>Name of recipient (in English Only)</td>
+															<td width="10" nowrap></td>
+															<td>
+																<input type="text" name="method_info4" size="25" maxlength="100" style="color:#9B9EA3;">
+															</td>
+															<td width="9" nowrap></td>
+															<td width="1" nowrap></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+														</tr>
+														<tr>
+															<td colspan="6" height="1"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="#EFEFEF" nowrap></td>
+															<td width="400" bgcolor="#EFEFEF" align="center" nowrap>
+																Address should be written in English Only as other languages can be unreadable. However, when student write this mailing address on an envelope for deposit refund upon check-out inspection, it is advised to write in home country's language for efficient delivery.
+															</td>
+															<td width="10" nowrap></td>
+															<td>
+																<input type="text" name="method_info5" size="25" maxlength="100" style="color:#9B9EA3;"><br>
+															</td>
+															<td width="9" nowrap></td>
+															<td width="1" nowrap></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="20"></td>
+								</tr>
+								<tr>
+									<td id="wire2" style="display:none">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" nowrap></td>
+												<td style="padding-left:10px;padding-right:10px;">
+													I understand that the deposit will be refunded to me upon online request, when all my financial obligations are paid and the contract is fulfilled. Residence hall charges, including damages will be deducted from the deposit. Any amount remaining from the deposit will be wired to my bank account in Korea. The bank account and other deposit refund related information are provided by me in this form.<br>
+													I understand the refund process will take between six to eight weeks after the request has been made and my actual vacate date. I understand that requests for deposit refunds will be honored up to 6 month after I have vacated residence.  After completing this form, I understand a new residence application with the required deposit must be submitted to reapply for residence.
+												</td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td id="money2" style="display:none">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" nowrap></td>
+												<td style="padding-left:10px;padding-right:10px;">
+													I understand that the deposit will be refunded to me upon online request, when all my financial obligations are paid and the contract is fulfilled. Residence hall charges, including damages will be deducted from the deposit. Any amount remaining from the deposit will be mailed to me in the form of money order.  The mailing address is provided by me in this request and I will also write this address in my home country's language on an envelope for deposit refund upon check-out inspection. I am responsible for requesting Residence Life office via email to change my address, if any, before the deposit is refunded.<br>
+													I understand the refund process will take between six to eight weeks after the request has been made and my actual vacate date. I understand that requests for deposit refunds will be honored up to 6 month after I have vacated residence.  After completing this form, I understand a new residence application with the required deposit must be submitted to reapply for residence.
+												</td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td id="transfer" style="display:none">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td><img src="../../images/title/cnt_refund8.jpg" width="200" height="14"></td>
+								</tr>
+								<tr>
+									<td height="5"></td>
+								</tr>
+								<tr>
+									<td>
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" nowrap></td>
+												<td width="100%" style="padding-left:10px;padding-right:10px;">
+													<!--(Apply No.:<input type="text" name="cf_no" size="10" maxlength="10">)-->
+													<select name="cf_no" style="color:#9B9EA3;">
+														<option value="">Select an application number.</option>
+														<!-- BEGIN DYNAMIC BLOCK: cf_apply_row -->
+														<option value="{CF_APPLY_NUMBER}">{CF_APPLY_PERIOD}</option>
+														<!-- END DYNAMIC BLOCK: cf_apply_row -->
+													</select>
+												</td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="20"></td>
+								</tr>
+								<tr>
+									<td>
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" nowrap></td>
+												<td style="padding-left:10px;padding-right:10px;">
+													I understand, by submitting this request, I transfer the current deposit to an application for a new term.  Residence hall charges, including damages will be deducted from the deposit.  Any amount remaining from the deposit will be transferred to the new application, which number is provided in this request.  If the deposit is carried forward less than the full amount, I will be billed for the difference.<br>
+													If the transfer is made before check-out inspection as I continue to stay without vacation period, then, the full amount of deposit before residence hall charges will be transferred upon the transfer request. After the check-out inspection report for the previous room is completed, I will be billed for the charges, if any.
+												</td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="1"></td>
+											</tr>
+											<tr> 
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="3" height="3" bgcolor="#7C0019"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="15"></td>
+					</tr>
+					<tr>
+						<td align="center"><input type="image" src="../../images/button/btn_request.jpg" width="100" height="19" border="0"></td>
+					</tr>
+				</form>
+			</table>
+		</td>
+		<td width="10" nowrap></td>
+	</tr>
+</table>

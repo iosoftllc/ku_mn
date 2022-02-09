@@ -1,0 +1,60 @@
+<%@page pageEncoding="UTF-8"%>
+<%@ include file="taglibs.jspf"%>
+<%
+	request.setAttribute("language", Functions.getLanguage().contains("ko") ? "ko" : "en");
+	request.setAttribute("squot", "'");
+	request.setAttribute("dquot", "\"");
+	request.setAttribute("cr", "\r");
+	request.setAttribute("lf", "\n");
+	request.setAttribute("crlf", "\n\r");
+	request.setAttribute("now", new Date());
+	request.setAttribute("user", request.getSession().getAttribute(Constants.SESSION_USERINFO));
+	request.setAttribute("user_org", request.getSession().getAttribute(Constants.SESSION_USERINFO_ORG));
+	request.setAttribute("user_agent", request.getHeader("User-Agent"));
+
+	/*
+		현재 URL값
+		
+		URL 패턴
+			/back/code -> LIST 화면
+			/back/code/1 -> VIEW 화면
+			/back/code/write -> INSERT 화면
+			/back/code/1/write -> UPDATE 화면
+		주의사항
+			/write 는 여러번 사용 금지
+			ex) /back/code/write/1/sub/write (X)
+			ex) /back/code/1/sub/write (O)
+	*/
+	String url = request.getAttribute("javax.servlet.forward.request_uri") != null ? request.getAttribute("javax.servlet.forward.request_uri").toString() : "/";
+	request.setAttribute("url", url);
+	/*
+		하위 프로그램이 있는 경우 상위 경로로 가기 위함 (파라메터 값은 수작업으로 셋팅한다)
+		
+		referer 값이 없는경우 마지막 / 부터를  제거한 URL을 상위 프로그램으로 간주한다
+	*/
+	String url_back = request.getHeader("REFERER");
+// 	System.out.println("url " + url);
+// 	System.out.println("url_back1 " + url_back);
+// 	System.out.println("url_back2 " + !(url_back + "?").split("\\?")[0].endsWith(url));
+// 	System.out.println("url_back3 " + (url_back + "?").split("\\?")[0]);
+// 	System.out.println("url_back4 " + url.substring(0, url.lastIndexOf("/")));
+// 	System.out.println("url_back5 " + url.substring(0, url.replaceAll("/write", "").lastIndexOf("/")));
+	request.setAttribute("url_back", url.equals("/") ? "" : url_back != null && !(url_back + "?").split("\\?")[0].endsWith(url) ? (url_back + "?").split("\\?")[0] : url.substring(0, url.lastIndexOf("/")));
+	request.setAttribute("url_up", url.equals("/") ? "" : url.substring(0, url.replaceAll("/write", "").lastIndexOf("/")));
+	request.setAttribute("url_up_list", url.equals("/") || !((String) request.getAttribute("url_up")).contains("/") ? "" : url.substring(0, url.substring(0, url.replaceAll("/write", "").lastIndexOf("/")).lastIndexOf("/")));
+%>
+<%-- <c:set var="url" value="${requestScope['javax.servlet.forward.request_uri']}" /> --%>
+<c:set var="isBack" value="${fn:contains(url, '/back/') }" /> <%-- 관리자 화면 여부 --%>
+<c:set var="isFront" value="${fn:contains(url, '/front/') or url == '/' }" /> <%-- 사용자 화면 여부 --%>
+<c:set var="isMain" value="${fn:contains(url, '/index') or fn:contains(url, '/main')  or url == '/' }" /> <%-- 메인화면 여부 --%>
+<c:set var="img_src" value="${configs.CONTEXT_WEB}${configs.IMG_SRC}" />
+<c:set var="css_src" value="${configs.CONTEXT_WEB}${configs.CSS_SRC}" />
+<c:set var="js_src" value="${configs.CONTEXT_WEB}${configs.JS_SRC}" />
+<sec:authorize access="hasRole('ROLE_ADMIN')" var="isAdmin" /> <%-- 관리자 여부 --%>
+<sec:authorize access="hasRole('ROLE_USER')" var="isUser" /> <%-- 일반 사용자 여부 --%>
+<sec:authorize access="hasRole('ROLE_STAFF')" var="isStaff" /> <%-- 운영자 여부 --%>
+<sec:authorize access="hasRole('ROLE_FOOD')" var="isFood" /> <%-- 식단 관리자 여부 --%>
+<sec:authorize access="hasRole('ROLE_REPAIR')" var="isRepair" /> <%-- 시설 관리자 여부 --%>
+<c:set var="isUserLogin" value="${!empty user_org }" /> <%-- 사용자 접속 로그인 여부 --%>
+<c:set var="isLocal" value="${!configs.IS_REAL_SERVER && (fn:contains(pageContext.request.serverName, 'local') or fn:contains(pageContext.request.serverName, 'test'))}"/> <%-- 개발환경 여부 --%>
+<c:set var="isMobile" value="${fn:contains(user_agent, 'iPhone') or fn:contains(user_agent, 'iPod') or fn:contains(user_agent, 'Android')  }" /> <%-- 모바일 여부 --%>

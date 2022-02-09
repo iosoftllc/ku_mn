@@ -1,0 +1,228 @@
+<html>
+
+<head>
+	<title>::::: Invoice :::::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<style type="text/css">
+		table { font-family:Verdana; font-size:12px; text-decoration:none; line-height:14pt; color:#000000; letter-spacing:0.1mm; text-align:justify; line-height:14pt;letter-spacing:0.1mm; }
+		a, a:link { font-family:Verdana; font-size:12px; text-decoration:none; text-align:justify; color:#000000; letter-spacing:0.1mm; }
+		a:hover { font-family:Verdana; font-size:12px; text-decoration:underline; text-align:justify; color:#000000; letter-spacing:0.1mm; }
+	</style>
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="window.print();window.close();">
+	<table width="910" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tr>
+			<td width="450" valign="top" nowrap>
+				<table width="100%" border="0" cellpadding="10" cellspacing="1" bgcolor="#000000">
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>Korea University<br>Anam Residence Life<br>Anam-dong Seongbuk-gu<br>Seoul 02841</td>
+								</tr>
+								<tr>
+									<td align="center">Billing Statement<br>(For Student)</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td width="100" nowrap>KU Student ID:</td>
+									<td>{APPLY_STUDENT}</td>
+								</tr>
+								<tr>
+									<td width="100" nowrap>Name:</td>
+									<td>{APPLY_NAME}</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td colspan="3">Payment History:</td>
+											</tr>
+											<!-- BEGIN DYNAMIC BLOCK: payment1_row -->
+											<tr>
+												<td width="80" nowrap>{PAYMENT1_DATE}</td>
+												<td>{PAYMENT1_DETAIL}</td>
+												<td width="120" align="right" nowrap>{PAYMENT1_PRICE} KRW</td>
+											</tr>
+											<!-- END DYNAMIC BLOCK: payment1_row -->
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>Total Amount Due:</td>
+									<td align="right">{APPLY_TOTAL} KRW</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td width="170" valign="top" nowrap>Payment should be made:</td>
+									<td>{PAYMENT_PERIOD}</td>
+								</tr>
+								<tr>
+									<td width="170" valign="top" nowrap>Time:</td>
+									<td>between 9:30 am and 4:30 pm on weekdays, except holidays.</td>
+								</tr>
+								<tr>
+									<td width="170" valign="top">Methods:</td>
+									<td>In person at any branches of Hana Bank, or; Online electronic fund transfer</td>
+								</tr>
+								<tr>
+									<td colspan="2" height="10" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td></td>
+												<td align="right">수납인</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>Hana Bank</td>
+								</tr>
+								<tr>
+									<td>Account No. {APPLY_ACCOUNT}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td width="10" nowrap></td>
+			<td width="450" valign="top" nowrap>
+				<table width="100%" border="0" cellpadding="10" cellspacing="1" bgcolor="#000000">
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>고려대학교<br>안암학사<br>서울 성북구 안암동<br>02841</td>
+								</tr>
+								<tr>
+									<td align="center">수납원부<br>(For Bank, 하나은행 보관용)</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td width="100" nowrap>고려대 학번:</td>
+									<td>{APPLY_STUDENT}</td>
+								</tr>
+								<tr>
+									<td width="100" nowrap>학생 성명:</td>
+									<td>{APPLY_NAME}</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td colspan="3"><font color="#FFFFFF">내 역:</font></td>
+											</tr>
+											<!-- BEGIN DYNAMIC BLOCK: payment2_row -->
+											<tr>
+												<td width="80" nowrap><font color="#FFFFFF">{PAYMENT2_DATE}</font></td>
+												<td><font color="#FFFFFF">{PAYMENT2_DETAIL}</font></td>
+												<td width="120" align="right" nowrap><font color="#FFFFFF">{PAYMENT2_PRICE} 원</font></td>
+											</tr>
+											<!-- END DYNAMIC BLOCK: payment2_row -->
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>금 액:</td>
+									<td align="right">{APPLY_TOTAL} 원</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td width="170" valign="top" nowrap>납부기간:</td>
+									<td>{PAYMENT_PERIOD}</td>
+								</tr>
+								<tr>
+									<td width="170" valign="top" nowrap>시 간:</td>
+									<td>오전 9:30 - 오후 4:30</td>
+								</tr>
+								<tr>
+									<td width="170" valign="top">납부방법:</td>
+									<td>하나은행 전국지점</td>
+								</tr>
+								<tr>
+									<td colspan="2" height="10" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td></td>
+												<td align="right">수납인</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td align="center"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>하나은행</td>
+								</tr>
+								<tr>
+									<td>계좌번호: {APPLY_ACCOUNT}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>

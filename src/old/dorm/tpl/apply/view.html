@@ -1,0 +1,1055 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript">
+	var popup;
+	function printApplication(no) {
+		if (no) {
+			if (popup != null && !popup.closed) popup.close();
+			var URL = "https://reslife.korea.ac.kr:5008/v1/src/popup/application.php?no=" + no;
+			popup = window.open(URL, '_zipcode','resizable=no,scrollbars=yes,status=no,width=700,height=500');
+		}
+	}
+	function printInvoice(no) {
+		//var today = getToday();
+		//if (today < "2006-06-08") alert("Your billing statement for summer session will be available on June 8, 2006.");
+		if (no) {
+			if (popup != null && !popup.closed) popup.close();
+			var URL = "https://reslife.korea.ac.kr:5008/v1/src/popup/invoice.php?no=" + no;
+			popup = window.open(URL, '_zipcode','resizable=no,scrollbars=yes,status=no,width=950,height=650');
+		}
+	}
+	function submitRefund(no, flag) {
+		if (no) {
+			if (flag == "N") alert("Deposit transfer/refund is not available for you.\n\nYou have financial obligations left or your deposit was already carried forward/refunded.");
+			else document.location.href = "https://reslife.korea.ac.kr:5008/v1/src/apply/refund1.php?no=" + no;
+		}
+	}
+</script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td colspan="3" height="10"></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					{TITLE_IMAGE}
+					<td width="100%" height="22"></td>
+					<td width="33" rowspan="2" nowrap><img src="../../images/title/page_end.jpg" width="33" height="23"></td>
+				</tr>
+				<tr>
+					<td height="1" bgcolor="#177394"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" height="10"></td>
+	</tr>
+	<tr>
+		<td width="10" nowrap></td>
+		<td>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+				<!-- BEGIN DYNAMIC BLOCK: deposit_row -->
+				<tr>
+					<td width="100%">
+						Please note that your <font color="#7C0019">deposit is due</font> when you submit the application.
+						You should make a deposit of 200,000 Korean won to:
+					</td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td>
+						<table cellpadding="0" cellspacing="0" border="0" align="center">
+							<tr>
+								<td width="4" nowrap><img src="../../images/main/info_left.jpg" width="4" height="185"></td>
+								<td height="100%">
+									<table height="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+										<tr>
+											<td colspan="5" height="1" bgcolor="#892034" nowrap></td>
+										</tr>
+										<tr>
+											<td width="1" height="9" bgcolor="#DDDDDD" nowrap></td>
+											<td colspan="3" height="9" background="../../images/main/info_bg.jpg" nowrap></td>
+											<td width="1" height="9" bgcolor="#DDDDDD" nowrap></td>
+										</tr>
+										<tr bgcolor="#F2F2F2">
+											<td width="1" nowrap></td>
+											<td width="15" nowrap></td>
+											<td style="color:#6E0010;">
+												BANK NAME: Hana Bank, Godae Branch<br>
+												Bank Address: Korea University, Anam-dong, Seongbuk-gu, Seoul 136-701, KOREA<br>
+												SWIFT CODE: KOEXKRSE<br>
+												ACCOUNT NO.: 391-910004-19204<br>
+												BENEFICIARY: Korea University International Residence<br>
+												Make sure to write your name and Student ID as the remittance information to Beneficiary. After transferring the money, fax wire 
+												transfer confirmation stub to the residence life office at 82-2-926-3464, accompanied by a copy of your online residence hall 
+												application.
+											</td>
+											<td width="15" nowrap></td>
+											<td width="1" nowrap></td>
+										</tr>
+										<tr>
+											<td width="1" height="9" bgcolor="#DDDDDD" nowrap></td>
+											<td colspan="3" height="9" background="../../images/main/info_bg.jpg" nowrap></td>
+											<td width="1" height="9" bgcolor="#DDDDDD" nowrap></td>
+										</tr>
+										<tr>
+											<td colspan="5" height="1" bgcolor="#892034" nowrap></td>
+										</tr>
+									</table>
+								</td>
+								<td width="4" nowrap><img src="../../images/main/info_right.jpg" width="4" height="185"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td width="100%">
+						Only after the deposit payment is made, your room will be assigned.
+					</td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: deposit_row -->
+				<tr>
+					<td><img src="../../images/title/cnt_check_info.jpg" width="217" height="14"></td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+							<tr> 
+								<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF" nowrap></td>
+								<td width="180" bgcolor="#EFEFEF" align="center" nowrap>Application Number</td>
+								<td width="10" nowrap></td>
+								<td height="21">{APPLY_NUMBER}</td>
+								<td width="9" nowrap></td>
+								<td width="1" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="180" bgcolor="#EFEFEF" align="center">Application Status</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_STATE}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="180" bgcolor="#EFEFEF" align="center">Session Applying</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_PERIOD}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="180" bgcolor="#EFEFEF" align="center">Type of Room and Rates</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_RATE}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="180" bgcolor="#EFEFEF" align="center">Room Number</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_ROOM}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="180" bgcolor="#EFEFEF" align="center">Room Phone No.</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_ROOM_PH}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="180" bgcolor="#EFEFEF" align="center">IP Address for Cable configuration</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_ROOM_IP}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="180" bgcolor="#EFEFEF" align="center">Resident Type</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_CURRENT}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr> 
+								<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td><img src="../../images/title/cnt_apply1.jpg" width="267" height="14"></td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+							<tr> 
+								<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF" nowrap></td>
+								<td width="220" bgcolor="#EFEFEF" align="center" nowrap>Korea University Student ID No</td>
+								<td width="10" nowrap></td>
+								<td height="21">{APPLY_STUDENT}</td>
+								<td width="9" nowrap></td>
+								<td width="1" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Name in Full (in English)</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_NAME}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Name in Korean (if available)</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_KRNAME}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Gender</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_GENDER}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Date of Birth</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_DOB}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Nationality</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_NATION}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Home University</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_HOME_UNI}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Major</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_MAJOR}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Class Standing</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_CLASS}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Home Country Mailing Address</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_HOME_ADDR}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Email Address</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_EMAIL}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Telephone Number</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_PHONE}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Cell Phone Number (in Korea)</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_CELL}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="220" bgcolor="#EFEFEF" align="center">Photo</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_PHOTO}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr> 
+								<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td><img src="../../images/title/cnt_apply5.jpg" width="337" height="14"></td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+							<tr> 
+								<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF" nowrap></td>
+								<td width="150" bgcolor="#EFEFEF" align="center" nowrap>Name in Full</td>
+								<td width="10" nowrap></td>
+								<td height="21">{APPLY_CASE_NAME}</td>
+								<td width="9" nowrap></td>
+								<td width="1" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="150" bgcolor="#EFEFEF" align="center">Relationship to you</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_CASE_RELATE}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="150" bgcolor="#EFEFEF" align="center">Telephone Number</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_CASE_PHONE}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="150" bgcolor="#EFEFEF" align="center">Address</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_CASE_ADDR}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr> 
+								<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td><img src="../../images/title/cnt_apply7.jpg" width="154" height="14"></td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+							<tr> 
+								<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<!-- BEGIN DYNAMIC BLOCK: room_prefer_row -->
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="120" bgcolor="#EFEFEF" align="center">Room Preference</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_PREFER}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<!-- END DYNAMIC BLOCK: room_prefer_row -->
+							<!-- BEGIN DYNAMIC BLOCK: preference_row -->
+							<tr>
+								<td width="1" bgcolor="#EFEFEF" nowrap></td>
+								<td width="120" bgcolor="#EFEFEF" align="center" nowrap>Preference {PREFERENCE_NUMBER}.</td>
+								<td width="10" nowrap></td>
+								<td height="21">{PREFERENCE_RATE}</td>
+								<td width="9" nowrap></td>
+								<td width="1" nowrap></td>
+							</tr>
+							{DIVIDE_LINE}
+							<!-- END DYNAMIC BLOCK: preference_row -->
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr> 
+								<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td><img src="../../images/title/cnt_apply4.jpg" width="132" height="14"></td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+							<tr> 
+								<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF" nowrap></td>
+								<td width="120" bgcolor="#EFEFEF" align="center" nowrap>Name in Full</td>
+								<td width="10" nowrap></td>
+								<td height="21">{APPLY_MATE_NAME}</td>
+								<td width="9" nowrap></td>
+								<td width="1" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="120" bgcolor="#EFEFEF" align="center">Date of Birth</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_MATE_DOB}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr> 
+								<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td><img src="../../images/title/cnt_apply6.jpg" width="176" height="14"></td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+							<tr> 
+								<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF" nowrap></td>
+								<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Prefer living with a non-smoker</td>
+								<td width="10" nowrap></td>
+								<td height="21">{APPLY_PREFERENCE1}</td>
+								<td width="9" nowrap></td>
+								<td width="1" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="250" bgcolor="#EFEFEF" align="center">Prefer going to bed early</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_PREFERENCE2}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="250" bgcolor="#EFEFEF" align="center">Prefer getting up early</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_PREFERENCE3}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="250" bgcolor="#EFEFEF" align="center">Prefer studying in silence</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_PREFERENCE4}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" bgcolor="#EFEFEF"></td>
+								<td width="250" bgcolor="#EFEFEF" align="center">Prefer studying during the day</td>
+								<td width="10"></td>
+								<td height="21">{APPLY_PREFERENCE5}</td>
+								<td width="9"></td>
+								<td width="1"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="3" bgcolor="#7C0019"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: payment_use -->
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td><img src="../../images/title/cnt_apply9.jpg" width="108" height="14"></td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="9" height="3" bgcolor="#7C0019"></td>
+							</tr>
+							<tr> 
+								<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="7" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="6" height="1"></td>
+							</tr>
+							<!-- BEGIN DYNAMIC BLOCK: payment_row -->
+							<tr>
+								<td width="1" nowrap></td>
+								<td width="9" nowrap></td>
+								<td width="130" height="21" nowrap>{PAYMENT_DATE}</td>
+								<td width="10" nowrap></td>
+								<td height="21">{PAYMENT_DETAIL}</td>
+								<td width="10" nowrap></td>
+								<td width="120" height="21" align="right" nowrap>{PAYMENT_PRICE} KRW</td>
+								<td width="9" nowrap></td>
+								<td width="1" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="9" height="1"></td>
+							</tr>
+							<tr>
+								<td colspan="9" height="1" background="../../images/board/board_hdot.jpg"></td>
+							</tr>
+							<tr>
+								<td colspan="9" height="1"></td>
+							</tr>
+							<!-- END DYNAMIC BLOCK: payment_row -->
+							<tr bgcolor="#EFEFEF">
+								<td width="1" nowrap></td>
+								<td width="9" nowrap></td>
+								<td width="130" height="21" nowrap></td>
+								<td width="10" nowrap></td>
+								<td height="21"><b>Total Due / (Overpaid, if negative)</b></td>
+								<td width="10" nowrap></td>
+								<td width="120" height="21" align="right" nowrap><b>{PAYMENT_TOTAL} KRW</b></td>
+								<td width="9" nowrap></td>
+								<td width="1" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="9" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td colspan="7" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="9" height="3" bgcolor="#7C0019"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: payment_use -->
+				<!-- BEGIN DYNAMIC BLOCK: deposit1_row -->
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td><img src="../../images/title/cnt_apply15.jpg" width="300" height="14"></td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="3" height="3" bgcolor="#7C0019"></td>
+							</tr>
+							<tr> 
+								<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="3" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" nowrap></td>
+								<td height="21" align="center">{REFUND_DESC}</td>
+								<td width="1" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="3" height="1"></td>
+							</tr>
+							<tr>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+								<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+								<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+							</tr>
+							<tr>
+								<td colspan="3" height="3" bgcolor="#7C0019"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: deposit1_row -->
+			</table>
+		</td>
+		<td width="10" nowrap></td>
+	</tr>
+	<tr>
+		<td colspan="3" height="10"></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<table cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;" align="center">
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner1.jpg" width="7" height="12"></td>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner2.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="11" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+					<td width="30" align="center" valign="top" nowrap><img src="../../images/main/spacer.jpg" width="1" height="3"><br><img src="../../images/main/notice_dot.jpg" width="14" height="14"></td>
+					<td style="color:#765E35;">
+						Thank you for your on-line residence hall application.<br>
+						Your application number is {APPLY_NUMBER}.<br>
+						Please print this page for your record.<br>
+						If you have any further questions, <br>please contact Residence Life at <a href="mailto:{CF_EMAIL_UNDER}" style="color:#7C0019;">{CF_EMAIL_UNDER}</a>.
+					</td>
+					<td width="20" nowrap></td>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner3.jpg" width="7" height="12"></td>
+					<td colspan="3" height="11" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner4.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" height="30"></td>
+	</tr>
+	<tr>
+		<td colspan="3" align="center">
+			<a href="javascript:printApplication('{APPLY_NUMBER}');"><img src="../../images/button/btn_print.jpg" width="184" height="30" border="0"></a>
+			<!-- BEGIN DYNAMIC BLOCK: invoice_row -->
+			<a href="javascript:printInvoice('{APPLY_NUMBER}');"><img src="../../images/button/btn_invoice.jpg" width="170" height="30" border="0"></a>
+			<!-- END DYNAMIC BLOCK: invoice_row -->
+			<a href="javascript:submitRefund('{APPLY_NUMBER}', '{REFUND_FLAG}');"><img src="../../images/button/btn_goto_refund.jpg" width="294" height="30" border="0"></a>
+		</td>
+	</tr>
+</table>

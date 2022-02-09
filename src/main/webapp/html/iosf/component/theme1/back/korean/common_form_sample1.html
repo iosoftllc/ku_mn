@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi" />
+<title>고려대학교 지식재산관리시스템 (KU_KIPS)</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../css/iosf/component/theme1/back/korean/reset.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../js/jquery-ui-1.11.2.custom/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../../../js/iosf/grid/jqgrid/css/ui.jqgrid.css" />
+ <link rel="stylesheet" type="text/css" href="../../../../../../css/iosf/component/theme1/back/korean/slick.css">
+ <link rel="stylesheet" type="text/css" href="../../../../../../css/iosf/component/theme1/back/korean/slick-theme.css">
+<link type="text/css" rel="stylesheet" href="../../../../../../css/iosf/component/theme1/back/korean/common.css" />
+<script type="text/javascript" src="../../../../../../js/iosf/jquery_1.9.1.min.js"></script>
+<script type="text/javascript" src="../../../../../../js/iosf/grid/jqgrid/js/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="../../../../../../js/iosf/grid/jqgrid/js/jquery.jqGrid.min.js" charset="UTF-8"></script>
+
+<style type="text/css">
+	body {
+		padding: 15px;
+	}
+	
+	.obj_tabs, .btn_alignment{
+		padding-top:15px;
+	}
+	
+	.pagview{
+		margin-bottom:15px;
+	}
+	.obj_tabs .tab-menu{
+		border:0;
+	}
+	
+</style>
+
+
+<script>
+	var mydata = [
+	   { id: "1", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "2", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "3", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "4", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다다다다다", col5: "<a href='#'>다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "5", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "6", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "7", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "8", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "9", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "10", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "11", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "12", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "13", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "14", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "15", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "16", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "17", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "18", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "19", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "20", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "21", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "22", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "23", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "31", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "32", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "33", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "34", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다다다다다", col5: "<a href='#'>다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "35", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "36", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "37", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "38", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "39", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "310", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "311", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "312", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "313", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "314", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "315", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "316", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "317", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "318", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "319", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "320", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "321", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "322", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" },
+	   { id: "323", col2: "0000000", col3: "<a href='#'>다다다다다</a>", col4: "다다다다다다다다다다", col5: "<a href='#'>다다다다다다다다</a>", col6: "다다다다다다다다다" }
+	];
+ 
+	var mydata2 = [
+	   { id: "1", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다", col5: "<a href='#'>다다다다다다다</a>", col6: "다다다다다",col7: "<a href='#'>다다다다다다다</a>", col8: "다다다다다다다다다다다다" },
+	   { id: "2", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다", col5: "<a href='#'>다다다</a>", col6: "다다다", col7: "<a href='#'>다다다다다</a>", col8: "다다다다다다다" },
+	   { id: "3", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다", col5: "<a href='#'>다다다다다다다</a>", col6: "다다다다다",col7: "<a href='#'>다다다다다다다</a>", col8: "다다다다다다다다다다다다다다다" },
+	   { id: "4", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다", col5: "<a href='#'>다다다</a>", col6: "다다다", col7: "<a href='#'>다다다다다</a>", col8: "다다다다다다다" },
+	   { id: "5", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다", col5: "<a href='#'>다다다다다다다</a>", col6: "다다다다다",col7: "<a href='#'>다다다다다다다</a>", col8: "다다다다다다다다다다다다" },
+	   { id: "6", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다", col5: "<a href='#'>다다다</a>", col6: "다다다", col7: "<a href='#'>다다다다다</a>", col8: "다다다다다다다다다" },
+	   { id: "7", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다", col5: "<a href='#'>다다다다다다다</a>", col6: "다다다다다",col7: "<a href='#'>다다다다다다다</a>", col8: "다다다다다다다다다" },
+	   { id: "8", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다", col5: "<a href='#'>다다다</a>", col6: "다다다", col7: "<a href='#'>다다다다다</a>", col8: "다다다다다다다다다" },
+	   { id: "9", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다", col5: "<a href='#'>다다다다다다다</a>", col6: "다다다다다",col7: "<a href='#'>다다다다다다다</a>", col8: "다다다다다다다다다" },
+	   { id: "10", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다", col5: "<a href='#'>다다다</a>", col6: "다다다", col7: "<a href='#'>다다다다다</a>", col8: "다다다다다다다다다" },
+	   { id: "11", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다다다다다다</a>", col4: "다다다다다", col5: "<a href='#'>다다다다다다다</a>", col6: "다다다다다",col7: "<a href='#'>다다다다다다다</a>", col8: "다다다다다다다다다" },
+	   { id: "12", col2: "0000000", col3: "<a href='#'>다다다다다다다다다다다</a>", col4: "다다다", col5: "<a href='#'>다다다</a>", col6: "다다다", col7: "<a href='#'>다다다다다</a>", col8: "다다다다다다다다다" },		               
+	];
+	jQuery(function($){
+		$("#list_normal").jqGrid({
+			datatype: "local",
+			data: mydata,
+			height: 240,
+			width: 960,
+			colNames:[ '다다', '다다다다다다다다다','다다다',
+					  '다다다', '다다다다다다다다다'],
+			colModel: [
+				{name: 'col2', align: 'center', width: 64, sortable: false},
+				{name: 'col3', align: 'left', width: 242 },
+				{name: 'col4', align: 'center', width: 155, sortable: false},
+				{name: 'col5', align: 'right', width: 137 },
+				{name: 'col6', align: 'left', width: 282, sortable: false}
+			],
+			multiselect: true,
+			viewsortcols: [true, 'vertical', true],
+			viewrecords: true, 
+			pager: "#list_page",
+			pgtext: "{0}<button type='button' class='btn-go'>GO</button><span class='sep'>/</span> <span class='total'>{1}</total>",
+			gridview: true,
+			rowNum: 10,
+			firstsortorder: 'desc',
+			recordtext: "<span class='total-page'>{2}</span>개 중 {0}-{1}",
+			shrinkToFit: true,
+			hoverrows: false
+		});
+		
+		
+		
+		$("#list_complex").jqGrid({
+			datatype: "local",
+			data: mydata2,
+			height: 240,
+			width: 960,
+			colNames:[ '다다', '다다다다다다다다다', '다다다', '다다다', 
+				'다다다', '다다다', '다다다다다다다다다'],
+			colModel: [
+				{name: 'col2', align: 'center', width: 64, sortable: false },
+				{name: 'col3', align: 'left', width: 184, sortable: false },
+				{name: 'col4', align: 'center', width: 111 },
+				{name: 'col5', align: 'right', width: 111 },
+				{name: 'col6', align: 'right', width: 111 },
+				{name: 'col7', align: 'left', width: 111 },
+				{name: 'col8', align: 'left',  width: 185, sortable: false }
+			],
+			multiselect: true,
+			viewsortcols: [true, 'vertical', true],
+			viewrecords: true, 
+			pager: "#list_page2",
+			pgtext: "{0}<button type='button' class='btn-go'>GO</button><span class='sep'>/</span> <span class='total'>{1}</total>",
+			gridview: true,
+			rowNum: 10,
+			firstsortorder: 'desc',	
+			recordtext: "<span class='total-page'>{2}</span>개 중 {0}-{1}",
+			shrinkToFit: false,
+			hoverrows: false
+		});
+		
+		var gheaders = {
+			useColSpanStyle: true, 
+			groupHeaders:[
+				{startColumnName: 'col4', numberOfColumns: 2, titleText: '다다다4'},
+				{startColumnName: 'col6', numberOfColumns: 2, titleText: '다다다6'}
+			]
+		}
+		
+		$('#list_complex').jqGrid('setGroupHeaders', gheaders ).data('groupHeader', gheaders);
+		
+		// add indicator 
+		
+		var indicatorTimer = [];
+		var resizeTimer;
+		$('.tg-list:visible .ui-jqgrid-btable').each(function ( ) {
+			var container = $(this).closest('.ui-jqgrid'),
+				scroll_div = container.find('.ui-jqgrid-bdiv');
+			scroll_div.on('scroll', function(){
+				var indicator = $(this).find('.indicator').css({
+					top: this.scrollTop,
+					right: this.scrollLeft*-1,
+					bottom: this.scrollTop*-1,
+					left: this.scrollLeft
+				}).addClass('hide');
+				clearTimeout(indicatorTimer[container[0].id]);
+				indicatorTimer[container[0].id] = setTimeout(function(){
+					indicator.removeClass('hide');
+				},3000);
+			})
+		});
+			
+		$(window).on( 'resize', function() {
+			
+			clearTimeout(indicatorTimer);
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(resizeGrid, 40);
+			
+		}).trigger('resize');
+	});
+	
+	function resizeGrid() {
+		$('.tg-list:visible .ui-jqgrid-btable').each(function ( ) {
+			
+			var container = $(this).closest('.tg-list');
+			$(this).jqGrid().setGridWidth( container.width(), ( container.width() > 738 ) );
+			container.find('.ui-jqgrid').indicator().toggleClass('mobile', container.width() < 690 );
+
+			// Destroy and recreate the group headers to work around the bug.
+			var groupHeaders = $(this).jqGrid("getGridParam", "groupHeader");
+			if (groupHeaders != null) {
+				$(this).jqGrid("destroyGroupHeader", false).jqGrid("setGroupHeaders", $(this).data('groupHeader'));
+			}
+		});
+	}
+</script>
+<script type="text/javascript">var language = "ko", img_src ="../../../../../../images";</script>
+<script type="text/javascript" src="../../../../../../js/iosf/component/slick.js"></script>
+<script type="text/javascript" src="../../../../../../js/iosf/component/controller.js"></script>
+<script type="text/javascript" src="../../../../../../js/iosf/grid/jqgrid.js" charset="UTF-8"></script>
+</head>
+<body>
+	<div class="common_search">
+		<table>
+			<colgroup>
+				<col width="">
+				<col width="88px">
+			</colgroup>
+			<tbody>
+				<tr>
+					<td class="nopadding">
+						<div class="divsep">
+							<span class="text-label">기간검색 :</span>
+							<div class="common_datetime">
+								<div class="block-holder date">
+									<input type="text" class="calendar grey" value="2000-00-00" />	
+									<span class="etc_calendar-sep">~</span>	
+								</div>	
+								<div class="block-holder date">
+									<input type="text" class="calendar grey" value="2000-00-00" />
+								</div>	
+							</div>	
+						</div>
+						<div class="divsep">
+							<select>
+								<option>선택</option>
+							</select>
+							<select>
+								<option>선택</option>
+							</select>
+							<input type="text" class="notice" size="" title="검색어를 입력하세요." />	
+						</div>					
+					</td>
+					<td class="big-Button">
+						<button type="button" class="common-btn1 btn-red">
+							<span class="btn-icon-holder">
+								<span class="icon-holder">
+									<span class="btn1-icon search">&nbsp;</span>
+								</span>
+								<span class="btn-text">검색</span>
+							</span>
+						</button>
+					</td>
+				</tr>
+			</tbody>				
+		</table>
+	</div>
+	
+	<div class="obj_tabs">
+		<span class="tab-mobile"></span>
+		<ul class="tab-menu">
+			<li class="on"><a href="#">다다다다다다다</a></li>
+			<li><a href="#">다다다</a></li>
+			<li><a href="#">다다다다다</a></li>
+			<li><a href="#">다다다다</a></li>
+			<li><a href="#">다다다다다다다</a></li>
+		</ul>
+	</div>
+	
+	<div class="pagview">
+		<span class="pageview-heading">다다다다다다</span>
+		<div class="pagview-box">
+			<ul class="five_box slider">
+				<li>
+					<div class="section">
+						<span class="section-title newgreen">1111111111111</span>
+						<span class="number"><em class="green">245</em>건</span>
+						<button class="box-btn">선택</button>
+					</div>
+				</li>
+				<li>
+					<div class="section">
+						<span class="section-title">2222</span>
+						<span class="number"><em class="yellow">0</em>건</span>
+						<button class="box-btn" disabled="disabled">선택</button>
+					</div>
+				</li>
+				<li>
+					<div class="section">
+						<span class="section-title">333333333</span>
+						<span class="number"><em class="green">109</em>건</span>
+						<button class="box-btn">선택</button>
+					</div>
+				</li>
+				<li>
+					<div class="section">
+						<span class="section-title newyellow">444444444444</span>
+						<span class="number"><em class="yellow">46</em>건</span>
+						<button class="box-btn">선택</button>
+					</div>
+				</li>
+				<li>
+					<div class="section">
+						<span class="section-title newgreen">5555555555555555555</span>
+						<span class="number"><em class="green">172</em>건</span>
+						<button class="box-btn">선택</button>
+					</div>
+				</li>
+				<li>
+					<div class="section">
+						<span class="section-title newgreen">6666666666666</span>
+						<span class="number"><em class="green">245</em>건</span>
+						<button class="box-btn">선택</button>
+					</div>
+				</li>
+				<li>
+					<div class="section">
+						<span class="section-title">777777777777777</span>
+						<span class="number"><em class="yellow">0</em>건</span>
+						<button class="box-btn" disabled="disabled">선택</button>
+					</div>
+				</li>
+				<li>
+					<div class="section">
+						<span class="section-title">888888888</span>
+						<span class="number"><em class="green">109</em>건</span>
+						<button class="box-btn">선택</button>
+					</div>
+				</li>
+				<li>
+					<div class="section">
+						<span class="section-title newyellow">999999999999999999</span>
+						<span class="number"><em class="yellow">46</em>건</span>
+						<button class="box-btn">선택</button>
+					</div>
+				</li>
+				<li>
+					<div class="section">
+						<span class="section-title newgreen">00000000000000</span>
+						<span class="number"><em class="green">172</em>건</span>
+						<button class="box-btn">선택</button>
+					</div>
+				</li>					
+			</ul>
+			<div class="nav-button fivebox">
+				<button type="button" class="slick-prev">Previous</button>
+				<button type="button" class="slick-next">Next</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="sample-container">
+		<div class="tg-list grid">
+			<table id="list_normal"></table>
+			<div id="list_page"></div>
+		</div>
+	</div>
+
+	<div class="btn_alignment ver2">
+		<div class="btn-wrapper">
+			<div class="align-left border-bottom">		
+				<div class="btn_widget">
+					<a href="#" class="current">다다다다</a>
+					<ul>
+						<li><a href="#">다다다다다다다다다다다다</a></li>
+						<li><a href="#">다다다다다</a></li>
+						<li><a href="#">다다다다다다다다다</a></li>
+					</ul>
+					
+				</div>
+			</div>
+			<div class="align-right">
+				<div class="align-right">
+					<button type="button" class="common-btn2 btn-red">다다다다다다</button>
+					<button type="button" class="common-btn2 btn-orange">다다다다다다</button>					
+					<button type="button" class="common-btn2 btn-orange">다다다다다다</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

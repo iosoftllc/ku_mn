@@ -1,0 +1,19 @@
+html { overflow-y:scroll; }
+body, textarea, iframe { scrollbar-face-color:#ececec; scrollbar-highlight-color:#ffffff; scrollbar-shadow-color:#c2c2c2; scrollbar-3dlight-color:#ffffff; scrollbar-darkshadow-color:#c2c2c2; scrollbar-track-color:#fdfdfd; scrollbar-arrow-color:#737373; }
+table, tr, td, textarea, input, select, a, a:link, a:hover { font-size:9pt; color:#333333; font-family:Verdana,Helvetica,Seoul,±¼¸²; text-decoration:none; letter-spacing:0.1mm; }
+table, tr, td, textarea { line-height:160%; }
+textarea, input, select { border-width:1px; border-color:#e6e6e6; }
+textarea { overflow:auto; }
+img, .noBorder { border-width:0px; }
+a:hover { text-decoration:underline; }
+
+.center { text-align:center; }
+
+.layer { border:none; text-align:left; position:absolute; visibility:hidden; z-index:1; }
+
+.button { width:80px; height:19px; text-align:center; background-color:#efefef; border-width:1px; border-style:outset; cursor:pointer; }
+
+.subMenuOut { cursor:pointer; color:#303030; font-family:±¼¸²,Verdana,Helvetica,Seoul ! important; font-size:8pt ! important; }
+.subMenuOver { cursor:pointer; color:#8d0924; font-family:±¼¸²,Verdana,Helvetica,Seoul ! important; font-size:8pt ! important; }
+
+table { border-collapse:collapse; border-color:#9F9F9F; }

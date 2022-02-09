@@ -1,0 +1,89 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/facility.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="FacilityForm" action="" method="get">
+		<tr>
+			<td height="22">
+				<a href="javascript:gotoMonth(document.FacilityForm, '{PREVIOUS_YEAR}', '{PREVIOUS_MONTH}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+				<select name="year" onChange="gotoMonth(document.FacilityForm, document.FacilityForm.year.value, document.FacilityForm.month.value);">
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="month" onChange="gotoMonth(document.FacilityForm, document.FacilityForm.year.value, document.FacilityForm.month.value);">
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<a href="javascript:gotoMonth(document.FacilityForm, '{NEXT_YEAR}', '{NEXT_MONTH}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+			</td>
+			<td align="right">
+				<select name="s_room" onChange="gotoMonth(document.FacilityForm, document.FacilityForm.year.value, document.FacilityForm.month.value);">
+					<option value="">회의실별보기</option>
+					<option value="C1">컨퍼런스홀</option>
+					<option value="S1">세미나실(강현석)</option>
+					<option value="S2">세미나실(캘리포니아)</option>
+					<option value="R1">스터디룸(고려사자클럽)</option>
+					<option value="R2">스터디룸(최상용)</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="5"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="2" nowrap><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="15%" height="26" align="center" background="../../images/list/list_back.jpg">SUN</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">MON</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">TUE</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">WED</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">THU</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">FRI</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="15%" height="26" align="center" background="../../images/list/list_back.jpg">SAT</td>
+						<td width="2" nowrap><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: week_row -->
+					<tr>
+						<td width="2" bgcolor="#E2E4E1"></td>
+						<td width="15%" height="50" valign="top"{WEEK_PROPERTY1}>{WEEK_DATE1}<br>{WEEK_DESC1}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY2}>{WEEK_DATE2}<br>{WEEK_DESC2}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY3}>{WEEK_DATE3}<br>{WEEK_DESC3}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY4}>{WEEK_DATE4}<br>{WEEK_DESC4}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY5}>{WEEK_DATE5}<br>{WEEK_DESC5}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY6}>{WEEK_DATE6}<br>{WEEK_DESC6}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="15%" height="50" valign="top"{WEEK_PROPERTY7}>{WEEK_DATE7}<br>{WEEK_DESC7}</td>
+						<td width="2" bgcolor="#E2E4E1"></td>
+					</tr>
+					<tr>
+						<td colspan="15" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: week_row -->
+					<tr>
+						<td colspan="15" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="javascript">
+	setSelected(document.FacilityForm.year, '{CURRENT_YEAR}');
+	setSelected(document.FacilityForm.month, '{CURRENT_MONTH}');
+	setSelected(document.FacilityForm.s_room, '{SEARCH_ROOM}');
+</script>

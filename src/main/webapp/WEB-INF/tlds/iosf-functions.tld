@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+
+	<description>IOSF TAG LIBRARY</description>
+	<display-name>IOSF Tag Library</display-name>
+	<tlib-version>1.2</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>iosf</short-name>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>IOSF Component : Button <button> Tag Type</b>
+			]]>
+		</description>
+		<name>button</name>
+		<tag-class>iosf.com.support.taglib.ButtonTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> type<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Enumerated Values : submit|button|reset
+				]]>
+			</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> btnType<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Enumerated Values : 1|2|3
+				]]>
+			</description>
+			<name>btnType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> value<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> onclick<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> id<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> style<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> color<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> white<br/>
+					<b>Enumerated Values : white|grey|orange|pinkred|red|brownred|darkbeige|olivegreen|lightgreen|aquagreen|darknavy|black
+				]]>
+			</description>
+			<name>color</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> icon<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Enumerated Values : search|download|upload|select|reset|prev|link|plus|minus|zoomin|zoomout|save1|save2|delete|option|report1|report2|report3|builging|list1|list2|write|cancel|comment|email|modify|statistic1|statistic2|help|information|money1|money2|network1|network2|book|account|ordersave|global|clock|user|lock|pc
+				]]>
+			</description>
+			<name>icon</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> clazz<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Note :</b> stylesheet class<br/>
+				]]>
+			</description>
+			<name>clazz</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> permission<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> true<br/>
+					<b>Enumerated Values : true|false
+				]]>
+			</description>
+			<name>permission</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> disabled<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> false<br/>
+					<b>Enumerated Values : true|false
+				]]>
+			</description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> set<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> false<br/>
+					<b>Enumerated Values : list|save|delete|write|rewrite|modify|close|cancel|confirm|search|reject|download|upload|reset|refresh|plus|minus|tempsave
+				]]>
+			</description>
+			<name>set</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>IOSF Functions : Code</b>
+			]]>
+		</description>
+		<name>code</name>
+		<tag-class>iosf.com.support.taglib.CodeTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> upcd<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>upcd</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> cd<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>cd</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> conjunction<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>conjunction</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> lang<br/>
+					<b>Data Type :</b> Boolean<br/>
+				]]>
+			</description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>IOSF Functions : Date</b>
+			]]>
+		</description>
+		<name>date</name>
+		<tag-class>iosf.com.support.taglib.DateTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> format<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example : </b><br/>
+						- yyyy-MM-dd HH:mm:ss (E)<br/>
+						- ${config.FORMAT_DATE}<br/>
+						- ${config.FORMAT_DATEE}<br/>
+						- ${config.FORMAT_DATETIME}<br/>
+						- ${config.FORMAT_DATEETIME}<br/>
+						- ${config.FORMAT_TIME}<br/> 
+				]]>
+			</description>
+			<name>format</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> value<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> 20130417150000<br/>
+				]]>
+			</description>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> default_value<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> <br/>
+						- today<br/>
+				]]>
+			</description>
+			<name>default_value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> calcYear<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> <br/>
+						- -1 (1 year before)<br/>
+						- 1 (1 year after)<br/>
+				]]>
+			</description>
+			<name>calc_year</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> calcMonth<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> <br/>
+						- -1 (1 month before)<br/>
+						- 1 (1 month after)<br/>
+				]]>
+			</description>
+			<name>calc_month</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> calcDay<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> <br/>
+						- -15 (15 day before)<br/>
+						- 15 (15 day after)<br/>
+				]]>
+			</description>
+			<name>calc_day</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> calcHour<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> <br/>
+						- -15 (15 hour before)<br/>
+						- 15 (15 hour after)<br/>
+				]]>
+			</description>
+			<name>calc_hour</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> calcMinute<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> <br/>
+						- -15 (15 minute before)<br/>
+						- 15 (15 minute after)<br/>
+				]]>
+			</description>
+			<name>calc_min</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> calcSec<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> <br/>
+						- -15 (15 second before)<br/>
+						- 15 (15 second after)<br/>
+				]]>
+			</description>
+			<name>calc_sec</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> week<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> <br/>
+						- MON<br/>
+						- TUE<br/>
+						- WED<br/>
+						- THU<br/>
+						- FRI<br/>
+						- SAT<br/>
+						- SUN<br/>
+				]]>
+			</description>
+			<name>week</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>IOSF Functions : New Icon</b>
+			]]>
+		</description>
+		<name>icon-new</name>
+		<tag-class>iosf.com.support.taglib.NewsTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> datetime<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> 20130417150000<br/>
+				]]>
+			</description>
+			<name>datetime</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> period<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>period</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>IOSF Functions : Option</b>
+			]]>
+		</description>
+		<name>option</name>
+		<tag-class>iosf.com.support.taglib.OptionTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> object<br/>
+					<b>Data Type :</b><br/>
+					- java.util.Map<br/>
+					- java.util.List<br/>
+					<b>Example :</b> ${codes.key}<br/>
+				]]>
+			</description>
+			<name>object</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> select<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>select</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> enabledCondition<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>enabledCondition</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> disabled<br/>
+					<b>Data Type :</b> Boolean<br/>
+				]]>
+			</description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> clazzCondition<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>clazzCondition</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> clazz<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>clazz</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> exception<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> data1;data2;data3<br/>
+				]]>
+			</description>
+			<name>exception</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> lang_up_cd<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>lang_up_cd</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>IOSF Functions : CheckBox</b>
+			]]>
+		</description>
+		<name>checkbox</name>
+		<tag-class>iosf.com.support.taglib.CheckboxTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> value<br/>
+					<b>Data Type :</b><br/>
+					- String<br/>
+					- java.util.Map<br/>
+					- java.util.List<br/>
+					<b>String Example :</b> data1;data2;data3<br/>
+					<b>Object Example :</b> ${codes.key}<br/>
+					<b>Note :</b><br/>
+					If this value is specified for not String type<br/>
+					- name attribute value = code key (If do not specify [name] attribute)<br/>
+					- id attribute value = code key<br/>
+					- value attribute value = code value<br/>
+					- checked attribute are ignored<br/>
+				]]>
+			</description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> name<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> id<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> onclick<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> label<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> value<br/>
+					<b>Data Type :</b><br/>
+					- String<br/>
+					- java.util.Map<br/>
+					- java.util.List<br/>
+					<b>String Example :</b> data1;data2;data3<br/>
+					<b>Note :</b><br/>
+					If [code] value is specified for not String type<br/>
+					- name attribute value = code key (If do not specify [name] attribute)<br/>
+					- id attribute value = code key<br/>
+					- value attribute value = code value<br/>
+				]]>
+			</description>
+			<name>check</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> checked<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> false<br/>
+					<b>Enumerated Values : </b><br/>
+						- true<br/>
+						- false<br/>
+				]]>
+			</description>
+			<name>checked</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> disabled<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> false<br/>
+					<b>Enumerated Values : </b><br/>
+						- true<br/>
+						- false<br/>
+				]]>
+			</description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> exception<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> data1;data2;data3<br/>
+					<b>Note :</b><br/>
+					If [code] value is specified for not String type<br/>
+					- name attribute value = code key (If do not specify [name] attribute)<br/>
+					- id attribute value = code key<br/>
+					- value attribute value = code value<br/>
+				]]>
+			</description>
+			<name>exception</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> style<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> className<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Note :</b> stylesheet class<br/>
+				]]>
+			</description>
+			<name>className</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> permission<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> true<br/>
+					<b>Enumerated Values : </b><br/>
+						- true<br/>
+						- false<br/>
+				]]>
+			</description>
+			<name>permission</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> permissionshow<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> false<br/>
+					<b>Enumerated Values : </b><br/>
+						- true<br/>
+						- false<br/>
+				]]>
+			</description>
+			<name>permissionshow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>IOSF Functions : Radio</b>
+			]]>
+		</description>
+		<name>radio</name>
+		<tag-class>iosf.com.support.taglib.RadioTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> value<br/>
+					<b>Data Type :</b><br/>
+					- String<br/>
+					- java.util.Map<br/>
+					- java.util.List<br/>
+					<b>String Example :</b> data1<br/>
+					<b>Object Example :</b> ${codes.key}<br/>
+					<b>Note :</b><br/>
+					If this value is specified for not String type<br/>
+					- name attribute value = code key (If do not specify [name] attribute)<br/>
+					- id attribute value = code key<br/>
+					- value attribute value = code value<br/>
+					- checked attribute are ignored<br/>
+				]]>
+			</description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> name<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> id<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> onclick<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> label<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> check<br/>
+					<b>Data Type :</b><br/>
+					- String<br/>
+					<b>String Example :</b> data1<br/>
+					<b>Note :</b><br/>
+				]]>
+			</description>
+			<name>check</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> checked<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> false<br/>
+					<b>Enumerated Values : </b><br/>
+						- true<br/>
+						- false<br/>
+					<b>Note :</b><br/>
+						- First option checked.
+				]]>
+			</description>
+			<name>checked</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> disabled<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> false<br/>
+					<b>Enumerated Values : </b><br/>
+						- true<br/>
+						- false<br/>
+				]]>
+			</description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> exception<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Example :</b> data1;data2;data3<br/>
+					<b>Note :</b><br/>
+					If [code] value is specified for not String type<br/>
+					- name attribute value = code key (If do not specify [name] attribute)<br/>
+					- id attribute value = code key<br/>
+					- value attribute value = code value<br/>
+				]]>
+			</description>
+			<name>exception</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> style<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> className<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Note :</b> stylesheet class<br/>
+				]]>
+			</description>
+			<name>className</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> permission<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> true<br/>
+					<b>Enumerated Values : </b><br/>
+						- true<br/>
+						- false<br/>
+				]]>
+			</description>
+			<name>permission</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> permissionshow<br/>
+					<b>Data Type :</b> String<br/>
+					<b>Default Value :</b> false<br/>
+					<b>Enumerated Values : </b><br/>
+						- true<br/>
+						- false<br/>
+				]]>
+			</description>
+			<name>permissionshow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>IOSF Component : Paging</b>
+			]]>
+		</description>
+		<name>paging</name>
+		<tag-class>iosf.com.support.taglib.PagingTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>IOSF Out</b>
+			]]>
+		</description>
+		<name>out</name>
+		<tag-class>iosf.com.support.taglib.OutTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> value<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> escapeXml<br/>
+					<b>Data Type :</b> Boolean<br/>
+				]]>
+			</description>
+			<name>escapeXml</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>
+			<![CDATA[
+				<b>Language message bundle</b>
+			]]>
+		</description>
+		<name>msg</name>
+		<tag-class>iosf.com.support.taglib.MessageTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> key<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>key</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> arguments<br/>
+					<b>Data Type :</b> String<br/>
+				]]>
+			</description>
+			<name>args</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				<![CDATA[
+					<b>Attribute :</b> locale<br/>
+					<b>Data Type :</b> java.util.Locale<br/>
+				]]>
+			</description>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.Locale</type>
+		</attribute>
+	</tag>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>QueryString<br/>
+			]]>
+		</description>
+		<name>params</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getQueryString(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:params(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>Code<br/>
+			]]>
+		</description>
+		<name>code</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getCode(java.lang.String, java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:code(string, string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>Code List<br/>
+			]]>
+		</description>
+		<name>codes</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getCodes(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:codes(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>Is New?<br/>
+			]]>
+		</description>
+		<name>new</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>boolean isNew(java.lang.String, java.lang.String)</function-signature>
+		<example>
+			&lt;c:if test="${iosf:new(string, string)}">...&lt;/c:if>
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>Language message bundle</b>
+			]]>
+		</description>
+		<name>msg</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getMessage(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:msg(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>Content wrap</b>
+			]]>
+		</description>
+		<name>wrap</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getWrap(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:wrap(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>QueryString to jQuery params</b>
+			]]>
+		</description>
+		<name>jqueryParams</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getJQueryParams(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:jqueryParams(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>Clean HTML Tags</b>
+			]]>
+		</description>
+		<name>cleanHTML</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getCleanHTML(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:cleanHTML(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>DES Encrypt</b>
+			]]>
+		</description>
+		<name>encrypt</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getEncrypt(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:encrypt(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>DES Decrypt</b>
+			]]>
+		</description>
+		<name>decrypt</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getDecrypt(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:decrypt(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>extIcon</b>
+			]]>
+		</description>
+		<name>extIcon</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getExtIcon(java.lang.String,
+			java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:extIcon(string, string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>getCleanJSON</b>
+			]]>
+		</description>
+		<name>getCleanJSON</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getCleanJSON(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:getCleanJSON(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>getURLEncode</b>
+			]]>
+		</description>
+		<name>getURLEncode</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getURLEncode(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:getURLEncode(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>getURLDecode</b>
+			]]>
+		</description>
+		<name>getURLDecode</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getURLDecode(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:getURLDecode(string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>concat</b>
+			]]>
+		</description>
+		<name>concat</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String concat(java.lang.String, java.lang.String, java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:concat(string, string, string)}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>date</b>
+			]]>
+		</description>
+		<name>date</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String getDate(java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:date('yyyy-MM-dd')}">
+    	</example>
+	</function>
+
+	<function>
+		<description>
+			<![CDATA[
+				<b>lPad</b>
+			]]>
+		</description>
+		<name>lPad</name>
+		<function-class>iosf.com.support.util.Functions</function-class>
+		<function-signature>String lPad(int, int, java.lang.String)</function-signature>
+		<example>
+			&lt;c:out value="${iosf:lPad(1, 2, '0')}">
+    	</example>
+	</function>
+
+</taglib>    

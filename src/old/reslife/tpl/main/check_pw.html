@@ -1,0 +1,87 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript">
+	function gotoAdminInfo(pw1, pw2) {
+		if (checkPassword(pw1, pw2)) document.PasswordForm.submit();
+	}
+</script>
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr> 
+		<td>
+			관리자정보관리 이용을 원하세요?<br>
+			관리자정보 보호를 위해 비밀번호를 한번 더 입력해 주세요. 
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" cellpadding="0" cellspacing="0">
+				<form name="PasswordForm" action="../../src/main/modify.php" method="post" onSubmit="return checkPassword(this.pw, this.pw);">
+					<tr>
+						<td colspan="10" height="1" bgcolor="#F8F8F8"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F8F8F8"></td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="100" height="22" bgcolor="#E6E6E6" align="center">비밀번호</td>
+						<td width="1" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+						<td width="1" bgcolor="#FFFFFF"></td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="276" height="22" bgcolor="#F5F5F5">
+							<input type="password" name="pw" size="15" maxlength="15">
+						</td>
+						<td width="9" bgcolor="#F5F5F5"></td>
+						<td width="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+						<td width="1" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F8F8F8"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+					</tr>
+					<tr>
+						<td colspan="10" height="5"></td>
+					</tr>
+					<tr>
+						<td colspan="10">
+							<table border="0" cellpadding="0" cellspacing="0" align="center">
+								<tr>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:gotoAdminInfo(document.PasswordForm.pw, document.PasswordForm.pw);">확인</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:history.go(-1);">취소</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</td>
+	</tr>
+</table>

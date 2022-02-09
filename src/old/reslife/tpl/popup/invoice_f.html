@@ -1,0 +1,202 @@
+<table width="500" border="0" cellpadding="0" cellspacing="0" align="center">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="3" cellspacing="0" style="border:1px solid #000000;">
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td><b>Korea University<br>Anam Residence Life<br>International Residence</b><br>Anam-dong Seongbuk-gu<br>Seoul 02841</td>
+								<td align="right"><font style="font-size:13pt;"><b>INVOICE</b></font><br><br><br>Invoice No.:	{INVOICE_NUMBER}<br>Invoice Date: {INVOICE_DATE}</td>
+							</tr>
+							<tr>
+								<td colspan="2">(e-mail: {CF_EMAIL_FACULTY}, Phone: 82.2.3290.1555, Website: reslife.korea.ac.kr)</td>
+							</tr>
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center"><b>To: {INVOICE_TO}</b></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border:2px solid #000000;">
+							<tr>
+								<td>Amount Due</td>
+								<td>Property</td>
+								<td>Unit</td>
+							</tr>
+							<tr>
+								<td>£Ü{INVOICE_TOTAL}</td>
+								<td>{INVOICE_PROPERTY}</td>
+								<td>{INVOICE_UNIT}</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border:2px solid #000000;">
+							<tr>
+								<td>For the period</td>
+								<td>(From)</td>
+								<td>(To)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>{INVOICE_CHECKIN}</td>
+								<td>{INVOICE_CHECKOUT}</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border:2px solid #000000;">
+							<tr>
+								<td style="border-bottom:2px solid #000000;">Date</td>
+								<td style="border-bottom:2px solid #000000;">Description</td>
+								<td style="border-bottom:2px solid #000000;" align="right">Amount<br>Consumed</td>
+								<td style="border-bottom:2px solid #000000;" align="right">Amount<br>Due</td>
+							</tr>
+							<!--
+							<tr>
+								<td>PREVIOUS MONTH'S OUTSTANDING BALANCE</td>
+								<td align="right" valign="bottom">&nbsp;</td>
+								<td align="right" valign="bottom">-</td>
+							</tr>
+							-->
+							<!-- BEGIN DYNAMIC BLOCK: payment_row -->
+							<tr>
+								<td>{PAYMENT_DATE}</td>
+								<td>{PAYMENT_DETAIL}</td>
+								<td align="right" valign="bottom">&nbsp;</td>
+								<td align="right" valign="bottom">{PAYMENT_AMOUNT}</td>
+							</tr>
+							<!-- END DYNAMIC BLOCK: payment_row -->
+							<tr>
+								<td colspan="2" style="border-top:1px solid #000000;">Total</td>
+								<td style="border-top:1px solid #000000;" align="right" valign="bottom">&nbsp;</td>
+								<td style="border-top:1px solid #000000;" align="right" valign="bottom">{INVOICE_TOTAL}</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="border-top:2px solid #000000;">Total, rounded down</td>
+								<td style="border-top:2px solid #000000;" align="right" valign="bottom">&nbsp;</td>
+								<td style="border-top:2px solid #000000;" align="right" valign="bottom">£Ü{INVOICE_TOTAL}</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td colspan="2"><b>Methods of payment</b></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>1.</td>
+								<td>Transfer to one of our accounts:</td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap></td>
+								<td>
+									BANK: Hana Bank, Godae Branch<br>
+									RECIPIENT: Korea University Anam Residence Life<br>
+									SWIFT CODE: KOEXKRSE<br>
+									ACCOUNT No.: 391-910001-03204
+								</td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap></td>
+								<td>Make sure enter your unit number in the reference field for recipient.</td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap></td>
+								<td>All dormitories of Universities in Korea are tax exempt areas, where you cannot use cards.</td>
+							</tr>
+							<!-- BEGIN DYNAMIC BLOCK: method_row -->
+							<tr>
+								<td width="15" valign="top" nowrap>2.</td>
+								<td>Deduction from your salary.<br>(Salary Deduction form is available at the Residence Life office. Please fill in the form and submit to our office.)</td>
+							</tr>
+							<!-- END DYNAMIC BLOCK: method_row -->
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>1.</td>
+								<td><b>New visitors : Payment must be made before check-in date to avoid a late fee of £Ü50,000. (NOTICE : If you want to cancel the assigned room, please send us a cancellation email 7 days prior to your check-in date. Otherwise, a cancellation fee-10% of your rental fee in total- will be charged. In addition, you should pay your rent from your check-in date.)</b></td>
+							</tr>
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>2.</td>
+								<td><b>The receipt is issued only by request through email or call.</b></td>
+							</tr>
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>3.</td>
+								<td><b>Residents : Payment must be made within 10 days from the rent invoice date to avoid a late fee of 50,000 won.</b></td>
+							</tr>
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>4.</td>
+								<td><b>Check-in time is 15:00. Check-out time is 11:00.</b></td>
+							</tr>
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>5.</td>
+								<td><b>A studio is only for a single person. If the room is shared, the extra cost - 10,000 won per day - will be charged and the fact should be informed in the special request box or by email ({CF_EMAIL_FACULTY}).</b></td>
+							</tr>
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>6.</td>
+								<td>The group reservation will be given a priority but cancellation or change in stay period or room number will not be possible after the room assignment.</td>
+							</tr>
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>7.</td>
+								<td>Dormitory rates are subject to change without prior notice.</td>
+							</tr>
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>8.</td>
+								<td>Non residents should be informed to the front desk and the dormitory does not have a responsibility on any accidents to them.</td>
+							</tr>
+							<tr>
+								<td colspan="2" height="5"></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top" nowrap>9.</td>
+								<td>
+									<table width="100%" border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td style="padding-right:5px;" valign="top" nowrap>The contact :</td>
+											<td width="100%">82-2-3290-1555(during the working hours)<br>82-2-3290-9583(Anam I-House reception desk, only in Korean)<br>82-2-3290-1806(CJ reception desk, only in Korean)</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

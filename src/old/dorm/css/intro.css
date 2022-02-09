@@ -1,0 +1,35 @@
+/*레이아웃*/
+.container {
+	background-color: #ffffff;
+	border-top: 4px solid  #79011c;
+	box-shadow: inset 0 1px 0 #e3d8c2;
+}
+
+/*인트로페이지*/
+.intro-wrap {
+	background: url(/v1/images/main/intro_new_bg.jpg) no-repeat center center;
+	min-width: 800px;
+	height: 804px;
+	/*
+	min-height: 804px;
+	height: 100%;
+	*/
+	background-size: cover;
+	padding: 0;
+}
+
+.intro-wrap .intro-logo {
+	text-align: center;
+}
+
+.intro-wrap .intro-menu {
+	text-align: center;
+}
+
+.intro-wrap .intro-menu img {
+	padding: 0px 29px;
+}
+
+.intro-footer {
+	text-align: center;
+}

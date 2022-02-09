@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>::::: Korea University :::::</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+		<meta http-equiv="ImageToolbar" content="No">
+		<link rel="stylesheet" type="text/css" href="http://www.korea.ac.kr/english04/2005/css/eng.css">
+	</head>
+	<script language="javascript">
+		function setCookie(name, value, expiredays) {
+			var todayDate = new Date();
+			todayDate.setDate(todayDate.getDate() + expiredays);
+			document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+		}
+		function closeWin() {
+			setCookie("2019_winter", "1" , 1); 
+			self.close();
+		} 
+	</script>
+	<map name="LinkMap">
+		<area shape="rect" coords="96,155,399,192" href="javascript:window.opener.document.location.href='https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=procedure_stu';self.close();">
+		<area shape="rect" coords="96,198,399,235" href="javascript:window.opener.document.location.href='https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=status_stu';self.close();">
+	</map>
+	<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr> 
+				<td><img src="../../images/popup/2019_winter.jpg" border="0" usemap="#LinkMap"></td>
+			</tr>
+			<!--
+			<tr>
+				<td height="20" align="right"><input type="checkbox" name="popup" onClick="closeWin();"> Close for today.</td>
+			</tr>
+			-->
+		</table>
+	</body>
+</html>

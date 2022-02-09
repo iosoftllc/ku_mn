@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="iosf.com.program.extend.notice.service.impl.NoticeMapper">
+
+	<select id="getListCount" parameterType="Notice" resultType="Integer">
+		SELECT 
+			COUNT(1)
+		FROM
+			MOBILE_NOTICE A
+		<where>
+			<if test="@DbFunctions@isNotEmpty(search_keyword)">
+				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
+					AND TITLE LIKE CONCAT('%', #{search_keyword}, '%')
+				</if>
+				<if test="@DbFunctions@isEqualsStr(search_field, 'CONTENT')">
+					AND CONTENTS LIKE CONCAT('%', #{search_keyword}, '%')
+				</if>
+			</if>
+		</where>
+	</select>
+
+	<select id="getList" parameterType="Notice" resultType="Notice">
+		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
+			SELECT * FROM ( SELECT (ROW_NUMBER() OVER()) AS RN, TB.* FROM (
+		</if>
+		SELECT
+			SEQ
+			, TITLE
+			, HTML
+			, VIEWCNT
+			, INID REG_ID
+			, UPID MOD_ID
+			, INIP
+			, DATE_FORMAT(INDT, '%Y%m%d%H%i%s') REG_DT
+			, DATE_FORMAT(UPDT, '%Y%m%d%H%i%s') MOD_DT
+		FROM
+			MOBILE_NOTICE A
+		<where>
+			<if test="@DbFunctions@isNotEmpty(search_keyword)">
+				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
+					AND TITLE LIKE CONCAT('%', #{search_keyword}, '%')
+				</if>
+				<if test="@DbFunctions@isEqualsStr(search_field, 'CONTENT')">
+					AND CONTENTS LIKE CONCAT('%', #{search_keyword}, '%')
+				</if>
+			</if>
+		</where>
+		ORDER BY
+			SEQ DESC
+		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
+			) TB ) TBS LIMIT #{record_count_per_page} OFFSET #{first_index}
+		</if>
+	</select>
+
+	<select id="getView" parameterType="Notice" resultType="Notice">
+		SELECT
+			SEQ
+			, TITLE
+			, CONTENTS
+			, HTML
+			, VIEWCNT
+			, INID REG_ID
+			, UPID MOD_ID
+			, INIP
+			, DATE_FORMAT(INDT, '%Y%m%d%H%i%s') REG_DT
+			, DATE_FORMAT(UPDT, '%Y%m%d%H%i%s') MOD_DT
+		FROM
+			MOBILE_NOTICE A
+		WHERE
+			SEQ = #{seq}
+	</select>
+	
+	<update id="updateHit" parameterType="Notice">
+		UPDATE
+			MOBILE_NOTICE
+		SET
+			VIEWCNT = VIEWCNT + 1        
+		WHERE
+			SEQ = #{seq}
+	</update>
+	
+</mapper>

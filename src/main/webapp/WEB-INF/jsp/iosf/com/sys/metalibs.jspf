@@ -1,0 +1,13 @@
+<%@page pageEncoding="UTF-8"%>
+<%@ include file="taglibs.jspf"%>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi, minimum-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" /><meta charset="UTF-8">
+<title>KU스마트카드 & 모바일신분증</title>
+<%-- <link rel="canonical" href="https://piportal.korea.ac.kr/">
+<meta name="description" content="창업교육, 창업지원, 창업상담, 창업보육, 창업포탈, 창업원스톱">
+<meta property="og:type" content="website">
+<meta property="og:title" content="고려대학교 크림슨창업지원단">
+<meta property="og:description" content="고려대학교 크림슨창업지원단 창업통합관리 파이포탈">
+<meta property="og:url" content="https://piportal.korea.ac.kr/"> --%>

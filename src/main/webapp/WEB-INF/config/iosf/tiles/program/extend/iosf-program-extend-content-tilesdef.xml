@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition
+		name="/front/content/view"
+		extends="layout.front.sub"
+	>
+		<put-attribute
+			name="content"
+			expression="/WEB-INF/iosf/com/content/html/${cmd.content_history_seq}.jsp" />
+	</definition>
+
+	<definition
+		name="/front/content/history/view"
+		extends="layout.front.sub"
+	>
+		<put-attribute
+			name="content"
+			expression="/WEB-INF/iosf/com/content/html/${cmd.content_history_seq}.jsp" />
+	</definition>
+	
+	<definition
+		name="/back/content/history/write"
+		template="/WEB-INF/jsp/iosf/com/program/back/extend/content/history/content_history_write.jsp">
+	</definition>
+	
+	<definition
+		name="/front/content/slide"
+		template="/WEB-INF/jsp/iosf/com/program/front/extend/content/slide/content_slide.jsp">
+	</definition>
+	
+	<definition
+		name="/front/content/room/type"
+		template="/WEB-INF/jsp/iosf/com/program/front/extend/content/room/type/content_room_type.jsp">
+	</definition>
+	
+</tiles-definitions>

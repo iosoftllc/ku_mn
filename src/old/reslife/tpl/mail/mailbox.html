@@ -1,0 +1,123 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/mailbox.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="MailForm" action="" method="get" onSubmit="return checkSearchInfo(document.MailForm.s_text, document.MailForm.page);">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="no" value="">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<tr>
+			<td width="200" height="22">{SEL_PAGE} / {TOTAL_PAGE}페이지, 총 {TOTAL_COUNT}개</td>
+			<td>
+				<table border="0" cellpadding="0" cellspacing="0" align="right">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:deleteMail();">삭제</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="4"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr> 
+						<td width="2" nowrap><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="20" height="26" align="center" background="../../images/list/list_back.jpg" nowrap><input type="checkbox" name="select_all" onClick="selectAll(document.MailForm.list_no);"></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg"><a href="javascript:sortList('subject');">제 목</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="300" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('receiver');">받는이</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="120" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('send_date');">발송날짜</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="50" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>이미지</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="2" nowrap><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: mail_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="2" nowrap></td>
+						<td width="20" height="23" align="center" nowrap><input type="checkbox" name="list_no" value="{MAIL_NUMBER}"></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center"><a href="javascript:viewMail('{MAIL_NUMBER}');">{MAIL_SUBJECT}</a></td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td width="300" height="23" align="center" style="word-wrap:break-word;" nowrap>{MAIL_RECEIVER}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td width="120" height="23" align="center" nowrap>{MAIL_DATE}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td width="50" height="23" align="center" nowrap>{IMAGE_FILE}</td>
+						<td width="5" nowrap></td>
+						<td width="2" nowrap></td>
+					</tr>
+					<tr> 
+						<td colspan="19" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: mail_row -->
+					<tr> 
+						<td colspan="19" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr> 
+						<td height="35">
+							<a href="javascript:gotoPage('{PRE_PAGE}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+							<!-- BEGIN DYNAMIC BLOCK: page_row -->
+							{PAGE_VALUE}
+							<!-- END DYNAMIC BLOCK: page_row -->
+							<a href="javascript:gotoPage('{NEXT_PAGE}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td height="22" align="center">
+							<select name="s_type">
+								<option value="1">받는이</option>
+								<option value="2">제목</option>
+							</select>
+							<input type="text" name="s_text" size="30" value="{SEARCH_TEXT}">
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:searchMail();">검색</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setSelected(document.MailForm.s_type, '{SEARCH_TYPE}');
+</script>

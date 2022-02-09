@@ -1,0 +1,1261 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: none;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+
+.board_list > div{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    background: #fff;
+}
+
+
+.board_list article{
+    display: flex;
+    width: 100%;
+}
+.board_list article + article{
+    margin-top: 40px;
+}
+.board_list .counter + article{
+    margin-top: 20px;
+}
+.board_list article + article ~ article{
+    margin-top: 20px;
+}
+
+.board_list article dl{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* 탭 메뉴 정렬 */
+
+.board_list article dl dt{
+/* .board_list article dl dd{ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #707070;
+    flex: 1 1 10%;
+    /* min-width: 184px; */
+    height: 54px;
+}
+.board_list article dl dt ~ dt{
+    margin-left: -1px;
+}
+
+.board_list article dl dt a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #707070;
+    font: bold 17px/1.3em "맑은 고딕";
+    border: 1px solid #e4e4e4;
+    background: #fff;
+}
+
+.board_list article dl dt a.on{
+    background: #830020;
+    border: 1px solid #830020;
+    color: #ffffff;
+    text-shadow: 1px 1px 0px #36010f;
+    z-index: 1;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+.board_list article div{
+    align-items: center;
+    display: flex;
+    border: 1px solid #dbdbdb;
+    /* background: green; */
+    min-height: 40px;
+    margin-right: auto;
+    /* height: 0px; */
+}
+
+.board_list article div p:first-of-type{
+    display: flex;
+    align-items: center;
+    font: 13px/1.3em "맑은 고딕";
+    color: #735231;
+    padding: 11px 13px;
+    min-height: 100%;
+    background: #f6f6f6;
+    border-right: 1px solid #dbdbdb;
+}
+.board_list article div p{
+    font: 15px/1.3em "맑은 고딕";
+    padding: 10px 13px;
+    color: #830020;
+}
+.board_list article div p span{
+    font: 13px/1.3em "맑은 고딕";
+    color: #000;
+}
+
+
+.board_list article form{
+    display: flex;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 달력 */
+
+.board_list article form span{
+    display: flex;
+    position: relative;
+}
+.board_list article form span:last-of-type .calendar-wrapper{
+    margin-right: 10px;
+}
+.board_list article form .calendar-wrapper input{
+    width: 136px;
+    margin-left: 0;
+}
+.board_list article form .calendar-wrapper img{
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+.board_list article select{
+    min-width: 94px;
+    min-height: 40px;
+    padding: 0 20px 1px 10px;
+    padding-right: 30px;
+    background: url(../../../images/iosf/content/board/image_arrowdown_20x4.png)no-repeat right 52%/ 20px 4px;
+    font: 15px/1.3em "맑은 고딕";
+    color: #000;
+    border: 1px solid #dbdbdb;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+.board_list article select::-ms-expand{
+    display: none;
+}
+
+
+.board_list article select::before{
+    content:"";
+    display: inline-block;
+    width: 8px;
+    height: 4px;
+    background: #000;
+    top: 0;
+    right: 0;
+}
+
+.board_list article select + select,
+.board_list article input{
+    margin-left: 10px;
+}
+.board_list article select option{
+    font: 15px/1.3em "맑은 고딕";
+    color: #000;
+}
+
+
+
+.board_list article input{
+    font: 15px/1.3em "맑은 고딕";
+    width: 174px;
+    min-height: 40px;
+    padding: 0px 10px 2px 10px;
+    margin-right: -1px;
+    border: 1px solid #dbdbdb;
+}
+.board_list article input::placeholder{
+    font: 15px/1.3em "맑은 고딕";
+    color: #b5b5b5;
+    /* vertical-align: middle; */
+}
+.board_list article input:-ms-input-placeholder{
+    font: 15px/1.3em "맑은 고딕";
+    color: #b5b5b5;
+}
+
+
+.board_list article form button{
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background: 
+    url(../../../images/iosf/content/board/icon_search_18x18.png)no-repeat center/18px 18px,
+    #8f816a;
+} 
+
+
+
+
+/* 게시판 테이블 */
+
+table,tr,th,td{
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* 게시글이 하나도 없을 떄 */
+
+
+
+.board_list article table tr.empty td{
+    width: 100%;
+    height: 66px;
+    background: #f6f6f6;
+}
+.board_list article table tr.empty td p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font:normal 15px/1.3em "맑은 고딕";
+    color: #959595;
+    /* padding-left: -25px; */
+}
+.board_list article table tr.empty td p:before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    margin-bottom: -2px;
+    background: url(../../../images/iosf/content/board/icon_alert_20x20.png)no-repeat center/20px 20px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+.board_list article table{
+    width: 100%;
+    border-top: 2px solid #830020;
+    border-bottom: 1px solid #414141;
+}
+.board_list article table.notice{
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #c8c8c8;
+}
+.board_list article table tr th,
+.board_list article table tr td{
+    vertical-align: middle;
+    min-width: 92px;
+    font: 15px/1.3em "맑은 고딕";
+    color: #313131;
+    padding: 13px 13px;
+    text-align: center;
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+.board_list article table tr th:last-of-type,
+.board_list article table tr td:last-of-type{
+    border-right: 1px solid #e6e6e6;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* 공지사항 번호 박스처리*/
+
+
+
+.board_list article table .notice td{
+    background: #fcfbf9;
+}
+.board_list article table .notice td b{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    font: bold 13px/1.3em "맑은 고딕";
+    color: #fff;
+    text-shadow: 1px 1px 0 #434343;
+    padding: 4px 9px 5px;
+    background: #6b6b6b;
+}
+.board_list article table td b,
+.board_list article table td p{
+    font: normal 15px/1.3em "맑은 고딕";
+    color: #313131;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* 답변대기 , 완료 상태표시 */
+
+
+
+.board_list article table td small{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 76px;
+    height: 28px;
+    font: bold 13px/1.3em "맑은 고딕";
+    /* line-height: 16px; */
+    color: #fff;
+    text-shadow: 1px 1px 0px #860121;
+    background: #c2022e;
+    padding: 4px 10px 5px;
+    border: 1px solid #b8022b;
+    white-space: nowrap;
+}
+.board_list article table td small.clear{
+    text-shadow: 1px 1px 0px #598c06;
+    background: #75ba04;
+    border: 1px solid #6aa904;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+
+
+.board_list article table tr th{
+    color: #735231;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.board_list article table tr:last-of-type td{
+    border-bottom: 0px solid #000;
+    /* margin-bottom: 10px; */
+}
+
+.board_list article table tr .title{
+    text-align: left;
+    width: 44%;
+}
+
+.board_list article table tr .title.new span{
+    display: inline-flex;
+    vertical-align: bottom;
+    width: 44px;
+    height: 18px;
+    /* border-radius: 10px; */
+    background: 
+    url(../../../images/iosf/content/board/image_new_44x18.png)no-repeat center/44px 18px;
+    /* #f67400; */
+    margin-left: 3px;
+    margin-bottom: 1px;
+}
+/* .board_list article table tr .title.new span:before{
+    content: "NEW";
+    font: bold 12px/1.3em "맑은 고딕";
+    color: #fff;
+    text-shadow: 1px 1px 1px #ce4c19;
+    vertical-align:auto;
+    margin: auto;
+} */
+
+.board_list article table tr td.name,
+.board_list article table tr td.date{
+    width: 13%;
+}
+
+.board_list article table tr td a{
+    text-align: left;
+    font: 15px/1.3em "맑은 고딕";
+    line-height: 1.5em;
+    color: #000;
+    background: #fff;
+    /* margin-right: 6px; */
+}
+.board_list article table .notice .title a{
+    background: #fcfbf9;
+    width: 100%;
+}
+
+.board_list article table tr td a:hover{
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+
+
+/* 페이징 버튼 */
+section .paging{
+    margin: 20px 40px auto;
+}
+
+
+section .paging dl,
+section .paging dt,
+section .paging dd{
+    display: flex;
+    align-items: center;
+}
+section .paging dt{
+    margin: 0 10px;
+}
+
+section .paging dt button,
+section .paging dd button{
+    font: 15px/1.3em "맑은 고딕";
+    color: #313131;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #e3e3e3;
+    border-left: 0;
+    background: #fff;
+    transition: all 0.2s;
+}
+
+section .paging dt button:first-of-type,
+section .paging dd button:first-of-type{
+    border-left: 1px solid #e3e3e3;
+}
+
+section .paging dd button.on{
+    background: #64001a;
+    color: #fff;
+    border: 1px solid #64001a;
+    transition: all 0.1s;
+}
+
+section .paging dl{
+    justify-content: center;
+    width: 100%;
+}
+section .paging dt:first-of-type button{
+    background: 
+    url(../../../images/iosf/content/event/icon_paging_prev_7x12.png)no-repeat center;
+    background-size: 7px 12px;
+}
+section .paging dt:first-of-type button:first-of-type{
+    background: 
+    url(../../../images/iosf/content/event/icon_paging_first_10x12.png)no-repeat center;
+    background-size: 10px 12px;
+}
+section .paging dt:last-of-type button{
+    background: 
+    url(../../../images/iosf/content/event/icon_paging_next_7x12.png)no-repeat center;
+    background-size: 7px 12px;
+}
+section .paging dt:last-of-type button:last-of-type{
+    background: 
+    url(../../../images/iosf/content/event/icon_paging_last_10x12.png)no-repeat center;
+    background-size: 10px 12px;
+}
+
+/* 페이징 버튼 end*/
+
+/* 페이징 버튼 모바일 비활성 */
+section .paging .mobile{
+    display: none;
+    margin: 0 13px;
+}
+section .paging .mobile p{
+    font: bold 17px/1.3em "맑은 고딕";
+    color: #991233;
+}
+section .paging .mobile p:last-of-type{
+    font-weight: normal;
+    color: #313131;
+}
+section .paging .mobile small{
+    font-size: 18px;
+    margin: 0 2px;
+    color: #a0a0a0;
+}
+
+
+/* 버튼 */
+
+.board_list .btn dl dd button{
+    font: bold 15px/1.3em "맑은 고딕";
+    color: #fff;
+    text-shadow: 1px 1px 0px #992401;
+    background: #f67400;
+    min-width: 100px;
+    border: 0;
+    padding: 8px 10px 9px;
+    /* min-height: 40px; */
+    border-radius: 20px;
+}
+.board_list .btn dl .right{
+    margin-left: auto;
+}
+.board_list .btn dl .left{
+    margin-right: auto;
+}
+.board_list .btn dl .center{
+    margin: auto;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+/* h1 제목 부분 */
+
+.board_list article h1{
+    display: flex;
+    align-items: center;
+    font: bold 23px/1.3em "맑은 고딕";
+    color: #000;
+}
+.board_list article h1:before{
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 22px;
+    margin-right: 10px;
+    background: url(../../../images/iosf/content/board/icon_titlebar_4x22.png)center/4px 22px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* 급식 업체 리스트 페이지 meal_company */
+
+
+.board_list .meal_company{
+    flex-direction: column;
+    width: 100%;
+    height: 296px;
+    padding: 27px;
+    background: 
+    url(../../../images/iosf/content/board/bg_pattern_1100x296.png)repeat center/1140px 296px,
+    url(../../../images/iosf/content/board/bg_tiger_392x296.png)no-repeat right center/392px 296px,
+    #8f816a;
+    border-top: 2px solid #830020;
+    border-bottom: 2px solid #635848;
+}
+
+.board_list .meal_company div{
+    border: 0;
+}
+
+.board_list .meal_company div b{
+    display: block;
+    font: bold 23px "맑은 고딕";
+    color: #fff;
+     text-shadow: 1px 1px 0px #4a381c;
+}
+.board_list .meal_company div b:after{
+    content: "";
+    display: block;
+    width: 58px;
+    height: 1px;
+    background: #e0d6c6;
+    margin-top: 13px;
+}
+
+.board_list .meal_company dl{
+    display: flex;
+    background:transparent;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+.board_list .meal_company dl dt{
+    flex: 0 1 238px;
+    height: 168px;
+    background: 
+    url(../../../images/iosf/content/board/bg_companyex_194x98.png)no-repeat center,
+    #fff;
+    border: 1px solid #6c6152;
+    margin-right: 20px ;
+}
+
+.board_list .meal_company dl dd{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    flex: 1;
+    vertical-align: top;
+}
+.board_list .meal_company dl dd div{
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    flex: 1 0 45%;
+}
+.board_list .meal_company dl dd div:nth-child(2n){
+    margin-left: 20px;
+}
+
+.board_list .meal_company dl dd div p{
+    display: flex;
+    align-items: center;
+    font: normal 15px/1.3em "맑은 고딕";
+    color: #fff;
+    text-shadow: 1px 1px 0px #524329;
+    padding: 11px 15px;
+    min-height: 0;
+    width: 100%;
+    background: #867963;
+    border: 1px solid #6c6152;
+}
+.board_list .meal_company dl dd div p:before{
+    content: "";
+    flex: 0 0 2px;
+    height: 14px;
+    display: block;
+    background: #e0d6c6;
+    margin-right: 7px;
+}
+.board_list .meal_company dl dd div small{
+    font: normal 15px/1.3em "맑은 고딕";
+    display: block;
+    width: 100%;
+    padding: 11px 15px;
+    color: #313131;
+    background: #fff;
+}
+
+.board_list .meal_company dl dd .btn {
+    position: relative;
+    display: flex;
+    flex: 1 0 90%;
+    margin-top: 20px;
+    background:transparent;
+    border-top: 1px solid #b5a795;
+}
+/* .board_list .meal_company dl dd .btn:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #b5a795;
+} */
+
+.board_list .meal_company dl dd .btn a{
+    font: bold 15px/1.3em "맑은 고딕";
+    color: #fff;
+    text-shadow: 1px 1px 0px #6a3403;
+    padding: 8px 17px 10px;
+    background: #fea51c;
+    border-radius: 20px;
+    border: 1px solid #5c5449;
+    margin-top: 20px;
+    min-height: 40px;
+}
+
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+@media screen and (max-width: 960px ){
+
+
+    /* ----------------------------------------------------------------------------------------------------------------------- */
+    /* 탭 메뉴 정렬 */
+    .board_list article dl dt{
+        flex: 1 1 33.333%;
+    }
+    .board_list article dl dt:nth-of-type(4){
+        margin-left: 0;
+    }
+    .board_list article dl dt:nth-of-type(3) ~ dt{
+        margin-top: -1px;
+    }
+
+    
+
+    /* 탭 메뉴 한 줄 처리 */
+    .board_list .single_line dl dt{
+        flex: 1 1 10%;
+    }
+    .board_list .single_line dl dt:nth-of-type(4){
+        margin-left: -1px;
+    }
+    .board_list .single_line dl dt:nth-of-type(2) ~ dt{
+        margin-top: 0px;
+    }
+
+
+    .board_list .counter.calendar_pick {
+        flex-direction: column;
+    }
+
+    .board_list .counter.calendar_pick form {
+        margin-top: 20px;
+    }
+    .board_list .counter.calendar_pick input:last-of-type{
+        flex: auto;
+        /* flex: 1 0 10%; */
+    }
+
+    
+    
+    /* ----------------------------------------------------------------------------------------------------------------------- */
+
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+@media screen and (max-width: 768px ){
+
+    .board_list .meal_company{
+        width: 100%;
+        height: 401px;
+        background: 
+        url(../../../images/iosf/content/board/bg_pattern_600x401.png)repeat center/600px 401px,
+        url(../../../images/iosf/content/board/bg_tiger_340x340.png)no-repeat right top/340px 340px,
+        #8f816a;        
+    }
+
+
+    .board_list .meal_company dl dt{
+        flex: 0 0 275px;
+        height: 194px;
+    }
+
+    .board_list .meal_company dl dd{
+        flex-direction: column;
+    }
+    .board_list .meal_company dl dd div:nth-child(2n){
+        margin-left: 0;
+    }
+    .board_list .meal_company dl dd div{
+        width: 100%;
+        height: 100%;
+        flex: auto;
+    }
+    .board_list .meal_company dl dd div ~ div{
+        margin-top: 21px;
+    }
+
+    .board_list .meal_company dl dd .btn {
+        width: calc(100% + 295px);
+        left: -295px;
+
+    }
+
+
+    
+
+    .board_list article table tr th,
+    .board_list article table tr td,
+    .board_list article table tr td:last-of-type{
+    /* background: #000; */
+        border: 0px solid #000;
+    }
+
+    .board_list article table tr th, 
+    .board_list article table tr td {
+        min-width: auto;
+    }
+    
+    .board_list article table thead{
+        display: none;
+    }
+
+    .board_list article h1{
+        font: bold 19px/1.3em "맑은 고딕";
+    }
+    .board_list article h1:before{
+        width: 3px;
+        height: 18px;
+        margin-right: 8px;
+        background: url(../../../images/iosf/content/board/icon_titlebar_4x22.png)center/4px 22px;
+    }
+
+    .board_list .meal_company div b{
+        font-size: 21px;
+    }
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* 게시글이 하나도 없을 떄 */
+
+
+.board_list article table tr.empty{
+    border: 0px solid #000;
+}
+.board_list article table tr.empty td{
+    width: calc(100% + 40px);
+    /* margin: 0px -20px; */
+}
+.board_list article table tr.empty td p{
+    width: 100%;
+    position: relative;
+    left: 20px;
+    margin: 0 -20px;
+    min-width: 310px;
+    height: 66px;
+    background: #f6f6f6;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+    
+    .board_list article table tbody tr{
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        /* flex-direction: column; */
+        border: 1px solid #e4e4e4;
+        border-top: 0 solid #e4e4e4;
+    }
+    .board_list article table tbody tr:last-of-type{
+        border-bottom: 0px solid #000;
+    }
+    .board_list article table tbody tr td{
+        padding: 0;
+        /* display: inline-flex; */
+    }
+
+    .board_list article table tbody tr td.title{
+        display: flex;
+        /* width: calc(100% - 40px); */
+        flex: 1 0 90%;
+    }
+    .board_list article table tbody tr td.title a{
+        padding-bottom: 2px;
+    }
+
+    .board_list article table .notice td b{
+        background: #6b6b6b;
+    }
+    .board_list article table .notice {
+        background: #fcfbf9;
+    }
+
+
+    /* --------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------- */
+    /* 공지사항이 아닌 글 박스처리 */
+
+    .board_list article table td b{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 64px;
+        height: 28px;
+        font: bold 13px/1.3em "맑은 고딕";
+        color: #fff;
+        text-shadow: 1px 1px 0 #77674f;
+        padding: 4px 8px 5px;
+        background: #b2a28a;
+        margin-right: 9px;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------- */
+
+    
+    .board_list article table td p{
+        font: bold 13px/1.3em "맑은 고딕";
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 64px;
+        height: 28px;
+        padding: 4px 8px 5px;
+        color: #967c57;
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        margin-right: 9px;
+    }
+
+  
+
+    .board_list article table tr .title{
+        margin-top: 15px;
+        margin-bottom: 16px;
+    }
+    .board_list article table tr .title.new a:after{
+        margin-bottom: 1px;
+    }
+    .board_list article table tr td a{
+        font: bold 19px/1.3em "맑은 고딕";
+        line-height: 1.2em;
+    }
+
+    .board_list article table tr td.name,
+    .board_list article table tr td.date{
+        width:auto;
+    }
+    
+    
+    .board_list article table tr td.name,
+    .board_list article table tr td.title ~ td,
+    .board_list article table tr td.name ~ td{
+        text-align: left;
+        display: inline-flex;
+        align-items: center;
+        font: 13px/1.3em "맑은 고딕";
+        color: #626262;
+        bottom: 20px;
+        margin-right: 13px;
+    }
+
+
+    .board_list article table tr td.name:before,
+    .board_list article table tr td.date:before,
+    .board_list article table tr td.viewcount:before{
+        content: "";
+        display: inline-block;
+        width: 17px;
+        height: 16px;
+        vertical-align: middle;
+        margin-bottom: -1px;
+        margin-right: 5px;
+    }
+    .board_list article table tr td.name:before{
+        background: url(../../../images/iosf/content/board/icon_name_16x14.png)no-repeat center/14px 14px;
+        /* vertical-align: top; */
+    }
+    .board_list article table tr td.date:before{
+        background: url(../../../images/iosf/content/board/icon_date_16x14.png)no-repeat center/14px 14px;
+    }
+    .board_list article table tr td.viewcount:before{
+        background: url(../../../images/iosf/content/board/icon_viewcount_16x14.png)no-repeat center/17px 12px;
+    }
+
+    
+    
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+@media screen and (max-width: 640px ){
+
+
+    .board_list .meal_company{
+        width: 100%;
+        height: 615px;
+        background: 
+        url(../../../images/iosf/content/board/bg_pattern_600x401.png)repeat center/600px 401px,
+        url(../../../images/iosf/content/board/bg_tiger_340x340.png)no-repeat right top/340px 340px,
+        #8f816a;        
+    }
+    .board_list .meal_company div{
+        height: auto;
+    }
+    .board_list .meal_company dl dt{
+        flex: 0 0 100%;
+        height: 194px;
+    }
+    .board_list .meal_company dl dd{
+        margin-top: 20px;
+    }
+    .board_list .meal_company dl dd .btn {
+        width: 100%;
+        left: 0px;
+    }
+
+    .board_list .counter.calendar_pick form{
+        flex-wrap: wrap;
+    }
+    /* .board_list article form .calendar-wrapper input{
+        width: 100%;
+    } */
+    .board_list .counter.calendar_pick form span{
+        flex: 1 0 40%;
+        margin-bottom: 10px;
+        height: 42px;
+    }
+    .board_list .counter.calendar_pick form span + div{
+        height: 42px;
+    }
+
+    .board_list article form span:last-of-type .calendar-wrapper{
+        margin-right: 0;
+    }
+    .board_list .counter.calendar_pick select{
+        flex: 1 0 20%;
+    }
+    .board_list .counter.calendar_pick input:last-of-type{
+        flex: 1 0 30%;
+        height: 42px;
+    }
+    
+
+    /* ----------------------------------------------------------------------------------------------------------------------- */
+    /* 탭 메뉴 정렬 */
+
+    .board_list article dl dt{
+        flex: 1 1 50%;
+    }
+    .board_list article dl dt:nth-of-type(n){
+        margin-left: -1px;
+    }
+    .board_list article dl dt:nth-child(odd){
+        margin-left: 0px;
+    }
+
+    .board_list article dl dt:nth-of-type(2) ~ dt{
+        margin-top: -1px;
+    }
+
+
+    /* 탭 메뉴 한 줄 처리 */
+    .board_list .single_line dl dt{
+        flex: 1 1 10%;
+    }
+    .board_list .single_line dl dt:nth-child(odd){
+        margin-left: -1px;
+    }
+    .board_list .single_line dl dt:nth-of-type(2) ~ dt{
+        margin-top: 0px;
+    }
+    
+    /* ----------------------------------------------------------------------------------------------------------------------- */
+    
+    .board_list article div{
+        width: 100%;
+        height: 100%;
+        /* flex: 1 1 100%; */
+    }
+
+    .board_list article div p:first-of-type{
+        display: block;
+        /* flex: 1 1 70px; */
+        /* min-width: 70px; */
+        height: 100%;
+    }
+    .board_list article div p + p{
+        width: 100%;
+        text-align: right;
+    }
+    
+    .board_list .counter{
+        flex-direction: column;
+        width: 100%;
+    }
+    .board_list .counter form{
+        margin-top: 20px;
+    }
+
+    .board_list article input{
+        width: 100px;
+        flex: 1 1 30px;
+    }
+
+
+    .board_list article table tbody tr{
+        width: 100%;
+        margin-right: -180px;
+    }
+
+    /* 모바일 페이징 활성 */
+
+    .board_list .paging dd{
+        display: none;
+    }
+    .board_list .paging .mobile{
+        display: flex;
+    }
+
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+@media screen and (max-width: 480px ){
+
+    .board_list .counter form{
+        flex-wrap: wrap;
+    }
+    .board_list article select{
+        flex: 1 1 26%;
+        
+    }
+    /* .board_list article {
+        overflow: hidden;
+    } */
+
+    .board_list article input{
+        flex: 1 0 75%;
+        /* width: 100%; */
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    .board_list .counter input,
+    .board_list .counter button{
+        margin-top: 10px;
+    }
+    .board_list .counter.calendar_pick input,
+    .board_list .counter.calendar_pick button{
+        margin-top: 0;
+    }
+    .board_list .counter.calendar_pick form > input{
+        margin-left: 10px;
+    }
+
+
+    .board_list article table tr td.name{
+        flex: 0 0 100%;
+        margin-bottom: 6px;
+        margin-right: -20px;
+        /* padding-right: 20px; */
+        /* white-space: nowrap; */
+        /* word-break: break-all; */
+        /* word-wrap: break-word; */
+    }
+    .board_list article table tr td.name:before{
+        align-items: flex-start;
+    }
+    
+    .board_list article table tbody tr{
+        width: 100%;
+        /* min-width: 310px; */
+    }
+    
+}
+
+@media screen and ( max-width: 350px ){
+
+    .board_list > div{
+        min-width: 310px;
+    }
+
+    /* body{
+        width: 350px;
+    } */
+
+    .board_list article table tbody tr{
+        width: auto;
+        max-width: 310px;
+    }
+}

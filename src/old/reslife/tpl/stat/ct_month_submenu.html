@@ -1,0 +1,28 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td height="25">
+			월별통계 : 
+			<select name="ct_year" onChange="gotoCounterStat();">
+				<!-- BEGIN DYNAMIC BLOCK: year_row -->
+				<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+				<!-- END DYNAMIC BLOCK: year_row -->
+			</select> 년
+			<select name="ct_month" onChange="gotoCounterStat();">
+				<!-- BEGIN DYNAMIC BLOCK: month_row -->
+				<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+				<!-- END DYNAMIC BLOCK: month_row -->
+			</select> 월
+		</td>
+		<td height="25" align="right">
+			<a id="month_day" href="javascript:ViewCounterStat('month_day');">날짜</a> | 
+			<a id="month_week" href="javascript:ViewCounterStat('month_week');">요일</a> | 
+			<a id="month_hour" href="javascript:ViewCounterStat('month_hour');">시간</a> | 
+			<a id="month_os" href="javascript:ViewCounterStat('month_os');">운영체제</a> | 
+			<a id="month_brow" href="javascript:ViewCounterStat('month_brow');">브라우져</a>
+		</td>
+	</tr>
+</table>
+<script language="javascript">
+	setSelected(document.CounterForm.ct_year, '{SEL_YEAR}');
+	setSelected(document.CounterForm.ct_month, '{SEL_MONTH}');
+</script>

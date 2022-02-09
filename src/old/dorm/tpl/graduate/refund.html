@@ -1,0 +1,186 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/grad_refund.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+	<form name="RefundForm" action="https://reslife.korea.ac.kr:5008/v1/src/graduate/action_app.php" method="post" enctype="multipart/form-data" onSubmit="return checkRefundInfo(this);">
+		<input type="hidden" name="mode" value="refund">
+		<input type="hidden" name="no" value="{APPLY_NUMBER}">
+		<input type="hidden" name="email" value="{STUDENT_EMAIL}">
+		<input type="hidden" name="pw" value="{STUDENT_PASSWORD}">
+		<tr>
+			<td align="right">
+				<a href="javascript:gotoList(document.RefundForm);"><img src="../../images/button/btn_goto_account.jpg" width="194" height="30" border="0"></a>
+				<a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=status_stu"><img src="../../images/button/btn_logout.jpg" width="74" height="30" border="0"></a>
+			</td>
+		</tr>
+		<input type="hidden" name="vacate_flag" value="Y">
+		<input type="hidden" name="refund_flag" value="Y">
+		<input type="hidden" name="method_type" value="W">
+		<tr>
+			<td height="15"></td>
+		</tr>
+		<tr>
+			<td width="100%">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td><font color="#7C0019"><b>Wire Transfer - Korean bank account in Korea only</b></font></td>
+					</tr>
+					<tr>
+						<td height="5"></td>
+					</tr>
+					<tr>
+						<td height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr> 
+									<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="1"></td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Name of Korean local bank</td>
+									<td width="10" nowrap></td>
+									<td width="100%">
+										<input type="text" name="method_info1" size="30" maxlength="100" style="color:#9B9EA3;">
+									</td>
+									<td width="9" nowrap></td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Bank Account Number</td>
+									<td width="10" nowrap></td>
+									<td width="100%">
+										<input type="text" name="method_info2" size="30" maxlength="100" style="color:#9B9EA3;">
+									</td>
+									<td width="9" nowrap></td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Name of Beneficiary, i.e. Your Name</td>
+									<td width="10" nowrap></td>
+									<td width="100%">
+										<input type="text" name="method_info3" size="30" maxlength="100" style="color:#9B9EA3;">
+									</td>
+									<td width="9" nowrap></td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td colspan="4" style="padding-left:10px;padding-right:10px;">
+										Upload the picture of your bank book copy or the backside of student ID, where the requested account number is written on.<br>
+										<input type="file" name="photo" size="50" style="color:#9B9EA3;"><br>
+										<a href="javascript:previewImage('../../images/popup/ku_card.jpg');">Example of backside of KU student ID card</a><br>
+										<a href="javascript:previewImage('../../images/popup/bank_book.jpg');">Example bankbook copy</a>
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="1"></td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="20"></td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" nowrap></td>
+									<td style="padding-left:10px;padding-right:10px;">
+										I understand that the deposit will be refunded to me upon online request, when all my financial obligations are paid and the contract is fulfilled. Residence hall charges, including damages will be deducted from the deposit. Any amount remaining from the deposit will be wired to my bank account in Korea. The bank account and other deposit refund related information are provided by me in this form.
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="15"></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="image" src="../../images/button/btn_request.jpg" width="100" height="19" border="0"></td>
+		</tr>
+	</form>
+</table>

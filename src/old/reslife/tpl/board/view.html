@@ -1,0 +1,617 @@
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/board.js?20180416"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="BoardForm" action="" method="get">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="type" value="{BOARD_TYPE}">
+		<input type="hidden" name="no" value="{BOARD_NO}">
+		<input type="hidden" name="br_ref" value="{BOARD_REF}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="cmt_no" value="">
+		<input type="hidden" name="email" value="">
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" height="1" bgcolor="#EAEAEA" nowrap></td>
+						<td height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" height="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="10" bgcolor="#E4E4E4" nowrap></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" height="10" bgcolor="#C4C4C4" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#D7D7D7" nowrap></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" bgcolor="#E5E1E2" align="center" nowrap>제 목</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF" nowrap>{SUBJECT}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>공지설정</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" align="center" bgcolor="#EFEFEF">{TOP_FLAG}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>이 름</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" align="center" bgcolor="#EFEFEF"><a href="javascript:sendEmail(document.BoardForm, '{WRITER_EMAIL}');">{WRITER_NAME}</a> ({BOARD_MEMBER})</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>조회수</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" align="center" bgcolor="#EFEFEF">{READ_COUNT}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>이메일</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" align="center" bgcolor="#EFEFEF"><a href="javascript:sendEmail(document.BoardForm, '{WRITER_EMAIL}');">{WRITER_EMAIL}</a></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>등록IP</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" align="center" bgcolor="#EFEFEF">{POST_IP}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>등록일</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" align="center" bgcolor="#EFEFEF">{POST_DATE}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td bgcolor="#EFEFEF">
+							<!-- BEGIN DYNAMIC BLOCK: attach_row -->
+							{FILE_LIST}
+							<!-- END DYNAMIC BLOCK: attach_row -->
+							{CONTENT}
+						</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<!-- BEGIN DYNAMIC BLOCK: comment_row -->
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td bgcolor="#EFEFEF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<!-- BEGIN DYNAMIC BLOCK: comment_list_row -->
+								<tr>
+									<td width="100" valign="top" nowrap>[{COMMENT_NAME}]<a href="javascript:deleteComment('{COMMENT_NUMBER}');"><img src="../../images/button/btn_small_delete.jpg" width="10" height="10" border="0" alt="삭제"></a><br>({COMMENT_MEMBER})</td>
+									<td valign="top" bgcolor="#E1E1E1">{COMMENT_CONTENT}</td>
+									<td width="100" valign="top" align="right" nowrap>[{COMMENT_DATE}]<br>[{COMMENT_IP}]</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="5"></td>
+								</tr>
+								<tr>
+									<td colspan="3" bgcolor="#FFFFFF"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="5"></td>
+								</tr>
+								<!-- END DYNAMIC BLOCK: comment_list_row -->
+								<tr>
+									<td width="100" valign="top" nowrap>이름<br><input type="text" name="cmt_name" size="12" value="{COMMENT_INPUT_NAME}"></td>
+									<td colspan="2">
+										<textarea name="comment" rows="3" style="width:100%;" onkeyup="updateCharLen(this, 255);"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td width="100" nowrap></td>
+									<td>현재 <span id="comment_limit">0</span> / 최대 255byte (한글 127자, 영문 255자)</td>
+									<td width="100" nowrap>
+										<table border="0" cellpadding="0" cellspacing="0" align="right">
+											<tr>
+												<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+												<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+													<a href="javascript:saveComment(document.BoardForm);">등록</a>
+												</td>
+												<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<!-- END DYNAMIC BLOCK: comment_row -->
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" height="1" bgcolor="#EAEAEA" nowrap></td>
+						<td height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" height="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="10" bgcolor="#E4E4E4" nowrap></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" height="10" bgcolor="#C4C4C4" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#D7D7D7" nowrap></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>
+							<table border="0" cellpadding="0" cellspacing="0" align="right">
+								<tr>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:gotoList();">목록보기</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:postBoard('new');">쓰기</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<!-- BEGIN DYNAMIC BLOCK: reply_button_row -->
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:postBoard('reply');">답장</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<!-- END DYNAMIC BLOCK: reply_button_row -->
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:postBoard('edit');">수정</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:deleteBoard('{BOARD_NO}');">삭제</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:viewBoard('{PRE_BOARD_NO}');" title="{PRE_BOARD_TITLE}">이전</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:viewBoard('{NEXT_BOARD_NO}');" title="{NEXT_BOARD_TITLE}">다음</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- BEGIN DYNAMIC BLOCK: reply_row -->
+		<tr>
+			<td>:::::::::: 관련글 ::::::::::</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr> 
+						<td width="2"><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">제 목</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="100" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">이름</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="80" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">작성일</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="70" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">조회</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="2"><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: board_row -->
+					<tr bgcolor="{REPLY_BGCOLOR}"> 
+						<td width="2"></td>
+						<td width="5"></td>
+						<td height="23" align="left">{REPLY_IMAGE}<a href="javascript:viewBoard('{REPLY_NUMBER}');">{REPLY_SUBJECT}</a>{NEW_IMAGE}{HOT_IMAGE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="100" height="23" align="center"><a href="javascript:sendEmail(document.BoardForm, '{REPLY_EMAIL}');">{REPLY_NAME}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="80" height="23" align="center">{REPLY_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="70" height="23" align="center">{REPLY_COUNT}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr> 
+						<td colspan="17" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: board_row -->
+					<tr> 
+						<td colspan="17" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- END DYNAMIC BLOCK: reply_row -->
+	</form>
+</table>

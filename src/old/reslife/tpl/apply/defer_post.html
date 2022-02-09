@@ -1,0 +1,523 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/calendar.js"></script>
+<script language="javascript" src="../../js/defer.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="DeferForm" action="../../src/apply/defer_action.php" method="post" onSubmit="return checkDeferInfo(this);">
+		<input type="hidden" name="mode" value="{MODE}">
+		<input type="hidden" name="no" value="{DEFER_NUMBER}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="s_approve" value="{SEARCH_APPROVE}">
+		<input type="hidden" name="s_period" value="{SEARCH_PERIOD}">
+		<input type="hidden" name="s_year1" value="{SEARCH_YEAR1}">
+		<input type="hidden" name="s_month1" value="{SEARCH_MONTH1}">
+		<input type="hidden" name="s_day1" value="{SEARCH_DAY1}">
+		<input type="hidden" name="s_year2" value="{SEARCH_YEAR2}">
+		<input type="hidden" name="s_month2" value="{SEARCH_MONTH2}">
+		<input type="hidden" name="s_day2" value="{SEARCH_DAY2}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<tr> 
+			<td colspan="20" height="25"><img src="../../images/main/title_dot.jpg" width="21" height="8" align="absmiddle">Personal Information</td>
+		</tr>
+		<tr>
+			<td colspan="20" height="1" bgcolor="#F8F8F8"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="13" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;">이메일</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td colspan="11" height="22" bgcolor="#F5F5F5" id="emailItem">{DEFER_EMAIL}</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="13" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="14" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="18" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>이 름</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5" id="nameItem">{DEFER_NAME}</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>고대학번</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5" id="studentItem">{DEFER_STUDENT}</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="18" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="13" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;">주 소</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td colspan="11" height="22" bgcolor="#F5F5F5" id="addressItem">
+				{DEFER_ADDRESS}
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="13" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="14" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="18" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>학 위</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5" id="degreeItem">{DEFER_DEGREE}</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>교환학생</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="exchange" value="KUSEP">KUSEP
+				<input type="radio" name="exchange" value="KIEP">KIEP
+				<input type="radio" name="exchange" value="ISEP">ISEP
+			</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td colspan="20" height="20"></td>
+		</tr>
+		<tr>
+			<td colspan="20" height="25"><img src="../../images/main/title_dot.jpg" width="21" height="8" align="absmiddle">Deferral Application Information</td>
+		</tr>
+		<tr>
+			<td colspan="20" height="1" bgcolor="#F8F8F8"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>지원번호</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5">
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td height="22"><input type="text" name="apply_no" size="10" maxlength="10" value="{DEFER_APPLY_NO}" readOnly onClick="checkStudentInfo(document.DeferForm);"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:checkStudentInfo(document.DeferForm);">정보확인</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>체류기간</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5" id="periodItem">{DEFER_PERIOD}</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="18" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>승인여부</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="approve" value="Y">승인
+				<input type="radio" name="approve" value="N">미승인
+				<input type="radio" name="approve" value="C">취소
+			</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>승인날짜</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5">
+				<input type="text" name="grant" size="10" maxlength="10" value="{DEFER_GRANT}" onclick="popUpCalendar(document.DeferForm.grant_cal, document.DeferForm.grant, 'yyyy-mm-dd');" readOnly>
+				<input type="button" name="grant_cal" style="padding-top:3px;text-align:center;" onclick="popUpCalendar(this, document.DeferForm.grant, 'yyyy-mm-dd');" value="날짜선택">
+			</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="18" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>납부연기금액</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5" id="amountItem">{DEFER_AMOUNT}</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;" nowrap>납부날짜</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="50%" height="22" bgcolor="#F5F5F5" id="payDateItem">{DEFER_PAYMENT}</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="18" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="13" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="100" height="22" bgcolor="#E6E6E6" align="center" style="padding-top:3px;">관리자 노트</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td colspan="11" height="22" bgcolor="#F5F5F5">
+				<textarea name="admin" rows="3" style="width:100%;">{DEFER_ADMIN}</textarea>
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="13" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="14" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td colspan="20" height="5"></td>
+		</tr>
+		<tr>
+			<td colspan="20">
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:submitDefer(document.DeferForm);">확인</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:history.go(-1);">취소</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="javascript">
+	setChecked(document.DeferForm.exchange, '{DEFER_EXCHANGE}');
+	setChecked(document.DeferForm.approve, '{DEFER_APPROVE}');
+</script>

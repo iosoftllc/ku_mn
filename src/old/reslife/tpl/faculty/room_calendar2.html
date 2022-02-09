@@ -1,0 +1,111 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/faculty.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="FacultyForm" action="" method="get">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="no" value="">
+		<input type="hidden" name="kind" value="{KIND_VALUE}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="s_term" value="{SEARCH_TERM}">
+		<input type="hidden" name="s_state" value="{SEARCH_STATE}">
+		<input type="hidden" name="s_grade" value="{SEARCH_GRADE}">
+		<input type="hidden" name="s_room" value="{SEARCH_ROOM}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<tr>
+			<td height="22">
+				<a href="javascript:gotoMonth(document.FacultyForm, '{PREVIOUS_YEAR}', '{PREVIOUS_MONTH}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+				<select name="year" onChange="gotoMonth(document.FacultyForm, document.FacultyForm.year.value, document.FacultyForm.month.value);">
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="month" onChange="gotoMonth(document.FacultyForm, document.FacultyForm.year.value, document.FacultyForm.month.value);">
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<a href="javascript:gotoMonth(document.FacultyForm, '{NEXT_YEAR}', '{NEXT_MONTH}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+			</td>
+			<td align="right">
+				<select name="s_dorm" onChange="document.FacultyForm.s_rate.value='';gotoMonth(document.FacultyForm, document.FacultyForm.year.value, document.FacultyForm.month.value);">
+					<option value="">모든기숙사</option>
+					<!-- BEGIN DYNAMIC BLOCK: dorm_row -->
+					<option value="{DORM_VALUE}">{DORM_NAME}</option>
+					<!-- END DYNAMIC BLOCK: dorm_row -->
+				</select>
+				<select name="s_rate" onChange="gotoMonth(document.FacultyForm, document.FacultyForm.year.value, document.FacultyForm.month.value);">
+					<option value="">모든입실형태</option>
+					<!-- BEGIN DYNAMIC BLOCK: rate_row -->
+					<option value="{RATE_VALUE}">{RATE_NAME}</option>
+					<!-- END DYNAMIC BLOCK: rate_row -->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="5"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table width="100%" border="0" cellspacing="1" cellpadding="3" bgcolor="#E2E4E1">
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Rooms</td>{DAY_LIST}</tr>
+					<!-- BEGIN DYNAMIC BLOCK: total_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Total({TOTAL_ROOM}실)</td>{TOTAL_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: total_row -->
+					<!-- BEGIN DYNAMIC BLOCK: cj_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>CJ Ave.Occu.({TOTAL_CJ_ROOM}실)</td>{TOTAL_CJ_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: cj_row -->
+					<!-- BEGIN DYNAMIC BLOCK: cj1_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Stu({TOTAL_CJ1_ROOM}실)</td>{TOTAL_CJ1_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: cj1_row -->
+					<!-- BEGIN DYNAMIC BLOCK: cj2_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>T._Bed({TOTAL_CJ2_ROOM}실)</td>{TOTAL_CJ2_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: cj2_row -->
+					<!-- BEGIN DYNAMIC BLOCK: cj3_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Fam.({TOTAL_CJ3_ROOM}실)</td>{TOTAL_CJ3_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: cj3_row -->
+					<!-- BEGIN DYNAMIC BLOCK: fh_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>IFH Ave.Occu.({TOTAL_FH_ROOM}실)</td>{TOTAL_FH_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: fh_row -->
+					<!-- BEGIN DYNAMIC BLOCK: fh1_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Stu({TOTAL_FH1_ROOM}실)</td>{TOTAL_FH1_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: fh1_row -->
+					<!-- BEGIN DYNAMIC BLOCK: fh2_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>O._Bed({TOTAL_FH2_ROOM}실)</td>{TOTAL_FH2_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: fh2_row -->
+					<!-- BEGIN DYNAMIC BLOCK: fh3_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Fam.({TOTAL_FH3_ROOM}실)</td>{TOTAL_FH3_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: fh3_row -->
+					<!-- BEGIN DYNAMIC BLOCK: fh4_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>입시사정실({TOTAL_FH4_ROOM}실)</td>{TOTAL_FH4_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: fh4_row -->
+					<!-- BEGIN DYNAMIC BLOCK: anam_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Anam Ave.Occu.({TOTAL_ANAM_ROOM}실)</td>{TOTAL_ANAM_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: anam_row -->
+					<!-- BEGIN DYNAMIC BLOCK: anam1_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>T._Bed({TOTAL_ANAM1_ROOM}실)</td>{TOTAL_ANAM1_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: anam1_row -->
+					<!-- BEGIN DYNAMIC BLOCK: anam2_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Fam_A({TOTAL_ANAM2_ROOM}실)</td>{TOTAL_ANAM2_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: anam2_row -->
+					<!-- BEGIN DYNAMIC BLOCK: anam3_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Fam_B({TOTAL_ANAM3_ROOM}실)</td>{TOTAL_ANAM3_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: anam3_row -->
+					<!-- BEGIN DYNAMIC BLOCK: anam4_row -->
+					<tr align="center" bgcolor="#F0F0F0"><td nowrap>Fam_C({TOTAL_ANAM4_ROOM}실)</td>{TOTAL_ANAM4_LIST}</tr>
+					<!-- END DYNAMIC BLOCK: anam4_row -->
+					{ROOM_LIST}
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="javascript">
+	setSelected(document.FacultyForm.year, '{CURRENT_YEAR}');
+	setSelected(document.FacultyForm.month, '{CURRENT_MONTH}');
+	setSelected(document.FacultyForm.s_dorm, '{SEARCH_DORM}');
+	setSelected(document.FacultyForm.s_rate, '{SEARCH_RATE}');
+</script>

@@ -1,0 +1,151 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="BoardForm" action="../../src/board/action.php" method="post">
+		<tr>
+			<td colspan="10" height="1" bgcolor="#F8F8F8"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="120" bgcolor="#E6E6E6" align="center" nowrap>등록 불가능<br>이름/아이디</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td bgcolor="#F5F5F5">
+				이름이나 아이디를 등록해 두시면 특정 이름이나 아이디로 게시판에 글을 등록할 때 등록 거부를 할 수 있는 기능입니다.<br>
+				구분자는 꼭 세미콜론(;)을 사용해 주시기 바랍니다.<br>
+				(예) aaa;bbb;ccc 식으로 등록해 주시기 바랍니다.<br>
+				<textarea name="reject_id" rows="3" style="width:100%;">{REJECT_ID}</textarea>
+				<input type="hidden" name="mode" value="spam">
+			</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="120" bgcolor="#E6E6E6" align="center">등록 불가능<br>IP주소</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td bgcolor="#F5F5F5">
+				IP를 등록해 두시면 특정 IP로 접속한 사람이 게시판에 글을 등록할 때 등록 거부를 할 수 있는 기능입니다.<br>
+				구분자는 꼭 세미콜론(;)을 사용해 주시기 바랍니다.<br>
+				(예) 192.168.1.1;211.123.121.134 식으로 등록해 주시기 바랍니다.<br>
+				<textarea name="reject_ip" rows="3" style="width:100%;">{REJECT_IP}</textarea>
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="120" bgcolor="#E6E6E6" align="center">등록 불가능<br>단어</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td bgcolor="#F5F5F5">
+				게시판에 글을 등록하는 사람들이 욕 같은 단어나 불량 단어를 등록할 때 등록 거부를 할 수 있는 기능입니다.<br>
+				구분자는 꼭 세미콜론(;)을 사용해 주시기 바랍니다.<br>
+				(예)씨발놈;니미랄;조까 식으로 등록해 주시기 바랍니다.<br>
+				<textarea name="reject_word" rows="3" style="width:100%;">{REJECT_WORD}</textarea>
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td colspan="10" height="5"></td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:document.BoardForm.submit();">확인</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>

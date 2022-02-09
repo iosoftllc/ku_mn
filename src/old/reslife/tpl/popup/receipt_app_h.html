@@ -1,0 +1,88 @@
+<table width="600" border="0" cellpadding="3" cellspacing="0" style="border:1px solid #000000;">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><img src="../../../images/main/ku_sign_eng.jpg" width="150" height="50"><br><font style="line-height:10pt;">Anam Residence Life<br>Anam-dong Seongbuk-gu<br>Seoul 02841<br>Korea</font></td>
+					<td align="right" valign="top">Receipt printed on {RECEIPT_DATE}</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td align="center"><font style="font-size:16pt;"><b>Receipt of Residence Hall Fee Payment</b></font></td>
+	</tr>
+	<tr>
+		<td height="15"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td nowrap>KU Student ID:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_STUDENT}</td>
+				</tr>
+				<tr>
+					<td nowrap>Name:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_NAME}</td>
+				</tr>
+				<tr>
+					<td nowrap>Residence Application No.:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_NUMBER}</td>
+				</tr>
+				<tr>
+					<td nowrap>For the Period:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_PERIOD}</td>
+				</tr>
+				<tr>
+					<td nowrap>Residence Hall:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_HALL}</td>
+				</tr>
+				<tr>
+					<td nowrap>Room No.:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_ROOM}</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="15"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td>&nbsp;<b>Date</b></td>
+					<td>&nbsp;<b>Description</b></td>
+					<td align="right" height="25"><b>Amount (KRW)</b>&nbsp;</td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: payment_row -->
+				<tr>
+					<td>&nbsp;{PAYMENT_DATE}</td>
+					<td>&nbsp;{PAYMENT_DETAIL}</td>
+					<td align="right" height="25">{PAYMENT_AMOUNT}&nbsp;</td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: payment_row -->
+				<tr>
+					<td>&nbsp;</td>
+					<td align="right"><b>Total Residence Hall Fee Paid</b>&nbsp;</td>
+					<td align="right" height="25"><b>{PAYMENT_TOTAL}</b>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td align="right"><b>Total Due / (Overpaid)</b>&nbsp;</td>
+					<td align="right" height="25"><b>{PAYMENT_ALL}</b>&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

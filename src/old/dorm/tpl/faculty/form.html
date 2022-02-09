@@ -1,0 +1,866 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/calendar.js"></script>
+<script language="javascript" src="../../js/faculty.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<form name="FacultyForm" action="https://reslife.korea.ac.kr:5008/v1/src/faculty/action.php" method="post" onSubmit="return checkFacultyInfo(this);">
+	<input type="hidden" name="mode" value="apply">
+	<input type="hidden" name="term" value="{TERM_VALUE}">
+	<tr>
+		<td><img src="../../images/title/cnt_apply1.jpg" width="267" height="14"></td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td style="color:#7C0019;">
+			IMPORTANT: In order to have successful correspondence regarding your application, please enter your phone and email address completely and accurately. 
+			Failure to do so can result in your application being cancelled, as we will not be able to contact you.
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Name in Full (성명)</td>
+					<td width="10"></td>
+					<td>
+						<input type="radio" name="title" value="Mr">Mr <input type="radio" name="title" value="Mrs">Mrs <input type="radio" name="title" value="Ms">Ms<br>
+						Family:<input type="text" name="lname" size="10" maxlength="50" style="color:#9B9EA3;"> Given:<input type="text" name="fname" size="10" maxlength="50" style="color:#9B9EA3;"> Middle:<input type="text" name="mname" size="10" maxlength="50" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Name in Korean (if available)</td>
+					<td width="10"></td>
+					<td>
+						<input type="text" name="name_kr" size="20" maxlength="50" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: logn_term1_row -->
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Korea Uni. Employee No.<br>(고대교직원번호)</td>
+					<td width="10"></td>
+					<td>
+						<input type="text" name="employ" size="20" maxlength="30" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: logn_term1_row -->
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Purpose of Stay (거주목적)</td>
+					<td width="10"></td>
+					<td>
+						<input type="text" name="purpose" size="35" maxlength="100" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Inviting Korea University Organization (초청학과)</td>
+					<td width="10"></td>
+					<td>
+						Department: <input type="text" name="kdepart" size="25" maxlength="100" style="color:#9B9EA3;"><br>
+						Position: <input type="text" name="kpos" size="25" maxlength="100" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: logn_term2_row -->
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="200" bgcolor="#EFEFEF" align="center" nowrap>{MANDATORY_INPUT}Organization and Position Held at Home Country<br>(본국 학과)</td>
+					<td width="10" nowrap></td>
+					<td>
+						Organization: <input type="text" name="hdepart" size="25" maxlength="100" style="color:#9B9EA3;"><br>
+						Position: <input type="text" name="hpos" size="25" maxlength="100" style="color:#9B9EA3;">
+					</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: logn_term2_row -->
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Nationality (국적)</td>
+					<td width="10"></td>
+					<td>
+						<select name="nation" style="color:#9B9EA3;">
+							<option value="">Please select your nationality.</option>
+							<option value="Afghanistan">Afghanistan</option>
+							<option value="Albania">Albania</option>
+							<option value="Algeria">Algeria</option>
+							<option value="American Samoa">American Samoa</option>
+							<option value="Andorra">Andorra</option>
+							<option value="Angola">Angola</option>
+							<option value="Anguilla">Anguilla</option>
+							<option value="Antarctica">Antarctica</option>
+							<option value="Antigua And Barbuda">Antigua And Barbuda</option>
+							<option value="Argentina">Argentina</option>
+							<option value="Armenia">Armenia</option>
+							<option value="Aruba">Aruba</option>
+							<option value="Australia">Australia</option>
+							<option value="Austria">Austria</option>
+							<option value="Azerbaijan">Azerbaijan</option>
+							<option value="Bahamas">Bahamas</option>
+							<option value="Bahrain">Bahrain</option>
+							<option value="Bangladesh">Bangladesh</option>
+							<option value="Barbados">Barbados</option>
+							<option value="Belarus">Belarus</option>
+							<option value="Belgium">Belgium</option>
+							<option value="Belize">Belize</option>
+							<option value="Benin">Benin</option>
+							<option value="Bermuda">Bermuda</option>
+							<option value="Bhutan">Bhutan</option>
+							<option value="Bolivia">Bolivia</option>
+							<option value="Bosnia And Herzegowina">Bosnia And Herzegowina</option>
+							<option value="Botswana">Botswana</option>
+							<option value="Bouvet Island">Bouvet Island</option>
+							<option value="Brazil">Brazil</option>
+							<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+							<option value="Brunei Darussalam">Brunei Darussalam</option>
+							<option value="Bulgaria">Bulgaria</option>
+							<option value="Burkina Faso">Burkina Faso</option>
+							<option value="Burundi">Burundi</option>
+							<option value="Cambodia">Cambodia</option>
+							<option value="Cameroon">Cameroon</option>
+							<option value="Canada">Canada</option>
+							<option value="Cape Verde">Cape Verde</option>
+							<option value="Cayman Islands">Cayman Islands</option>
+							<option value="Central African Republic">Central African Republic</option>
+							<option value="Chad">Chad</option>
+							<option value="Chile">Chile</option>
+							<option value="China">China</option>
+							<option value="Christmas Island">Christmas Island</option>
+							<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+							<option value="Colombia">Colombia</option>
+							<option value="Comoros">Comoros</option>
+							<option value="Congo">Congo</option>
+							<option value="Cook Islands">Cook Islands</option>
+							<option value="Costa Rica">Costa Rica</option>
+							<option value="Cote D'Ivoire">Cote D'Ivoire</option>
+							<option value="Croatia">Croatia</option>
+							<option value="Cuba">Cuba</option>
+							<option value="Cyprus">Cyprus</option>
+							<option value="Czech Republic">Czech Republic</option>
+							<option value="Denmark">Denmark</option>
+							<option value="Djibouti">Djibouti</option>
+							<option value="Dominica">Dominica</option>
+							<option value="Dominican Republic">Dominican Republic</option>
+							<option value="East Timor">East Timor</option>
+							<option value="Ecuador">Ecuador</option>
+							<option value="Egypt">Egypt</option>
+							<option value="El Salvador">El Salvador</option>
+							<option value="Equatorial Guinea">Equatorial Guinea</option>
+							<option value="Eritrea">Eritrea</option>
+							<option value="Estonia">Estonia</option>
+							<option value="Ethiopia">Ethiopia</option>
+							<option value="Falkland Islands">Falkland Islands</option>
+							<option value="Faroe Islands">Faroe Islands</option>
+							<option value="Fiji">Fiji</option>
+							<option value="Finland">Finland</option>
+							<option value="France">France</option>
+							<option value="France, Metropolitan">France, Metropolitan</option>
+							<option value="French Guiana">French Guiana</option>
+							<option value="French Polynesia">French Polynesia</option>
+							<option value="French Southern Territories">French Southern Territories</option>
+							<option value="Gabon">Gabon</option>
+							<option value="Gambia">Gambia</option>
+							<option value="Georgia">Georgia</option>
+							<option value="Germany">Germany</option>
+							<option value="Ghana">Ghana</option>
+							<option value="Gibraltar">Gibraltar</option>
+							<option value="Greece">Greece</option>
+							<option value="Greenland">Greenland</option>
+							<option value="Grenada">Grenada</option>
+							<option value="Guadeloupe">Guadeloupe</option>
+							<option value="Guam">Guam</option>
+							<option value="Guatemala">Guatemala</option>
+							<option value="Guinea">Guinea</option>
+							<option value="Guinea-Bissau">Guinea-Bissau</option>
+							<option value="Guyana">Guyana</option>
+							<option value="Haiti">Haiti</option>
+							<option value="Heard And Mc Donald Islands">Heard And Mc Donald Islands</option>
+							<option value="Honduras">Honduras</option>
+							<option value="Hong Kong">Hong Kong</option>
+							<option value="Hungary">Hungary</option>
+							<option value="Iceland">Iceland</option>
+							<option value="India">India</option>
+							<option value="Indonesia">Indonesia</option>
+							<option value="Iran">Iran</option>
+							<option value="Ireland">Ireland</option>
+							<option value="Israel">Israel</option>
+							<option value="Italy">Italy</option>
+							<option value="Jamaica">Jamaica</option>
+							<option value="Japan">Japan</option>
+							<option value="Jordan">Jordan</option>
+							<option value="Kazakhstan">Kazakhstan</option>
+							<option value="Kenya">Kenya</option>
+							<option value="Kiribati">Kiribati</option>
+							<option value="North Korea (People's Republic Of Korea)">North Korea (People's Republic Of Korea)</option>
+							<option value="South Korea (Republic Of Korea)">South Korea (Republic Of Korea)</option>
+							<option value="Kuwait">Kuwait</option>
+							<option value="Kyrgyzstan">Kyrgyzstan</option>
+							<option value="Lao People's Republic">Lao People's Republic</option>
+							<option value="Latvia">Latvia</option>
+							<option value="Lebanon">Lebanon</option>
+							<option value="Lesotho">Lesotho</option>
+							<option value="Liberia">Liberia</option>
+							<option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+							<option value="Liechtenstein">Liechtenstein</option>
+							<option value="Lithuania">Lithuania</option>
+							<option value="Luxembourg">Luxembourg</option>
+							<option value="Macau">Macau</option>
+							<option value="Macedonia">Macedonia</option>
+							<option value="Madagascar">Madagascar</option>
+							<option value="Malawi">Malawi</option>
+							<option value="Malaysia">Malaysia</option>
+							<option value="Maldives">Maldives</option>
+							<option value="Mali">Mali</option>
+							<option value="Malta">Malta</option>
+							<option value="Marshall Islands">Marshall Islands</option>
+							<option value="Martinique">Martinique</option>
+							<option value="Mauritania">Mauritania</option>
+							<option value="Mauritius">Mauritius</option>
+							<option value="Mayotte">Mayotte</option>
+							<option value="Mexico">Mexico</option>
+							<option value="Micronesia">Micronesia</option>
+							<option value="Moldova">Moldova</option>
+							<option value="Monaco">Monaco</option>
+							<option value="Mongolia">Mongolia</option>
+							<option value="Montserrat">Montserrat</option>
+							<option value="Morocco">Morocco</option>
+							<option value="Mozambique">Mozambique</option>
+							<option value="Myanmar">Myanmar</option>
+							<option value="Namibia">Namibia</option>
+							<option value="Nauru">Nauru</option>
+							<option value="Nepal">Nepal</option>
+							<option value="Netherlands">Netherlands</option>
+							<option value="Netherlands Antilles">Netherlands Antilles</option>
+							<option value="New Caledonia">New Caledonia</option>
+							<option value="New Zealand">New Zealand</option>
+							<option value="Nicaragua">Nicaragua</option>
+							<option value="Niger">Niger</option>
+							<option value="Nigeria">Nigeria</option>
+							<option value="Niue">Niue</option>
+							<option value="Norfolk Island">Norfolk Island</option>
+							<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+							<option value="Norway">Norway</option>
+							<option value="Oman">Oman</option>
+							<option value="Pakistan">Pakistan</option>
+							<option value="Palau">Palau</option>
+							<option value="Palestine">Palestine</option>
+							<option value="Panama">Panama</option>
+							<option value="Papua New Guinea">Papua New Guinea</option>
+							<option value="Paraguay">Paraguay</option>
+							<option value="Peru">Peru</option>
+							<option value="Philippines">Philippines</option>
+							<option value="Pitcairn">Pitcairn</option>
+							<option value="Poland">Poland</option>
+							<option value="Portugal">Portugal</option>
+							<option value="Puerto Rico">Puerto Rico</option>
+							<option value="Qatar">Qatar</option>
+							<option value="Reunion">Reunion</option>
+							<option value="Romania">Romania</option>
+							<option value="Russian Federation">Russian Federation</option>
+							<option value="Rwanda">Rwanda</option>
+							<option value="Saint Kitts And Nevis">Saint Kitts And Nevis</option>
+							<option value="Saint Lucia">Saint Lucia</option>
+							<option value="Saint Vincent And The Grenadines">Saint Vincent And The Grenadines</option>
+							<option value="Samoa">Samoa</option>
+							<option value="San Marino">San Marino</option>
+							<option value="Sao Tome And Principe">Sao Tome And Principe</option>
+							<option value="Saudi Arabia">Saudi Arabia</option>
+							<option value="Senegal">Senegal</option>
+							<option value="Seychelles">Seychelles</option>
+							<option value="Sierra Leone">Sierra Leone</option>
+							<option value="Singapore">Singapore</option>
+							<option value="Slovakia">Slovakia</option>
+							<option value="Slovenia">Slovenia</option>
+							<option value="Solomon Islands">Solomon Islands</option>
+							<option value="Somalia">Somalia</option>
+							<option value="South Africa">South Africa</option>
+							<option value="South Georgia And The South Sandwich Islands</option>">South Georgia And The South Sandwich Is.</option>
+							<option value="Spain">Spain</option>
+							<option value="Sri Lanka">Sri Lanka</option>
+							<option value="St Helena">St Helena</option>
+							<option value="St Pierre and Miquelon">St Pierre and Miquelon</option>
+							<option value="Sudan">Sudan</option>
+							<option value="Suriname">Suriname</option>
+							<option value="Svalbard And Jan Mayen Islands">Svalbard And Jan Mayen Islands</option>
+							<option value="Swaziland">Swaziland</option>
+							<option value="Sweden">Sweden</option>
+							<option value="Switzerland">Switzerland</option>
+							<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+							<option value="Taiwan">Taiwan</option>
+							<option value="Tajikistan">Tajikistan</option>
+							<option value="Tanzania">Tanzania</option>
+							<option value="Thailand">Thailand</option>
+							<option value="Togo">Togo</option>
+							<option value="Tokelau">Tokelau</option>
+							<option value="Tonga">Tonga</option>
+							<option value="Trinidad And Tobago">Trinidad And Tobago</option>
+							<option value="Tunisia">Tunisia</option>
+							<option value="Turkey">Turkey</option>
+							<option value="Turkmenistan">Turkmenistan</option>
+							<option value="Turks And Caicos Islands">Turks And Caicos Islands</option>
+							<option value="Tuvalu">Tuvalu</option>
+							<option value="Uganda">Uganda</option>
+							<option value="Ukraine">Ukraine</option>
+							<option value="United Arab Emirates">United Arab Emirates</option>
+							<option value="United Kingdom">United Kingdom</option>
+							<option value="United States">United States</option>
+							<option value="Uruguay">Uruguay</option>
+							<option value="Uzbekistan">Uzbekistan</option>
+							<option value="Vanuatu">Vanuatu</option>
+							<option value="Vatican City State">Vatican City State</option>
+							<option value="Venezuela">Venezuela</option>
+							<option value="Viet Nam">Viet Nam</option>
+							<option value="Virgin Islands (British)">Virgin Islands (British)</option>
+							<option value="Virgin Islands (U.S.)">Virgin Islands (U.S.)</option>
+							<option value="Wallis And Futuna Islands">Wallis And Futuna Islands</option>
+							<option value="Western Sahara">Western Sahara</option>
+							<option value="Yemen">Yemen</option>
+							<option value="Zaire">Zaire</option>
+							<option value="Zambia">Zambia</option>
+							<option value="Zimbabwe">Zimbabwe</option>
+							<option value="Other Not Shown">Other Not Shown</option>
+						</select>
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: logn_term3_row -->
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">{MANDATORY_INPUT}Date of Birth (생년월일)</td>
+					<td width="10"></td>
+					<td>
+						<select name="dob_yy" style="color:#9B9EA3;" onChange="setDayList(document.FacultyForm.dob_yy, document.FacultyForm.dob_mm, document.FacultyForm.dob_dd);">
+							<option value="">yyyy</option>
+							<!-- BEGIN DYNAMIC BLOCK: year_row -->
+							<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+							<!-- END DYNAMIC BLOCK: year_row -->
+						</select>
+						<select name="dob_mm" style="color:#9B9EA3;" onChange="setDayList(document.FacultyForm.dob_yy, document.FacultyForm.dob_mm, document.FacultyForm.dob_dd);">
+							<option value="">mm</option>
+							<!-- BEGIN DYNAMIC BLOCK: month_row -->
+							<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+							<!-- END DYNAMIC BLOCK: month_row -->
+						</select>
+						<select name="dob_dd" style="color:#9B9EA3;">
+							<option value="">dd</option>
+						</select> (yyyy-mm-dd)
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">{MANDATORY_INPUT}Country (국가)</td>
+					<td width="10"></td>
+					<td>
+						<input type="text" name="country" size="30" maxlength="50" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: logn_term3_row -->
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Email Address</td>
+					<td width="10"></td>
+					<td>
+						<input type="text" name="email" style="width:100%;" maxlength="100" style="color:#9B9EA3;"><br>
+						* Invoice will be sent to the applicant and reference's e-mail at the same time.
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Telephone No. (전화번호)</td>
+					<td width="10"></td>
+					<td>
+						<input type="text" name="phone" size="20" maxlength="20" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Staying Period (투숙기간)</td>
+					<td width="10"></td>
+					<td>
+						From(Arrival):
+						<input type="text" name="arr_dt" size="10" maxlength="10" style="color:#9B9EA3;" onclick="popUpCalendar(document.FacultyForm.arr_cal, document.FacultyForm.arr_dt, 'yyyy-mm-dd');" readOnly>
+						<input type="button" name="arr_cal" style="color:#9B9EA3;padding-top:3px;text-align:center;" onclick="popUpCalendar(this, document.FacultyForm.arr_dt, 'yyyy-mm-dd');" value="Calendar">
+						<br>
+						To(Departure):
+						<input type="text" name="det_dt" size="10" maxlength="10" style="color:#9B9EA3;" onclick="popUpCalendar(document.FacultyForm.det_cal, document.FacultyForm.det_dt, 'yyyy-mm-dd');" readOnly>
+						<input type="button" name="det_cal" style="color:#9B9EA3;padding-top:3px;text-align:center;" onclick="popUpCalendar(this, document.FacultyForm.det_dt, 'yyyy-mm-dd');" value="Calendar">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Payer (사비 납부자) - No credit card payment available</td>
+					<td width="10"></td>
+					<td>
+						<input type="radio" name="pay" value="S">Self - Wire Transfer (사용인 부담)<br>
+						<input type="radio" name="pay" value="R">Reference - Wire Transfer (추천인 부담)
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Special Requests(비고)</td>
+					<td width="10"></td>
+					<td>
+						<textarea name="request" rows="3" style="width:100%;color:#9B9EA3;"></textarea>
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td><img src="../../images/title/cnt_apply13.jpg" width="250" height="14"></td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">Type of Room</td>
+					<td width="10"></td>
+					<td>
+						<select name="rate" style="color:#9B9EA3;">
+							<option value=""></option>
+							<!-- BEGIN DYNAMIC BLOCK: rate_row -->
+							<option value="{RATE_VALUE}">{RATE_NAME}</option>
+							<!-- END DYNAMIC BLOCK: rate_row -->
+						</select>
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">No. of Rooms(실사용수)</td>
+					<td width="10"></td>
+					<td>
+						<input type="text" name="no_room" size="3" maxlength="3" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><b>A studio is only for a single person. If the room is shared, the extra cost - 10,000 won per day - will be charged and the fact should be informed in the special request box or by email(<a href="mailto:{CF_EMAIL_FACULTY}">{CF_EMAIL_FACULTY}</a>).</b></td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td><img src="../../images/title/cnt_apply11.jpg" width="250" height="14"></td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="200" bgcolor="#EFEFEF" align="center" nowrap>*Name in Full (성명)</td>
+					<td width="10" nowrap></td>
+					<td>
+						Family:<input type="text" name="rlname" size="10" maxlength="50" style="color:#9B9EA3;">
+						Given:<input type="text" name="rfname" size="10" maxlength="50" style="color:#9B9EA3;">
+						Middle:<input type="text" name="rmname" size="10" maxlength="50" style="color:#9B9EA3;">
+					</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Department and Position Held at Korea University (추천인 학과)</td>
+					<td width="10"></td>
+					<td>
+						Department: <input type="text" name="rdepart" size="25" maxlength="100" style="color:#9B9EA3;"><br>
+						Position: <input type="text" name="rpos" size="25" maxlength="100" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Email Address</td>
+					<td width="10"></td>
+					<td>
+						<input type="text" name="remail" style="width:100%;" maxlength="100" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="200" bgcolor="#EFEFEF" align="center">*Telephone No. (전화번호)</td>
+					<td width="10"></td>
+					<td>
+						<input type="text" name="rphone" size="20" maxlength="20" style="color:#9B9EA3;">
+					</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+				<tr>
+					<td colspan="5" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="3" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="5" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="10" nowrap></td>
+					<td>
+						<font color="red">I understand that completing an application does not guarantee housing.</font> I understand the Residence Life Office will inform me by email confirming my residence hall reservation status, upon receiving the residence hall application and full payment. I agree to keep the Residence Life Office informed of any changes of email address. Failure to do so could result in the loss of my unit reservation.<br>
+						<font color="red">현재 작성하신 예약 요청 양식은 방배정 확인 메일이 아닙니다. 예약 요청서를 작성하셨더라도, 방배정 상황에 따라, 방배정이 되지 않을 수 있습니다.</font> 이에 대해, 입실 1~2주전에 확답 메일 혹은 연락을 드릴 것입니다. 또한 신청한 예약 양식상의 내용이 변경될 경우, {CF_EMAIL_FACULTY}로 연락주시길 바랍니다.
+					</td>
+					<td width="10" nowrap></td>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="5" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td>
+			<textarea name="agreement" rows="10" style="width:100%;text-align:justify;line-height:14pt;letter-spacing:0.1mm;color:#9B9EA3;font-size:12px;font-family:Verdana;" readonly>
+All terms used herein shall have the same meaning as in the lease of which this is a part.
+
+1. Nothing shall be placed on the outside of the building, windows, or projections, and no signs or advertising notices of any kind shall be placed on any part of the building or on the doors of any apartments therein.
+
+2. The walls, ceilings, and woodwork must not be damaged in any way, including but not limited to damage by toggle bolts, large nails, and adhesive materials or by otherwise defacing the same. You shall not damage the premises in any fashion. You shall leave the premises in broom clean condition and in the same or better condition than when you received them, reasonable wear and tear expected. No television antennas or satellite dishes are permitted without our written consent.
+
+3. The residence life cannot be held liable for packages accepted from private carries such as DHL and Fedex.
+
+4. No dogs or pets shall be permitted on the premises.
+
+5. Loud music and other noises on the premises are prohibited at all times.
+
+6. No justification will be recognized for your failure or refusal to make prompt rental payments, including any refusal based upon any alleged defective condition.
+
+7. No alternations, additions, or improvements shall be made in the apartment without our express written consent, which consent can be withheld in our sole discretion and when so made shall immediately become our property.
+
+8. Bicycle and other articles may not be kept in common hallways, or about entrances at any time. Any such items founding these prohibited areas may be removed to storage and a charge will be made for their redemption.
+
+9. A charge will be made for unclogging plumbing equipment in cases where stop-ups are caused by the introduction of improper objects therein, such as children's toys, material containing cloth of any kind, etc.
+
+10. Rain or other water will damage floors, carpets, and drapes. Do not leave windows open when you leave your apartment. You will be responsible for any resulting damage.
+
+11. No persons other than those listed on the lease agreement will be allowed to occupy the premises without our prior written permission.
+
+12. No residents shall do or permit anything to be done in the leased premises, or bring or keep anything therein, which in any way may increase the rate of fire insurance on the building or property kept therein. No resident shall violate the laws or any insurance policy pertaining to the building in which the premises are located or any part thereof.
+
+13. No additional locks shall be affixed to any door except with our written consent. You shall keep the glass, locks and trimmings in and upon the doors and window of the premises in the good condition; and if any part thereof shall be broken by you or persons under your control, the same shall immediately be replaced and repaired and put in order under our direction and our satisfaction at your sole expense.
+
+14. You are responsible for all damages to the premises, staircase, hallways and lawns however caused by you or your invitees, and particularly by moving or placing furniture, boxes or bulky article in or about the premises.
+
+15. You and your invitees must give immediate notice to the managers of any accident or injury to any person, or of any damage to the premises or furnishings.
+
+16. We reserve the right to restrict the placement of unsightly articles on balconies, in the halls, on the stairways, and in the yards. Cooking grills must not be placed on the balconies, in halls, or near stairways. TV satellite dishes and antennas are prohibited.
+
+17. No private tutoring or holding seminar in the leased premises shall be permitted.
+
+18. We reserve the right to make and enforce such other reasonable rules and regulations as we deem necessary or advisable from time to time to promote the safety, cure and cleanliness of the premises and for the quiet enjoyment of tenants occupy.
+
+19. No vehicular washing or repair work to said vehicle shall be permitted on the premises.
+
+20. Vehicles are permitted to park in assigned spaces only. Furthermore, residents' vehicles must be kept in running order (including no flat tires), and must be legally registered and currently inspected. Vehicles must be used during residency. No vehicles may be stored. VEHICLES IN VIOLATION OF THE PARKING POLICY WILL BE SUBJECT TO TOWING.</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td align="center">
+				<input type="checkbox" name="agree_flag" value="Y"> I agree to comply with the <a href="http://www.korea.edu/dorm/dorm_03_05.php" target="_top" style="color:#7C0019;">Residence Hall Contract</a>.
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="image" src="../../images/button/btn_apply.jpg" width="73" height="19" border="0"></td>
+		</tr>
+	</form>
+</table>

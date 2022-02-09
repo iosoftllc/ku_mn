@@ -1,0 +1,393 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/calendar.js"></script>
+<script language="javascript" src="../../js/facility.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<form name="FacilityForm" action="https://reslife.korea.ac.kr:5008/v1/src/facility/action.php" method="post" onSubmit="return checkFacilityInfo(this);">
+		<input type="hidden" name="mode" value="apply">
+		<tr>
+			<td style="color:#7C0019;">
+				IMPORTANT: In order to have successful correspondence regarding your application, please enter your phone and email address completely and accurately. 
+				Failure to do so can result in your application being cancelled, as we will not be able to contact you.
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Name of Event<br>(회의명)</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" name="event" size="35" maxlength="50" style="color:#9B9EA3;">
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Organization/Individual<br>(신청기관명/신청자명)</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" name="applicant" size="35" maxlength="50" style="color:#9B9EA3;"><br>
+							<input type="radio" name="resident" value="Y"> CJ International House Resident (거주자)<br>
+							<input type="radio" name="resident" value="N"> Non Resident (비거주자)
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Department at Korea University<br>(고대 부서)</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" name="department" size="35" maxlength="50" style="color:#9B9EA3;">
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Position at Korea University<br>(고대 직책명)</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" name="position" size="35" maxlength="50" style="color:#9B9EA3;">
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Email Address</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" name="email" style="width:100%;" maxlength="100" style="color:#9B9EA3;">
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Telephone No.</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" name="phone" size="20" maxlength="20" style="color:#9B9EA3;">
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Date of Event<br>(사용날짜)</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" name="event_dt" size="10" maxlength="10" style="color:#9B9EA3;" onclick="popUpCalendar(document.FacilityForm.event_cal, document.FacilityForm.event_dt, 'yyyy-mm-dd');" readOnly>
+							<input type="button" name="event_cal" style="color:#9B9EA3;padding-top:3px;text-align:center;" onclick="popUpCalendar(this, document.FacilityForm.event_dt, 'yyyy-mm-dd');" value="Calendar">
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Hours of Event<br>(사용시간)</td>
+						<td width="10"></td>
+						<td>
+							<select name="event_h1" style="color:#9B9EA3;">
+								<option value="">hh</option>
+								<option value="00">00</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+							</select>:
+							<select name="event_m1" style="color:#9B9EA3;">
+								<option value="">mm</option>
+								<option value="00">00</option>
+								<option value="05">05</option>
+								<option value="15">15</option>
+								<option value="20">20</option>
+								<option value="25">25</option>
+								<option value="30">30</option>
+								<option value="35">35</option>
+								<option value="40">40</option>
+								<option value="45">45</option>
+								<option value="50">50</option>
+								<option value="55">55</option>
+							</select>
+							To
+							<select name="event_h2" style="color:#9B9EA3;">
+								<option value="">hh</option>
+								<option value="00">00</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+							</select>:
+							<select name="event_m2" style="color:#9B9EA3;">
+								<option value="">mm</option>
+								<option value="00">00</option>
+								<option value="05">05</option>
+								<option value="15">15</option>
+								<option value="20">20</option>
+								<option value="25">25</option>
+								<option value="30">30</option>
+								<option value="35">35</option>
+								<option value="40">40</option>
+								<option value="45">45</option>
+								<option value="50">50</option>
+								<option value="55">55</option>
+							</select>
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Estimated Number of Attendees<br>(참석인원수)</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" name="attendee" size="3" maxlength="3" style="color:#9B9EA3;">
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<!--<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Conference Breakfast Package<br>(조찬 후 회의실 사용)</td>
+						<td width="10"></td>
+						<td>
+							<input type="radio" name="breakfast" value="Y"> Yes
+							<input type="radio" name="breakfast" value="N"> No<br>
+							Free Buffet Breakfast (7:30 am - 9:30 am) upto 10 conference attendees (조찬 후 회의실 사용 시 참석자 10명까지 무료 조찬 뷔페 식권 제공)
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>-->
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="220" bgcolor="#EFEFEF" align="center">Room Requested</td>
+						<td width="10"></td>
+						<td>
+							<input type="checkbox" name="request1" value="C1">Korea University Alumni Association Conference Hall with beam projector - Seat 23<br>
+							<input type="checkbox" name="request2" value="S1">Kang Hyun Suk Seminar Room with white board - Seat 8<br>
+							<input type="checkbox" name="request3" value="S2">Korea University Alumni Association of Southern California Seminar Room with white board - Seat 8<br>
+							<!--
+							<input type="checkbox" name="request4" value="R1">Koryo Lions Club Study Room - Seat 30<br>
+							<input type="checkbox" name="request5" value="R2">Choi, Sang Yong Study Room - Seat 25
+							-->
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td colspan="5" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="3" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="5" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="10" nowrap></td>
+						<td>
+							Room reservations must be made in writing at least two weeks before scheduled date, or room reservation will be cancelled. Cancellations must be made at least two weeks in advance for 50% refund. Smoking NOT PERMITTED in any area of CJ International House, including the meeting rooms. Residence Life staff are unable to deliver TELEPHONE CALLS AND MESSAGES to individuals using the meeting rooms. Turn off lights and make sure room is clean and in order before you leave. If you use electrical appliances, please make sure they are turned off when you leave.
+						</td>
+						<td width="10" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="5" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td align="center">
+				<input type="checkbox" name="agree_flag" value="Y"> I agree to comply with the <a href="http://www.korea.ac.kr/english04/2005/dorm/dorm_02_03.jsp" target="_top" style="color:#7C0019;">Residence Hall Contract</a>.
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="image" src="../../images/button/btn_apply.jpg" width="73" height="19" border="0"></td>
+		</tr>
+	</form>
+</table>

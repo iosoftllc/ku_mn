@@ -1,0 +1,115 @@
+<html>
+
+<head>
+	<title>{PAGE_TITLE}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="ImageToolbar" content="No">
+	<link rel="stylesheet" href="../../css/style.css" type="text/css">
+	<link rel="stylesheet" href="../../css/print.css" type="text/css" media="print">
+</head>
+
+<script language="javascript">
+	function sendEmail(src) {
+		if (src) document.location.href = src;
+	}
+</script>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#FFFFFF" onLoad="{ON_LOAD}">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr> 
+			<td colspan="3" height="10" class="NoPrint"></td>
+		</tr>
+		<tr> 
+			<td width="10" class="NoPrint"></td>
+			<td valign="top"> 
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td colspan="3" height="1" bgcolor="#D2CFC6"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#D2CFC6" class="NoPrint"></td>
+						<td>
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr class="NoPrint">
+									<td colspan="2" height="1" bgcolor="#F5F4F9"></td>
+									<td width="1" height="1" bgcolor="#EEEDF2"></td>
+								</tr>
+								<tr class="NoPrint">
+									<td width="1" height="18" bgcolor="#F5F4F9"></td>
+									<td width="100%" height="18" bgcolor="#EFEEF4" align="center"><img src="../../images/menu/main_front.jpg" width="17" height="18" align="absmiddle">{SUB_TITLE}</td>
+									<td width="1" height="18" bgcolor="#D5D4D9"></td>
+								</tr>
+								<tr class="NoPrint">
+									<td width="1" height="1" bgcolor="#E9E8EE"></td>
+									<td colspan="2" height="1" bgcolor="#D5D4D9"></td>
+								</tr>
+								<tr>
+									<td colspan="3" bgcolor="#FFFFFF">
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<tr> 
+												<td colspan="3" height="10" class="NoPrint"></td>
+											</tr>
+											<tr> 
+												<td width="10" class="NoPrint"></td>
+												<td valign="top"> 
+													<!-- NAME: popup_body -->
+													{BODY}
+													<!-- END: popup_body -->
+												</td>
+												<td width="10" class="NoPrint"></td>
+											</tr>
+											<tr> 
+												<td colspan="3" height="10" class="NoPrint"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td width="1" bgcolor="#D2CFC6" class="NoPrint"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#D2CFC6"></td>
+						<td colspan="2" height="1" bgcolor="#D2CFC6"></td>
+					</tr>
+				</table>
+			</td>
+			<td width="10" class="NoPrint"></td>
+		</tr>
+		<tr> 
+			<td colspan="3" height="10" class="NoPrint"></td>
+		</tr>
+		<tr> 
+			<td colspan="3" class="NoPrint">
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:window.close();">닫기</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:window.print();">출력</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<!-- BEGIN DYNAMIC BLOCK: email_row -->
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:sendEmail('{EMAIL_SRC}');">이메일</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<!-- END DYNAMIC BLOCK: email_row -->
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr> 
+			<td colspan="3" height="10" class="NoPrint"></td>
+		</tr>
+	</table>
+</body>
+
+</html>

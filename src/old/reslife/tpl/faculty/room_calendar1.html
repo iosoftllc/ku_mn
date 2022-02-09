@@ -1,0 +1,100 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/faculty.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="FacultyForm" action="" method="get">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="no" value="">
+		<input type="hidden" name="kind" value="{KIND_VALUE}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="s_term" value="{SEARCH_TERM}">
+		<input type="hidden" name="s_state" value="{SEARCH_STATE}">
+		<input type="hidden" name="s_grade" value="{SEARCH_GRADE}">
+		<input type="hidden" name="s_room" value="{SEARCH_ROOM}">
+		<input type="hidden" name="s_dorm" value="{SEARCH_DORM}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<tr>
+			<td height="22">
+				<a href="javascript:gotoMonth(document.FacultyForm, '{PREVIOUS_YEAR}', '{PREVIOUS_MONTH}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+				<select name="year" onChange="gotoMonth(document.FacultyForm, document.FacultyForm.year.value, document.FacultyForm.month.value);">
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="month" onChange="gotoMonth(document.FacultyForm, document.FacultyForm.year.value, document.FacultyForm.month.value);">
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<a href="javascript:gotoMonth(document.FacultyForm, '{NEXT_YEAR}', '{NEXT_MONTH}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+			</td>
+			<td align="right">
+				<select name="s_rate" onChange="gotoMonth(document.FacultyForm, document.FacultyForm.year.value, document.FacultyForm.month.value);">
+					<option value="">입실형태별보기</option>
+					<!-- BEGIN DYNAMIC BLOCK: rate_row -->
+					<option value="{RATE_VALUE}">{RATE_NAME}</option>
+					<!-- END DYNAMIC BLOCK: rate_row -->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="5"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="2" nowrap><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="15%" height="26" align="center" background="../../images/list/list_back.jpg">SUN</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">MON</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">TUE</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">WED</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">THU</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="14%" height="26" align="center" background="../../images/list/list_back.jpg">FRI</td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="15%" height="26" align="center" background="../../images/list/list_back.jpg">SAT</td>
+						<td width="2" nowrap><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: week_row -->
+					<tr>
+						<td width="2" bgcolor="#E2E4E1"></td>
+						<td width="15%" height="50" valign="top"{WEEK_PROPERTY1}>{WEEK_DATE1}<br>{WEEK_DESC1}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY2}>{WEEK_DATE2}<br>{WEEK_DESC2}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY3}>{WEEK_DATE3}<br>{WEEK_DESC3}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY4}>{WEEK_DATE4}<br>{WEEK_DESC4}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY5}>{WEEK_DATE5}<br>{WEEK_DESC5}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="14%" height="50" valign="top"{WEEK_PROPERTY6}>{WEEK_DATE6}<br>{WEEK_DESC6}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="15%" height="50" valign="top"{WEEK_PROPERTY7}>{WEEK_DATE7}<br>{WEEK_DESC7}</td>
+						<td width="2" bgcolor="#E2E4E1"></td>
+					</tr>
+					<tr>
+						<td colspan="15" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: week_row -->
+					<tr>
+						<td colspan="15" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="javascript">
+	setSelected(document.FacultyForm.year, '{CURRENT_YEAR}');
+	setSelected(document.FacultyForm.month, '{CURRENT_MONTH}');
+	setSelected(document.FacultyForm.s_rate, '{SEARCH_RATE}');
+</script>

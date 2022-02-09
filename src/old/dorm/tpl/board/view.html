@@ -1,0 +1,259 @@
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/board.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+	<form name="BoardForm" action="https://reslife.korea.ac.kr:5008/v1/src/board/action.php" method="get" onSubmit="return checkCommentInfo(this);">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="type" value="{BOARD_TYPE}">
+		<input type="hidden" name="no" value="{BOARD_NUMBER}">
+		<input type="hidden" name="br_ref" value="{BOARD_REF}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="cmt_no" value="">
+		<tr>
+			<td height="3" bgcolor="#7C0019"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr> 
+						<td width="1" height="10" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" height="10" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="1" bgcolor="#EFEFEF" nowrap></td>
+							<td width="83" height="21" bgcolor="#EFEFEF" align="center" nowrap>제 목</td>
+							<td width="5" nowrap></td>
+							<td width="100%" height="21">{BOARD_SUBJECT}</td>
+							<td width="4" nowrap></td>
+							<td width="1" nowrap></td>
+						</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td height="1" background="../../images/board/board_hdot.jpg"></td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="1" bgcolor="#EFEFEF" nowrap></td>
+							<td width="83" height="21" bgcolor="#EFEFEF" align="center" nowrap>이 름</td>
+							<td width="5" nowrap></td>
+							<td width="50%" height="21" align="center">{WRITER_NAME}</td>
+							<td width="5" nowrap></td>
+							<td width="84" height="21" bgcolor="#EFEFEF" align="center" nowrap>조 회</td>
+							<td width="5" nowrap></td>
+							<td width="50%" height="21" align="center">{READ_COUNT}</td>
+							<td width="4" nowrap></td>
+							<td width="1" nowrap></td>
+						</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td height="1" background="../../images/board/board_hdot.jpg"></td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="1" bgcolor="#EFEFEF" nowrap></td>
+							<td width="83" height="21" bgcolor="#EFEFEF" align="center" nowrap>날 짜</td>
+							<td width="5" nowrap></td>
+							<td width="100%" height="21">{POST_DATE} {POST_IP}</td>
+							<td width="4" nowrap></td>
+							<td width="1" nowrap></td>
+						</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td height="1" background="../../images/board/board_hdot.jpg"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" nowrap></td>
+						<td width="100%" style="padding-top:5pt; padding-bottom:5pt; padding-left:5pt; padding-right:5pt;">
+							{BOARD_CONTENT}
+						</td>
+						<td width="1" nowrap></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- BEGIN DYNAMIC BLOCK: comment_row -->
+		<tr>
+		<tr>
+			<td height="1" background="../../images/board/board_hdot.jpg"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<!-- BEGIN DYNAMIC BLOCK: comment_list_row -->
+					<tr>
+						<td height="1"></td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="2" bgcolor="#EFEFEF" nowrap></td>
+									<td width="80" height="21" align="center" valign="top" bgcolor="#EFEFEF" nowrap>{COMMENT_NAME}</td>
+									<td width="2" bgcolor="#EFEFEF" nowrap></td>
+									<td width="5" nowrap></td>
+									<td width="100%" height="21" valign="top">{COMMENT_CONTENT} ({COMMENT_DATE})</td>
+									<td width="10" height="21" valign="bottom" nowrap><a href="javascript:deleteComment('{COMMENT_NUMBER}');"><img src="../../images/board/icon_delete.jpg" width="10" height="10" border="0" alt="삭제"></a></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="1"></td>
+					</tr>
+					<tr>
+						<td height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: comment_list_row -->
+					<tr>
+						<td>
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+								<tr>
+									<td width="135" rowspan="2" align="right" valign="top" nowrap>
+										Name:&nbsp;<input type="text" name="cmt_name" style="width:75px;" maxlength="20" value="{MEMBER_NAME}" style="color:#9B9EA3;"><br>
+										P/W:&nbsp;<input type="password" name="cmt_pw" style="width:75px;" maxlength="20" style="color:#9B9EA3;">
+									</td>
+									<td width="5" rowspan="2" nowrap></td>
+									<td colspan="2">
+										<textarea name="comment" rows="3" style="width:100%;color:#9B9EA3;" onkeyup="updateCharLen(this, 255);"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td width="100%">Current <span id="comment_limit">0</span> / Max 255byte</td>
+									<td width="100" align="right" nowrap><input type="image" src="../../images/button/btn_comment.jpg" width="53" height="19" border="0"></td>
+								</tr>
+								<tr>
+									<td colspan="4" height="5"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- END DYNAMIC BLOCK: comment_row -->
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" height="10" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" height="10" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="3" bgcolor="#7C0019"></td>
+		</tr>
+		<tr>
+			<td height="4"></td>
+		</tr>
+		<tr>
+			<td align="right">
+				<a href="javascript:gotoList();"><img src="../../images/button/btn_list.jpg" width="53" height="19" border="0"></a>
+				<!-- BEGIN DYNAMIC BLOCK: btn_reply_row -->
+				<a href="javascript:postBoard('reply');"><img src="../../images/button/btn_reply.jpg" width="53" height="19" border="0"></a>
+				<!-- END DYNAMIC BLOCK: btn_reply_row -->
+				<!-- BEGIN DYNAMIC BLOCK: btn_write_row -->
+				<a href="javascript:postBoard('new');"><img src="../../images/button/btn_write.jpg" width="53" height="19" border="0"></a>
+				<a href="javascript:postBoard('edit');"><img src="../../images/button/btn_modify.jpg" width="53" height="19" border="0"></a>
+				<a href="javascript:deleteBoard('{BOARD_NUMBER}');"><img src="../../images/button/btn_delete.jpg" width="53" height="19" border="0"></a>
+				<!-- END DYNAMIC BLOCK: btn_write_row -->
+				<a href="javascript:viewBoard('{PRE_BOARD_NO}');" title="{PRE_BOARD_TITLE}"><img src="../../images/button/btn_previous.jpg" width="53" height="19" border="0"></a>
+				<a href="javascript:viewBoard('{NEXT_BOARD_NO}');" title="{NEXT_BOARD_TITLE}"><img src="../../images/button/btn_next.jpg" width="53" height="19" border="0"></a>
+			</td>
+		</tr>
+		<!-- BEGIN DYNAMIC BLOCK: reply_row -->
+		<tr>
+			<td height="15"></td>
+		</tr>
+		<tr>
+			<td>:::::::::: 관련글 ::::::::::</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td colspan="11" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_top_left.jpg" width="1" height="21"></td>
+						<td colspan="3" height="21" align="center" background="../../images/board/board_top_back.jpg"><img src="../../images/board/board_subject.jpg" width="40" height="21"></td>
+						<td width="2" nowrap><img src="../../images/board/board_top_border.jpg" width="2" height="21"></td>
+						<td width="70" height="21" align="center" background="../../images/board/board_top_back.jpg" nowrap><img src="../../images/board/board_name.jpg" width="26" height="21"></td>
+						<td width="2" nowrap><img src="../../images/board/board_top_border.jpg" width="2" height="21"></td>
+						<td width="80" height="21" align="center" background="../../images/board/board_top_back.jpg" nowrap><img src="../../images/board/board_date.jpg" width="23" height="21"></td>
+						<td width="2" nowrap><img src="../../images/board/board_top_border.jpg" width="2" height="21"></td>
+						<td width="50" height="21" align="center" background="../../images/board/board_top_back.jpg" nowrap><img src="../../images/board/board_read.jpg" width="23" height="21"></td>
+						<td width="1" nowrap><img src="../../images/board/board_top_right.jpg" width="1" height="21"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: board_row -->
+					<tr bgcolor="{BG_COLOR}"> 
+						<td width="1" nowrap></td>
+						<td width="3" nowrap></td>
+						<td height="23" align="left">{REPLY_IMAGE}<a href="javascript:viewBoard('{REPLY_NUMBER}');">{REPLY_SUBJECT}</a>{NEW_IMAGE}{HOT_IMAGE}</td>
+						<td width="3" nowrap></td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="70" height="23" align="center" nowrap>{REPLY_NAME}</td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="80" height="23" align="center" nowrap>{REPLY_DATE}</td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="50" height="23" align="center" nowrap>{REPLY_COUNT}</td>
+						<td width="1"></td>
+					</tr>
+					{DIVIDE_LINE}
+					<!-- END DYNAMIC BLOCK: board_row -->
+					<tr> 
+						<td width="1" height="10"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="9" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" height="10"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="11" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- END DYNAMIC BLOCK: reply_row -->
+	</form>
+</table>

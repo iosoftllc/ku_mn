@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Receipt of Residence Hall Fee Payment" pageWidth="595" pageHeight="841" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="adb745a4-d27f-47f1-a3e1-2421e74bfb95">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.report.description" value="기숙사비영수증 (영문)"/>
+	<parameter name="EVENT_SUBMIT_INVOICE_SEQ" class="java.lang.Long"/>
+	<parameter name="REPORT_SRC" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT DATE_FORMAT(NOW(),'%Y-%m-%d') NOW_DT
+	, A.USER_NM
+	, A.STD_ID
+	, A.DEPT_NM
+	, FN_GET_CODE('bd_cd', F.BD_CD) BD_NM
+	, ROOM_NM
+	, DATE_FORMAT(STR_TO_DATE(B.PAY_START_DT, '%Y%m%d%H%i%s'), '%Y-%m-%d') AS PAY_DT
+	, DATE_FORMAT(STR_TO_DATE(D.START_DT, '%Y%m%d%H%i%s'), '%Y-%m-%d') AS START_DT
+	, DATE_FORMAT(STR_TO_DATE(D.END_DT, '%Y%m%d%H%i%s'), '%Y-%m-%d') AS END_DT
+	, FORMAT(B.TOT_PRICE, 0) AS TOT_PRICE
+	, FORMAT(B.PAY_PRICE, 0) AS PAY_PRICE
+	, CASE WHEN B.PAY_CD != 'Y' THEN FORMAT(B.PAY_PRICE, 0) ELSE 0 END CALC_PRICE
+FROM IOSF_EVENT_SUBMIT A
+	INNER JOIN IOSF_EVENT_SUBMIT_INVOICE B ON A.EVENT_SUBMIT_SEQ = B.EVENT_SUBMIT_SEQ 
+	INNER JOIN IOSF_EVENT_SUBMIT_INVOICE_ROOM_MAPP C ON B.EVENT_SUBMIT_INVOICE_SEQ  = C.EVENT_SUBMIT_INVOICE_SEQ 
+	INNER JOIN IOSF_EVENT_SUBMIT_ROOM_MAPP D ON B.EVENT_SUBMIT_SEQ = D.EVENT_SUBMIT_SEQ 
+	INNER JOIN IOSF_ROOM E ON C.ROOM_SEQ = E.ROOM_SEQ 
+	INNER JOIN IOSF_ROOM_TYPE F ON E.ROOM_TYPE_SEQ = F.ROOM_TYPE_SEQ
+WHERE 
+	 B.DEL_YN = 'N' 
+	 AND B.USE_YN = 'Y' 
+	 AND B.EVENT_SUBMIT_INVOICE_SEQ = $P{EVENT_SUBMIT_INVOICE_SEQ}]]>
+	</queryString>
+	<field name="NOW_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOW_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOW_DT"/>
+	</field>
+	<field name="USER_NM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="USER_NM"/>
+		<property name="com.jaspersoft.studio.field.label" value="USER_NM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[사용자이름]]></fieldDescription>
+	</field>
+	<field name="STD_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="STD_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="STD_ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[학번/교번/수험번호]]></fieldDescription>
+	</field>
+	<field name="DEPT_NM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DEPT_NM"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEPT_NM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[부서/학과명 과정명 포함]]></fieldDescription>
+	</field>
+	<field name="BD_NM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BD_NM"/>
+		<property name="com.jaspersoft.studio.field.label" value="BD_NM"/>
+	</field>
+	<field name="ROOM_NM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ROOM_NM"/>
+		<property name="com.jaspersoft.studio.field.label" value="ROOM_NM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_ROOM"/>
+		<fieldDescription><![CDATA[외부 공개용]]></fieldDescription>
+	</field>
+	<field name="PAY_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PAY_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="PAY_DT"/>
+	</field>
+	<field name="START_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="START_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="START_DT"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[입실기간]]></fieldDescription>
+	</field>
+	<field name="END_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="END_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="END_DT"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[입실기간]]></fieldDescription>
+	</field>
+	<field name="TOT_PRICE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TOT_PRICE"/>
+		<property name="com.jaspersoft.studio.field.label" value="TOT_PRICE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT_INVOICE"/>
+	</field>
+	<field name="PAY_PRICE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PAY_PRICE"/>
+		<property name="com.jaspersoft.studio.field.label" value="PAY_PRICE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT_INVOICE"/>
+	</field>
+	<field name="CALC_PRICE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CALC_PRICE"/>
+		<property name="com.jaspersoft.studio.field.label" value="CALC_PRICE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT_INVOICE"/>
+	</field>
+	<background>
+		<band height="368" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="-15" y="-15" width="581" height="354" uuid="bde78c89-e5dd-4850-a79e-d76b5c67f9d1">
+					<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="3.0"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<image>
+				<reportElement x="0" y="0" width="278" height="42" uuid="e806a561-0c27-45f1-abbd-37f49fde1d4b"/>
+				<imageExpression><![CDATA[$P{REPORT_SRC} + "/images/logo-korea.svg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="278" y="0" width="277" height="42" uuid="a6a1e6ba-da84-49e9-8b12-ba453649f6b1"/>
+				<textElement textAlignment="Right">
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Receipt printed on " + $F{NOW_DT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="42" uuid="389cb047-24d9-4174-825f-41d9d0b55632"/>
+				<textElement>
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<text><![CDATA[Anam Residence Life
+145 Anam-ro, Seongbuk-gu,
+Seoul, 02841, Korea]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="42" uuid="23e275d9-3126-425b-8064-cab917567e0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MalgunGothic" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receipt of Residence Hall Fee Payment]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="113" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="370" height="23" uuid="0c905088-9ced-4f16-ab18-e0915074b5c8">
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="2.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="0.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement>
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="185" height="23" uuid="10930d8c-a8a6-4696-8d71-9f4f37051ff6">
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="0.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement>
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="370" height="23" uuid="8f969e53-46ea-4cac-ba2f-268c6bc5eef9">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+					<paragraph lineSpacingSize="1.0" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[KU Student ID : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="370" y="0" width="185" height="23" uuid="3f1fc731-566f-4ef1-890f-b0707bc60ffc">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STD_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="23" width="370" height="23" uuid="7fb67377-cfd8-4585-bb87-0ad6c02bf14a">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="mm"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+					<paragraph lineSpacingSize="1.0" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Name : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="370" y="23" width="185" height="23" uuid="fa91c28f-db7c-46ef-8cc7-e0a93b6b1159">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{USER_NM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="46" width="370" height="23" uuid="d80d1fd7-2660-44a8-a8a5-0573a70cd241">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="2"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="mm"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+					<paragraph lineSpacingSize="1.0" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[For the Period : ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="370" y="46" width="185" height="23" uuid="62554c47-2520-4a4f-bef8-36e9afd3b5a5">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="2"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{START_DT} + " ~ " + $F{END_DT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="69" width="370" height="22" uuid="394885fb-83bb-435a-a945-b36de04f6bd2">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="3"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="mm"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+					<paragraph lineSpacingSize="1.0" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Residence Hall : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="370" y="69" width="185" height="22" uuid="bc5e75b8-f000-4c11-8769-2cf657928494">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="3"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BD_NM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="91" width="370" height="22" uuid="3006b613-5ea3-4b8d-bdf5-1c51cef447dc">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="4"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="mm"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+					<paragraph lineSpacingSize="1.0" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Room No : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="370" y="91" width="185" height="22" uuid="4d9b32fe-04af-45e7-9922-2e73bf7c19ba">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="4"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ROOM_NM}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="85">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="139" height="29" uuid="423c9aff-f3ea-40f5-b0c3-cad747442317">
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="0.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement>
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="0" width="278" height="29" uuid="881971c4-d3a3-4a76-bf8f-d47ba30c3a3b">
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="2.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="0.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement>
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="138" height="29" uuid="df1ff0f5-9907-48b0-890f-4c4fd191f476">
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="0.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement>
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="139" height="29" uuid="e8d7ef95-5f65-46b2-9f15-5a8708930455">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="mm"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MalgunGothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="0" width="278" height="29" uuid="3a06c461-fd43-4e9c-8f78-74d79dd5bd78">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="mm"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MalgunGothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="138" height="29" uuid="75b66538-9f89-4c29-bfcc-27317132d022">
+					<property name="com.jaspersoft.layout.grid.x" value="2"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MalgunGothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount (KRW)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="29" width="139" height="28" uuid="6e9c3be7-1c17-45bb-b21a-43604c7ff9d9">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAY_DT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="29" width="278" height="28" uuid="1ee22a6a-405d-4f0e-bd9e-db59333f87c7"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+					<paragraph leftIndent="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BD_NM} + " Fee Billed"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="29" width="138" height="28" uuid="132baf4e-876c-49a1-be30-e18de1bb08c5">
+					<property name="com.jaspersoft.layout.grid.x" value="2"/>
+					<property name="com.jaspersoft.layout.grid.y" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+					<paragraph rightIndent="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOT_PRICE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="57" width="417" height="28" uuid="6f673e4f-6bd4-4ed7-802f-4ba50b6603b9">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="2"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="2"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MalgunGothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total " + $F{BD_NM} + " Fee Paid"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="57" width="138" height="28" uuid="10a586a1-18eb-4400-ba1a-296e07eaa03f">
+					<property name="com.jaspersoft.layout.grid.x" value="2"/>
+					<property name="com.jaspersoft.layout.grid.y" value="2"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="MalgunGothic"/>
+					<paragraph rightIndent="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAY_PRICE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<noData>
+		<band height="50"/>
+	</noData>
+</jasperReport>

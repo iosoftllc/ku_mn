@@ -1,0 +1,169 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/board.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="BoardForm" action="" method="get" onSubmit="return checkSearchInfo(document.BoardForm.s_text, document.BoardForm.page);">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="type" value="{BOARD_TYPE}">
+		<input type="hidden" name="top_count" value="{TOP_COUNT}">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="no" value="">
+		<input type="hidden" name="email" value="">
+		<tr>
+			<td height="22">총 {TOTAL_COUNT}개 / {TOTAL_PAGE}페이지</td>
+			<td height="22">
+				<table border="0" cellpadding="0" cellspacing="0" align="right">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:postBoard('new');">쓰기</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:deleteBoard('');">삭제</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="4"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr> 
+						<td width="2"><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="30" height="26" align="center" background="../../images/list/list_back.jpg"><input type="checkbox" name="select_all" onClick="selectAll(document.BoardForm.list_no);"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="50" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">번 호</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">제 목</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="90" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">이 름</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="80" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">작성일</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="50" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">조 회</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="2"><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: top_row -->
+					<tr bgcolor="#F5F5F5"> 
+						<td width="2"></td>
+						<td width="30"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="50" height="23" align="center">[공지]</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="left"><a href="javascript:viewBoard('{BOARD_NUMBER}');">{SUBJECT}</a>{NEW_IMAGE}{HOT_IMAGE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="90" height="23" align="center"><a href="javascript:sendEmail(document.BoardForm, '{WRITER_EMAIL}');">{WRITER_NAME}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="80" height="23" align="center">{WRITE_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="50" height="23" align="center">{READ_COUNT}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr> 
+						<td colspan="23" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: top_row -->
+					<!-- BEGIN DYNAMIC BLOCK: board_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="2"></td>
+						<td width="30" height="23" align="center"><input type="checkbox" name="list_no" value="{BOARD_NUMBER}"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="50" height="23" align="center">{COUNT_NO}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="left">{REPLY_IMAGE}<a href="javascript:viewBoard('{BOARD_NUMBER}');">{SUBJECT}</a>{NEW_IMAGE}{HOT_IMAGE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="90" height="23" align="center"><a href="javascript:sendEmail(document.BoardForm, '{WRITER_EMAIL}');">{WRITER_NAME}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="80" height="23" align="center">{WRITE_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="50" height="23" align="center">{READ_COUNT}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr> 
+						<td colspan="23" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: board_row -->
+					<tr> 
+						<td colspan="23" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr> 
+						<td height="35">
+							<a href="javascript:gotoPage('{PRE_PAGE}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+							<!-- BEGIN DYNAMIC BLOCK: page_row -->
+							{PAGE_VALUE}
+							<!-- END DYNAMIC BLOCK: page_row -->
+							<a href="javascript:gotoPage('{NEXT_PAGE}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td height="22" align="center">
+							<select name="s_type">
+								<option value="1">제목</option>
+								<option value="2">이름</option>
+								<option value="3">내용</option>
+							</select>
+							<input type="text" name="s_text" size="30" value="{SEARCH_TEXT}">
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:searchBoard();">검색</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setSelected(document.BoardForm.s_type, '{SEARCH_TYPE}');
+</script>

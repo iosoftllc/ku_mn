@@ -1,0 +1,180 @@
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/board.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+	<form name="BoardForm" action="https://reslife.korea.ac.kr:5008/v1/src/board/action.php" method="post" enctype="multipart/form-data" onSubmit="return checkBoardInfo(this);">
+		<input type="hidden" name="mode" value="{MODE}">
+		<input type="hidden" name="type" value="{BOARD_TYPE}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="no" value="{BOARD_NUMBER}">
+		<input type="hidden" name="ref" value="{BOARD_REFERENCE}">
+		<input type="hidden" name="level" value="{BOARD_LEVEL}">
+		<tr>
+			<td height="3" bgcolor="#7C0019"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="1" height="10" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" height="10" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="83" height="21" bgcolor="#EFEFEF" align="center" nowrap>Name</td>
+						<td width="5" nowrap></td>
+						<td width="50%" height="21"><input type="text" name="name" size="15" maxlength="50" value="{WRITER_NAME}" style="color:#9B9EA3;"></td>
+						<td width="5" nowrap></td>
+						<td width="84" height="21" bgcolor="#EFEFEF" align="center" nowrap>Password</td>
+						<td width="5" nowrap></td>
+						<td width="50%" height="21"><input type="password" name="pw" size="15" maxlength="20" style="color:#9B9EA3;"></td>
+						<td width="4" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td height="1" background="../../images/board/board_hdot.jpg"></td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="83" height="21" bgcolor="#EFEFEF" align="center" nowrap>Subject</td>
+						<td width="5" nowrap></td>
+						<td width="100%" height="21"><input type="text" name="subject" style="width:100%;" value="{BOARD_SUBJECT}" style="color:#9B9EA3;"></td>
+						<td width="4" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td height="1" background="../../images/board/board_hdot.jpg"></td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="83" height="21" bgcolor="#EFEFEF" align="center" nowrap>Email</td>
+						<td width="5" nowrap></td>
+						<td width="50%" height="21"><input type="text" name="email" style="width:100%;" maxlength="100" value="{WRITER_EMAIL}" style="color:#9B9EA3;"></td>
+						<td width="5" nowrap></td>
+						<td width="84" height="21" bgcolor="#EFEFEF" align="center" nowrap>HTML Tag</td>
+						<td width="5" nowrap></td>
+						<td width="50%" height="21"><input type="radio" name="html" value="N" checked> No <input type="radio" name="html" value="Y"> Yes</td>
+						<td width="4" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<!-- BEGIN DYNAMIC BLOCK: attach_row -->
+		<tr>
+			<td height="1" background="../../images/board/board_hdot.jpg"></td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="83" height="21" bgcolor="#EFEFEF" align="center" nowrap>Photo</td>
+						<td width="5" nowrap></td>
+						<td width="100%" height="21">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td width="100%"><input type="file" name="photo" style="width:100%;" style="color:#9B9EA3;"></td>
+									<td nowrap><a href="javascript:previewUpload(document.BoardForm.photo);"><img src="../../images/button/btn_preview.jpg" width="62" height="22" border="0" align="absmiddle"></a></td>
+									<td nowrap><input type="checkbox" name="att_del" value="Y">ªË¡¶</td>
+									<td nowrap><input type="hidden" name="att_no" value="{ATTACH_NO}"></td>
+								</tr>
+								<tr>
+									<td colspan="4">{PHOTO_NAME}</td>
+								</tr>
+							</table>
+						</td>
+						<td width="4" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<!-- END DYNAMIC BLOCK: attach_row -->
+		<tr>
+			<td height="1" background="../../images/board/board_hdot.jpg"></td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td>
+				<textarea name="content" style="width:100%;color:#9B9EA3;" rows="22">{BOARD_CONTENT}</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td height="1"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="1" height="10" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" height="10" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="3" bgcolor="#7C0019"></td>
+		</tr>
+		<tr>
+			<td height="4"></td>
+		</tr>
+		<tr>
+			<td align="center">
+				<input type="image" src="../../images/button/btn_ok.jpg" width="53" height="19" border="0">
+				<a href="javascript:history.go(-1);"><img src="../../images/button/btn_cancel.jpg" width="53" height="19" border="0"></a>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setChecked(document.BoardForm.html, '{HTML_FLAG}');
+</script>

@@ -1,0 +1,653 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: none;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+
+.board_view > div{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    background: #fff;
+}
+
+.board_view article{
+    padding: 20px 20px 0;
+    border-top: 2px solid #830020;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.board_view article.reply{
+    border: 0px solid #830020;
+}
+
+
+.board_view article:last-of-type{
+    margin-bottom: 40px;
+}
+
+.board_view article ~ article{
+    margin-top: 20px;
+}
+
+.board_view article .status,
+.board_view article .title,
+.board_view article .info{
+    /* padding: 0 20px; */
+}
+
+.board_view article .status{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.board_view article .status small,
+.board_view article .status p,
+.board_view article .status b{
+    display: block;
+    font: bold 13px/1.3em "맑은 고딕";
+    min-width: 66px;
+    /* width: 0px; */
+    text-align: center;
+    color: #967c57;
+    padding: 0px 14px;
+    border: 1px solid #e6e6e6;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    line-height: 26px;
+    height: 28px;
+}
+
+
+.board_view article .status .color1{
+    text-shadow: 1px 1px 2px #860121 ; 
+    color: #fff ;
+    background: #c2022e;
+    border: 1px solid #b8022b;
+}
+.board_view article .status .color2{
+    text-shadow: 1px 1px 2px #598c06 ; 
+    color: #fff ;
+    background: #75ba04;
+    border: 1px solid #6aa904;
+}
+
+
+
+/* 상태 아이콘 기본 가리기 */
+
+.board_view article .status small,
+.board_view article .status p,
+.board_view article .status b{
+    display: none;
+}
+.board_view article .status small.on,
+.board_view article .status p.on,
+.board_view article .status b.on{
+    display: block;
+}
+
+
+/* 제목 */
+
+.board_view article .title{
+    padding: 10px 0 28px;
+}
+
+.board_view article .title a{
+    font: bold 23px/1.3em "맑은 고딕";
+    color: #000;
+    cursor: text;
+}
+/* .board_view article .title a:hover{
+    text-decoration: underline;
+    text-underline-position: under;
+} */
+.board_view article .title.new span{
+    display: inline-block;
+    /* vertical-align: middle; */
+    width: 48px;
+    height: 22px;
+    margin-bottom: -3px;
+    margin-left: 3px;
+    background: url(../../../images/iosf/content/board/image_new_44x18.png)no-repeat center/48px 22px;
+}
+
+
+
+/* 게시글 정보 */
+
+.board_view article .info{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background: #f6f6f6;
+    width: calc(100% + 40px);
+    left: -20px;
+    padding: 10px 20px;
+    /* min-height: 100px; */
+    border-top: 1px solid #e6e6e6;
+    /* border-bottom: 1px solid #dbdbdb; */
+}
+
+.board_view article .info dt{
+    display: flex;
+    align-items:center;
+    padding-right: 8px;
+}
+
+
+/* .board_view article .info.view dt.date::before, */
+.board_view article .info dt.name ~ dt::before,
+.board_view article .info dt.date ~ dt::before{
+/* .board_view .reply .info dt:nth-child(2) ~ dt::before{ */
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 15px;
+    margin-bottom: -1px;
+    margin-right: 8px;
+    background: #c8c8c8;
+}
+
+
+.board_view article .info dt b,
+.board_view article .info dt p{
+    font: 15px/1.3em "맑은 고딕";
+    color: #707070;
+}
+
+
+/* 질문자 항목 */
+.board_view article .info dt small{
+    display: inline-block;
+    /* margin-right: 10px; */
+    font: bold 13px/1.3em "맑은 고딕";
+    color: #fff;
+    text-shadow: 1px 1px 0px #434343;
+    padding: 5px 10px 6px;
+    background: #6b6b6b;
+    min-width: 64px;
+    text-align: center;
+}
+
+
+
+
+/* view_reply 답변자 정보 */
+
+.board_view .reply .info{
+    background: 
+    url(../../../images/iosf/content/board/bg_pattern_1100x42.png)center/1100px 42px,
+    #867963;
+    border-top: 2px solid #6c6152;
+    border-bottom: 1px solid #6c6152;
+}
+
+.board_view .reply .info dt{
+    display: flex;
+    align-items:center;
+    padding-right: 8px;
+}
+
+/* .board_view .reply .info dt ~ dt::before{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 15px;
+    margin-bottom: -1px;
+    margin-right: 8px;
+    background: #d0c6ac;
+} */
+
+.board_view .reply .info dt b,
+.board_view .reply .info dt p{
+    font: 15px/1.3em "맑은 고딕";
+    color: #fff;
+}
+
+
+/* view_reply 질문자 항목 */
+.board_view .reply .info dt small{
+    font: bold 13px/1.3em "맑은 고딕";
+    color: #fff;
+    text-shadow: 1px 1px 0px #5a533d;
+    background: #aca288;
+    border: 1px solid #564e41;
+}
+
+
+
+
+/* 문서 연결 공간 */
+
+.board_view .document {
+    padding: 20px ;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.board_view .document.reply {
+    padding-bottom: 0;
+}
+
+.board_view .document div div{
+    width: 100%;
+    min-height: 300px;
+    background: grey;
+}
+
+.board_view .document dl{
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid #e6e6e6;
+    display: flex;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.board_view .document dl dt{
+    min-width: 14%;
+    padding: 15px;
+    font: 15px/1.3em "맑은 고딕";
+    color: #98724b;
+    background: #fbf9f6;
+}
+.board_view .document dl dt:nth-child(even){
+    /* width: 30%; */
+    font: 15px/1.3em "맑은 고딕";
+    color: #535353;
+    background: #fff;
+}
+.board_view .document dl dt ~ dt{
+    border-left: 1px solid #e6e6e6;
+}
+
+
+/* 첨부 파일 */
+
+.board_view .attachment {
+    padding: 0;
+    border-top: 1px solid #e6e6e6;
+    border-top: 1px solid #dbdbdb;
+}
+.board_view .attachment dl{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.board_view .attachment dl dt{
+    display: flex;
+    padding: 15px 20px;
+    width: 100%;
+    height: 100%;
+    background: #f6f6f6;
+}
+.board_view .attachment dl dt ~ dt{
+    border-top: 1px solid #e6e6e6;
+}
+.board_view .attachment dl dt span{
+    display: inline-block;
+    /* flex: 0 0 24px; */
+    min-width: 24px;
+    height: 24px;
+    background: lightgrey;
+}
+
+
+.board_view .attachment dl dt span.doc{
+    background: url(../../../images/iosf/content/event/icon_file_doc_22x22.png)center/24px 24px;
+}
+.board_view .attachment dl dt span.etc{
+    background: url(../../../images/iosf/content/event/icon_file_etc_22x22.png)center/24px 24px;
+}
+.board_view .attachment dl dt span.hwp{
+    background: url(../../../images/iosf/content/event/icon_file_hwp_22x22.png)center/24px 24px;
+}
+.board_view .attachment dl dt span.mp4{
+    background: url(../../../images/iosf/content/event/icon_file_mp4_22x22.png)center/24px 24px;
+}
+.board_view .attachment dl dt span.pdf{
+    background: url(../../../images/iosf/content/event/icon_file_pdf_22x22.png)center/24px 24px;
+}
+.board_view .attachment dl dt span.ppt{
+    background: url(../../../images/iosf/content/event/icon_file_ppt_22x22.png)center/24px 24px;
+}
+.board_view .attachment dl dt span.xls{
+    background: url(../../../images/iosf/content/event/icon_file_xls_22x22.png)center/24px 24px;
+}
+.board_view .attachment dl dt span.zip{
+    background: url(../../../images/iosf/content/event/icon_file_zip_22x22.png)center/24px 24px;
+}
+
+.board_view .attachment dl dt button{
+    border: 0;
+    margin-left: 10px;
+    background:transparent;
+    text-align: left;
+}
+.board_view .attachment dl dt button:hover{
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+
+
+/* 페이징 버튼 */
+
+.board_view .paging dl,
+.board_view .paging dt,
+.board_view .paging dd{
+    display: flex;
+    align-items: center;
+}
+.board_view .paging dd{
+    margin: 0 10px;
+}
+
+.board_view .paging dt button,
+.board_view .paging dd button{
+    font: 15px/1.3em "맑은 고딕";
+    color: #313131;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #e3e3e3;
+    border-left: 0;
+    background: #fff;
+    transition: all 0.2s;
+}
+
+.board_view .paging dt button:first-of-type,
+.board_view .paging dd button:first-of-type{
+    border-left: 1px solid #e3e3e3;
+}
+
+.board_view .paging dd button.on{
+    background: #64001a;
+    color: #fff;
+    border: 1px solid #64001a;
+    transition: all 0.1s;
+}
+
+.board_view .paging dl{
+    justify-content: center;
+    width: 100%;
+    margin: 20px auto;
+}
+.board_view .paging dt:first-of-type button{
+    background: 
+    url(../../../images/iosf/content/event/icon_paging_prev_7x12.png)no-repeat center;
+    background-size: 7px 12px;
+}
+.board_view .paging dt:first-of-type button:first-of-type{
+    background: 
+    url(../../../images/iosf/content/event/icon_paging_first_10x12.png)no-repeat center;
+    background-size: 10px 12px;
+}
+.board_view .paging dt:last-of-type button{
+    background: 
+    url(../../../images/iosf/content/event/icon_paging_next_7x12.png)no-repeat center;
+    background-size: 7px 12px;
+}
+.board_view .paging dt:last-of-type button:last-of-type{
+    background: 
+    url(../../../images/iosf/content/event/icon_paging_last_10x12.png)no-repeat center;
+    background-size: 10px 12px;
+}
+
+/* 페이징 버튼 end*/
+
+/* 페이징 버튼 모바일 비활성 */
+.board_view .paging .mobile{
+    display: none;
+    margin: 0 23px;
+}
+.board_view .paging .mobile p{
+    font: bold 17px/1.3em "맑은 고딕";
+    color: #991233;
+}
+.board_view .paging .mobile p:last-of-type{
+    font-weight: normal;
+    color: #313131;
+}
+.board_view .paging .mobile small{
+    font-size: 18px;
+    margin: 0 2px;
+    color: #a0a0a0;
+}
+
+
+
+/* 버튼 */
+
+.board_view .btn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.board_view .btn::before{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: #414141;
+}
+
+.board_view .btn dl{
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    display: flex;
+}
+
+.board_view .btn dl dt ~ dt{
+    margin-left: 10px;
+}
+
+.board_view .btn dl .left{
+    margin-right: auto;
+}
+.board_view .btn dl .right{
+    margin-left: auto;
+}
+.board_view .btn dl .center{
+    margin: 0 auto;
+}
+
+.board_view .btn dl dt button,
+.board_view .btn dl dt .list{
+    border: 0;
+    font: bold 15px/1.3em "맑은 고딕";
+    color: #fff;
+    text-shadow: 1px 1px 0px #69011a;
+    background: #940034;
+    min-width: 100px;
+    padding: 8px 10px 9px;
+    /* min-height: 40px; */
+    border-radius: 20px;
+}
+.board_view .btn dl dt .edit{
+    background: #f67400;
+    text-shadow: 1px 1px 0px #992401;
+}
+.board_view .btn dl dt .delete{
+    background: #8f816a;
+    text-shadow: 1px 1px 0px #433723;
+}
+
+
+
+
+
+@media screen and (min-width: 1140px) {
+    .board_view article .schedule dt p br{
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 960px) {
+
+    .board_view .document dl{
+        flex-wrap: wrap;
+    }
+
+    .board_view .document dl dt:nth-child(2) ~ dt{
+        border-top: 1px solid #e6e6e6;
+    }
+    .board_view .document dl dt:nth-child(odd){
+        flex: 1 0 21%;
+        border-left: 0px solid #000;
+    }
+    .board_view .document dl dt:nth-child(even){
+        flex: 1 0 70%;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .board_view article .info dt:nth-child(2)::before,
+    .board_view .reply .info dt:nth-child(2)::before{
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .board_view article .title a{
+        font: bold 21px/1.3em "맑은 고딕";
+    }
+
+    .board_view article .info dt.viewcount b{
+        display: none;
+    }
+
+    .board_view article .info dt{
+        margin-right: 4px;
+    }
+
+    /* .board_view article .info dt.name p:before, */
+    /* .board_view .reply .info dt.name p:before, */
+    .board_view article .info.view dt.name::before,
+    .board_view article .info.view dt.date::before,
+    .board_view article .info dt ~ dt:before,
+    .board_view .reply .info dt ~ dt:before{
+        content: "";
+        display: inline-block;
+        width: 17px;
+        height: 16px;
+        vertical-align: middle;
+        margin-bottom: -1px;
+        margin-right: 5px;
+    }
+
+    .board_view article .info.view dt.name::before,
+    .board_view article .info dt.name:before,
+    .board_view .reply .info dt.name p:before{
+        background: url(../../../images/iosf/content/board/icon_name_16x14.png)no-repeat center/14px 14px;
+        /* vertical-align: top;
+        margin-bottom: 0;
+        margin-top: 2px; */
+    }
+    .board_view article .info.view dt.date::before,
+    .board_view article .info dt.date:before{
+        background: url(../../../images/iosf/content/board/icon_date_16x14.png)no-repeat center/14px 14px;
+    }
+    
+    .board_view article .info dt.viewcount:before{
+        background: url(../../../images/iosf/content/board/icon_viewcount_16x14.png)no-repeat center/17px 12px;
+    }
+    
+    .board_view .reply .info dt.name:before{
+        background: url(../../../images/iosf/content/board/icon_name_grey_16x14.png)no-repeat center/14px 14px;
+    }
+    /* .board_view .reply .info dt.date:before{
+        background: url(../../../images/iosf/content/board/icon_date_grey_16x14.png)no-repeat center/14px 14px;
+    } */
+    .board_view .reply .info dt.viewcount:before{
+        background: url(../../../images/iosf/content/board/icon_viewcount_grey_16x14.png)no-repeat center/17px 12px;
+    }
+
+
+}
+
+@media screen and (max-width: 640px) {
+
+    .board_view .document dl{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    
+    .board_view .document dl dt:nth-child(n){
+        flex: 1 0 21%;
+        border-left: 0px solid #000;
+        border-top: 0;
+        border-bottom: 0;
+    }
+    .board_view .document dl dt:nth-child(2) ~ dt{
+        border-top: 0px solid #e6e6e6;
+    }
+    .board_view .document dl dt:nth-child(even){
+        border-bottom: 1px solid #e6e6e6;
+    }
+        
+    .board_view .document dl dt:last-of-type{
+        border-bottom: 0;
+    }
+
+    .board_view .document dl dt:nth-child(even){
+        flex: 1 0 70%;
+    }
+
+    .board_view article .schedule{
+        flex-direction: column;
+    }
+    .board_view article .schedule dt,
+    .board_view article .schedule.item4 dt{
+        flex: auto;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+    .board_view article .schedule dt:first-of-type{
+        margin-top: 0;
+    }
+    .board_view .paging dd{
+        display: none;
+    }
+    .board_view .paging .mobile{
+        display: flex;
+    }
+    
+
+}
+
+
+@media screen and ( max-width: 480px ){
+
+    .board_view article .info{
+        padding: 16px 16px 14px;
+    }
+
+    .board_view article .info dt:first-of-type{
+        flex: 1 0 100%;
+        margin-bottom: 7px;
+    }        
+    
+}

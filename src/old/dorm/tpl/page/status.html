@@ -1,0 +1,101 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/applicant.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td width="241" rowspan="2" nowrap><img src="../../images/title/page_status1.jpg" width="241" height="23"></td>
+					<td width="100%" height="22"></td>
+					<td width="33" rowspan="2" nowrap><img src="../../images/title/page_end.jpg" width="33" height="23"></td>
+				</tr>
+				<tr>
+					<td height="1" bgcolor="#177394"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<form name="CheckForm" action="https://reslife.korea.ac.kr:5008/v1/src/apply/view.php" method="post" onSubmit="return checkViewInfo(this);">
+		<tr>
+			<td>
+				If you would like to check your information on your application status, 
+				please put your application number from the residence hall application form and name in the box below.<br><br>
+				<font color="#7C0019"><b>NOTE:</b></font> The housing application number is given to you only after you apply for the KU housing. If you haven't applied for the housing before, 
+				then you do not have your housing application number. Please keep your application number after your housing application and use the number when 
+				you are checking your housing account.
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="180" bgcolor="#EFEFEF" align="center" nowrap>Application Number</td>
+						<td width="10" nowrap></td>
+						<td><input type="text" name="view_no" size="20" maxlength="20" style="color:#9B9EA3;"></td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="180" bgcolor="#EFEFEF" align="center">Name in Full (in English)</td>
+						<td width="10"></td>
+						<td>Family:<input type="text" name="view_lname" size="10" style="color:#9B9EA3;"> Given:<input type="text" name="view_fname" size="10" style="color:#9B9EA3;"> Middle:<input type="text" name="view_mname" size="10" style="color:#9B9EA3;"></td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="image" src="../../images/button/btn_ok.jpg" width="53" height="19" border="0"></td>
+		</tr>
+	</form>
+</table>
+<script language="javascript">
+	document.CheckForm.view_no.focus();
+</script>

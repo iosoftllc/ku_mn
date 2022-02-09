@@ -1,0 +1,583 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/boardtype.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="BoardForm" action="../../src/board/action.php" method="post" onSubmit="return checkSettingInfo(this);">
+		<tr>
+			<td colspan="10" height="1" bgcolor="#F8F8F8"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8" nowrap></td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center" nowrap>게시판 선택</td>
+			<td width="1" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+			<td width="1" bgcolor="#FFFFFF" nowrap></td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<select name="no" onChange="viewInfo(document.BoardForm);">
+					<!-- BEGIN DYNAMIC BLOCK: boardtype_row -->
+					<option value="{BOARDTYPE_NO}">{BOARDTYPE_NAME}</option>
+					<!-- END DYNAMIC BLOCK: boardtype_row -->
+				</select>
+				<input type="hidden" name="mode" value="setting">
+			</td>
+			<td width="9" bgcolor="#F5F5F5" nowrap></td>
+			<td width="1" bgcolor="#C7C7C7" nowrap></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">공지글 최대 개수</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				공지글 최대<input type="text" name="notice_no" size="3" maxlength="3" value="{NOTICE_NUMBER}">개까지 리스트에 출력합니다.
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">리스트에 나타낼 줄수</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="text" name="list_no" size="5" maxlength="5" value="{LIST_NUMBER}">개씩 리스트를 출력합니다.
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">NEW 표시 설정</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="text" name="new_no" size="5" maxlength="5" value="{NEW_NUMBER}">일간 New 마크가 표시됩니다.
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">HOT 표시 설정</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				조회수가 <input type="text" name="hot_no" size="5" maxlength="5" value="{HOT_NUMBER}">회 이상 되면 Hot 마크 표시합니다.
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">IP주소 나타내기</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="ip" value="Y"> 나타냅니다.
+				<input type="radio" name="ip" value="N"> 나타내지 않고 숨깁니다.
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">글쓴시간 형태</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="time" value="F"> 오전오후시분초까지 나타냅니다.
+				<input type="radio" name="time" value="M"> 년월일만 나타냅니다.
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">답글 가능 여부</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="reply" value="N"> 불가능
+				<input type="radio" name="reply" value="Y"> 가능
+				(게시물에 답글을 올릴 수 있는지의 여부)
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">댓글 가능 여부</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="comment" value="N"> 불가능
+				<input type="radio" name="comment" value="Y"> 가능
+				(게시물에 댓글을 올릴 수 있는지의 여부)
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">사진 첨부 가능 여부</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="attach" value="N"> 불가능
+				<input type="radio" name="attach" value="Y"> 가능
+				최대 <input type="text" name="att_size" size="3" maxlength="3" value="{ATTACH_SIZE}">MB 까지
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">게시판 목록 권한</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="auth_list" value="A"> 모두에게
+				<input type="radio" name="auth_list" value="M"> 회원에게만
+				<input type="radio" name="auth_list" value="N"> 관리자만 목록보기가 가능
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">게시판 보기 권한</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="auth_view" value="A"> 모두에게
+				<input type="radio" name="auth_view" value="M"> 회원에게만
+				<input type="radio" name="auth_view" value="N"> 관리자만 글보기가 가능
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="8" height="1" bgcolor="#FFFFFF"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" bgcolor="#F8F8F8"></td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="170" height="22" bgcolor="#E6E6E6" align="center">게시판 쓰기 권한</td>
+			<td width="1" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+			<td width="1" bgcolor="#FFFFFF"></td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td height="22" bgcolor="#F5F5F5">
+				<input type="radio" name="auth_post" value="A"> 모두에게
+				<input type="radio" name="auth_post" value="M"> 회원에게만
+				<input type="radio" name="auth_post" value="N"> 관리자만 글쓰기가 가능
+			</td>
+			<td width="9" bgcolor="#F5F5F5"></td>
+			<td width="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="3" height="1" bgcolor="#F5F5F5"></td>
+			<td width="1" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td width="1" height="1" bgcolor="#F8F8F8"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+			<td width="1" height="1" bgcolor="#FFFFFF"></td>
+			<td colspan="4" height="1" bgcolor="#C7C7C7"></td>
+		</tr>
+		<tr>
+			<td colspan="10" height="5"></td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:saveSetting(document.BoardForm);">확인</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setSelected(document.BoardForm.no, '{BOARDTYPE_NUMBER}');
+	setChecked(document.BoardForm.ip, '{IP_FLAG}');
+	setChecked(document.BoardForm.time, '{TIME_FLAG}');
+	setChecked(document.BoardForm.reply, '{REPLY_FLAG}');
+	setChecked(document.BoardForm.comment, '{COMMENT_FLAG}');
+	setChecked(document.BoardForm.attach, '{ATTACH_FLAG}');
+	setChecked(document.BoardForm.auth_list, '{AUTH_LIST}');
+	setChecked(document.BoardForm.auth_view, '{AUTH_VIEW}');
+	setChecked(document.BoardForm.auth_post, '{AUTH_POST}');
+</script>

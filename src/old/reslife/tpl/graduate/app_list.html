@@ -1,0 +1,496 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/grad_application.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="ApplicationForm" action="" method="get" onSubmit="return checkSearchApplication(this);">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_period" value="{SEARCH_PERIOD}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<input type="hidden" name="no" value="">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="email" value="">
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td class="NoPrint">
+							<select name="s_kind" onChange="viewList();">
+								<option value="">구분</option>
+								<option value="G">일반</option>
+								<option value="S">특수</option>
+							</select>
+							<!--
+							<select name="s_current" onChange="viewList();">
+								<option value="">재사여부</option>
+								<option value="Y">재사학생</option>
+								<option value="N">새학생</option>
+							</select>
+							-->
+							<select name="s_rate" onChange="viewList();">
+								<option value="">사실유형</option>
+								<!-- BEGIN DYNAMIC BLOCK: rate_row -->
+								<option value="{RATE_VALUE}">{RATE_TEXT}</option>
+								<!-- END DYNAMIC BLOCK: rate_row -->
+							</select>
+							<select name="s_state" onChange="viewList();">
+								<option value="">지원상태</option>
+								<option value="IW">Application registered</option>
+								<option value="DP">Deposit paid, partial</option>
+								<option value="DD">Deposit paid; Processing room assignment</option>
+								<option value="RA">Room Assigned; Anam Global House fee billed</option>
+								<option value="RN">Room Not Assigned</option>
+								<option value="PR">Anam Global House fee deferred</option>
+								<option value="FP">Anam Global House fee paid, partial</option>
+								<option value="FD">Anam Global House fee paid</option>
+								<option value="FS">Anam Global House fee scholarship</option>
+								<option value="RR">Deposit refund requested</option>
+								<option value="TR">Deposit carry-forward requested</option>
+								<option value="RD">Deposit refunded/processed</option>
+								<option value="CF">Deposit carried forward</option>
+								<option value="CC">Cancelled</option>
+								<option value="CR">Cancellation Form Received - Deposit Refund Requested</option>
+								<option value="CA">Cancellation Approved - Deposit Refund Processed</option>
+								<option value="ET">Early Termination</option>
+								<option value="ER">Early Termination - Deposit Refund Requested</option>
+								<option value="EA">Early Termination Approved - Deposit Refund Processed</option>
+								<!--
+								<option value="IW">입사신청</option>
+								<option value="DP">보증금부분납부</option>
+								<option value="DD">보증금납부</option>
+								<option value="RA">호실배정</option>
+								<option value="PR">납부기간연장신청</option>
+								<option value="FP">기숙사비부분납부</option>
+								<option value="FD">기숙사비</option>
+								<option value="FS">기숙사비장학금</option>
+								<option value="RR">보증금반환신청</option>
+								<option value="TR">보증금이전신청</option>
+								<option value="RD">보증금반환</option>
+								<option value="CF">보증금이전</option>
+								-->
+							</select>
+							<select name="s_grade" onChange="viewList();">
+								<option value="">결재단계</option>
+								<option value="0">담당자결재대기</option>
+								<option value="1">과장결재대기</option>
+								<option value="2">팀장결재대기</option>
+								<option value="3">사감장결재대기</option>
+								<option value="4">사감장전결</option>
+							</select>
+						</td>
+						<td align="right" class="NoPrint">총 {TOTAL_COUNT}명 / {TOTAL_PAGE}페이지</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td>
+							<table border="0" cellpadding="0" cellspacing="0" align="left">
+								<tr>
+									<td>사용목적:<input type="text" name="purpose" size="20"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="74" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:showPhotoList();">사진리스트</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:downloadExcel();">지원다운로드</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table border="0" cellpadding="0" cellspacing="0" align="right">
+								<tr>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:postApplication('new');">추가</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:deleteApplication('');">삭제</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<!--
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:sendEmail(document.ApplicationForm, 'grad_app');">전체공지메일</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:sendEmail(document.ApplicationForm, 'list');">선택공지메일</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+									-->
+									<td width="2"></td>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:downloadExcel1();">입금다운로드</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+			</td>
+		</tr>
+		<tr>
+			<td height="4" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<!-- BEGIN DYNAMIC BLOCK: title1_row -->
+					<tr>
+						<td width="2" nowrap><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="20" height="26" align="center" background="../../images/list/list_back.jpg" nowrap><input type="checkbox" name="select_all" onClick="selectAll(document.ApplicationForm.list_no);"></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="65" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('apply_no');">번 호</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('lname');">이 름</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="65" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('student_id');">학 번</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="45" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('gender');">성 별</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('e.nationality');">국 적</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="85" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>보증금납부일</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="65" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>보증금</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="65" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>기숙사비</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="65" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('pay_pr');">총미납액</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('state');">지원상태</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="110" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('a.period_code');">체류기간</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="40" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('a.room_code');">사 실</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="30" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>사진</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="2" nowrap><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: title1_row -->
+					<!-- BEGIN DYNAMIC BLOCK: title2_row -->
+					<tr>
+						<td width="2" nowrap><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="20" height="26" align="center" background="../../images/list/list_back.jpg" nowrap><input type="checkbox" name="select_all" onClick="selectAll(document.ApplicationForm.list_no);"></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="65" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('apply_no');">번 호</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('lname');">이 름</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="65" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('student_id');">학 번</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="45" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('gender');">성 별</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('e.nationality');">국 적</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="85" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>보증금납부일</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="65" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>보증금</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="65" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('pay_pr');">총미납액</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="110" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('a.period_code');">체류기간</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="40" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('g.name');">사 실</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="30" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>사진</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="2" nowrap><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: title2_row -->
+					<!-- BEGIN DYNAMIC BLOCK: list1_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="2"></td>
+						<td width="20" height="23" align="center"><input type="checkbox" name="list_no" value="{LIST_NUMBER}"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="65" height="23" align="center"><a href="javascript:viewApplication('{LIST_NUMBER}');">{LIST_NUMBER}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center"><a href="javascript:viewApplication('{LIST_NUMBER}');">{LIST_NAME}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="65" height="23" align="center"><a href="javascript:viewStudent('{LIST_STUDENT_NO}');">{LIST_STUDENT_ID}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="45" height="23" align="center">{LIST_GENDER}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_NATION}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="85" height="23" align="center">{LIST_APP_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="65" height="23" align="center">{LIST_DEPOSIT}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="65" height="23" align="center">{LIST_RESIDENCE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="65" height="23" align="center">{LIST_PAYMENT}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_STATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="110" height="23" align="center">{LIST_PERIOD}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="40" height="23" align="center">{LIST_ROOM}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="30" height="23" align="center">{LIST_PHOTO}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr> 
+						<td colspan="55" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!--<input type="hidden" name="list_email" value="{LIST_EMAIL}">-->
+					<!-- END DYNAMIC BLOCK: list1_row -->
+					<!-- BEGIN DYNAMIC BLOCK: list2_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="2"></td>
+						<td width="20" height="23" align="center"><input type="checkbox" name="list_no" value="{LIST_NUMBER}"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="65" height="23" align="center"><a href="javascript:viewApplication('{LIST_NUMBER}');">{LIST_NUMBER}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center"><a href="javascript:viewApplication('{LIST_NUMBER}');">{LIST_NAME}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="65" height="23" align="center"><a href="javascript:viewStudent('{LIST_STUDENT_NO}');">{LIST_STUDENT_ID}</a></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="45" height="23" align="center">{LIST_GENDER}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{LIST_NATION}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="85" height="23" align="center">{LIST_APP_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="65" height="23" align="center">{LIST_DEPOSIT}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="65" height="23" align="center">{LIST_PAYMENT}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="110" height="23" align="center">{LIST_PERIOD}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="40" height="23" align="center">{LIST_ROOM}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="30" height="23" align="center">{LIST_PHOTO}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr> 
+						<td colspan="55" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!--<input type="hidden" name="list_email" value="{LIST_EMAIL}">-->
+					<!-- END DYNAMIC BLOCK: list2_row -->
+					<tr> 
+						<td colspan="55" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr> 
+						<td height="35">
+							<a href="javascript:gotoPage('{PRE_PAGE}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+							<!-- BEGIN DYNAMIC BLOCK: page_row -->
+							{PAGE_VALUE}
+							<!-- END DYNAMIC BLOCK: page_row -->
+							<a href="javascript:gotoPage('{NEXT_PAGE}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="NoPrint">
+				<!-- BEGIN DYNAMIC BLOCK: period_row -->
+				<input type="checkbox" name="list_period" value="{PERIOD_CODE}">{PERIOD_NAME}
+				<!-- END DYNAMIC BLOCK: period_row -->
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td align="center" class="NoPrint">
+				<select name="s_year1" onChange="setDayList(document.ApplicationForm.s_year1, document.ApplicationForm.s_month1, document.ApplicationForm.s_day1);">
+					<option value="">----</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_month1" onChange="setDayList(document.ApplicationForm.s_year1, document.ApplicationForm.s_month1, document.ApplicationForm.s_day1);">
+					<option value="">--</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_day1">
+					<option value="">--</option>
+				</select>일 부터
+				<select name="s_year2" onChange="setDayList(document.ApplicationForm.s_year2, document.ApplicationForm.s_month2, document.ApplicationForm.s_day2);">
+					<option value="">----</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_month2" onChange="setDayList(document.ApplicationForm.s_year2, document.ApplicationForm.s_month2, document.ApplicationForm.s_day2);">
+					<option value="">--</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_day2">
+					<option value="">--</option>
+				</select>일 까지
+			</td>
+		</tr>
+		<tr>
+			<td height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td height="22" align="center">
+							<select name="s_type">
+								<option value="1">이메일</option>
+								<option value="2">이름</option>
+								<option value="3">지원번호</option>
+								<option value="4">학번</option>
+								<option value="5">호실</option>
+								<option value="6">가상계좌</option>
+							</select>
+							<input type="text" name="s_text" size="30" value="{SEARCH_TEXT}">
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:searchApplication(document.ApplicationForm);">검색</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setSelected(document.ApplicationForm.s_rate, '{SEARCH_RATE}');
+	setSelected(document.ApplicationForm.s_state, '{SEARCH_STATE}');
+	setSelected(document.ApplicationForm.s_grade, '{SEARCH_GRADE}');
+	setSelected(document.ApplicationForm.s_kind, '{SEARCH_KIND}');
+	//setSelected(document.ApplicationForm.s_current, '{SEARCH_CURRENT}');
+	setMultipleChecked(document.ApplicationForm.list_period, '{SEARCH_PERIOD}');
+	setSelected(document.ApplicationForm.s_type, '{SEARCH_TYPE}');
+	setSelected(document.ApplicationForm.s_year1, '{SEARCH_YEAR1}');
+	setSelected(document.ApplicationForm.s_month1, '{SEARCH_MONTH1}');
+	setDayList(document.ApplicationForm.s_year1, document.ApplicationForm.s_month1, document.ApplicationForm.s_day1);
+	setSelected(document.ApplicationForm.s_day1, '{SEARCH_DAY1}');
+	setSelected(document.ApplicationForm.s_year2, '{SEARCH_YEAR2}');
+	setSelected(document.ApplicationForm.s_month2, '{SEARCH_MONTH2}');
+	setDayList(document.ApplicationForm.s_year2, document.ApplicationForm.s_month2, document.ApplicationForm.s_day2);
+	setSelected(document.ApplicationForm.s_day2, '{SEARCH_DAY2}');
+</script>

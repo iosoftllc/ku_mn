@@ -1,0 +1,251 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/application.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+	<form name="ApplicationForm" action="https://reslife.korea.ac.kr:5008/v1/src/apply/action_app.php" method="post">
+		<input type="hidden" name="mode" value="defer">
+		<input type="hidden" name="s_state" value="{SEARCH_STATE}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<input type="hidden" name="email" value="{SEL_EMAIL}">
+		<input type="hidden" name="pw" value="{SEL_PASSWORD}">
+		<input type="hidden" name="no" value="{APPLY_NUMBER}">
+		<tr>
+			<td>
+				<b>Note</b>: Applications must be received by <font style="font-style:italic;text-decoration:underline;">{DEFER_DATE1}</font><br><br>
+				<center><b>KOREA UNIVERSITY<br>
+				ANAM RESIDENCE LIFE<br>
+				RESIDENCE HALL FEE PAYMENT DEFERRAL APPLICATION /AGREEMENT</b></center><br>
+				PLEASE PRINT & PROVIDE ALL REQUESTED INFORMATION
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td>{DEFER_LNAME}</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_FNAME}</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_MNAME}</td>
+					</tr>
+					<tr>
+						<td colspan="5" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td>FAMILY NAME</td>
+						<td width="30" nowrap></td>
+						<td>GIVEN NAME</td>
+						<td width="30" nowrap></td>
+						<td>MIDDLE NAME</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td>{DEFER_STUDENT}</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_EMAIL}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td>KOREA UNIVERSITY STUDENT ID NO.</td>
+						<td width="30" nowrap></td>
+						<td>EMAIL ADDRESS</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td>{DEFER_ADDRESS}</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_CITY}</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_STATE}</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_POSTAL}</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_COUNTRY}</td>
+					</tr>
+					<tr>
+						<td colspan="9" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td>STREET ADDRESS</td>
+						<td width="30" nowrap></td>
+						<td>CITY</td>
+						<td width="30" nowrap></td>
+						<td>PROVINCE</td>
+						<td width="30" nowrap></td>
+						<td>ZIP</td>
+						<td width="30" nowrap></td>
+						<td>COUNTRY</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td colspan="5">DEGREE PURSUING</td>
+					</tr>
+					<tr>
+						<td colspan="5" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td>{DEFER_DEGREE1} BACHEOLOR</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_DEGREE2} MASTER</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_DEGREE3} DOCTORATE</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td colspan="5">EXCHANGE PROGRAM (SELECT ONE), if you are an exchange student</td>
+					</tr>
+					<tr>
+						<td colspan="5" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td>( <input type="radio" name="exchange" value="KUSEP"> ) KUSEP</td>
+						<td width="30" nowrap></td>
+						<td>( <input type="radio" name="exchange" value="KIEP"> ) KIEP</td>
+						<td width="30" nowrap></td>
+						<td>( <input type="radio" name="exchange" value="ISEP"> ) ISEP</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				I am an international student and I give the above information to apply for residence hall fee deferral. Everything I stated in this application is correct to the best of my knowledge.<br>
+				<b><font style="font-style:italic;text-decoration:underline;">By {DEFER_DATE2}</font></b>, I promise to pay the Anam Residence Life of Korea University the total residence hall fee owed.<br>
+				I understand the followings:
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td width="20" valign="top" nowrap>1.</td>
+						<td width="100%">Failure to pay the amount due by the dates specified in the Deferred Payment Agreement may result in an additional 30,000 KRW late fee; loss of the fee deferral privilege for future sessions; and forfeiture of your deposit and immediate termination of my residence hall contract.</td>
+					</tr>
+					<tr>
+						<td width="20" valign="top" nowrap>2.</td>
+						<td width="100%">It is my responsibility to make the fund available in Korea for residence hall fee payment before the official payment period. NOTE: The international electronic funds transfer or credit or debit card withdrawal transactions can take more than 10 business days to complete.</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td>{DEFER_LNAME}, {DEFER_FNAME} {DEFER_MNAME}</td>
+						<td width="30" nowrap></td>
+						<td>{DEFER_POST2}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td>Student Signature</td>
+						<td width="30" nowrap></td>
+						<td>Date</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td colspan="4">Official Use Only</td>
+					</tr>
+					<tr>
+						<td nowrap>Granted:&nbsp;</td>
+						<td width="50%"></td>
+						<td nowrap>&nbsp;Date:&nbsp;</td>
+						<td width="50%"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td width="50%" height="1" bgcolor="#000000"></td>
+						<td></td>
+						<td width="50%" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td nowrap>Deferral Amount:&nbsp;</td>
+						<td width="50%">{DEFER_AMOUNT}</td>
+						<td nowrap>&nbsp;Date of Payment:&nbsp;</td>
+						<td width="50%"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td width="50%" height="1" bgcolor="#000000"></td>
+						<td></td>
+						<td width="50%" height="1" bgcolor="#000000"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!--
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				Please returen this completed deferral application by <font style="font-style:italic;text-decoration:underline;">{DEFER_DATE1}</font> to:<br>
+				<b>Director Anam Residence Life - International Residence, Korea University, Anam-dong Seongbuk-gu, Seoul 136-701, Korea (Fax: 82-2-926-3464)</b>
+			</td>
+		</tr>
+		-->
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td align="center">
+				<input type="image" src="../../images/button/btn_online.jpg" width="100" height="19" border="0">
+				<a href="javascript:history.go(-1);"><img src="../../images/button/btn_cancel.jpg" width="53" height="19" border="0"></a>
+			</td>
+		</tr>
+	</form>
+</table>

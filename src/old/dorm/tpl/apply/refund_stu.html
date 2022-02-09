@@ -1,0 +1,1176 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/refund.js?20210223"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+	<form name="RefundForm" action="https://reslife.korea.ac.kr:5008/v1/src/apply/action_app.php" method="post" enctype="multipart/form-data" onSubmit="return checkRefundInfo1(this);">
+		<input type="hidden" name="mode" value="refund">
+		<input type="hidden" name="no" value="{APPLY_NUMBER}">
+		<input type="hidden" name="email" value="{STUDENT_EMAIL}">
+		<input type="hidden" name="pw" value="{STUDENT_PASSWORD}">
+		<tr>
+			<td align="right">
+				<a href="javascript:gotoList(document.RefundForm);"><img src="../../images/button/btn_goto_account.jpg" width="194" height="30" border="0"></a>
+				<a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=status_stu"><img src="../../images/button/btn_logout.jpg" width="74" height="30" border="0"></a>
+			</td>
+		</tr>
+		<input type="hidden" name="vacate_flag" value="Y">
+		<!--
+		<tr>
+			<td><img src="../../images/title/cnt_refund5.jpg" width="200" height="14"></td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="3" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" nowrap></td>
+						<td style="padding-left:10px;padding-right:10px;">
+							<input type="radio" name="vacate_flag" value="Y">Vacated or 
+							<input type="radio" name="vacate_flag" value="N">will vacate residence unit on 
+							Year
+							<select name="vacate_yy" style="color:#9B9EA3;" onChange="setDayList(document.RefundForm.vacate_yy, document.RefundForm.vacate_mm, document.RefundForm.vacate_dd);">
+								<option value="">yyyy</option>
+								<!-- BEGIN DYNAMIC BLOCK: year_row -->
+								<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: year_row -->
+							</select>
+							Month
+							<select name="vacate_mm" style="color:#9B9EA3;" onChange="setDayList(document.RefundForm.vacate_yy, document.RefundForm.vacate_mm, document.RefundForm.vacate_dd);">
+								<option value="">mm</option>
+								<!-- BEGIN DYNAMIC BLOCK: month_row -->
+								<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: month_row -->
+							</select>
+							Day
+							<select name="vacate_dd" style="color:#9B9EA3;">
+								<option value="">dd</option>
+							</select>
+						</td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="15"></td>
+		</tr>
+		-->
+		<input type="hidden" name="refund_flag" value="Y">
+		<!--
+		<tr>
+			<td><img src="../../images/title/cnt_refund6.jpg" width="200" height="14"></td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="3" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td style="padding-left:10px;padding-right:10px;">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										Are you requesting a Refund or Change of Semester?<br>
+										Note: Deposit will be refunded or carried forward after damage deductions, if any. If the deposit is carried forward less than the full amount, 
+										students will be billed for the difference.
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="radio" name="refund_flag" value="Y" onclick="document.getElementById('refund').style.display='block';document.getElementById('transfer').style.display='none';">Refund
+										<input type="radio" name="refund_flag" value="N" onclick="document.getElementById('refund').style.display='none';document.getElementById('transfer').style.display='block';">Change of Semester
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		-->
+		<tr>
+			<td height="15"></td>
+		</tr>
+		<input type="hidden" name="method_type" value="W">
+		<tr>
+			<td width="100%" id="refund" style="display:none">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td><font color="#7C0019"><b>Wire Transfer - Korean bank account in Korea only</b></font></td>
+					</tr>
+					<tr>
+						<td height="5"></td>
+					</tr>
+					<tr>
+						<td width="100%">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td height="3" bgcolor="#7C0019"></td>
+								</tr>
+								<tr>
+									<td>
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="1"></td>
+								</tr>
+								<!--
+								<tr>
+									<td width="1" nowrap></td>
+									<td width="100%" style="padding-left:10px;padding-right:10px;">
+										<input type="radio" name="method_type" value="W" onclick="document.getElementById('wire1').style.display='block';document.getElementById('wire2').style.display='block';document.getElementById('money1').style.display='none';document.getElementById('money2').style.display='none';document.getElementById('overseas1').style.display='none';document.getElementById('overseas2').style.display='none';">Wire transfer (to your Korean bank account in Korea)
+										<input type="radio" name="method_type" value="M" onclick="document.getElementById('wire1').style.display='none';document.getElementById('wire2').style.display='none';document.getElementById('money1').style.display='block';document.getElementById('money2').style.display='block';document.getElementById('overseas1').style.display='none';document.getElementById('overseas2').style.display='none';">Money order
+										<input type="radio" name="method_type" value="O" onclick="document.getElementById('wire1').style.display='none';document.getElementById('wire2').style.display='none';document.getElementById('money1').style.display='none';document.getElementById('money2').style.display='none';document.getElementById('overseas1').style.display='block';document.getElementById('overseas2').style.display='block';">Overseas remittance (to your country¡¯s bank account)
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+								-->
+								<tr>
+									<td id="wire1" style="display:none">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<!--
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											-->
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Name of Korean local bank</td>
+												<td width="10" nowrap></td>
+												<td width="100%">
+													<input type="text" name="method_info1" size="30" maxlength="100" style="color:#9B9EA3;">
+												</td>
+												<td width="9" nowrap></td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Bank Account Number</td>
+												<td width="10" nowrap></td>
+												<td width="100%">
+													<input type="text" name="method_info2" size="30" maxlength="100" style="color:#9B9EA3;">
+												</td>
+												<td width="9" nowrap></td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Name of Beneficiary, i.e. Your Name</td>
+												<td width="10" nowrap></td>
+												<td width="100%">
+													<input type="text" name="method_info3" size="30" maxlength="100" style="color:#9B9EA3;">
+												</td>
+												<td width="9" nowrap></td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Reason for request refund</td>
+												<td width="10" nowrap></td>
+												<td width="100%">
+													<input type="text" name="reason" size="30" maxlength="100" style="color:#9B9EA3;">
+												</td>
+												<td width="9" nowrap></td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td colspan="4" style="padding-left:10px;padding-right:10px;">
+													Upload the picture of your bank book copy or the backside of student ID, where the requested account number is written on.<br>
+													<input type="file" name="photo" size="50" style="color:#9B9EA3;"><br>
+													<a href="javascript:previewImage('../../images/popup/ku_card.jpg');">Example of backside of KU student ID card</a><br>
+													<a href="javascript:previewImage('../../images/popup/bank_book.jpg');">Example bankbook copy</a>
+												</td>
+												<td width="1" nowrap></td>
+											</tr>
+											<!--
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td colspan="4" style="padding-left:10px;padding-right:10px;">NOTE: If money order is chosen, applicants should address an air-mail envelop with their own language. Air-mail envelops are available on information desk. If wire-transfer is chosen, they should upload their bank book or the backside of student ID.</td>
+												<td width="1" nowrap></td>
+											</tr>
+											-->
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td id="money1" style="display:none">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td width="200" bgcolor="#EFEFEF" align="center" nowrap>Payee's Name<br>i.e., Your Full Name in English</td>
+												<td width="10" nowrap></td>
+												<td>
+													<input type="text" name="method_info4" size="25" maxlength="100" style="color:#9B9EA3;">
+												</td>
+												<td width="9" nowrap></td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td width="200" bgcolor="#EFEFEF" align="center" nowrap>
+													Address should be written in English Only as other languages can be unreadable. However, when student write this mailing address on an envelope for deposit refund upon check-out inspection, it is advised to write in home country's language for efficient delivery.
+												</td>
+												<td width="10" nowrap></td>
+												<td>
+													Name of Mail Recipient *: <input type="text" name="method_info6" size="20" maxlength="100" style="color:#9B9EA3;"><br>
+													Address Line 1 *: <input type="text" name="method_info5" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+													Address Line 2: <input type="text" name="addr1" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+													Address Line 3: <input type="text" name="addr2" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+													City/Town *: <input type="text" name="city" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+													Province/State: <input type="text" name="state" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+													Postal Code: <input type="text" name="postal" size="20" maxlength="20" style="color:#9B9EA3;"><br>
+													Country *:
+													<select name="country" style="color:#9B9EA3;">
+														<option value="">Please select your home country.</option>
+														<option value="Afghanistan">Afghanistan</option>
+														<option value="Albania">Albania</option>
+														<option value="Algeria">Algeria</option>
+														<option value="American Samoa">American Samoa</option>
+														<option value="Andorra">Andorra</option>
+														<option value="Angola">Angola</option>
+														<option value="Anguilla">Anguilla</option>
+														<option value="Antarctica">Antarctica</option>
+														<option value="Antigua And Barbuda">Antigua And Barbuda</option>
+														<option value="Argentina">Argentina</option>
+														<option value="Armenia">Armenia</option>
+														<option value="Aruba">Aruba</option>
+														<option value="Australia">Australia</option>
+														<option value="Austria">Austria</option>
+														<option value="Azerbaijan">Azerbaijan</option>
+														<option value="Bahamas">Bahamas</option>
+														<option value="Bahrain">Bahrain</option>
+														<option value="Bangladesh">Bangladesh</option>
+														<option value="Barbados">Barbados</option>
+														<option value="Belarus">Belarus</option>
+														<option value="Belgium">Belgium</option>
+														<option value="Belize">Belize</option>
+														<option value="Benin">Benin</option>
+														<option value="Bermuda">Bermuda</option>
+														<option value="Bhutan">Bhutan</option>
+														<option value="Bolivia">Bolivia</option>
+														<option value="Bosnia And Herzegowina">Bosnia And Herzegowina</option>
+														<option value="Botswana">Botswana</option>
+														<option value="Bouvet Island">Bouvet Island</option>
+														<option value="Brazil">Brazil</option>
+														<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+														<option value="Brunei Darussalam">Brunei Darussalam</option>
+														<option value="Bulgaria">Bulgaria</option>
+														<option value="Burkina Faso">Burkina Faso</option>
+														<option value="Burundi">Burundi</option>
+														<option value="Cambodia">Cambodia</option>
+														<option value="Cameroon">Cameroon</option>
+														<option value="Canada">Canada</option>
+														<option value="Cape Verde">Cape Verde</option>
+														<option value="Cayman Islands">Cayman Islands</option>
+														<option value="Central African Republic">Central African Republic</option>
+														<option value="Chad">Chad</option>
+														<option value="Chile">Chile</option>
+														<option value="China">China</option>
+														<option value="Christmas Island">Christmas Island</option>
+														<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+														<option value="Colombia">Colombia</option>
+														<option value="Comoros">Comoros</option>
+														<option value="Congo">Congo</option>
+														<option value="Cook Islands">Cook Islands</option>
+														<option value="Costa Rica">Costa Rica</option>
+														<option value="Cote D'Ivoire">Cote D'Ivoire</option>
+														<option value="Croatia">Croatia</option>
+														<option value="Cuba">Cuba</option>
+														<option value="Cyprus">Cyprus</option>
+														<option value="Czech Republic">Czech Republic</option>
+														<option value="Denmark">Denmark</option>
+														<option value="Djibouti">Djibouti</option>
+														<option value="Dominica">Dominica</option>
+														<option value="Dominican Republic">Dominican Republic</option>
+														<option value="East Timor">East Timor</option>
+														<option value="Ecuador">Ecuador</option>
+														<option value="Egypt">Egypt</option>
+														<option value="El Salvador">El Salvador</option>
+														<option value="Equatorial Guinea">Equatorial Guinea</option>
+														<option value="Eritrea">Eritrea</option>
+														<option value="Estonia">Estonia</option>
+														<option value="Ethiopia">Ethiopia</option>
+														<option value="Falkland Islands">Falkland Islands</option>
+														<option value="Faroe Islands">Faroe Islands</option>
+														<option value="Fiji">Fiji</option>
+														<option value="Finland">Finland</option>
+														<option value="France">France</option>
+														<option value="France, Metropolitan">France, Metropolitan</option>
+														<option value="French Guiana">French Guiana</option>
+														<option value="French Polynesia">French Polynesia</option>
+														<option value="French Southern Territories">French Southern Territories</option>
+														<option value="Gabon">Gabon</option>
+														<option value="Gambia">Gambia</option>
+														<option value="Georgia">Georgia</option>
+														<option value="Germany">Germany</option>
+														<option value="Ghana">Ghana</option>
+														<option value="Gibraltar">Gibraltar</option>
+														<option value="Greece">Greece</option>
+														<option value="Greenland">Greenland</option>
+														<option value="Grenada">Grenada</option>
+														<option value="Guadeloupe">Guadeloupe</option>
+														<option value="Guam">Guam</option>
+														<option value="Guatemala">Guatemala</option>
+														<option value="Guinea">Guinea</option>
+														<option value="Guinea-Bissau">Guinea-Bissau</option>
+														<option value="Guyana">Guyana</option>
+														<option value="Haiti">Haiti</option>
+														<option value="Heard And Mc Donald Islands">Heard And Mc Donald Islands</option>
+														<option value="Honduras">Honduras</option>
+														<option value="Hong Kong">Hong Kong</option>
+														<option value="Hungary">Hungary</option>
+														<option value="Iceland">Iceland</option>
+														<option value="India">India</option>
+														<option value="Indonesia">Indonesia</option>
+														<option value="Iran">Iran</option>
+														<option value="Ireland">Ireland</option>
+														<option value="Israel">Israel</option>
+														<option value="Italy">Italy</option>
+														<option value="Jamaica">Jamaica</option>
+														<option value="Japan">Japan</option>
+														<option value="Jordan">Jordan</option>
+														<option value="Kazakhstan">Kazakhstan</option>
+														<option value="Kenya">Kenya</option>
+														<option value="Kiribati">Kiribati</option>
+														<option value="North Korea (People's Republic Of Korea)">North Korea (People's Republic Of Korea)</option>
+														<option value="South Korea (Republic Of Korea)">South Korea (Republic Of Korea)</option>
+														<option value="Kuwait">Kuwait</option>
+														<option value="Kyrgyzstan">Kyrgyzstan</option>
+														<option value="Lao People's Republic">Lao People's Republic</option>
+														<option value="Latvia">Latvia</option>
+														<option value="Lebanon">Lebanon</option>
+														<option value="Lesotho">Lesotho</option>
+														<option value="Liberia">Liberia</option>
+														<option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+														<option value="Liechtenstein">Liechtenstein</option>
+														<option value="Lithuania">Lithuania</option>
+														<option value="Luxembourg">Luxembourg</option>
+														<option value="Macau">Macau</option>
+														<option value="Macedonia">Macedonia</option>
+														<option value="Madagascar">Madagascar</option>
+														<option value="Malawi">Malawi</option>
+														<option value="Malaysia">Malaysia</option>
+														<option value="Maldives">Maldives</option>
+														<option value="Mali">Mali</option>
+														<option value="Malta">Malta</option>
+														<option value="Marshall Islands">Marshall Islands</option>
+														<option value="Martinique">Martinique</option>
+														<option value="Mauritania">Mauritania</option>
+														<option value="Mauritius">Mauritius</option>
+														<option value="Mayotte">Mayotte</option>
+														<option value="Mexico">Mexico</option>
+														<option value="Micronesia">Micronesia</option>
+														<option value="Moldova">Moldova</option>
+														<option value="Monaco">Monaco</option>
+														<option value="Mongolia">Mongolia</option>
+														<option value="Montserrat">Montserrat</option>
+														<option value="Morocco">Morocco</option>
+														<option value="Mozambique">Mozambique</option>
+														<option value="Myanmar">Myanmar</option>
+														<option value="Namibia">Namibia</option>
+														<option value="Nauru">Nauru</option>
+														<option value="Nepal">Nepal</option>
+														<option value="Netherlands">Netherlands</option>
+														<option value="Netherlands Antilles">Netherlands Antilles</option>
+														<option value="New Caledonia">New Caledonia</option>
+														<option value="New Zealand">New Zealand</option>
+														<option value="Nicaragua">Nicaragua</option>
+														<option value="Niger">Niger</option>
+														<option value="Nigeria">Nigeria</option>
+														<option value="Niue">Niue</option>
+														<option value="Norfolk Island">Norfolk Island</option>
+														<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+														<option value="Norway">Norway</option>
+														<option value="Oman">Oman</option>
+														<option value="Pakistan">Pakistan</option>
+														<option value="Palau">Palau</option>
+														<option value="Palestine">Palestine</option>
+														<option value="Panama">Panama</option>
+														<option value="Papua New Guinea">Papua New Guinea</option>
+														<option value="Paraguay">Paraguay</option>
+														<option value="Peru">Peru</option>
+														<option value="Philippines">Philippines</option>
+														<option value="Pitcairn">Pitcairn</option>
+														<option value="Poland">Poland</option>
+														<option value="Portugal">Portugal</option>
+														<option value="Puerto Rico">Puerto Rico</option>
+														<option value="Qatar">Qatar</option>
+														<option value="Reunion">Reunion</option>
+														<option value="Romania">Romania</option>
+														<option value="Russian Federation">Russian Federation</option>
+														<option value="Rwanda">Rwanda</option>
+														<option value="Saint Kitts And Nevis">Saint Kitts And Nevis</option>
+														<option value="Saint Lucia">Saint Lucia</option>
+														<option value="Saint Vincent And The Grenadines">Saint Vincent And The Grenadines</option>
+														<option value="Samoa">Samoa</option>
+														<option value="San Marino">San Marino</option>
+														<option value="Sao Tome And Principe">Sao Tome And Principe</option>
+														<option value="Saudi Arabia">Saudi Arabia</option>
+														<option value="Senegal">Senegal</option>
+														<option value="Seychelles">Seychelles</option>
+														<option value="Sierra Leone">Sierra Leone</option>
+														<option value="Singapore">Singapore</option>
+														<option value="Slovakia">Slovakia</option>
+														<option value="Slovenia">Slovenia</option>
+														<option value="Solomon Islands">Solomon Islands</option>
+														<option value="Somalia">Somalia</option>
+														<option value="South Africa">South Africa</option>
+														<option value="South Georgia And The South Sandwich Islands</option>">South Georgia And The South Sandwich Is.</option>
+														<option value="Spain">Spain</option>
+														<option value="Sri Lanka">Sri Lanka</option>
+														<option value="St Helena">St Helena</option>
+														<option value="St Pierre and Miquelon">St Pierre and Miquelon</option>
+														<option value="Sudan">Sudan</option>
+														<option value="Suriname">Suriname</option>
+														<option value="Svalbard And Jan Mayen Islands">Svalbard And Jan Mayen Islands</option>
+														<option value="Swaziland">Swaziland</option>
+														<option value="Sweden">Sweden</option>
+														<option value="Switzerland">Switzerland</option>
+														<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+														<option value="Taiwan">Taiwan</option>
+														<option value="Tajikistan">Tajikistan</option>
+														<option value="Tanzania">Tanzania</option>
+														<option value="Thailand">Thailand</option>
+														<option value="Togo">Togo</option>
+														<option value="Tokelau">Tokelau</option>
+														<option value="Tonga">Tonga</option>
+														<option value="Trinidad And Tobago">Trinidad And Tobago</option>
+														<option value="Tunisia">Tunisia</option>
+														<option value="Turkey">Turkey</option>
+														<option value="Turkmenistan">Turkmenistan</option>
+														<option value="Turks And Caicos Islands">Turks And Caicos Islands</option>
+														<option value="Tuvalu">Tuvalu</option>
+														<option value="Uganda">Uganda</option>
+														<option value="Ukraine">Ukraine</option>
+														<option value="United Arab Emirates">United Arab Emirates</option>
+														<option value="United Kingdom">United Kingdom</option>
+														<option value="United States">United States</option>
+														<option value="Uruguay">Uruguay</option>
+														<option value="Uzbekistan">Uzbekistan</option>
+														<option value="Vanuatu">Vanuatu</option>
+														<option value="Vatican City State">Vatican City State</option>
+														<option value="Venezuela">Venezuela</option>
+														<option value="Viet Nam">Viet Nam</option>
+														<option value="Virgin Islands (British)">Virgin Islands (British)</option>
+														<option value="Virgin Islands (U.S.)">Virgin Islands (U.S.)</option>
+														<option value="Wallis And Futuna Islands">Wallis And Futuna Islands</option>
+														<option value="Western Sahara">Western Sahara</option>
+														<option value="Yemen">Yemen</option>
+														<option value="Zaire">Zaire</option>
+														<option value="Zambia">Zambia</option>
+														<option value="Zimbabwe">Zimbabwe</option>
+														<option value="Other Not Shown">Other Not Shown</option>
+													</select>
+												</td>
+												<td width="9" nowrap></td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td colspan="4" style="padding-left:10px;padding-right:10px;">NOTE: If money order is chosen, applicants should address an air-mail envelop with their own language. Air-mail envelops are available on information desk. If wire-transfer is chosen, they should upload or submit the copy of their bank book or the backside of student ID to the information desk(Fax:926-3464(Local),82-2-926-3464(Overseas), E-mail:{CF_EMAIL_UNDER}).</td>
+												<td width="1" nowrap></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td id="overseas1" style="display:none">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td colspan="4" style="padding-left:10px;padding-right:10px;">should be written in ENGLISH ONLY as other languages can be unreadable.</td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td width="150" bgcolor="#EFEFEF" align="center" nowrap>Beneficiary¡¯s Bank</td>
+												<td width="10" nowrap></td>
+												<td>
+													Bank Name: <input type="text" name="method_info7" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+													Bank Code: <input type="text" name="method_info8" size="30" maxlength="100" style="color:#9B9EA3;">(Swift, BIC, ABA or etc)<br>
+													* If the written bank code is incorrect, transferred money could be held on an international intermediary bank. We are not responsible for the situation, hence, please double check your bank code before submit.<br>
+													Bank Address: <input type="text" name="addr3" size="50" maxlength="100" style="color:#9B9EA3;"><br>
+													Beneficiary¡¯s Account NO.: <input type="text" name="method_info9" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+													* If you bank is in EU, fill out the Account NO. section with IBAN code.
+												</td>
+												<td width="9" nowrap></td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td width="150" bgcolor="#EFEFEF" align="center" nowrap>Beneficiary</td>
+												<td width="10" nowrap></td>
+												<td>
+													Name: <input type="text" name="method_info10" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+													Passport NO.: <input type="text" name="method_info11" size="50" maxlength="100" style="color:#9B9EA3;"><br>
+													Home Address: <input type="text" name="addr4" size="50" maxlength="100" style="color:#9B9EA3;"><br>
+													Telephone NO.: <input type="text" name="method_info12" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+													Country *:
+													<select name="country1" style="color:#9B9EA3;">
+														<option value="">Please select your home country.</option>
+														<option value="Afghanistan">Afghanistan</option>
+														<option value="Albania">Albania</option>
+														<option value="Algeria">Algeria</option>
+														<option value="American Samoa">American Samoa</option>
+														<option value="Andorra">Andorra</option>
+														<option value="Angola">Angola</option>
+														<option value="Anguilla">Anguilla</option>
+														<option value="Antarctica">Antarctica</option>
+														<option value="Antigua And Barbuda">Antigua And Barbuda</option>
+														<option value="Argentina">Argentina</option>
+														<option value="Armenia">Armenia</option>
+														<option value="Aruba">Aruba</option>
+														<option value="Australia">Australia</option>
+														<option value="Austria">Austria</option>
+														<option value="Azerbaijan">Azerbaijan</option>
+														<option value="Bahamas">Bahamas</option>
+														<option value="Bahrain">Bahrain</option>
+														<option value="Bangladesh">Bangladesh</option>
+														<option value="Barbados">Barbados</option>
+														<option value="Belarus">Belarus</option>
+														<option value="Belgium">Belgium</option>
+														<option value="Belize">Belize</option>
+														<option value="Benin">Benin</option>
+														<option value="Bermuda">Bermuda</option>
+														<option value="Bhutan">Bhutan</option>
+														<option value="Bolivia">Bolivia</option>
+														<option value="Bosnia And Herzegowina">Bosnia And Herzegowina</option>
+														<option value="Botswana">Botswana</option>
+														<option value="Bouvet Island">Bouvet Island</option>
+														<option value="Brazil">Brazil</option>
+														<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+														<option value="Brunei Darussalam">Brunei Darussalam</option>
+														<option value="Bulgaria">Bulgaria</option>
+														<option value="Burkina Faso">Burkina Faso</option>
+														<option value="Burundi">Burundi</option>
+														<option value="Cambodia">Cambodia</option>
+														<option value="Cameroon">Cameroon</option>
+														<option value="Canada">Canada</option>
+														<option value="Cape Verde">Cape Verde</option>
+														<option value="Cayman Islands">Cayman Islands</option>
+														<option value="Central African Republic">Central African Republic</option>
+														<option value="Chad">Chad</option>
+														<option value="Chile">Chile</option>
+														<option value="China">China</option>
+														<option value="Christmas Island">Christmas Island</option>
+														<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+														<option value="Colombia">Colombia</option>
+														<option value="Comoros">Comoros</option>
+														<option value="Congo">Congo</option>
+														<option value="Cook Islands">Cook Islands</option>
+														<option value="Costa Rica">Costa Rica</option>
+														<option value="Cote D'Ivoire">Cote D'Ivoire</option>
+														<option value="Croatia">Croatia</option>
+														<option value="Cuba">Cuba</option>
+														<option value="Cyprus">Cyprus</option>
+														<option value="Czech Republic">Czech Republic</option>
+														<option value="Denmark">Denmark</option>
+														<option value="Djibouti">Djibouti</option>
+														<option value="Dominica">Dominica</option>
+														<option value="Dominican Republic">Dominican Republic</option>
+														<option value="East Timor">East Timor</option>
+														<option value="Ecuador">Ecuador</option>
+														<option value="Egypt">Egypt</option>
+														<option value="El Salvador">El Salvador</option>
+														<option value="Equatorial Guinea">Equatorial Guinea</option>
+														<option value="Eritrea">Eritrea</option>
+														<option value="Estonia">Estonia</option>
+														<option value="Ethiopia">Ethiopia</option>
+														<option value="Falkland Islands">Falkland Islands</option>
+														<option value="Faroe Islands">Faroe Islands</option>
+														<option value="Fiji">Fiji</option>
+														<option value="Finland">Finland</option>
+														<option value="France">France</option>
+														<option value="France, Metropolitan">France, Metropolitan</option>
+														<option value="French Guiana">French Guiana</option>
+														<option value="French Polynesia">French Polynesia</option>
+														<option value="French Southern Territories">French Southern Territories</option>
+														<option value="Gabon">Gabon</option>
+														<option value="Gambia">Gambia</option>
+														<option value="Georgia">Georgia</option>
+														<option value="Germany">Germany</option>
+														<option value="Ghana">Ghana</option>
+														<option value="Gibraltar">Gibraltar</option>
+														<option value="Greece">Greece</option>
+														<option value="Greenland">Greenland</option>
+														<option value="Grenada">Grenada</option>
+														<option value="Guadeloupe">Guadeloupe</option>
+														<option value="Guam">Guam</option>
+														<option value="Guatemala">Guatemala</option>
+														<option value="Guinea">Guinea</option>
+														<option value="Guinea-Bissau">Guinea-Bissau</option>
+														<option value="Guyana">Guyana</option>
+														<option value="Haiti">Haiti</option>
+														<option value="Heard And Mc Donald Islands">Heard And Mc Donald Islands</option>
+														<option value="Honduras">Honduras</option>
+														<option value="Hong Kong">Hong Kong</option>
+														<option value="Hungary">Hungary</option>
+														<option value="Iceland">Iceland</option>
+														<option value="India">India</option>
+														<option value="Indonesia">Indonesia</option>
+														<option value="Iran">Iran</option>
+														<option value="Ireland">Ireland</option>
+														<option value="Israel">Israel</option>
+														<option value="Italy">Italy</option>
+														<option value="Jamaica">Jamaica</option>
+														<option value="Japan">Japan</option>
+														<option value="Jordan">Jordan</option>
+														<option value="Kazakhstan">Kazakhstan</option>
+														<option value="Kenya">Kenya</option>
+														<option value="Kiribati">Kiribati</option>
+														<option value="North Korea (People's Republic Of Korea)">North Korea (People's Republic Of Korea)</option>
+														<option value="South Korea (Republic Of Korea)">South Korea (Republic Of Korea)</option>
+														<option value="Kuwait">Kuwait</option>
+														<option value="Kyrgyzstan">Kyrgyzstan</option>
+														<option value="Lao People's Republic">Lao People's Republic</option>
+														<option value="Latvia">Latvia</option>
+														<option value="Lebanon">Lebanon</option>
+														<option value="Lesotho">Lesotho</option>
+														<option value="Liberia">Liberia</option>
+														<option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+														<option value="Liechtenstein">Liechtenstein</option>
+														<option value="Lithuania">Lithuania</option>
+														<option value="Luxembourg">Luxembourg</option>
+														<option value="Macau">Macau</option>
+														<option value="Macedonia">Macedonia</option>
+														<option value="Madagascar">Madagascar</option>
+														<option value="Malawi">Malawi</option>
+														<option value="Malaysia">Malaysia</option>
+														<option value="Maldives">Maldives</option>
+														<option value="Mali">Mali</option>
+														<option value="Malta">Malta</option>
+														<option value="Marshall Islands">Marshall Islands</option>
+														<option value="Martinique">Martinique</option>
+														<option value="Mauritania">Mauritania</option>
+														<option value="Mauritius">Mauritius</option>
+														<option value="Mayotte">Mayotte</option>
+														<option value="Mexico">Mexico</option>
+														<option value="Micronesia">Micronesia</option>
+														<option value="Moldova">Moldova</option>
+														<option value="Monaco">Monaco</option>
+														<option value="Mongolia">Mongolia</option>
+														<option value="Montserrat">Montserrat</option>
+														<option value="Morocco">Morocco</option>
+														<option value="Mozambique">Mozambique</option>
+														<option value="Myanmar">Myanmar</option>
+														<option value="Namibia">Namibia</option>
+														<option value="Nauru">Nauru</option>
+														<option value="Nepal">Nepal</option>
+														<option value="Netherlands">Netherlands</option>
+														<option value="Netherlands Antilles">Netherlands Antilles</option>
+														<option value="New Caledonia">New Caledonia</option>
+														<option value="New Zealand">New Zealand</option>
+														<option value="Nicaragua">Nicaragua</option>
+														<option value="Niger">Niger</option>
+														<option value="Nigeria">Nigeria</option>
+														<option value="Niue">Niue</option>
+														<option value="Norfolk Island">Norfolk Island</option>
+														<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+														<option value="Norway">Norway</option>
+														<option value="Oman">Oman</option>
+														<option value="Pakistan">Pakistan</option>
+														<option value="Palau">Palau</option>
+														<option value="Palestine">Palestine</option>
+														<option value="Panama">Panama</option>
+														<option value="Papua New Guinea">Papua New Guinea</option>
+														<option value="Paraguay">Paraguay</option>
+														<option value="Peru">Peru</option>
+														<option value="Philippines">Philippines</option>
+														<option value="Pitcairn">Pitcairn</option>
+														<option value="Poland">Poland</option>
+														<option value="Portugal">Portugal</option>
+														<option value="Puerto Rico">Puerto Rico</option>
+														<option value="Qatar">Qatar</option>
+														<option value="Reunion">Reunion</option>
+														<option value="Romania">Romania</option>
+														<option value="Russian Federation">Russian Federation</option>
+														<option value="Rwanda">Rwanda</option>
+														<option value="Saint Kitts And Nevis">Saint Kitts And Nevis</option>
+														<option value="Saint Lucia">Saint Lucia</option>
+														<option value="Saint Vincent And The Grenadines">Saint Vincent And The Grenadines</option>
+														<option value="Samoa">Samoa</option>
+														<option value="San Marino">San Marino</option>
+														<option value="Sao Tome And Principe">Sao Tome And Principe</option>
+														<option value="Saudi Arabia">Saudi Arabia</option>
+														<option value="Senegal">Senegal</option>
+														<option value="Seychelles">Seychelles</option>
+														<option value="Sierra Leone">Sierra Leone</option>
+														<option value="Singapore">Singapore</option>
+														<option value="Slovakia">Slovakia</option>
+														<option value="Slovenia">Slovenia</option>
+														<option value="Solomon Islands">Solomon Islands</option>
+														<option value="Somalia">Somalia</option>
+														<option value="South Africa">South Africa</option>
+														<option value="South Georgia And The South Sandwich Islands</option>">South Georgia And The South Sandwich Is.</option>
+														<option value="Spain">Spain</option>
+														<option value="Sri Lanka">Sri Lanka</option>
+														<option value="St Helena">St Helena</option>
+														<option value="St Pierre and Miquelon">St Pierre and Miquelon</option>
+														<option value="Sudan">Sudan</option>
+														<option value="Suriname">Suriname</option>
+														<option value="Svalbard And Jan Mayen Islands">Svalbard And Jan Mayen Islands</option>
+														<option value="Swaziland">Swaziland</option>
+														<option value="Sweden">Sweden</option>
+														<option value="Switzerland">Switzerland</option>
+														<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+														<option value="Taiwan">Taiwan</option>
+														<option value="Tajikistan">Tajikistan</option>
+														<option value="Tanzania">Tanzania</option>
+														<option value="Thailand">Thailand</option>
+														<option value="Togo">Togo</option>
+														<option value="Tokelau">Tokelau</option>
+														<option value="Tonga">Tonga</option>
+														<option value="Trinidad And Tobago">Trinidad And Tobago</option>
+														<option value="Tunisia">Tunisia</option>
+														<option value="Turkey">Turkey</option>
+														<option value="Turkmenistan">Turkmenistan</option>
+														<option value="Turks And Caicos Islands">Turks And Caicos Islands</option>
+														<option value="Tuvalu">Tuvalu</option>
+														<option value="Uganda">Uganda</option>
+														<option value="Ukraine">Ukraine</option>
+														<option value="United Arab Emirates">United Arab Emirates</option>
+														<option value="United Kingdom">United Kingdom</option>
+														<option value="United States">United States</option>
+														<option value="Uruguay">Uruguay</option>
+														<option value="Uzbekistan">Uzbekistan</option>
+														<option value="Vanuatu">Vanuatu</option>
+														<option value="Vatican City State">Vatican City State</option>
+														<option value="Venezuela">Venezuela</option>
+														<option value="Viet Nam">Viet Nam</option>
+														<option value="Virgin Islands (British)">Virgin Islands (British)</option>
+														<option value="Virgin Islands (U.S.)">Virgin Islands (U.S.)</option>
+														<option value="Wallis And Futuna Islands">Wallis And Futuna Islands</option>
+														<option value="Western Sahara">Western Sahara</option>
+														<option value="Yemen">Yemen</option>
+														<option value="Zaire">Zaire</option>
+														<option value="Zambia">Zambia</option>
+														<option value="Zimbabwe">Zimbabwe</option>
+														<option value="Other Not Shown">Other Not Shown</option>
+													</select>
+												</td>
+												<td width="9" nowrap></td>
+												<td width="1" nowrap></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+											</tr>
+											<tr>
+												<td colspan="6" height="1"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#EFEFEF" nowrap></td>
+												<td colspan="4" style="padding-left:10px;padding-right:10px;">NOTE : If overseas remittance is chosen, you need to put all the information correctly, especially bank code. Bank code is different from country and bank. You can confirm the bank code through <a href="http://www.swift.com/bsl/" target="_blank">http://www.swift.com/bsl/</a>, however, to make sure, please inquire through your own bank.</td>
+												<td width="1" nowrap></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="1"></td>
+								</tr>
+								<tr>
+									<td>
+										<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="20"></td>
+					</tr>
+					<tr>
+						<td id="wire2" style="display:none">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" nowrap></td>
+									<td style="padding-left:10px;padding-right:10px;">
+										I understand that the deposit will be refunded to me upon online request, when all my financial obligations are paid and the contract is fulfilled. Residence hall charges, including damages will be deducted from the deposit. Any amount remaining from the deposit will be wired to my bank account in Korea. The bank account and other deposit refund related information are provided by me in this form.
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td id="money2" style="display:none">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" nowrap></td>
+									<td style="padding-left:10px;padding-right:10px;">
+										I understand that the deposit will be refunded to me upon online request, when all my financial obligations are paid and the contract is fulfilled. Residence hall charges, including damages will be deducted from the deposit. Any amount remaining from the deposit will be mailed to me in the form of money order.  The mailing address is provided by me in this request and I will also write this address in my home country's language on an envelope for deposit refund upon check-out inspection. I am responsible for requesting Residence Life office via email to change my address, if any, before the deposit is refunded.<br>
+										I understand the refund process will take between six to eight weeks after the request has been made and my actual vacate date. I understand that requests for deposit refunds will be honored up to 6 month after I have vacated residence.  After completing this form, I understand a new residence application with the required deposit must be submitted to reapply for residence.
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td id="overseas2" style="display:none">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" nowrap></td>
+									<td style="padding-left:10px;padding-right:10px;">
+										I understand that the deposit will be refunded to me upon online request, when all my financial obligations are paid and the contract is fulfilled. Residence hall charges, including damages will be deducted from the deposit. Any amount remaining from the deposit will be wired to my bank account in Korea. The bank account and other deposit refund related information are provided by me in this form.<br>
+										I understand the refund process will take between six to eight weeks after the request has been made and my actual vacate date. I understand that requests for deposit refunds will be honored up to 6 month after I have vacated residence. After completing this form, I understand a new residence application with the required deposit must be submitted to reapply for residence.<br>
+										I understand the Anam Residence Life in not responsible for the remittance incident cause by submitting incorrect bank information.
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id="transfer" style="display:none">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td><img src="../../images/title/cnt_refund9.jpg" width="500" height="14"></td>
+					</tr>
+					<tr>
+						<td height="5"></td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" nowrap></td>
+									<td width="100%" style="padding-left:10px;padding-right:10px;">
+										<!--(Apply No.:<input type="text" name="cf_no" size="10" maxlength="10">)-->
+										<select name="cf_no" style="color:#9B9EA3;">
+											<option value="">Select the application number.</option>
+											<!-- BEGIN DYNAMIC BLOCK: cf_apply_row -->
+											<option value="{CF_APPLY_NUMBER}">{CF_APPLY_PERIOD}</option>
+											<!-- END DYNAMIC BLOCK: cf_apply_row -->
+										</select>
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="20"></td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" nowrap></td>
+									<td style="padding-left:10px;padding-right:10px;">
+										I understand, by submitting this request, I transfer the current deposit to an application for a new term.  Residence hall charges, including damages will be deducted from the deposit.  Any amount remaining from the deposit will be transferred to the new application, which number is provided in this request.  If the deposit is carried forward less than the full amount, I will be billed for the difference.<br>
+										If the transfer is made before check-out inspection as I continue to stay without vacation period, then, the full amount of deposit before residence hall charges will be transferred upon the transfer request. After the check-out inspection report for the previous room is completed, I will be billed for the charges, if any.
+									</td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="1"></td>
+								</tr>
+								<tr> 
+									<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+									<td width="100%" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+									<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" height="3" bgcolor="#7C0019"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="15"></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="image" src="../../images/button/btn_request.jpg" width="100" height="19" border="0"></td>
+		</tr>
+	</form>
+</table>
+<script language="javascript">
+	document.getElementById("refund").style.display = "block";
+	document.getElementById("transfer").style.display = "none";
+	document.getElementById("wire1").style.display = "block";
+	document.getElementById("wire2").style.display = "block";
+	document.getElementById("money1").style.display = "none";
+	document.getElementById("money2").style.display = "none";
+	document.getElementById("overseas1").style.display = "none";
+	document.getElementById("overseas2").style.display = "none";
+</script>

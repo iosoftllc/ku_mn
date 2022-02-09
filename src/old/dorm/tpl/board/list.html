@@ -1,0 +1,109 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/board.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+	<form name="BoardForm" action="https://reslife.korea.ac.kr:5008/v1/src/board/list.php" method="get" onSubmit="return checkSearchInfo(document.BoardForm.s_text, document.BoardForm.page);">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="type" value="{BOARD_TYPE}">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="no" value="">
+		<tr>
+			<td height="22" valign="bottom">Page: {SEL_PAGE}/{TOTAL_PAGE}, Total: {TOTAL_COUNT}</td>
+			<td height="22" align="right" valign="bottom">
+				<!-- BEGIN DYNAMIC BLOCK: post_row -->
+				<a href="javascript:postBoard('new');"><img src="../../images/button/btn_write.jpg" width="53" height="19" border="0"></a>
+				<!-- END DYNAMIC BLOCK: post_row -->
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td colspan="13" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_top_left.jpg" width="1" height="21"></td>
+						<td width="50" height="21" align="center" background="../../images/board/board_top_back.jpg" nowrap><img src="../../images/board/board_no.jpg" width="15" height="21"></td>
+						<td width="2" nowrap><img src="../../images/board/board_top_border.jpg" width="2" height="21"></td>
+						<td colspan="3" height="21" align="center" background="../../images/board/board_top_back.jpg"><img src="../../images/board/board_subject.jpg" width="40" height="21"></td>
+						<td width="2" nowrap><img src="../../images/board/board_top_border.jpg" width="2" height="21"></td>
+						<td width="70" height="21" align="center" background="../../images/board/board_top_back.jpg" nowrap><img src="../../images/board/board_name.jpg" width="26" height="21"></td>
+						<td width="2" nowrap><img src="../../images/board/board_top_border.jpg" width="2" height="21"></td>
+						<td width="80" height="21" align="center" background="../../images/board/board_top_back.jpg" nowrap><img src="../../images/board/board_date.jpg" width="23" height="21"></td>
+						<td width="2" nowrap><img src="../../images/board/board_top_border.jpg" width="2" height="21"></td>
+						<td width="50" height="21" align="center" background="../../images/board/board_top_back.jpg" nowrap><img src="../../images/board/board_read.jpg" width="23" height="21"></td>
+						<td width="1" nowrap><img src="../../images/board/board_top_right.jpg" width="1" height="21"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: top_row -->
+					<tr bgcolor="#F9F9F9" onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="1" nowrap></td>
+						<td width="50" height="23" align="center" nowrap>[NOTICE]</td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="3" nowrap></td>
+						<td height="23" align="left"><a href="javascript:viewBoard('{BOARD_NUMBER}');">{SUBJECT}</a></td>
+						<td width="3" nowrap></td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="70" height="23" align="center" nowrap>{WRITER_NAME}</td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="80" height="23" align="center" nowrap>{WRITE_DATE}</td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="50" height="23" align="center" nowrap>{READ_COUNT}</td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr> 
+						<td colspan="13" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: top_row -->
+					<!-- BEGIN DYNAMIC BLOCK: board_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="1" nowrap></td>
+						<td width="50" height="23" align="center" nowrap>{COUNT_NO}</td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="3" nowrap></td>
+						<td height="23" align="left">{REPLY_IMAGE}<a href="javascript:viewBoard('{BOARD_NUMBER}');">{SUBJECT}</a>{NEW_IMAGE}{HOT_IMAGE}</td>
+						<td width="3" nowrap></td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="70" height="23" align="center" nowrap>{WRITER_NAME}</td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="80" height="23" align="center" nowrap>{WRITE_DATE}</td>
+						<td width="2" background="../../images/board/board_vdot.jpg" nowrap></td>
+						<td width="50" height="23" align="center" nowrap>{READ_COUNT}</td>
+						<td width="1" nowrap></td>
+					</tr>
+					{DIVIDE_LINE}
+					<!-- END DYNAMIC BLOCK: board_row -->
+					<tr> 
+						<td width="1" height="10"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="11" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" height="10"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="13" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="35" align="center">
+				<a href="javascript:gotoPage('{PRE_PAGE}');"><img src="../../images/board/page_pre.jpg" width="8" height="8" border="0" align="absmiddle"></a>
+				<!-- BEGIN DYNAMIC BLOCK: page_row -->
+				{PAGE_VALUE}
+				<!-- END DYNAMIC BLOCK: page_row -->
+				<a href="javascript:gotoPage('{NEXT_PAGE}');"><img src="../../images/board/page_next.jpg" width="8" height="8" border="0" align="absmiddle"></a>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<select name="s_type" style="color:#9B9EA3;">
+					<option value="1">Subject</option>
+					<option value="2">Name</option>
+					<option value="3">Content</option>
+				</select>
+				<input type="text" name="s_text" size="30" value="{SEARCH_TEXT}" style="color:#9B9EA3;">
+				<input type="image" src="../../images/button/btn_search.jpg" width="53" height="19" border="0" hspace="6" align="absmiddle">
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setSelected(document.BoardForm.s_type, '{SEARCH_TYPE}');
+</script>

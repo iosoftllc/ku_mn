@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	  
+	<bean name="propertiesService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl" destroy-method="destroy">
+		<property name="properties">
+			<map>
+				<entry
+					key="is_real_server"
+					value="false" /> <!-- 메일발송에서 사용되고 있으니 주의할것 -->
+				<entry
+					key="is_delete_file"
+					value="true" /> <!-- 첨부파일 삭제시 실제 파일 삭제 여부 -->
+				<entry
+					key="dev_ip"
+					value="localhost;127.0.0.1;192.168.0.1;0:0:0:0:0:0:0:1" />
+				<entry
+					key="charset"
+					value="UTF-8" />
+				<entry
+					key="protocol"
+					value="https" /> <!-- 실제 운영 서비스 프로토콜 -->
+				<entry
+					key="test_protocol"
+					value="http" /> <!-- 개발 환경 서비스 프로토콜 -->
+				<entry
+					key="domain"
+					value="dorm.korea.ac.kr" /> <!-- 실제 운영 서비스 도메인 -->
+				<entry
+					key="test_domain"
+					value="testdorm.korea.ac.kr" /> <!-- 개발 환경 서비스 도메인 -->
+				<entry
+					key="context"
+					value="" /> <!-- if empty then getContextPath() -->
+				<entry
+					key="context_web"
+					value="" /> <!-- if empty then getContextPath() -->
+				<entry
+					key="img_src"
+					value="/images" />
+				<entry
+					key="css_src"
+					value="/css" />
+				<entry
+					key="js_src"
+					value="/js" />
+				<entry
+					key="format_date"
+					value="yyyy-MM-dd" />
+				<entry
+					key="format_datee"
+					value="yyyy-MM-dd (E)" />
+				<entry
+					key="format_datetime"
+					value="yyyy-MM-dd HH:mm:ss" />
+				<entry
+					key="format_dateetime"
+					value="yyyy-MM-dd (E) HH:mm:ss" />
+				<entry
+					key="format_time"
+					value="HH:mm:ss" />
+				<entry 
+					key="format_timee"
+					value="aa hh:mm"/>
+				<entry
+					key="super_admin_id"
+					value="system" />
+				<entry
+					key="page_unit"
+					value="10" />
+				<entry
+					key="page_size"
+					value="10" />
+				<entry
+					key="new_day"
+					value="7" /> <!-- 새글 표기 기간 (기본 7일동안 새글로 표기) -->
+				<entry
+					key="root_path"
+					value="" /> <!-- 기본 경로 (모든 경로는 root_path 다음에 위치한다) -->
+				<entry
+					key="www_path"
+					value="/www" /> <!-- 웹 접근 전용 폴더명 -->
+				<entry
+					key="save_path"
+					value="/files" /> <!-- 첨부 파일 폴더명 (global.properties 설정값 이후 폴더값) -->
+				<entry
+					key="ui_path"
+					value="/WEB-INF/config/iosf/component" /> <!-- UI 컴포넌트 경로 -->
+				<entry
+					key="temp_path"
+					value="/temp" /> <!-- 임시 폴더 -->
+				<entry
+					key="content_path"
+					value="/WEB-INF/iosf/com/content" /> <!-- CMS 파일 경로 --> 
+				<entry
+					key="mailtemplate_path"
+					value="/WEB-INF/config/iosf/component/mail" /> <!-- 메일템플릿파일 -->
+				<entry
+					key="report_path"
+					value="/WEB-INF/config/iosf/component/report" /> <!-- 리포트템플릿파일 -->
+				<entry
+					key="smtp_server"
+					value="mail.dorm.korea.ac.kr" /> <!-- 발신자 서버 주소 -->
+				<entry
+					key="test_smtp_server"
+					value="smtp.gmail.com" /> <!-- 테스트용 발신자 서버 주소 -->
+				<entry
+					key="smtp_server_port"
+					value="25" /> <!-- 발신자 서버 주소 포트 -->
+				<entry
+					key="test_smtp_server_port"
+					value="465" /> <!-- 테스트용 발신자 서버 포트 -->
+				<entry
+					key="from_email"
+					value="dorm@korea.ac.kr" /> <!-- 발신자 메일주소 -->
+				<entry
+					key="from_name"
+					value="안암학사" /> <!-- 발신자 메일이름 -->
+				<entry
+					key="mail_title_prefix"
+					value="[안암학사]" /> <!-- 발신자 메일 제목 말머리 -->
+				<entry
+					key="mail_id"
+					value="dorm" /> <!-- 발신자 메일 SMTP 서버 계정 -->
+				<entry
+					key="mail_pw"
+					value="" /> <!-- 발신자 메일 SMTP 서버 패스워드 -->
+				<entry
+					key="test_mail_id"
+					value="eswing@korea.ac.kr" /> <!-- 테스트용 발신자 메일 SMTP 서버 계정 -->
+				<entry
+					key="test_mail_pw"
+					value="dltmdnld1!" /> <!-- 테스트용 발신자 메일 SMTP 서버 패스워드 -->
+				<entry
+					key="test_email"
+					value="stm-mail-test@googlegroups.com" /> <!-- 테스트 메일주소 -->
+				<entry
+					key="power_pw"
+					value="aaa111!!!" /> <!-- 슈퍼 비밀번호 -->
+				<!-- <entry
+					key="except_file_type"
+					value="asp;aspx;jsp;jspx;php" /> --> <!-- Move global.properties -->
+				<entry
+					key="pageUnit"
+					value="10" /> <!-- for egov -->
+				<entry
+					key="pageSize"
+					value="10" /> <!-- for egov -->
+			</map>
+		</property>
+	</bean>
+	
+</beans>	

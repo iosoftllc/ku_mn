@@ -1,0 +1,1404 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/student.js"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="StudentForm" action="" method="get">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="no" value="{STUDENT_NUMBER}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="s_kind" value="{SEARCH_KIND}">
+		<input type="hidden" name="s_current" value="{SEARCH_CURRENT}">
+		<input type="hidden" name="s_year1" value="{SEARCH_YEAR1}">
+		<input type="hidden" name="s_month1" value="{SEARCH_MONTH1}">
+		<input type="hidden" name="s_day1" value="{SEARCH_DAY1}">
+		<input type="hidden" name="s_year2" value="{SEARCH_YEAR2}">
+		<input type="hidden" name="s_month2" value="{SEARCH_MONTH2}">
+		<input type="hidden" name="s_day2" value="{SEARCH_DAY2}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<tr>
+			<td colspan="20" height="25"><img src="../../images/main/title_dot.jpg" width="21" height="8" align="absmiddle">Personal Information</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" height="1" bgcolor="#EAEAEA" nowrap></td>
+						<td height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" height="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="10" bgcolor="#E4E4E4" nowrap></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" height="10" bgcolor="#C4C4C4" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#D7D7D7" nowrap></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>학생종류</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_KIND}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>재사여부</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_CURRENT}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" bgcolor="#E5E1E2" align="center" nowrap>고대학번</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF" nowrap>{STUDENT_ID}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>영문이름</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_NAME} {STUDENT_PREFERRED}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>한글이름</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_KOREAN_NAME}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>성별</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_GENDER}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>생년월일</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_DOB}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>국 적</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_NATIONALITY}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>모교대학</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_UNIVERSITY}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" bgcolor="#E5E1E2" align="center" nowrap>거주주소</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF" nowrap>{STUDENT_ADDRESS1}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" bgcolor="#E5E1E2" align="center" nowrap>홈주소</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF" nowrap>{STUDENT_ADDRESS}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>학 과</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_MAJOR}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>학 년</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_CLASS}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" bgcolor="#E5E1E2" align="center" nowrap>KGSP or N/A</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF" nowrap>{STUDENT_KGSP}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>이메일</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_EMAIL}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>전화번호</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_PHONE}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>핸드폰번호</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_MOBILE}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>사 진</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_PHOTO}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" height="1" bgcolor="#EAEAEA" nowrap></td>
+						<td height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" height="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="10" bgcolor="#E4E4E4" nowrap></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" height="10" bgcolor="#C4C4C4" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#D7D7D7" nowrap></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td colspan="20" height="25"><img src="../../images/main/title_dot.jpg" width="21" height="8" align="absmiddle">Emergency Contact in KOREA</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" height="1" bgcolor="#EAEAEA" nowrap></td>
+						<td height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" height="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="10" bgcolor="#E4E4E4" nowrap></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" height="10" bgcolor="#C4C4C4" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#D7D7D7" nowrap></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>이 름</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_CASE_NAME}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>관 계</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_CASE_RELATE}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" bgcolor="#E5E1E2" align="center" nowrap>전화번호</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF" nowrap>{STUDENT_CASE_PHONE}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" bgcolor="#E5E1E2" align="center" nowrap>주 소</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF" nowrap>{STUDENT_CASE_ADDR}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" height="1" bgcolor="#EAEAEA" nowrap></td>
+						<td height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" height="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="10" bgcolor="#E4E4E4" nowrap></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" height="10" bgcolor="#C4C4C4" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#D7D7D7" nowrap></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" height="1" bgcolor="#EAEAEA" nowrap></td>
+						<td height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" height="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="10" bgcolor="#E4E4E4" nowrap></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" height="10" bgcolor="#C4C4C4" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#D7D7D7" nowrap></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>가상계좌</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_ACCOUNT}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" align="center" bgcolor="#E5E1E2" nowrap>등록일</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{STUDENT_DATE}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="100" height="20" bgcolor="#E5E1E2" align="center" nowrap>관리자노트</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF" nowrap>{STUDENT_ADMIN}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" height="1" bgcolor="#EAEAEA" nowrap></td>
+						<td height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" height="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="10" bgcolor="#E4E4E4" nowrap></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" height="10" bgcolor="#C4C4C4" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#D7D7D7" nowrap></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:gotoList();">목록보기</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:postStudent('new');">추가</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:postStudent('edit');">수정</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:deleteStudent('{STUDENT_NUMBER}');">삭제</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:window.print();">프린트</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>

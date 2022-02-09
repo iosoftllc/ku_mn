@@ -1,0 +1,14 @@
+.NoPrint {
+  DISPLAY: none;
+}
+
+.ForPrint {
+  DISPLAY : block;
+  BORDER-TOP : none;
+  BORDER-LEFT : none;
+  BORDER-RIGHT : none;
+  BORDER-BOTTOM : none;
+  HEIGHT : auto;
+  OVERFLOW : visible;
+  WIDTH : 100%;
+}

@@ -1,0 +1,34 @@
+<html>
+
+<head>
+	<title>::::: Korea University :::::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="ImageToolbar" content="No">
+</head>
+
+<script language="javascript">
+	function setCookie(name, value, expiredays) {
+		var todayDate = new Date();
+		todayDate.setDate(todayDate.getDate() + expiredays);
+		document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+	}
+	function closeWin() {
+		setCookie("2015_spring_notice1", "1" , 1); 
+		self.close();
+	} 
+</script>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr> 
+			<td><img src="../../images/popup/2015_spring_notice1.jpg" border="0"></td>
+		</tr>
+		<!--
+		<tr>
+			<td height="20" align="right"><input type="checkbox" name="popup" onClick="closeWin();"> Close for today.</td>
+		</tr>
+		-->
+	</table>
+</body>
+
+</html>

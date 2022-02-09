@@ -1,0 +1,15 @@
+@font-face { font-family: "NanumBarun"; src: url("../../../font/NanumBarunGothic.eot"); src: url("../../../font/NanumBarunGothic.eot?#iefix") format("embedded-opentype"), url("../../../font/NanumBarunGothic.ttf") format("truetype"), url("../../../font/NanumBarunGothic.woff") format("woff"), url("../../../font/NanumBarunGothic.woff2") format("woff2"); font-weight: normal; font-style: normal; }
+body { font-family: "Malgun Gothic"; font-size: 13px; margin: 0; padding: 0; }
+
+a { text-decoration: none; }
+
+button { cursor: pointer; }
+
+.preparing-comp { width: 100%; border: 1px solid #dbdbdb; box-sizing: border-box; }
+.preparing-comp .inner { width: 100%; padding: 40px; border: 5px solid #ece2d3; box-sizing: border-box; text-align: center; background: url("../../../images/iosf/front/icon/icon_preparing_origin.png") no-repeat 50% 40px; background-size: 106px 106px; }
+.preparing-comp .inner .note { margin-top: 131px; font: normal 17px/20px 'Malgun Gothic'; }
+.preparing-comp .inner .bottom { margin-top: 30px; padding-top: 30px; border-top: 1px solid #ebebeb; text-align: center; }
+.preparing-comp .inner .bottom .btnhome { display: inline-block; width: 150px; height: 48px; font: bold 19px/48px 'Malgun Gothic'; color: #fff; text-shadow: 1px 1px #000; background: #383838; border-radius: 30px; }
+.preparing-comp .inner .bottom .btnhome:after { display: inline-block; content: ''; width: 18px; height: 20px; margin-top: 14px; margin-left: 16px; background: url("../../../images/iosf/front/icon/icon_home_event_origin.png") no-repeat 0 0; background-size: 18px 20px; vertical-align: top; }
+
+/*# sourceMappingURL=preparing.css.map */

@@ -1,0 +1,90 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/student.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<form name="StudentForm" action="https://reslife.korea.ac.kr:5008/v1/src/apply/action_stu.php" method="post" onSubmit="return checkPasswordInfo(this);">
+		<input type="hidden" name="mode" value="pw">
+		<input type="hidden" name="no" value="{STUDENT_NUMBER}">
+		<input type="hidden" name="email" value="{STUDENT_EMAIL}">
+		<input type="hidden" name="pw" value="{STUDENT_PASSWORD}">
+		<tr>
+			<td align="right">
+				<a href="javascript:gotoList(document.StudentForm);"><img src="../../images/button/btn_goto_account.jpg" width="194" height="30" border="0"></a>
+				<a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=status_stu"><img src="../../images/button/btn_logout.jpg" width="74" height="30" border="0"></a>
+			</td>
+		</tr>
+		<tr>
+			<td><img src="../../images/title/cnt_change_pw.jpg" width="500" height="14"></td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="220" bgcolor="#EFEFEF" align="center" nowrap>Current Password</td>
+						<td width="10" nowrap></td>
+						<td>
+							<input type="password" name="cur_pw" size="15" maxlength="15" style="color:#9B9EA3;">
+						</td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="220" bgcolor="#EFEFEF" align="center" nowrap>New Password</td>
+						<td width="10" nowrap></td>
+						<td>
+							<input type="password" name="new_pw" size="15" maxlength="15" style="color:#9B9EA3;">
+							(Confirm: <input type="password" name="confirm_pw" size="15" maxlength="15" style="color:#9B9EA3;">)
+						</td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td align="center">
+				<input type="image" src="../../images/button/btn_save.jpg" width="53" height="19" border="0">
+				<a href="javascript:history.go(-1);"><img src="../../images/button/btn_cancel.jpg" width="53" height="19" border="0"></a>
+			</td>
+		</tr>
+	</form>
+</table>

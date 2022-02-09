@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi" />
+<title>고려대학교 지식재산관리시스템 (KU_KIPS)</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<link rel="stylesheet" href="../../../../../../css/iosf/component/theme1/back/korean/reset.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../js/jquery-ui-1.11.2.custom/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../../../../../js/iosf/grid/jqgrid/css/ui.jqgrid.css" />
+
+<link rel="stylesheet" href="../../../../../../css/iosf/component/theme1/back/korean/common.css" />
+
+
+<script type="text/javascript" src="../../../../../../js/iosf/jquery_1.9.1.min.js"></script>
+<script type="text/javascript" src="../../../../../../js/iosf/component/controller.js" charset="UTF-8"></script>
+<style type="text/css">
+	body {
+		padding: 15px;
+		min-width: 290px;
+	}
+	.sample-container + .sample-container {
+		margin-top: 15px;
+	}
+</style>
+</head>
+<body>
+	<div class="sample-container">
+		<div class="common-sitemap">
+			<div>
+				<ul class="level1">
+					<li>
+						<a href="#">결재관리</a>
+						<ul class="level2">
+							<li class="withsub"><a href="#">결재함</a>
+								<ul class="level3">
+									<li class="on"><a href="#">결재처리함</a></li>
+									<li><a href="#">결재요청함</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div>
+			<ul class="level1">
+				<li>
+					<a href="#">출원관리</a>
+					<ul class="level2">
+						<li class="withsub">
+							<a href="#">업무현황판</a>
+							<ul class="level3 withsub">
+								<li class="on">
+									<a href="#">특허/실용실안</a>
+									<ul class="level4">
+										<li><a href="#">국내출원</a></li>
+										<li><a href="#">해외출원</a></li>
+										<li><a href="#">권리유지/기타지시 및 보고</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">디자인출원</a>
+									<ul class="level4">
+										<li><a href="#">국내출원</a></li>
+										<li><a href="#">해외출원</a></li>
+										<li><a href="#">권리유지/기타지시 및 보고</a></li>
+									</ul>
+								</li>
+								<li><a href="#">사외특허</a></li>
+								<li><a href="#">기타지재권</a></li>
+							</ul>
+						</li>
+						<li class="withsub">
+							<a href="#">발명신고함</a>
+							<ul class="level3">
+								<li class="on"><a href="#">국내 특허</a></li>
+								<li><a href="#">해외 특허</a></li>
+								<li><a href="#">디자인</a></li>
+								<li><a href="#">소프트웨어</a></li>
+								<li><a href="#">배치/설계</a></li>
+								<li><a href="#">품종</a></li>
+								<li><a href="#">노하우</a></li>
+								<li><a href="#">양도 확인</a></li>
+							</ul>
+						</li>
+						<li class="withsub">
+							<a href="#">출원현황</a>
+							<ul class="level3">
+								<li class="on"><a href="#">특허</a></li>
+								<li><a href="#">디자인</a></li>
+								<li><a href="#">소프트웨어</a></li>
+								<li><a href="#">배치/설계</a></li>
+								<li><a href="#">배치/설계</a></li>
+								<li><a href="#">품종</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			</div>
+			<div>
+				<ul class="level1">
+				    <li>
+				    	<a href="#">기술이전</a>
+				    	<ul class="level2">
+				    		<li><a href="#">현황판</a></li>
+				    		<li><a href="#">기술이전계약</a></li>
+				    		<li class="withsub">
+				    			<a href="#">기술이전 수입/배분</a>
+				    			<ul class="level3">
+									<li class="on"><a href="#">기술료 수입/배분 현황</a></li>
+									<li><a href="#">기술료 보상내역 현황</a></li>
+								</ul>
+				    		</li>
+				    		<li><a href="#">산업자문현황</a></li>
+				    	</ul>
+				    </li>
+				</ul>
+			</div>
+			<div>
+				<ul class="level1">
+					<li>
+					<a href="#">비용관리</a>
+						<ul class="level2">
+							<li class="withsub">
+								<a href="#">특허비용</a>
+								<ul class="level3">
+									<li class="on"><a href="#">비용입력</a></li>
+									<li><a href="#">청구비용현황</a></li>
+									<li><a href="#">비용결의현황</a></li>
+									<li><a href="#">건별비용현황</a></li>
+								</ul>
+								
+							</li>
+							<li class="withsub">
+								<a href="#">등록유지 관리</a>
+								<ul class="level3">
+									<li class="on"><a href="#">특허비용</a></li>
+									<li><a href="#">등록유지 관리</a></li>
+									<li><a href="#">비용통계</a></li>
+								</ul>
+								
+							</li>
+							<li>
+								<a href="#">비용통계</a>
+								<ul class="level3">
+									<li class="on"><a href="#">월별 비용통계현황</a></li>
+									<li><a href="#">사무소별 비용통계</a></li>
+									<li><a href="#">연구소별 비용통계</a></li>
+									<li><a href="#">프로젝트별 비용현황</a></li>
+									<li><a href="#">전체 비용현황</a></li>
+									<li><a href="#">지출 비용현황</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<ul class="level1">
+					<li>
+					<a href="#">검색/통계</a>
+						<ul class="level2">
+							<li class="withsub">
+								<a href="#">출원계획/실적</a>
+								<ul class="level3">
+									<li class="on"><a href="#">출원계획</a></li>
+									<li><a href="#">출원실적</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">자사특허검색</a>
+								<ul class="level3">
+									<li class="on"><a href="#">자사특허검색</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">외부특허검색</a>
+								<ul class="level3">
+									<li class="on"><a href="#">KIPRIS 검색</a></li>
+									<li><a href="#">WIPS 검색</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">특허통계</a>
+								<ul class="level3">
+									<li class="on"><a href="#">Field 검색</a></li>
+									<li><a href="#">년도별실적통계</a></li>
+									<li><a href="#">사무소별실적통계</a></li>
+									<li><a href="#">소속별실적통계</a></li>
+									<li><a href="#">인벤션컨설팅</a></li>
+									<li><a href="#">사외특허분류</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">기술이전통계</a>
+								<ul class="level3">
+									<li class="on"><a href="#">기술이전 Field검색</a></li>
+									<li><a href="#">기술이전 실적통계1</a></li>
+									<li><a href="#">기술이전 실적통계2</a></li>
+									<li><a href="#">기술이전계약통계</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">비용통계 </a>
+								<ul class="level3">
+									<li class="on"><a href="#">기간별 비용현황</a></li>
+									<li><a href="#">과제별 비용현황</a></li>
+									<li><a href="#">대리인별 비용현황</a></li>
+									<li><a href="#">과제별 비용현황2</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">ViewChart</a>
+								<ul class="level3">
+									<li class="on"><a href="#">부서별 출원/등록현황</a></li>
+									<li><a href="#">전체 출원/등록현황</a></li>
+									<li><a href="#">개인 출원/등록현황</a></li>
+									<li><a href="#">연구소별 출원/등록현황</a></li>
+									<li><a href="#">출원목표대비 실적현황</a></li>
+									<li><a href="#">연도별 출원/등록현황</a></li>
+									<li><a href="#">해외국가별 출원/등록현황</a></li>
+								</ul>
+							</li>
+							<li><a href="#">정량맵</a></li>
+							<li class="withsub">
+								<a href="#">의료원통계</a>
+								<ul class="level3">
+									<li class="on"><a href="#">의료원 산하기관별 현황</a></li>
+									<li><a href="#">의료원 비용현황</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>	
+			<div>
+				<ul class="level1">
+					<li>
+					<a href="#">시스템관리</a>
+						<ul class="level2">
+							<li class="withsub">
+								<a href="#">특허팀관리</a>
+								<ul class="level3">
+									<li class="on"><a href="#">사원정보 관리</a></li>
+									<li><a href="#">외부발명자관리</a></li>
+									<li><a href="#">의료원 외부발명자관리</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">사무소관리</a>
+								<ul class="level3">
+									<li class="on"><a href="#">사무소관리</a></li>
+									<li><a href="#">사무소직원관리</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">데이터처리</a>
+								<ul class="level3">
+									<li class="on"><a href="#">건담당자 일괄변경</a></li>
+									<li><a href="#">출원의뢰서 삭제</a></li>
+									<li><a href="#">연구소별 비용통계</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">메뉴/그룹관리</a>
+								<ul class="level3">
+									<li class="on"><a href="#">메뉴관리</a></li>
+									<li><a href="#">사무소 메뉴관리</a></li>
+									<li><a href="#">그룹관리</a></li>
+									<li><a href="#">사무소 그룹관리</a></li>
+								</ul>
+							</li>
+							<li class="withsub">
+								<a href="#">로그조회</a>
+								<ul class="level3">
+									<li class="on"><a href="#">메일발송로그</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<ul class="level1">
+					<li>
+					<a href="#">게시판</a>
+						<ul class="level2">
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">자료실</a></li>
+							<li><a href="#">질문과 답변</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<ul class="level1">
+					<li>
+					<a href="#">인덱스</a>
+						<ul class="level2">
+							<li class="withsub">
+								<a href="#">마이 페이지</a>
+								<ul class="level3">
+									<li class="on"><a href="#">메인화면 관리</a></li>
+									<li><a href="#">나의 정보 조회</a></li>
+								</ul>
+							</li>
+							<li><a href="#">로그아웃</a></li>
+							<li><a href="#">개인정보처리방침</a></li>
+							<li><a href="#">이메일주소무단수집금지</a></li>
+							<li><a href="#">사이트 맵</a></li>							
+						</ul>
+					</li>
+				</ul>
+			</div>        		
+		</div>
+	</div>
+</body>
+</html>

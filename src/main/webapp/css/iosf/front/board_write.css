@@ -1,0 +1,936 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: none;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+
+.board_write{
+    overflow: hidden;
+    max-width: 1100px;
+    margin: auto;
+    background: #fff;
+}
+
+/* 신청자정보 테이블 */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------- */
+
+
+table,table table,thead,tbody,tr,th,td{
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+
+.board_write table {
+    width: 100%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* 해외주소 2중 테이블 설정 */
+
+
+.board_write table table,
+.board_write table table tr th{
+    margin-top: 0;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+
+
+.board_write table caption,
+.board_write div caption{
+    align-items: center;
+    font: bold 23px/1.3em "맑은 고딕";
+    color: #000;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.board_write table caption::before,
+.board_write div caption::before{
+    top: 2px;
+    position: relative;
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 22px;
+    background: url(../../../images/iosf/content/event/image_line_4x22.png)no-repeat center/4px 22px;
+    margin-right: 8px;
+}
+
+.board_write table{
+    border-top: 2px solid #830020;
+    border-bottom: 1px solid #414141;
+}
+
+.board_write table tr{
+    width: 100%;
+    border-right: 1px solid #e6e6e6;
+}
+.board_write table table tr th{
+    color: #98724b;
+    background: #fbf9f6;
+}
+
+
+.board_write table tr:last-of-type td,
+.board_write table tr:last-of-type th{
+    border-bottom: 0px solid #414141;
+}
+
+
+/* 문단 맨 위,아래 라인 컬러 추가*/
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+/* 풀 사이즈에서만 예외 */
+/* .board_write table tr:last-of-type > th:last-of-type{
+    border-bottom: 1px solid #414141;
+}
+
+.board_write table tr:last-of-type{
+    border-bottom: 1px solid #414141;
+} */
+
+/* .board_write table tr:first-of-type{
+    border-top: 1px solid #830020;
+} */
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+
+.board_write table tr th,
+.board_write table tr td{
+    font: 15px/1.3em "맑은 고딕";
+    text-align: left;
+    padding: 10px 15px;
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+
+.board_write form > table > tr > td:last-of-type{
+    border-right: 0px solid #e6e6e6;
+}
+
+
+.board_write table tr th{
+    width: 16%;
+    color: #735231;
+    background: #f6f6f6;
+    /* width: 150px; */
+    min-width: 160px;
+    vertical-align: middle;
+}
+
+.board_write table tr td{
+    color: #313131;
+    background: #fff;
+}
+.board_write table tr td select,
+.board_write table tr td input{
+    min-width: 130px;
+    border: 1px solid #cbc9c9;
+    min-height: 28px;
+    font: 15px/1.3em "맑은 고딕";
+    padding: 3px 10px;
+}
+
+.board_write table tr td .tinymce{
+    width: 100%;
+    height: 150px;
+}
+
+.board_write table tr .attachment input{
+    background: #eeeeee;
+    border: 1px solid #d7d5d5;
+}
+
+.board_write table tr td > input{
+    width: 100%;
+}
+
+.board_write table tr td select{
+    padding-right: 30px;
+    background: url(../../../images/iosf/content/event/img_arrowdown_22x8.png) no-repeat right center/22px 8px;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+.board_write table tr td select::-ms-expand{
+    display: none;
+}
+
+.board_write table tr td select::placeholder,
+.board_write table tr td input::placeholder{
+    color: #cbc9c9;
+}
+
+
+/* 달력 입력기 */
+
+
+.board_write table tr td > span{
+    display: inline-flex;
+    align-items: center;
+}
+.board_write table tr td span.calendar-wrapper{
+    display: flex;
+    align-items: normal;
+}
+
+
+.board_write table tr td input.calendar{
+    position: relative;
+    min-width: 0;
+    max-width: 100px;
+    width: calc(100% - 35px);
+}
+.board_write table tr td input.calendar + img{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+}
+
+.board_write table tr td input.calendar + button{
+    content: "";
+    display:inline-block;
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    background: url(../../../images/iosf/content/event/icon_calendar_26x26.png)no-repeat center/26px 26px;
+}
+
+
+
+/* 올린 파일 이름 확인, 파일 지우기 */
+
+
+
+.board_write table .attach th{
+    align-items: center;
+    position: relative;
+    padding-right: 11px;
+}
+.board_write table .attach th div{
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 28px);
+}
+.board_write table .attach th button{
+    border: 0;
+    display: inline-block;
+    vertical-align: middle;
+    /* position: absolute; */
+    width: 28px;
+    height: 28px;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    /* right: 11px; */
+    margin-left: auto;
+    /* border: 1px solid #cbc9c9; */
+    background: url(../../../images/iosf/content/board/icoc_cross_14x14.png)no-repeat center/28px 28px,
+    #fafafa;
+
+}
+
+.board_write table tr .attachment{
+    padding: 0;
+    /* width: 100%; */
+    flex-direction: column;
+}
+
+.board_write table tr .attachment dl{
+    display: flex;
+    width: 100%;
+}
+
+
+
+/* case2,3 간격조정테스트 */
+
+/* .board_write table tr .attachment dl.case2 div:first-of-type,
+.board_write table tr .attachment dl.case3 div:first-of-type{
+    padding-bottom: 0;
+    height: 45px;
+} */
+
+/* case2,3 간격조정테스트 */
+
+
+
+.board_write table tr .attachment dl dt{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: calc(100% - 50px);
+}
+.board_write table tr .attachment dl ~ dl{
+    border-top: 1px solid #e6e6e6;
+}
+
+.board_write table tr .attachment dl dt p{
+    width: calc(100% + 50px);
+    padding: 8px 15px;
+    font: 13px/1.3em "맑은 고딕";
+    background: #fbfbfb;
+    color: #735231;
+}
+
+.board_write table tr .attachment dl dt div{
+    display: flex;
+    padding: 8px 15px;
+    /* height: 48px; */
+    align-items: center;
+}
+
+.board_write table tr .attachment dl dt .text{
+    display: inline-block;
+    padding: 8px 15px 7px;
+    /* min-height: 48px; */
+    width: 0;
+    min-width: 100%;
+}
+
+.board_write table tr .attachment dl dt .text2{
+    padding: 0px 15px 8px;
+    min-height: 30px;
+    width: 0;
+    min-width: 100%;
+}
+
+
+
+
+/* 올린 사진 확인하기 버튼 */
+
+.board_write table tr .attachment .text{
+    flex-direction: row;
+}
+/* .board_write table tr .attachment .upload{
+    margin-bottom: 7px;
+} */
+/* .board_write table tr .attachment div:last-of-type{
+    margin-bottom: 0;
+} */
+
+
+.board_write table tr .attachment .text span{
+    display: inline-flex;
+    margin-right: 3px;
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* 첨부파일 사진 이미지 링크 */
+
+
+
+.board_write table tr .attachment .text .jpg{
+    background: url(../../../images/iosf/content/event/icon_photo_jpg_22x22.png)no-repeat center/22px 22px;
+}
+.board_write table tr .attachment .text .png{
+    background: url(../../../images/iosf/content/event/icon_photo_png_22x22.png)no-repeat center/22px 22px;
+}
+.board_write table tr .attachment .text .doc{
+    background: url(../../../images/iosf/content/event/icon_file_doc_22x22.png)no-repeat center/22px 22px;
+}
+.board_write table tr .attachment .text .etc{
+    background: url(../../../images/iosf/content/event/icon_file_etc_22x22.png)no-repeat center/22px 22px;
+}
+.board_write table tr .attachment .text .hwp{
+    background: url(../../../images/iosf/content/event/icon_file_hwp_22x22.png)no-repeat center/22px 22px;
+}
+.board_write table tr .attachment .text .mp4{
+    background: url(../../../images/iosf/content/event/icon_file_mp4_22x22.png)no-repeat center/22px 22px;
+}
+.board_write table tr .attachment .text .pdf{
+    background: url(../../../images/iosf/content/event/icon_file_pdf_22x22.png)no-repeat center/22px 22px;
+}
+.board_write table tr .attachment .text .ppt{
+    background: url(../../../images/iosf/content/event/icon_file_ppt_22x22.png)no-repeat center/22px 22px;
+}
+.board_write table tr .attachment .text .xls{
+    background: url(../../../images/iosf/content/event/icon_file_xls_22x22.png)no-repeat center/22px 22px;
+}
+.board_write table tr .attachment .text .zip{
+    background: url(../../../images/iosf/content/event/icon_file_zip_22x22.png)no-repeat center/22px 22px;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+.board_write table tr .attachment .text button{
+    border: 0;
+    font: 15px/1.3em "맑은 고딕";
+    vertical-align: middle;
+    display: inline-flex;
+    /* height: 200%; */
+    background: #fff;
+}
+.board_write table tr .attachment .text button:hover{
+    text-decoration: underline;
+    text-underline-position: under;
+    /* box-sizing: content-box; */
+    /* border-bottom: 1px solid #000; */
+}
+
+
+
+
+/* case2,3 간격조정테스트 */
+
+/* .board_write table tr .attachment dl dt div + div{
+    padding-top: 0;
+    height: 45px;
+} */
+
+/* case2,3 간격조정테스트 */
+
+
+
+
+.board_write table tr .attachment dl dd{
+    margin-left: auto;
+    min-width: 50px;
+}
+
+.board_write table tr .attachment a{
+    font: 15px/1.3em "맑은 고딕";
+    color: #000;
+    width: 100%;
+    /* margin-right: -100px; */
+    /* margin-right: -270px; */
+}
+
+.board_write table tr .attachment b{
+    font: 15px/1.3em "맑은 고딕";
+    color: #313131;
+    width: 100%;
+    /* margin-right: -100px; */
+    /* margin-right: -270px; */
+}
+
+.board_write table tr .attachment .text .delete{
+    vertical-align: middle;
+    margin-left: 4px;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+    border-radius: 2px;
+    background: 
+    url(../../../images/iosf/content/event/icon_delete_12x12.png)no-repeat center/12px 12px,
+    #be133c;
+}
+
+.board_write table tr .attachment dl dd span{
+    margin-left: auto;
+    height: 100%;
+}
+.board_write table tr .attachment dl dd span button{
+    border: 0;
+    display: block;
+    height: 100%;
+    width: 50px;
+    border-left: 1px solid #e6e6e6;
+    background: url(../../../images/iosf/content/board/icon_delete_on_14x18.png)no-repeat center/18px 18px;
+    transition: all 0.2s;
+}
+/* .board_write table tr .attachment dl ~ dl dd span button{
+    background: url(../../../images/iosf/content/board/icon_delete_on_14x18.png)no-repeat center/18px 18px;
+    transition: all 0.2s;
+} */
+.board_write table tr .attachment dl dd span button:disabled{
+    background: url(../../../images/iosf/content/board/icon_delete_off_14x18.png)no-repeat center/18px 18px;
+}
+
+/* 첫번째 버튼은 비활성 */
+
+.board_write table tr .attachment dl:first-of-type dd span button{
+    cursor: default;
+}
+
+
+/* 찾기버튼 */
+
+.board_write table tr td button.search{
+    font: bold 13px/1.3em "맑은 고딕";
+    padding: 3px 0 4px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    color: #fff;
+    border: 1px solid #3f3f3f;
+    text-shadow: 1px 1px 1px #000;
+    width: 54px;
+    height: 28px;
+    background: #535353;
+    margin-left: 7px;
+}
+
+
+
+/* 신청하기 버튼 */
+
+/* 동의하기 라디오버튼 */
+
+
+.board_write section .agreement{
+    width: 100%;
+    height: 44px;
+    margin:20px 0 16px 0;
+    background: #3f3f3f;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.board_write section .agreement input{
+    margin-right: 8px;
+}
+.board_write section .agreement label{
+    font-family: "맑은 고딕";
+    color: #e5e5e5;
+}
+
+.board_write section .btn{
+    padding: 40px 0 0;
+    text-align: center;
+}
+
+.board_write section .btn button{
+    margin-right: 10px;
+}
+.board_write section .btn button:last-of-type{
+    margin-right: 0;
+}
+
+.board_write section .btn button{
+    border: 0;
+    position: relative;
+    display: inline-block;
+    font: bold 15px/1.3em "맑은 고딕";
+    color: #fff;
+    text-shadow: 1px 1px 0 #000;
+    border-radius: 30px;
+    min-height: 40px;
+    min-width: 100px;
+    padding: 0 30px 0 30px;
+    background: #8f816a;
+    transition: all 0.2s;
+}
+.board_write section .btn button.apply{
+    background: #f67400;
+    text-shadow: 1px 1px 0 #9f2901;
+}
+.board_write section .btn button.save{
+    background: #f67400;
+    text-shadow: 1px 1px 0 #9f2901;
+}
+.board_write section .btn button.cancel{
+    background: #8f816a;
+    text-shadow: 1px 1px 0 #504432;
+}
+.board_write section .btn button.list{
+    background: #940034;
+    text-shadow: 1px 1px 0 #69011a;
+}
+
+
+
+.board_write section .btn .detail:after{
+    background: url(../../../images/iosf/content/event/icon_detailinfo_22x22.png);
+    background-size: 22px 22px;
+}
+
+
+.board_write section .btn button:hover{
+    transition: all 0.2s;
+}
+
+/* 신청하기 버튼 비활성*/
+
+.board_write section.inactive div a{
+    cursor: default;
+    pointer-events: none;
+}
+
+.board_write section .btn button.off{
+    background: #dfdfdf;
+    text-shadow: 1px 1px 0px #c8c8c8;
+    cursor:default;
+    pointer-events: none;
+}
+
+
+
+@media screen and (min-width: 1140px) {
+
+
+}
+
+
+@media screen and (min-width: 960px) {
+    .board_write table tr td:last-of-type{
+        border-right: 1px solid #e6e6e6;
+    }
+
+    .board_write table table tr:last-of-type th,
+    .board_write table table tr:last-of-type td{
+        border-bottom: 1px solid #000;
+    }
+    
+}
+
+@media screen and (max-width: 960px) {
+    .board_write table{
+        width: 100%;
+    }
+    
+    .board_write table tr{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .board_write table tr th{
+        display: flex;
+        align-items: center;
+        /* flex: 1 0 20%; */
+    }
+    .board_write table tr td{
+        display: flex;
+        flex: 1 0 70%;
+        flex-wrap: wrap;
+    }
+
+    .board_write table table tr th{
+        flex: 0 0 26%;
+    }
+    .board_write table table tr td{
+        flex: 1 0 50%;
+    }
+
+    /* 박스 맨 위,아래 라인 컬러 지정을 위한 라인 없애기 처리  */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+    .board_write table tr:first-of-type th,
+    .board_write table tr:first-of-type td{
+        border-top: 0px solid #e6e6e6;
+    }
+
+    .board_write table tr:last-of-type td:last-of-type,
+    .board_write table table tr:last-of-type td:last-of-type{
+        border-bottom: 0;
+    }
+
+    .board_write table tr:first-of-type th:first-of-type{
+        border-top: 0;
+    }
+
+    .board_write table tr:last-of-type > th:last-of-type{
+        border-bottom: 0px solid #414141;
+    }
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+    .board_write table tr:last-of-type th,
+    .board_write table tr:last-of-type td{
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .board_write table table tr:last-of-type td:first-of-type, 
+    .board_write table table tr:last-of-type th:first-of-type{
+        border-bottom: 1px solid #e6e6e6;
+    }    
+    .board_write table table tr{
+        border-right: 0px solid #000;
+    }
+    .board_write table table td{
+        border-right: 1px solid #e6e6e6;
+    }
+
+    .board_write table table tr{
+        display: flex;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    
+    .board_write article .title a{
+        font: bold 21px/1.3em "맑은 고딕";
+    }
+    .board_write table caption,
+    .board_write div caption{
+        font: bold 19px/1.3em "맑은 고딕";
+    }
+    .board_write table caption::before,
+    .board_write div caption::before{
+        width: 2px;
+        height: 18px;
+    }    
+    .board_write table tr th{
+        color: #735231;
+        background: #f6f6f6;
+    }
+    
+}
+@media screen and (min-width: 640px) and (max-width:960px) {
+
+    .board_write table .attach th button{
+        transform: translateY(0%);
+    }
+
+}
+
+
+
+@media screen and (max-width: 640px) {
+
+    .board_write article:first-of-type{
+        background:
+        url(../../../images/iosf/content/event/bg_texture_1100x247.png),
+        url(../../../images/iosf/content/event/image_tiger_340x340.png)no-repeat right top/340px 340px,
+         #8f816a;
+    }
+
+
+    .board_write .paging dd{
+        display: none;
+    }
+    .board_write .paging .mobile{
+        display: flex;
+    }
+
+    .board_write table tr{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .board_write table tr th,
+    .board_write table table tr th{
+        display: flex;
+        align-items: center;
+        flex: 1 0 60%;
+        min-height: 44px;
+        border-bottom: 0;
+    }
+    .board_write table tr td,
+    .board_write table table tr td{
+        display: flex;
+        flex: 1 0 60%;
+        min-height: 44px;
+        border-top: 0;
+    }
+    .board_write table tr td.attachment,
+    .board_write table table tr .attachment{
+        flex: 0 1 100%;
+    }
+
+
+    .board_write table tr:last-of-type th{
+        border-bottom: 0;
+    }
+    .board_write table table tr:last-of-type th:first-of-type{
+        border-bottom: 0;
+    }
+
+
+    .board_write table table tr{
+        display: flex;
+    }
+    .board_write table table tr th{
+        border-right: 1px solid #e6e6e6;
+    }
+    .board_write table table tr td{
+        border-left: 1px solid #e6e6e6;
+    }
+
+
+    /* 문단 맨 위,아래 라인 컬러 */
+    /* --------------------------------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------- */
+
+
+
+    .board_write table table tr:last-of-type td:last-of-type{
+        border-bottom: 0;
+    }
+
+
+    /* --------------------------------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------- */
+
+
+
+
+    /* 화면 줄었을 때 파일선택 창 가로 사이즈 줄이기 */
+
+    .board_write table tr td small + .delete + input{
+        width: auto;
+    }
+
+    .board_write table tr .attachment dl{
+        position: relative;
+    }
+
+    .board_write table tr .attachment dl dd span button{
+        border-left: 0px solid #000;
+    }
+    .board_write table tr .attachment dl ~ dl{
+        border-top: 0px solid #000;
+    }
+
+    .board_write table tr .attachment dl:after{
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        width: calc(100% - 30px);
+        height: 0.5px;
+        background: #e6e6e6;
+    }
+    .board_write table tr .attachment dl:last-of-type:after{
+        height: 0;
+    }
+
+    .board_write table tr .attachment dl.tip::after{
+        width: 100%;
+    }
+
+
+    .board_write table tr .attachment dl dd span button{
+        height: 48px;
+    }
+
+    .board_write table tr .attachment .case2 dd{
+        position: relative;
+    }
+    .board_write table tr .attachment .case2 dd span{
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .board_write table tr .attachment .case2 dd span button{
+        height: 48px;
+        margin-bottom: 2px;
+    }
+
+    .board_write table tr .attachment input{
+        width: 100%;
+    }
+    .board_write table tr .attachment .case2 input{
+        min-width: calc(100% - 50px);
+    }
+   
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .board_write article,
+    .board_write article:first-of-type{
+        background:
+        url(../../../images/iosf/content/event/bg_texture_1100x247.png),
+        url(../../../images/iosf/content/event/image_tiger_340x340.png)no-repeat right top/233px 233px,
+         #8f816a;
+    }
+    
+    .board_write article .applydate{
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    
+    .board_write article{
+        min-width: 310px;
+    }
+    .board_write table{
+        min-width: 310px;
+    }
+
+
+}

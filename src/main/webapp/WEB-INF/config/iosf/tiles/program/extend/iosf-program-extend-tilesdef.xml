@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!--
+    	타일즈 동적 구성 셋팅 되어있음.
+    	기획단계에서 설계시 마스터/서브 2단계 구성으로 설계해야함.
+    	3단계 이상 구성되는경우 별도 파일로 정의할것.
+    -->
+    
+    <!-- 마스터 : ex) /back/pgm -->
+    
+    <!--
+    	리스트 화면
+    	ex) /back/pgm/list -> /back/extend/pgm/pgm_list.jsp
+    -->
+	<definition
+		name="/*/*/list"
+		extends="layout.{1}.sub">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{2}_list.jsp" />
+	</definition>
+    
+    <!--
+    	찾기 화면 (팝업용)
+    	ex) /back/pgm/find/list -> /back/extend/pgm/pgm_find_list.jsp
+    -->
+	<definition
+		name="/*/*/find/list"
+		extends="layout.{1}.popup">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{2}_find_list.jsp" />
+	</definition>
+    
+    <!--
+    	자료 일괄 등록 화면 (팝업용)
+    	ex) /back/pgm/importdata/list -> /back/extend/pgm/pgm_importdata_list.jsp
+    -->
+	<definition
+		name="/*/*/importdata/list"
+		extends="layout.{1}.popup">
+		<put-attribute
+			name="page"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{2}_importdata_list.jsp" />
+	</definition>
+	<definition
+		name="/*/*/importdata/write"
+		extends="layout.{1}.popup">
+		<put-attribute
+			name="page"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{2}_importdata_write.jsp" />
+	</definition>
+
+    <!--
+    	등록/수정 화면
+    	ex) /back/pgm/write -> /back/extend/pgm/pgm_write.jsp
+    -->
+	<definition
+		name="/*/*/write"
+		extends="layout.{1}.sub">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{2}_write.jsp" />
+	</definition>
+	
+    <!--
+    	상세 화면
+    	ex) /back/pgm/123 -> /back/extend/pgm/pgm_view.jsp
+    -->
+	<definition
+		name="/*/*/view"
+		extends="layout.{1}.sub">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{2}_view.jsp" />
+	</definition>
+
+	<!-- 서브 : ex) /back/pgm/sub -->
+	
+    
+    <!--
+    	리스트 화면
+    	ex) /back/pgm/sub/list -> /back/extend/pgm/sub/pgm_sub_list.jsp
+    -->
+	<definition
+		name="/*/*/*/list"
+		extends="layout.{1}.sub">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{2}_{3}_list.jsp" />
+	</definition>
+    
+    <!--
+    	찾기 화면 (팝업용)
+    	ex) /back/pgm/sub/find/list -> /back/extend/pgm/pgm_sub_find_list.jsp
+    -->
+	<definition
+		name="/*/*/*/find/list"
+		extends="layout.{1}.popup">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{2}_{3}_find_list.jsp" />
+	</definition>
+    
+    <!--
+    	자료 일괄 등록 화면 (팝업용)
+    	ex) /back/pgm/importdata/list -> /back/extend/pgm/pgm_importdata_list.jsp
+    -->
+	<definition
+		name="/*/*/*/importdata/list"
+		extends="layout.{1}.popup">
+		<put-attribute
+			name="page"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{2}_{3}_importdata_list.jsp" />
+	</definition>
+	<definition
+		name="/*/*/*/importdata/write"
+		extends="layout.{1}.popup">
+		<put-attribute
+			name="page"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{2}_{3}_importdata_write.jsp" />
+	</definition>
+
+    <!--
+    	등록/수정 화면
+    	ex) /back/pgm/sub/write -> /back/extend/pgm/sub/pgm_sub_write.jsp
+    -->
+	<definition
+		name="/*/*/*/write"
+		extends="layout.{1}.sub">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{2}_{3}_write.jsp" />
+	</definition>
+
+    <!--
+    	상세 화면
+    	ex) /back/pgm/123 -> /back/extend/pgm/sub/pgm_sub_view.jsp
+    -->
+	<definition
+		name="/*/*/*/view"
+		extends="layout.{1}.sub">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{2}_{3}_view.jsp" />
+	</definition>
+
+	<!-- 서브의 추가서브 : ex) /back/pgm/sub/addsub -->
+	
+    
+    <!--
+    	리스트 화면
+    	ex) /back/pgm/sub/addsub/list -> /back/extend/pgm/addsub/pgm_sub_addsub_list.jsp
+    -->
+	<definition
+		name="/*/*/*/*/list"
+		extends="layout.{1}.sub">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{4}/{2}_{3}_{4}_list.jsp" />
+	</definition>
+    
+    <!--
+    	찾기 화면 (팝업용)
+    	ex) /back/pgm/sub/addsub/find/list -> /back/extend/pgm/pgm_sub_addsub_find_list.jsp
+    -->
+	<definition
+		name="/*/*/*/*/find/list"
+		extends="layout.{1}.popup">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{4}/{2}_{3}_{4}_find_list.jsp" />
+	</definition>
+    
+    <!--
+    	자료 일괄 등록 화면 (팝업용)
+    	ex) /back/pgm/importdata/list -> /back/extend/pgm/pgm_importdata_list.jsp
+    -->
+	<definition
+		name="/*/*/*/*/importdata/list"
+		extends="layout.{1}.popup">
+		<put-attribute
+			name="page"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{4}/{2}_{3}_{4}_importdata_list.jsp" />
+	</definition>
+	<definition
+		name="/*/*/*/*/importdata/write"
+		extends="layout.{1}.popup">
+		<put-attribute
+			name="page"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{4}/{2}_{3}_{4}_importdata_write.jsp" />
+	</definition>
+
+    <!--
+    	등록/수정 화면
+    	ex) /back/pgm/sub/addsub/write -> /back/extend/pgm/sub/addsub/pgm_sub_addsub_write.jsp
+    -->
+	<definition
+		name="/*/*/*/*/write"
+		extends="layout.{1}.sub">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{4}/{2}_{3}_{4}_write.jsp" />
+	</definition>
+
+    <!--
+    	상세 화면
+    	ex) /back/pgm/123 -> /back/extend/pgm/sub/addsub/pgm_sub_addsub_view.jsp
+    -->
+	<definition
+		name="/*/*/*/*/view"
+		extends="layout.{1}.sub">
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/program/{1}/extend/{2}/{3}/{4}/{2}_{3}_{4}_view.jsp" />
+	</definition>
+
+</tiles-definitions>

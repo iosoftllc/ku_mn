@@ -1,0 +1,99 @@
+<html>
+
+<head>
+	<title>::::: CJ I'House 관리자 툴 ::::::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="ImageToolbar" content="No">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script language="javascript" src="js/check.js"></script>
+	<script language="javascript" src="js/function.js"></script>
+</head>
+
+<script language="javascript">
+	function LoginCheck(Form) {
+		if (!checkID(Form.ihouse_adminid)) return false;
+		if (!checkPassword(Form.ihouse_adminpw, Form.ihouse_adminpw)) return false;
+		return true;
+	}
+</script>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="document.LoginForm.ihouse_adminid.focus();">
+	<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	  	<td>
+	  		<table border="0" cellspacing="0" cellpadding="0" align="center">
+	  			<tr>
+	  				<td><img src="images/login/login_bar_side1.jpg" width="8" height="23"></td>
+	  				<td align="center" background="images/login/login_bar_back.jpg"><img src="images/login/login_bar_title.jpg" width="199" height="23"></td>
+	  				<td><img src="images/login/login_bar_side2.jpg" width="8" height="23"></td>
+	  			</tr>
+	  			<tr>
+	  				<td width="8"></td>
+	  				<td background="images/login/login_body_back.jpg">
+				  		<table border="0" cellspacing="0" cellpadding="0">
+	  						<tr>
+	  							<td width="16"></td>
+	  							<td><img src="images/login/login_img.jpg" width="129" height="126"></td>
+	  							<td><img src="images/login/login_logo.jpg" width="145" height="126"></td>
+	  							<td width="16"></td>
+				  			</tr>
+	  						<tr>
+	  							<td></td>
+	  							<td colspan="2">
+							  		<table border="0" cellspacing="0" cellpadding="0">
+	  									<tr>
+	  										<td><img src="images/login/round_corner1.jpg" width="10" height="10"></td>
+	  										<td width="100%" background="images/login/round_side1.jpg"></td>
+	  										<td><img src="images/login/round_corner2.jpg" width="10" height="10"></td>
+							  			</tr>
+	  									<tr>
+	  										<td background="images/login/round_side2.jpg"></td>
+	  										<td bgcolor="#EEEEEE">
+										  		<table border="0" cellspacing="0" cellpadding="0" align="center">
+							  					  <form name="LoginForm" action="https://reslife.korea.ac.kr:5008/admin/src/main/logincheck.php" method="post" onSubmit="return LoginCheck(this);">
+	  													<tr>
+				  											<td colspan="2"><img src="images/login/login_id.jpg" width="20" height="16"></td>
+				  											<td colspan="3"><img src="images/login/login_pw.jpg" width="65" height="16"></td>
+											  			</tr>
+	  													<tr>
+				  											<td><input type="text" name="ihouse_adminid" style="width:88px;"></td>
+				  											<td width="11"></td>
+				  											<td><input type="password" name="ihouse_adminpw" style="width:88px;"></td>
+				  											<td width="8"></td>
+				  											<td><input type="image" src="images/login/btn_login.jpg" width="62" height="24" border="0"></td>
+											  			</tr>
+											  		</form>
+										  		</table>
+	  										</td>
+	  										<td background="images/login/round_side3.jpg"></td>
+							  			</tr>
+	  									<tr>
+	  										<td><img src="images/login/round_corner3.jpg" width="10" height="10"></td>
+	  										<td width="100%" background="images/login/round_side4.jpg"></td>
+	  										<td><img src="images/login/round_corner4.jpg" width="10" height="10"></td>
+							  			</tr>
+							  		</table>
+	  							</td>
+	  							<td></td>
+				  			</tr>
+	  						<tr>
+	  							<td height="10"></td>
+	  							<td colspan="2"></td>
+	  							<td height="10"></td>
+				  			</tr>
+				  		</table>
+	  				</td>
+	  				<td width="8"></td>
+	  			</tr>
+	  			<tr>
+	  				<td><img src="images/login/login_bar_side1.jpg" width="8" height="23"></td>
+	  				<td background="images/login/login_bar_back.jpg"></td>
+	  				<td><img src="images/login/login_bar_side2.jpg" width="8" height="23"></td>
+	  			</tr>
+	  		</table>
+	  	</td>
+	  </tr>
+	</table>
+</body>
+
+</html>

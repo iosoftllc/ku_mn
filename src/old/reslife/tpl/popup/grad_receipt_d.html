@@ -1,0 +1,104 @@
+<table width="600" border="0" cellpadding="3" cellspacing="0" style="border:1px solid #000000;">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><img src="../../../images/main/ku_sign_eng.jpg" width="150" height="50"><br><font style="line-height:10pt;">Anam Global House<br>Anam-dong Seongbuk-gu<br>Seoul 02841<br>Korea</font></td>
+					<td align="right" valign="top">Receipt printed on {RECEIPT_DATE}</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td align="center"><font style="font-size:16pt;"><b>Deposit Receipt</b></font></td>
+	</tr>
+	<tr>
+		<td height="15"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td nowrap>KU Student ID:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_STUDENT}</td>
+				</tr>
+				<tr>
+					<td nowrap>Name:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_NAME}</td>
+				</tr>
+				<tr>
+					<td nowrap>Residence Application No.:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_NUMBER}</td>
+				</tr>
+				<tr>
+					<td nowrap>For the Period:</td>
+					<td width="15" nowrap></td>
+					<td width="100%">{APP_PERIOD}</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="15"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td>&nbsp;<b>Date</b></td>
+					<td>&nbsp;<b>Description</b></td>
+					<td align="right" height="25"><b>Amount (KRW)</b>&nbsp;</td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: payment_row -->
+				<tr>
+					<td>&nbsp;{PAYMENT_DATE}</td>
+					<td>&nbsp;{PAYMENT_DETAIL}</td>
+					<td align="right" height="25">{PAYMENT_AMOUNT}&nbsp;</td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: payment_row -->
+				<tr>
+					<td>&nbsp;</td>
+					<td align="right"><b>Total Deposit Paid</b>&nbsp;</td>
+					<td align="right" height="25"><b>{PAYMENT_TOTAL}</b>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td align="right"><b>Total Due / (Overpaid)</b>&nbsp;</td>
+					<td align="right" height="25"><b>{PAYMENT_ALL}</b>&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td>A Reservation and Damage Deposit of 200,000 KRW must accompany the Anam Global House application. Applications must be made by ALL students regardless of any aid awarded (scholaships, etc.). Failure to cancel an application before room assignment date will result in forfeiture of your deposit.</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="20" valign="top" nowrap>1.</td>
+					<td width="100%">Residents will be liable for the damages of Univiersity Property.</td>
+				</tr>
+				<tr>
+					<td width="20" valign="top" nowrap>2.</td>
+					<td width="100%">Refund of fees will be in accordance with the Anam Global House Contract published in the current Anam Global House Website.</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+</table>

@@ -1,0 +1,142 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/grad_application.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td align="right">
+			<a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=grad_account"><img src="../../images/button/btn_logout.jpg" width="74" height="30" style="border:0px;"></a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<form name="ApplicationForm" action="" method="post" onSubmit="return checkSearchInfo(document.ApplicationForm.s_text, document.ApplicationForm.page);">
+					<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+					<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+					<input type="hidden" name="email" value="{SEL_EMAIL}">
+					<input type="hidden" name="pw" value="{SEL_PASSWORD}">
+					<input type="hidden" name="mode" value="">
+					<input type="hidden" name="no" value="">
+					<tr>
+						<td colspan="2"><img src="../../images/title/cnt_communication.jpg" width="500" height="14"></td>
+					</tr>
+					<tr>
+						<td colspan="2" height="20"></td>
+					</tr>
+					<tr>
+						<td width="15" nowrap></td>
+						<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td><a href="javascript:viewPersonalInfo(document.ApplicationForm, '{INFO_NUMBER}');"><img src="../../images/button/btn_info.jpg" style="border:0px;"></a></td>
+								</tr>
+								<tr>
+									<td height="20"></td>
+								</tr>
+								<tr>
+									<td><a href="javascript:changePassword(document.ApplicationForm, '{INFO_NUMBER}');"><img src="../../images/button/btn_change_pw.jpg" style="border:0px;"></a></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" height="20"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><img src="../../images/title/cnt_app_list.jpg" width="500" height="14"></td>
+					</tr>
+					<tr>
+						<td colspan="2" height="20"></td>
+					</tr>
+					<tr>
+						<td width="15" nowrap></td>
+						<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<!--<a href="javascript:viewList(document.ApplicationForm);"><img src="../../images/button/btn_view_list1.jpg" style="border:0px;" align="absmiddle"></a> - -->
+										<b>Select Term Year:</b>
+										<select name="s_state" style="color:#9B9EA3;">
+											<option value="">---------------------------------------</option>
+											<!-- BEGIN DYNAMIC BLOCK: term_row -->
+											<option value="{TERM_APPLY}">{TERM_NAME}</option>
+											<!-- END DYNAMIC BLOCK: term_row -->
+										</select>
+										<a href="javascript:viewListInfo(document.ApplicationForm);"><img src="../../images/button/btn_go.jpg" width="24" height="19" style="border:0px;" align="absmiddle"></a>
+									</td>
+								</tr>
+								<tr>
+									<td height="10"></td>
+								</tr>
+								<tr>
+									<td><small>'Select term year' under the My Housing Account section is only applicable for students who have already applied for the dormitory, through which the precious application status can be checked.<br>Students who want to apply for the dormitory in the next semester should click on 'Submit New Applicaion' under the My Housing Account section.</small></td>
+								</tr>
+								<!-- BEGIN DYNAMIC BLOCK: list_use -->
+								<tr>
+									<td height="10"></td>
+								</tr>
+								<tr>
+									<td>* Click the below NO. in order to look at the information of select term year.</td>
+								</tr>
+								<tr>
+									<td>
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td colspan="7" height="3" bgcolor="#7C0019"></td>
+											</tr>
+											<tr> 
+												<td width="1" nowrap><img src="../../images/board/board_top_left.jpg" width="1" height="21"></td>
+												<td width="100" height="21" align="center" background="../../images/board/board_top_back.jpg" nowrap><a href="javascript:sortList(document.ApplicationForm, 'a.apply_no');"><img src="../../images/board/board_no.jpg" width="15" height="21" style="border:0px;"></a></td>
+												<td width="2" nowrap><img src="../../images/board/board_top_border.jpg" width="2" height="21"></td>
+												<td height="21" align="center" background="../../images/board/board_top_back.jpg"><a href="javascript:sortList(document.ApplicationForm, 'b.name');"><img src="../../images/board/board_term.jpg" width="27" height="21" style="border:0px;"></a></td>
+												<td width="2" nowrap><img src="../../images/board/board_top_border.jpg" width="2" height="21"></td>
+												<td height="21" align="center" background="../../images/board/board_top_back.jpg" nowrap><a href="javascript:sortList(document.ApplicationForm, 'apply_date');"><img src="../../images/board/board_app_status.jpg" width="104" height="21" style="border:0px;"></a></td>
+												<td width="1" nowrap><img src="../../images/board/board_top_right.jpg" width="1" height="21"></td>
+											</tr>
+											<!-- BEGIN DYNAMIC BLOCK: list_row -->
+											<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+												<td width="1"></td>
+												<td width="100" height="23" align="center"><a href="javascript:viewApplication(document.ApplicationForm, '{LIST_NUMBER}');">{LIST_NUMBER}</td>
+												<td width="2" background="../../images/board/board_vdot.jpg"></td>
+												<td height="23" align="center">{LIST_PERIOD}</td>
+												<td width="2" background="../../images/board/board_vdot.jpg"></td>
+												<td height="23" align="center">{LIST_STATE}</td>
+												<td width="1"></td>
+											</tr>
+											{DIVIDE_LINE}
+											<!-- END DYNAMIC BLOCK: list_row -->
+											<tr> 
+												<td width="1" height="10"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+												<td colspan="5" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+												<td width="1" height="10"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+											</tr>
+											<tr>
+												<td colspan="7" height="3" bgcolor="#7C0019"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<!-- END DYNAMIC BLOCK: list_use -->
+								<tr>
+									<td height="20"></td>
+								</tr>
+								<tr>
+									<td><a href="javascript:gotoApplication(document.ApplicationForm, '{INFO_NATION}', '{INFO_STUDENT}', '{INFO_CLASS}', '{INFO_NUMBER}');"><img src="../../images/button/btn_submit_app1.jpg" style="border:0px;"></a></td>
+								</tr>
+								<tr>
+									<td height="20"></td>
+								</tr>
+								<tr>
+									<td><a href="javascript:gotoPayment(document.ApplicationForm);"><img src="../../images/button/btn_payment.jpg" style="border:0px;"></a></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript">
+	setSelected(document.ApplicationForm.s_state, '{SEARCH_STATE}');
+</script>

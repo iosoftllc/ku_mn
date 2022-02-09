@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_confirm.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_deposit_receipt_en.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_invoice_staff_en.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_invoice_student_en.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_payment_anam_ko.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_payment_en.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_payment_frontier_ko.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_permission_ko.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_receipt_en.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_residents_anam_ko.jrxml=UTF-8
+encoding//src/main/webapp/WEB-INF/config/iosf/component/report/doc_residents_frontier_ko.jrxml=UTF-8
+encoding//src/test/java=UTF-8

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="doc_residents_cert_ko" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6fe3ba31-fe0c-4bdf-974a-8b1eacccdcde">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="안암학사"/>
+	<parameter name="EVENT_SUBMIT_SEQ" class="java.lang.Long"/>
+	<parameter name="REPORT_SRC" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT A.USER_NM
+	, A.STD_ID
+	, A.DEPT_NM
+	, C.ROOM_NM
+	, DATE_FORMAT(NOW(), '%Y 년 %m 월 %d 일') NOW_DT
+FROM IOSF_EVENT_SUBMIT A
+INNER JOIN IOSF_EVENT_SUBMIT_ROOM_MAPP B ON A.EVENT_SUBMIT_SEQ = B.EVENT_SUBMIT_SEQ
+INNER JOIN IOSF_ROOM C ON B.ROOM_SEQ = C.ROOM_SEQ
+INNER JOIN IOSF_ROOM_TYPE D ON C.ROOM_TYPE_SEQ = D.ROOM_TYPE_SEQ
+WHERE A.EVENT_SUBMIT_SEQ =  $P{EVENT_SUBMIT_SEQ}
+LIMIT 1]]>
+	</queryString>
+	<field name="USER_NM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="USER_NM"/>
+		<property name="com.jaspersoft.studio.field.label" value="USER_NM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[사용자이름]]></fieldDescription>
+	</field>
+	<field name="STD_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="STD_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="STD_ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[학번/교번/수험번호]]></fieldDescription>
+	</field>
+	<field name="DEPT_NM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DEPT_NM"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEPT_NM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_EVENT_SUBMIT"/>
+		<fieldDescription><![CDATA[부서/학과명 과정명 포함]]></fieldDescription>
+	</field>
+	<field name="ROOM_NM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ROOM_NM"/>
+		<property name="com.jaspersoft.studio.field.label" value="ROOM_NM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="IOSF_ROOM"/>
+		<fieldDescription><![CDATA[외부 공개용]]></fieldDescription>
+	</field>
+	<field name="NOW_DT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOW_DT"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOW_DT"/>
+	</field>
+	<title>
+		<band height="198" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="198" uuid="e6c2a946-62a2-409e-ab52-3f4b7c7b7898"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="22"/>
+				</textElement>
+				<text><![CDATA[사생 확인 증명서]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="113" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="93" height="29" uuid="54195707-8d78-4f15-8e73-98af58adb93c">
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="0.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement>
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="0" width="462" height="29" uuid="b5e7640d-fc27-44cf-bf5c-49de56e73cef">
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="5.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="0.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement>
+					<font fontName="GungSeo"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="93" height="29" uuid="5cd865b9-c4b4-4c51-ae3a-e42ca40d5e86">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<text><![CDATA[성      명 : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="0" width="462" height="29" uuid="07f64c6a-0954-4fde-b61e-ebf3c89a63b4">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="0"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{USER_NM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="29" width="93" height="28" uuid="22ab5b4d-ad15-4293-ac5a-906c581f36ce">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<text><![CDATA[학      부 : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="29" width="462" height="28" uuid="e80e2ead-ac8e-4a1d-a9d2-b30ab934059e">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEPT_NM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="57" width="93" height="28" uuid="e1c1e2b6-1254-4878-95df-49b802feda11">
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="2"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<text><![CDATA[학      번 : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="57" width="462" height="28" uuid="29b1e8d6-9653-4d64-bd0a-e0fc55c26013">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="2"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STD_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="85" width="93" height="28" uuid="c475fa3b-6896-4c54-b506-2474745ac9c7">
+					<property name="com.jaspersoft.layout.grid.x" value="0"/>
+					<property name="com.jaspersoft.layout.grid.y" value="3"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<text><![CDATA[배정호실 : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="85" width="462" height="28" uuid="820e5a53-797a-4a0f-aa77-b1863ec50931">
+					<property name="com.jaspersoft.layout.grid.x" value="1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="3"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ROOM_NM}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="198" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="198" uuid="dafc6b61-5265-4485-b1aa-5fcc9397c355"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["       위 학생은 " + $F{NOW_DT} + " 현재 고려대학교 안암학사에 기숙함을 확인합니다"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="141" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="141" uuid="d74c8447-2d37-4941-8ad9-67142142f398"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOW_DT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="85" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="85" uuid="33454fcf-4b7d-403d-8bee-5aae73436707"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GungSeo" size="20"/>
+				</textElement>
+				<text><![CDATA[고려대학교 안암학사 사감장]]></text>
+			</staticText>
+			<image>
+				<reportElement x="410" y="7" width="120" height="70" uuid="6fac083a-6cb9-4e9c-b283-ff8d9ae63db4"/>
+				<imageExpression><![CDATA[$P{REPORT_SRC} + "/images/sign-korea.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

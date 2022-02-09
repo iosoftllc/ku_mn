@@ -1,0 +1,261 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+		<meta http-equiv="ImageToolbar" content="No">
+		<title>::: CJ International House - Korea University :::</title>
+		<!--<link rel="shortcut icon" href="../../images/main/ku.ico">-->
+		<link rel="stylesheet" type="text/css" href="../../css/default.css">
+		<link rel="stylesheet" type="text/css" href="../../css/print.css" media="print">
+		<script language="javascript" src="../../js/main.js?20210615"></script>
+		<script language="javascript">
+			var popup;
+			var main_menu_count = {MAIN_MENU_COUNT}, page_menu_count = {PAGE_MENU_COUNT}, etc_menu_count = {ETC_MENU_COUNT}, footer_menu_count = {FOOTER_MENU_COUNT}, sub_menu_count = new Array({SUB_MENU_COUNT});
+			var main_menu_index = {MAIN_MENU_INDEX}, page_menu_index = {PAGE_MENU_INDEX}, etc_menu_index = {ETC_MENU_INDEX};
+			var mainMenuOver = new Array(), mainMenuOut = new Array();
+			var subMenuOver = new Array(), subMenuOut = new Array();
+			var pageMenuOver = new Array(), pageMenuOut = new Array();
+			var etcMenuOver = new Array(), etcMenuOut = new Array();
+			var footerMenuOver = new Array(), footerMenuOut = new Array();
+			setRollOver();
+			<!-- BEGIN DYNAMIC BLOCK: main_img_row -->
+			mainMenuOut[{MAIN_IMG_INDEX}].src = "{MAIN_OUT_FILE}";
+			mainMenuOver[{MAIN_IMG_INDEX}].src = "{MAIN_OVER_FILE}";
+			<!-- END DYNAMIC BLOCK: main_img_row -->
+			<!-- BEGIN DYNAMIC BLOCK: sub_img_row -->
+			subMenuOut[{SUB_MAIN_INDEX}][{SUB_PAGE_INDEX}].src = "{SUB_OUT_FILE}";
+			subMenuOver[{SUB_MAIN_INDEX}][{SUB_PAGE_INDEX}].src = "{SUB_OVER_FILE}";
+			<!-- END DYNAMIC BLOCK: sub_img_row -->
+			<!-- BEGIN DYNAMIC BLOCK: page_img_row -->
+			pageMenuOut[{PAGE_IMG_INDEX}].src = "{PAGE_OUT_FILE}";
+			pageMenuOver[{PAGE_IMG_INDEX}].src = "{PAGE_OVER_FILE}";
+			<!-- END DYNAMIC BLOCK: page_img_row -->
+			<!-- BEGIN DYNAMIC BLOCK: etc_img_row -->
+			etcMenuOut[{ETC_IMG_INDEX}].src = "{ETC_OUT_FILE}";
+			etcMenuOver[{ETC_IMG_INDEX}].src = "{ETC_OVER_FILE}";
+			<!-- END DYNAMIC BLOCK: etc_img_row -->
+			<!-- BEGIN DYNAMIC BLOCK: footer_img_row -->
+			footerMenuOut[{FOOTER_IMG_INDEX}].src = "{FOOTER_OUT_FILE}";
+			footerMenuOver[{FOOTER_IMG_INDEX}].src = "{FOOTER_OVER_FILE}";
+			<!-- END DYNAMIC BLOCK: footer_img_row -->
+		</script>
+	</head>
+	<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="swapMenu('', 'out');{PAGE_ONLOAD}" bgcolor="#e3d9c5">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td height="134" background="../../images/main/header_bg.jpg" valign="top" class="NoPrint">
+					<table border="0" cellpadding="0" cellspacing="0" align="center">
+						<tr>
+							<td height="5"></td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td><a href="{HOME_URL}"><img src="{PAGE_LOGO}"></a></td>
+										<td valign="bottom">
+											<table border="0" cellpadding="0" cellspacing="0" align="right">
+												<tr>
+													<!-- BEGIN DYNAMIC BLOCK: etc_menu_row -->
+													<td>{ETC_MENU_IMAGE}</td>
+													<!-- END DYNAMIC BLOCK: etc_menu_row -->
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0" align="center">
+									<tr>
+										<!-- BEGIN DYNAMIC BLOCK: main_menu_row -->
+										<td>{MAIN_MENU_IMAGE}</td>
+										<!-- END DYNAMIC BLOCK: main_menu_row -->
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td height="3" valign="top">
+								<!-- BEGIN DYNAMIC BLOCK: sub_menu_row -->
+								<table id="{SUB_MENU_LAYER}" border="0" cellspacing="0" cellpadding="0" class="layer">
+									<tr>
+										<td width="{SUB_MENU_SPACE}" nowrap></td>
+										<td onMouseover="swapMenu('main_menu_{SUB_MENU_MAIN}', 'over');" onMouseout="swapMenu('main_menu_{SUB_MENU_MAIN}', 'out');">{SUB_MENU_LIST}</td>
+									</tr>
+								</table>
+								<!-- END DYNAMIC BLOCK: sub_menu_row -->
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="NoPrint">
+					<table border="0" cellpadding="0" cellspacing="0" align="center">
+						<tr>
+							<td><img src="../../images/main/frame_img_top.jpg"></td>
+						</tr>
+						<tr>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td><img src="../../images/main/frame_img_left.jpg"></td>
+										<td>{PAGE_IMAGE}</td>
+										<td><img src="../../images/main/frame_img_right.jpg"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><img src="../../images/main/frame_img_bottom.jpg"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td height="100%">
+					<table width="939" height="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+						<tr>
+							<td width="225" height="100%" valign="top" background="../../images/main/left_bg.jpg" class="NoPrint" nowrap>
+								<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td valign="top">
+											<table width="100%" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td width="23" background="../../images/main/menu_side1_bg.jpg" nowrap></td>
+													<td width="100%" bgcolor="#ffffff" valign="top" nowrap>
+														<table border="0" cellpadding="0" cellspacing="0" align="center">
+															<tr>
+																<td>{MENU_TITLE}</td>
+															</tr>
+															<!-- BEGIN DYNAMIC BLOCK: page_menu_row -->
+															<tr>
+																<td>{PAGE_MENU_IMAGE}</td>
+															</tr>
+															<!-- END DYNAMIC BLOCK: page_menu_row -->
+														</table>
+													</td>
+													<td width="29" valign="top" background="../../images/main/menu_side2_bg.jpg" nowrap><img src="../../images/main/menu_side2_img.jpg"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table width="100%" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td align="center"><img src="../../images/main/menu_bottom.jpg"></td>
+												</tr>
+												<tr>
+													<td style="padding-left:50px;"><a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=contact"><img src="../../images/main/left_contact.jpg"></a></td>
+												</tr>
+												<tr>
+													<td style="padding-left:50px;"><a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=direction"><img src="../../images/main/left_direction.jpg"></a></td>
+												</tr>
+												<tr>
+													<td style="padding-left:50px;"><a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=map"><img src="../../images/main/left_map.jpg"></a></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td height="100%"></td>
+									</tr>
+									<tr>
+										<td valign="bottom">
+											<table width="100%" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td><a href="http://www.korea.edu" target="_blank"><img src="../../images/main/left_link_1.jpg"></a></td>
+												</tr>
+												<tr>
+													<td><a href="http://portal.korea.ac.kr" target="_blank"><img src="../../images/main/left_link_2.jpg"></a></td>
+												</tr>
+												<tr>
+													<td><a href="http://oia.korea.ac.kr" target="_blank"><img src="../../images/main/left_link_3.jpg"></a></td>
+												</tr>
+												<tr>
+													<td><a href="http://dorm.korea.ac.kr" target="_blank"><img src="../../images/main/left_link_4.jpg"></a></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td width="100%" height="100%" valign="top" bgcolor="#ffffff">
+								<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td class="NoPrint"><img src="../../images/main/top_01.jpg"></td>
+									</tr>
+									<tr>
+										<td width="100%" height="100%" valign="top">
+											<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td height="52" background="../../images/title/page_title_bg.jpg">
+														<table width="100%" border="0" cellpadding="0" cellspacing="0">
+															<tr>
+																<td>{PAGE_TITLE}</td>
+																<td align="right">{PAGE_TITLE1}</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td height="30"></td>
+												</tr>
+												<tr>
+													<td style="padding-left:10px;padding-right:20px; padding-bottom:50px;">
+														{PAGE_CONTENT}
+													</td>
+												</tr>
+												<tr>
+													<td height="100%"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td width="50" height="100%" valign="top" background="../../images/main/right_bg.jpg" class="NoPrint" nowrap><img src="../../images/main/top_02.jpg"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="NoPrint"><img src="../../images/main/bottom.jpg"></td>
+			</tr>
+			<tr>
+				<td height="66" background="../../images/main/footer_bg.jpg" valign="top" class="NoPrint">
+					<map name="FooterMap">
+						<area shape="rect" coords="77,26,175,40" href="mailto:reslife@korea.ac.kr">
+						<area shape="rect" coords="328,26,455,40" href="mailto:reslife_grad@korea.ac.kr">
+						<area shape="rect" coords="616,26,740,40" href="mailto:reslife_prof@korea.ac.kr">
+					</map>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td height="12"></td>
+						</tr>
+						<tr>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0" align="center">
+									<tr>
+										<!-- BEGIN DYNAMIC BLOCK: footer_menu_row -->
+										<td>{FOOTER_MENU_IMAGE}</td>
+										<!-- END DYNAMIC BLOCK: footer_menu_row -->
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td height="1"></td>
+						</tr>
+						<tr>
+							<td align="center"><img src="../../images/main/footer.jpg" usemap="#FooterMap"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

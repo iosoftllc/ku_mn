@@ -1,0 +1,274 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript">
+	function sortList(Form, val) {
+		var dir = "ASC";
+		if (Form.sort2.value == "ASC") dir = "DESC";
+		Form.sort1.value = val;
+		Form.sort2.value = dir;
+		Form.submit();
+	}
+	function gotoPage(Form, page) {
+		if (page) {
+			Form.page.value = page;
+			Form.submit();
+		}
+	}
+	function checkSearchInfo(Form) {
+		var sdate, edate;
+		if (Form.s_yy1.value && Form.s_mm1.value && Form.s_dd1.value) sdate = Form.s_yy1.value + Form.s_mm1.value + Form.s_dd1.value;
+		if (Form.s_yy2.value && Form.s_mm2.value && Form.s_dd2.value) edate = Form.s_yy2.value + Form.s_mm2.value + Form.s_dd2.value;
+		if (!((Form.s_yy1.value && Form.s_mm1.value && Form.s_dd1.value) || (Form.s_yy2.value && Form.s_mm2.value && Form.s_dd2.value) || Form.s_text.value)) {
+			alert("검색기간이나 검색어를 입력해 주십시오.");
+			return false;
+		}
+		if (sdate && edate && sdate > edate) {
+			alert("검색기간이 올바르지 않습니다.");
+			return false;
+		}
+		return true;
+	}
+	function downloadExcel(Form) {
+		Form.action = "../../src/log/work_excel.php";
+		Form.submit();
+		Form.action = "../../src/log/work_list.php";
+	}
+</script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="ListForm" action="../../src/log/work_list.php" method="get" onSubmit="return checkSearchInfo(this);">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="no" value="">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="22" nowrap>
+							<select name="s_admin" onChange="document.ListForm.submit();">
+								<option value="">전체담당자</option>
+								<!-- BEGIN DYNAMIC BLOCK: admin_row -->
+								<option value="{ADMIN_ID}">{ADMIN_NAME}</option>
+								<!-- END DYNAMIC BLOCK: admin_row -->
+							</select>
+							<select name="s_building" onChange="document.ListForm.submit();">
+								<option value="">전체건물</option>
+								<option value="S">학생동</option>
+								<option value="F">교수동</option>
+								<option value="P">대학원생</option>
+							</select>
+							<select name="s_menu" onChange="document.ListForm.submit();">
+								<option value="">전체업무메뉴</option>
+								<option value="S">지원자관리</option>
+								<option value="A">온라인지원관리</option>
+								<option value="G">일반지원관리</option>
+								<option value="L">어학당지원관리</option>
+								<option value="O">과납금관리</option>
+								<option value="P">납부연기관리</option>
+								<option value="R">객실예약관리</option>
+								<option value="F">시설예약관리</option>
+							</select>
+							<select name="s_kind" onChange="document.ListForm.submit();">
+								<option value="">전체업무종류</option>
+								<option value="L">리스트열람</option>
+								<option value="I">상세정보열람</option>
+								<option value="N">추가</option>
+								<option value="E">수정</option>
+								<option value="D">삭제</option>
+								<option value="X">엑셀다운로드</option>
+								<option value="Z">기타</option>
+							</select>
+							총 {TOTAL_COUNT}개 / {TOTAL_PAGE}페이지
+						</td>
+						<td height="22" nowrap>
+							<table border="0" cellpadding="0" cellspacing="0" align="right">
+								<tr>
+									<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+									<td width="84" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+										<a href="javascript:downloadExcel(document.ListForm);">엑셀다운로드</a>
+									</td>
+									<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="4" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="2" nowrap><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.ListForm, 'a.work_time');">업무시간</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.ListForm, 'a.mem_id');">업무자 (ID)</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.ListForm, 'b.department');">부서명</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.ListForm, 'a.work_ip');">IP</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.ListForm, 'a.building');">건물</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.ListForm, 'a.menu');">업무메뉴</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.ListForm, 'a.kind');">업무종류</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList(document.ListForm, 'a.detail');">처리한 정보</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="2" nowrap><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: list_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="2" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_TIME}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_NAME} ({LIST_ID})</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_DEPARTMENT}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_IP}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_BUILDING}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_MENU}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_KIND}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="left">{LIST_DETAIL}</td>
+						<td width="5" nowrap></td>
+						<td width="2" nowrap></td>
+					</tr>
+					<tr> 
+						<td colspan="33" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: list_row -->
+					<tr> 
+						<td colspan="33" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr> 
+						<td height="35">
+							<a href="javascript:gotoPage(document.ListForm, '{PRE_PAGE}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+							<!-- BEGIN DYNAMIC BLOCK: page_row -->
+							{PAGE_VALUE}
+							<!-- END DYNAMIC BLOCK: page_row -->
+							<a href="javascript:gotoPage(document.ListForm, '{NEXT_PAGE}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="NoPrint">
+				<select name="s_yy1" onChange="setDayList(document.ListForm.s_yy1, document.ListForm.s_mm1, document.ListForm.s_dd1);">
+					<option value="">yyyy</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_mm1" onChange="setDayList(document.ListForm.s_yy1, document.ListForm.s_mm1, document.ListForm.s_dd1);">
+					<option value="">mm</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_dd1">
+					<option value="">dd</option>
+				</select>일 부터
+				<select name="s_yy2" onChange="setDayList(document.ListForm.s_yy2, document.ListForm.s_mm2, document.ListForm.s_dd2);">
+					<option value="">yyyy</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_mm2" onChange="setDayList(document.ListForm.s_yy2, document.ListForm.s_mm2, document.ListForm.s_dd2);">
+					<option value="">mm</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_dd2">
+					<option value="">dd</option>
+				</select>일 까지
+			</td>
+		</tr>
+		<tr>
+			<td height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td height="22" align="center">
+							<select name="s_type">
+								<option value="1">처리한 정보</option>
+								<option value="2">IP</option>
+								<option value="3">업무자명</option>
+								<option value="4">업무자아이디</option>
+							</select>
+							<input type="text" name="s_text" size="30" value="{SEARCH_TEXT}">
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" background="../../images/button/button_back.jpg"><input type="submit" style="height:22px;cursor:pointer;border:0px;background:url(../../images/button/button_back.jpg);" value="검색"></td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setSelected(document.ListForm.s_admin, '{SEARCH_ADMIN}');
+	setSelected(document.ListForm.s_building, '{SEARCH_BUILDING}');
+	setSelected(document.ListForm.s_menu, '{SEARCH_MENU}');
+	setSelected(document.ListForm.s_kind, '{SEARCH_KIND}');
+	setSelected(document.ListForm.s_type, '{SEARCH_TYPE}');
+	setSelected(document.ListForm.s_yy1, '{SEARCH_YEAR1}');
+	setSelected(document.ListForm.s_mm1, '{SEARCH_MONTH1}');
+	setDayList(document.ListForm.s_yy1, document.ListForm.s_mm1, document.ListForm.s_dd1);
+	setSelected(document.ListForm.s_dd1, '{SEARCH_DAY1}');
+	setSelected(document.ListForm.s_yy2, '{SEARCH_YEAR2}');
+	setSelected(document.ListForm.s_mm2, '{SEARCH_MONTH2}');
+	setDayList(document.ListForm.s_yy2, document.ListForm.s_mm2, document.ListForm.s_dd2);
+	setSelected(document.ListForm.s_dd2, '{SEARCH_DAY2}');
+</script>

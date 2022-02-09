@@ -1,0 +1,1328 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/application.js?20210721"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="ApplicationForm" action="" method="get">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="no" value="{APPLY_NUMBER}">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_type" value="{SEARCH_TYPE}">
+		<input type="hidden" name="s_text" value="{SEARCH_TEXT}">
+		<input type="hidden" name="s_kind" value="{SEARCH_KIND}">
+		<input type="hidden" name="s_rate" value="{SEARCH_RATE}">
+		<input type="hidden" name="s_state" value="{SEARCH_STATE}">
+		<input type="hidden" name="s_grade" value="{SEARCH_GRADE}">
+		<input type="hidden" name="s_current" value="{SEARCH_CURRENT}">
+		<input type="hidden" name="s_period" value="{SEARCH_PERIOD}">
+		<input type="hidden" name="s_year1" value="{SEARCH_YEAR1}">
+		<input type="hidden" name="s_month1" value="{SEARCH_MONTH1}">
+		<input type="hidden" name="s_day1" value="{SEARCH_DAY1}">
+		<input type="hidden" name="s_year2" value="{SEARCH_YEAR2}">
+		<input type="hidden" name="s_month2" value="{SEARCH_MONTH2}">
+		<input type="hidden" name="s_day2" value="{SEARCH_DAY2}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<input type="hidden" name="pay_no" value="">
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td valign="top">
+							Korea University<br>
+							Anam Residence Life Office<br>
+							Anam-dong Seongbuk-gu Seoul 02841 Korea<br>
+							Email: {CF_EMAIL_UNDER}<br>
+							Fax: +82-2-926-3464
+						</td>
+						<td width="30" nowrap></td>
+						<td valign="top">
+							<table border="0" cellpadding="0" cellspacing="1" align="right" bgcolor="#000000">
+								<tr bgcolor="#FFFFFF">
+									<td width="30" rowspan="2" align="center">결<br>재</td>
+									<td width="70" height="25" align="center">담 당</td>
+									<td width="70" height="25" align="center">과 장</td>
+									<td width="70" height="25" align="center">팀 장</td>
+									<td width="70" height="25" align="center">사감장</td>
+								</tr>
+								<tr bgcolor="#FFFFFF">
+									<td width="70" height="40" align="center">{APPLY_SETTLE1}</td>
+									<td width="70" height="40" align="center">{APPLY_SETTLE2}</td>
+									<td width="70" height="40" align="center">{APPLY_SETTLE3}</td>
+									<td width="70" height="40" align="center">{APPLY_SETTLE4}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td align="center"><font size="3"><font style="font-weight:bold;font-size:12pt;">APPLICATION<br>INTERNATIONAL STUDENT RESIDENCE HALL</font></font></td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>Application No: {APPLY_NUMBER}</td>
+						<td width="30" nowrap></td>
+						<td>Korea University Student ID No: {APPLY_STUDENT}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td>Name in Full (in English): {APPLY_NAME} {APPLY_PREFERRED}</td>
+						<td width="30" nowrap></td>
+						<td>Name in Korean (if available): {APPLY_KRNAME}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td>Gender: {APPLY_GENDER}</td>
+						<td width="30" nowrap></td>
+						<td>Date of Birth: {APPLY_DOB}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td>Nationality: {APPLY_NATION}</td>
+						<td width="30" nowrap></td>
+						<td>KGSP or N/A: {APPLY_KGSP}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td>Home University: {APPLY_HOME_UNI}</td>
+						<td width="30" nowrap></td>
+						<td>Major: {APPLY_MAJOR}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td>Class Standing: {APPLY_CLASS}</td>
+						<td width="30" nowrap></td>
+						<td>Email Address: <a href="javascript:sendEmail(document.ApplicationForm, '{APPLY_EMAIL}')">{APPLY_EMAIL}</a></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td>Home Country Mailing Address: {APPLY_HOME_ADDR}</td>
+						<td width="30" nowrap></td>
+						<td>Dormitory Fee fully/partially waived: {APPLY_DORM_WAIVED}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td>Telephone No: {APPLY_PHONE}</td>
+						<td width="30" nowrap></td>
+						<td>Cell Phone No: {APPLY_CELL}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!--
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td><b>Type of Resident Applicant:</b> {APPLY_CURRENT}</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		-->
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="3"><b>Emergency Contact</b></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td>Name in full: {APPLY_CASE_NAME}</td>
+						<td width="30" nowrap></td>
+						<td>Relationship to you: {APPLY_CASE_RELATE}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td colspan="3">Telephone No: {APPLY_CASE_PHONE}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td colspan="3">Address: {APPLY_CASE_ADDR}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td><b>Session Applying</b> - {APPLY_PERIOD}</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td><b>Type of Room and Rates</b></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: preference_row -->
+					<tr>
+						<td height="25" style="padding-left:20px;padding-right:20px;">Preference {PREFERENCE_NUMBER}. {PREFERENCE_RATE}</td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: preference_row -->
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td><b>Room Preference:</b> {APPLY_PREFER}</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="3"><b>Roommate Requests</b> (Your preferred roommate should request as well to be assigned in the same room.)</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="5"></td>
+					</tr>
+					<tr>
+						<td>Name: {APPLY_MATE_NAME}</td>
+						<td width="30" nowrap></td>
+						<td>KU Student ID: {APPLY_MATE_ID}</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" bgcolor="#000000"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5"><b>Roommate Matching Criteria</b></td>
+					</tr>
+					<tr>
+						<td colspan="5" height="5"></td>
+					</tr>
+					<tr>
+						<td width="20" nowrap></td>
+						<td height="25" nowrap>1. Prefer living with a local (Korean) student: {APPLY_PREFERENCE6}</td>
+						<td width="10" nowrap></td>
+						<td height="25" nowrap>2. Prefer living with a non-smoker: {APPLY_PREFERENCE1}</td>
+						<td width="20" nowrap></td>
+					</tr>
+					<tr>
+						<td width="20" nowrap></td>
+						<td height="25" nowrap>3. Prefer going to bed early: {APPLY_PREFERENCE2}</td>
+						<td width="10" nowrap></td>
+						<td height="25" nowrap>4. Prefer getting up early: {APPLY_PREFERENCE3}</td>
+						<td width="20" nowrap></td>
+					</tr>
+					<tr>
+						<td width="20" nowrap></td>
+						<td height="25" nowrap>5. Prefer studying in silence: {APPLY_PREFERENCE4}</td>
+						<td width="10" nowrap></td>
+						<td height="25" nowrap>6. Prefer studying during the day: {APPLY_PREFERENCE5}</td>
+						<td width="20" nowrap></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="2">
+							I understand that completing an application does not guarantee housing. I understand the Residence Life Office will inform me by email 
+							confirming my residence hall reservation status, upon receiving the residence hall application. I agree to keep the Residence Life Office 
+							informed of any changes of email address. Failure to do so could result in the loss of my unit reservation. I agree to comply with the 
+							Residence Hall Contract. 
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" height="5"></td>
+					</tr>
+					<tr>
+						<td>Signature: {APPLY_NAME}</td>
+						<td>Date: {APPLY_DATE}</td>
+					</tr>
+					<tr>
+						<td colspan="2" height="1" bgcolor="#000000"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td valign="bottom">
+							<font style="text-decoration:underline;font-weight:bold;">To : Director of Anam Residence Life</font><br>
+							<b>WIRE TRANSFER Payment Information</b><br>
+							BANK: Hana Bank, Godae Branch<br>
+							Bank Address: Korea University, Anam-dong, Seongbuk-gu, Seoul 02841, KOREA<br>
+							SWIFT CODE: KOEXKRSE<br>
+							ACCOUNT NO.: {APPLY_ACCOUNT}<br>
+							BENEFICIARY: Korea University International Residence
+						</td>
+						<td width="30" nowrap></td>
+						<td valign="bottom">
+							<table border="0" cellpadding="0" cellspacing="1" align="right" bgcolor="#000000">
+								<tr bgcolor="#FFFFFF">
+									<td colspan="2" height="30" align="center">OFFICE USE ONLY</td>
+								</tr>
+								<tr bgcolor="#FFFFFF">
+									<td width="120" height="50" align="center">Room Assigned</td>
+									<td width="120" height="50" align="center">{APPLY_ROOM}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" bgcolor="#EAEAEA" nowrap></td>
+						<td width="100%" height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#E4E4E4"></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" bgcolor="#C4C4C4"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#D7D7D7"></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>지원상태</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF">{APPLY_STATE}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>호실정보</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF">{APPLY_ROOM_INFO}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>룸메이트</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF">{APPLY_ROOMMATES}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" align="center" bgcolor="#E5E1E2" nowrap>입실일</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{APPLY_CHECKIN}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" align="center" bgcolor="#E5E1E2" nowrap>퇴실일</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{APPLY_CHECKOUT}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>Fee Transfer</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF">{APPLY_FEE_TRANSFER}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>Fee Support</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF">{APPLY_FEE_SUPPORT}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" bgcolor="#E5E1E2" align="center" style="padding-top:3px;" nowrap>TB Test Result</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td height="20" bgcolor="#EFEFEF">{APPLY_TB_TEST}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="5" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td colspan="4" height="1" bgcolor="#F3F3F3"></td>
+						<td width="1" height="1" bgcolor="#EDEDED"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" align="center" bgcolor="#E5E1E2" nowrap>사 진</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{APPLY_PHOTO}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" height="20" align="center" bgcolor="#E5E1E2" nowrap>관리자노트</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+						<td width="1" bgcolor="#FFFFFF" nowrap></td>
+						<td width="1" bgcolor="#F3F3F3" nowrap></td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" height="20" bgcolor="#EFEFEF">{APPLY_ADMIN}</td>
+						<td width="9" bgcolor="#EFEFEF" nowrap></td>
+						<td width="1" bgcolor="#D7D7D7" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#F3F3F3"></td>
+						<td colspan="3" height="1" bgcolor="#EFEFEF"></td>
+						<td width="1" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+					<tr>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+						<td width="1" height="1" bgcolor="#FFFFFF"></td>
+						<td width="1" height="1" bgcolor="#EBEBEB"></td>
+						<td colspan="4" height="1" bgcolor="#D7D7D7"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#FFFFFF" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="1" bgcolor="#EAEAEA" nowrap></td>
+						<td width="100%" height="1" bgcolor="#E5E5E5"></td>
+						<td width="1" bgcolor="#D9D9D9" nowrap></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#E4E4E4"></td>
+						<td height="10" bgcolor="#DADADA"></td>
+						<td width="1" bgcolor="#C4C4C4"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#D7D7D7"></td>
+						<td colspan="2" height="1" bgcolor="#C4C4C4"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:gotoList();">목록보기</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:postApplication('new');">추가</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:postApplication('edit');">수정</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:deleteApplication('{APPLY_NUMBER}');">삭제</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:sendRoomMail('{SEL_RATE}', '{APPLY_ROOM}');">룸배정메일</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:printInvoice('{APPLY_NUMBER}');">인보이스</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="100" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:printDepositReceipt('{APPLY_NUMBER}');">보증금영수증</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="100" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:printHallReceipt('{APPLY_NUMBER}');">기숙사비영수증</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:window.print();">프린트</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:approveApplication(document.ApplicationForm, 'Y');">결재승인</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:approveApplication(document.ApplicationForm, 'N');">결재취소</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:viewContract('{APPLY_NUMBER}');">규정계약서</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td>
+							<select name="period">
+								<option value="">::::::: 세션선택 :::::::</option>
+								<!-- BEGIN DYNAMIC BLOCK: period_row -->
+								<option value="{PERIOD_CODE}">{PERIOD_NAME}</option>
+								<!-- END DYNAMIC BLOCK: period_row -->
+							</select>
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:submitPeriod(document.ApplicationForm);">세션추가</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="20"></td>
+						<td>
+							<input type="text" name="room" size="20" maxlength="20">
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:assignRoom(document.ApplicationForm);">룸배정</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="86" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:cancelRoom(document.ApplicationForm);">룸배정취소</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="20"></td>
+						<td>
+							<select name="cf_no">
+								<option value="">이월할 세션</option>
+								<!-- BEGIN DYNAMIC BLOCK: cf_period_row -->
+								<option value="{CF_PERIOD_APPLY}">{CF_PERIOD_NAME}</option>
+								<!-- END DYNAMIC BLOCK: cf_period_row -->
+							</select>
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="100" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:carryForwardDeposit(document.ApplicationForm);">보증금강제이월</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="25" class="NoPrint"><img src="../../images/main/title_dot.jpg" width="21" height="8" align="absmiddle">Deposit Payment History</td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr> 
+						<td width="2"><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="20" height="26" align="center" background="../../images/list/list_back.jpg"><input type="checkbox" name="select_all" onClick="selectAll(document.ApplicationForm.list_no);"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="120" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">날 짜</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">내 역</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="35" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">종 류</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="120" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">금 액</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="35" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">수 정</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="2"><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: payment1_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="2"></td>
+						<td width="20" height="23" align="center">{PAYMENT1_CHECK}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="120" height="23" align="center">{PAYMENT1_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{PAYMENT1_DETAIL}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="35" height="23" align="center">{PAYMENT1_TYPE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="120" height="23" align="right">{PAYMENT1_PRICE}원</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="35" height="23" align="center">{PAYMENT1_RADIO}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr> 
+						<td colspan="23" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: payment1_row -->
+					<tr bgcolor="#F5F5F5">
+						<td width="2"></td>
+						<td width="20" height="23" align="center"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="120" height="23" align="center"></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">Total Due / (Overpaid)</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="35" height="23" align="center"></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="120" height="23" align="right">{PAYMENT1_TOTAL}원</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="35" height="23" align="center"></td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr>
+						<td colspan="23" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td height="25" class="NoPrint"><img src="../../images/main/title_dot.jpg" width="21" height="8" align="absmiddle">Residence Hall Fee Payment History</td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr> 
+						<td width="2"><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td width="20" height="26" align="center" background="../../images/list/list_back.jpg"><input type="checkbox" name="select_all" onClick="selectAll(document.ApplicationForm.list_no);"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="120" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">날 짜</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">내 역</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="35" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">종 류</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="120" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">금 액</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="1"><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="35" height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg">수 정</td>
+						<td width="5" background="../../images/list/list_back.jpg"></td>
+						<td width="2"><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: payment2_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="2"></td>
+						<td width="20" height="23" align="center">{PAYMENT2_CHECK}</td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="120" height="23" align="center">{PAYMENT2_DATE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">{PAYMENT2_DETAIL}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="35" height="23" align="center">{PAYMENT2_TYPE}</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="120" height="23" align="right">{PAYMENT2_PRICE}원</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="35" height="23" align="center">{PAYMENT2_RADIO}</td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr> 
+						<td colspan="23" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: payment2_row -->
+					<tr bgcolor="#F5F5F5">
+						<td width="2"></td>
+						<td width="20" height="23" align="center"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="120" height="23" align="center"></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td height="23" align="center">Total Due / (Overpaid)</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="35" height="23" align="center"></td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="120" height="23" align="right">{PAYMENT2_TOTAL}원</td>
+						<td width="5"></td>
+						<td width="1" bgcolor="#E2E4E1"></td>
+						<td width="5"></td>
+						<td width="35" height="23" align="center"></td>
+						<td width="5"></td>
+						<td width="2"></td>
+					</tr>
+					<tr>
+						<td colspan="23" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td class="NoPrint">
+				<table border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td height="22" align="center">
+							<select name="pay_yy" onChange="setDayList(document.ApplicationForm.pay_yy, document.ApplicationForm.pay_mm, document.ApplicationForm.pay_dd);">
+								<!-- BEGIN DYNAMIC BLOCK: year_row -->
+								<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: year_row -->
+							</select> 년
+							<select name="pay_mm" onChange="setDayList(document.ApplicationForm.pay_yy, document.ApplicationForm.pay_mm, document.ApplicationForm.pay_dd);">
+								<!-- BEGIN DYNAMIC BLOCK: month_row -->
+								<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: month_row -->
+							</select> 월
+							<select name="pay_dd">
+							</select>일
+							<select name="pay_type">
+								<option value="">종류선택</option>
+								<option value="+">청구</option>
+								<option value="-">납부</option>
+							</select>
+							<select name="detail">
+								<option value="">내역선택</option>
+								<option value="DB">Deposit Billed</option>
+								<option value="DD">Damage deduction</option>
+								<option value="DR">Deposit Refund</option>
+								<option value="RB">Residence Hall Fee Billed</option>
+								<option value="LF">Late Fee</option>
+								<option value="OR">Overpayment Refund</option>
+								<option value="OC">Overpayment Carried Forward</option>
+								<option value="DC">Deposit Carried Forward</option>
+								<option value="CF">Cancellation Fee</option>
+								<option value="TR">Contract Cancellation - Residence Hall Fee Refund</option>
+								<option value="TF">Contract Cancellation Fee</option>
+								<option value="BB">Blanket Rental Billed</option>
+								<option value="DI">Initial Deposit Paid</option>
+								<option value="DP">Deposit Partially Paid</option>
+								<option value="DF">Deposit Paid</option>
+								<option value="DW">Deposit Payment Waived</option>
+								<option value="RP">Residence Hall Fee Partially Paid</option>
+								<option value="RF">Residence Hall Fee Paid</option>
+								<option value="RW">Residence Hall Fee waived</option>
+								<option value="RS">Residence Hall Fee Scholarship</option>
+								<option value="OP">Overpayment</option>
+								<option value="DO">Deposit Carried Over</option>
+								<option value="RR">Deposit Refund Requested</option>
+								<option value="CR">Deposit Carried Forward Requested</option>
+								<option value="TQ">Contract Cancellation Requested</option>
+								<option value="BP">Blanket Rental Paid</option>
+								<option value="CI">Early Check-in</option>
+								<option value="CO">Late Check-out</option>
+								<option value="OO">Credit Carried Over</option>
+								<option value="CC">Credit Carried Forward</option>
+								<option value="CA">Credit Adjustment</option>
+								<option value="ET">Etc.</option>
+							</select>
+							<input type="text" name="price" size="8" maxlength="8">원
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:submitPayment();" class="button">추가</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:updatePayment();" class="button">수정</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:deletePayment();" class="button">삭제</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="javascript">
+	setSelected(document.ApplicationForm.pay_yy, '{APPLY_PAYMENT_YY}');
+	setSelected(document.ApplicationForm.pay_mm, '{APPLY_PAYMENT_MM}');
+	setDayList(document.ApplicationForm.pay_yy, document.ApplicationForm.pay_mm, document.ApplicationForm.pay_dd);
+	setSelected(document.ApplicationForm.pay_dd, '{APPLY_PAYMENT_DD}');
+</script>

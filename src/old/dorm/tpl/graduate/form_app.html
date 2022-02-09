@@ -1,0 +1,752 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/grad_ajax.js"></script> <!-- 여기 스크립트 복귀해야 함 -->
+<script language="javascript" src="../../js/grad_application.js"></script> <!-- 여기 스크립트 복귀해야 함 -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<form name="ApplicationForm" action="https://reslife.korea.ac.kr:5008/v1/src/graduate/action_app.php" method="post" onSubmit="return checkApplicationInfo(this);">
+		<input type="hidden" name="mode" value="{MODE}">
+		<input type="hidden" name="current" value="{APPLY_CURRENT}">
+		<input type="hidden" name="email" value="{APPLY_EMAIL}">
+		<input type="hidden" name="pw" value="{STUDENT_PASSWORD}">
+		<input type="hidden" name="no" value="{APPLY_NUMBER}">
+		<tr>
+			<td align="right">
+				<a href="javascript:gotoList(document.ApplicationForm);"><img src="../../images/button/btn_goto_account.jpg" width="194" height="30" border="0"></a>
+				<a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=grad_account"><img src="../../images/button/btn_logout.jpg" width="74" height="30" border="0"></a>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%">
+				For a new applicant:<br>
+				Print your billing statement at the bottom of this page.  The billing statement provides the total amount due and also the information needed for the wire transfer, such as Bank Name, Bank Address, Swift Code, Account No. and Name of Beneficiary, i.e., Korea University Anam Global House.<br>
+				<font color="#7C0019">NOTE:</font> The assigned bank account number for payment is different for each application.  This enables the Anam Global House office to match the payment with the applicant as the given account number will be used only by that applicant.  To credit your account, make sure that you use the provided account number to you, not other account number provided to other applicant.<br><br>
+				<font color="#7C0019">NOTE:</font> Any incomplete application will not be processed. For example, if the transfer receipt(or housing fee supporting confirmation document) or TB test result document is not uploaded within the housing fee paying period, your application will not be processed.
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td><font color="#7C0019"><b>Session Applying (Choose One)</b></font></td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" nowrap></td>
+						<td width="10" nowrap></td>
+						<td colspan="2" align="center">
+							<select id="period" name="period" style="color:#9B9EA3;" onchange="refreshRoomList(this.value, '{APPLY_GENDER}');">
+								<option value="">::::::: Choose Session Applying :::::::</option>
+								<!-- BEGIN DYNAMIC BLOCK: period_row -->
+								<option value="{PEDIOD_VALUE}">{PEDIOD_NAME}</option>
+								<!-- END DYNAMIC BLOCK: period_row -->
+							</select><br>
+							※ If you are using web browsers such as Fire Fox, Chrome or Safari, session applying selection above might not be shown. Please access to this webpage with MS Internet Explorer.
+						</td>
+						<td width="10" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td><font color="#7C0019"><b>Type of Room and Rates (Choose One)</b></font></td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" align="center" bgcolor="#EFEFEF" nowrap>Preference 1.</td>
+						<td width="10" nowrap></td>
+						<td>
+							<select id="rate1" name="rate1" style="color:#9B9EA3;">
+								<option value="">::::::: Choose Type of Room and Rates :::::::</option>
+							</select>
+						</td>
+						<td width="10" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" align="center" bgcolor="#EFEFEF" nowrap>Preference 2.</td>
+						<td width="10" nowrap></td>
+						<td>
+							<select id="rate2" name="rate2" style="color:#9B9EA3;">
+								<option value="">::::::: Choose Type of Room and Rates :::::::</option>
+							</select>
+						</td>
+						<td width="10" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" align="center" bgcolor="#EFEFEF" nowrap>Preference 3.</td>
+						<td width="10" nowrap></td>
+						<td>
+							<select id="rate3" name="rate3" style="color:#9B9EA3;">
+								<option value="">::::::: Choose Type of Room and Rates :::::::</option>
+							</select>
+						</td>
+						<td width="10" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<!-- BEGIN DYNAMIC BLOCK: room_row -->
+		<tr>
+			<td><font color="#7C0019"><b>Room Preference, If you would like to request a specific room</b></font></td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" bgcolor="#EFEFEF" align="center" nowrap>Room Number</td>
+						<td width="10" nowrap></td>
+						<td><input type="text" name="room_prefer" size="20" maxlength="20" style="color:#9B9EA3;" value="{APPLY_PREFER}"></td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<!-- END DYNAMIC BLOCK: room_row -->
+		<!--
+		<tr>
+			<td><font color="#7C0019"><b>Roommate Requests</b></font></td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="120" bgcolor="#EFEFEF" align="center" nowrap>Name in Full</td>
+						<td width="10" nowrap></td>
+						<td><input type="text" name="mate_nm" style="width:100%;" maxlength="100" style="color:#9B9EA3;" value="{APPLY_MATE_NAME}"></td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="120" bgcolor="#EFEFEF" align="center">KU Student ID</td>
+						<td width="10"></td>
+						<td><input type="text" name="mate_id" width="10" maxlength="10" style="color:#9B9EA3;" value="{APPLY_MATE_ID}"></td>
+							<select name="mate_yy" style="color:#9B9EA3;" onChange="setDayList(document.ApplicationForm.mate_yy, document.ApplicationForm.mate_mm, document.ApplicationForm.mate_dd);">
+								<option value="">yyyy</option>
+								<!-- BEGIN DYNAMIC BLOCK: year_row -->
+								<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: year_row -->
+							</select> -
+							<select name="mate_mm" style="color:#9B9EA3;" onChange="setDayList(document.ApplicationForm.mate_yy, document.ApplicationForm.mate_mm, document.ApplicationForm.mate_dd);">
+								<option value="">mm</option>
+								<!-- BEGIN DYNAMIC BLOCK: month_row -->
+								<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: month_row -->
+							</select> -
+							<select name="mate_dd" style="color:#9B9EA3;">
+								<option value="">dd</option>
+							</select>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td><font color="#7C0019"><b>Roommate Matching Criteria</b></font></td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="300" bgcolor="#EFEFEF" style="padding-left:15px;" nowrap>1. Prefer living with a local (Korean) student</td>
+						<td width="10" nowrap></td>
+						<td height="21">
+							<input type="radio" name="match_pre6" value="Y"> Yes
+							<input type="radio" name="match_pre6" value="N"> No
+							<input type="radio" name="match_pre6" value="M" checked> No Preference
+						</td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="300" bgcolor="#EFEFEF" style="padding-left:15px;" nowrap>2. Prefer living with a non-smoker</td>
+						<td width="10" nowrap></td>
+						<td height="21">
+							<input type="radio" name="match_pre1" value="Y"> Yes
+							<input type="radio" name="match_pre1" value="N"> No
+							<input type="radio" name="match_pre1" value="M" checked> No Preference
+						</td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="300" bgcolor="#EFEFEF" style="padding-left:15px;">3. Prefer going to bed early</td>
+						<td width="10"></td>
+						<td height="21">
+							<input type="radio" name="match_pre2" value="Y"> Yes
+							<input type="radio" name="match_pre2" value="N"> No
+							<input type="radio" name="match_pre2" value="M" checked> No Preference
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="300" bgcolor="#EFEFEF" style="padding-left:15px;">4. Prefer getting up early</td>
+						<td width="10"></td>
+						<td height="21">
+							<input type="radio" name="match_pre3" value="Y"> Yes
+							<input type="radio" name="match_pre3" value="N"> No
+							<input type="radio" name="match_pre3" value="M" checked> No Preference
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="300" bgcolor="#EFEFEF" style="padding-left:15px;">5. Prefer studying in silence</td>
+						<td width="10"></td>
+						<td height="21">
+							<input type="radio" name="match_pre4" value="Y"> Yes
+							<input type="radio" name="match_pre4" value="N"> No
+							<input type="radio" name="match_pre4" value="M" checked> No Preference
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF"></td>
+						<td width="300" bgcolor="#EFEFEF" style="padding-left:15px;">6. Prefer studying during the day</td>
+						<td width="10"></td>
+						<td height="21">
+							<input type="radio" name="match_pre5" value="Y"> Yes
+							<input type="radio" name="match_pre5" value="N"> No
+							<input type="radio" name="match_pre5" value="M" checked> No Preference
+						</td>
+						<td width="9"></td>
+						<td width="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		-->
+		<!-- BEGIN DYNAMIC BLOCK: deposit_row -->
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td><font color="#7C0019"><b>Deposit Refund Information</b></font></td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td colspan="3" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" nowrap></td>
+						<td style="padding-left:10px;padding-right:10px;">
+							<input type="radio" name="vacate_flag" value="Y">Vacated or 
+							<input type="radio" name="vacate_flag" value="N">will vacate residence unit on 
+							<select name="vacate_yy" style="color:#9B9EA3;" onChange="setDayList(document.RefundForm.vacate_yy, document.RefundForm.vacate_mm, document.RefundForm.vacate_dd);">
+								<option value="">yyyy</option>
+								<!-- BEGIN DYNAMIC BLOCK: year_row -->
+								<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: year_row -->
+							</select> 년
+							<select name="vacate_mm" style="color:#9B9EA3;" onChange="setDayList(document.RefundForm.vacate_yy, document.RefundForm.vacate_mm, document.RefundForm.vacate_dd);">
+								<option value="">mm</option>
+								<!-- BEGIN DYNAMIC BLOCK: month_row -->
+								<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: month_row -->
+							</select> 월
+							<select name="vacate_dd" style="color:#9B9EA3;">
+								<option value="">dd</option>
+							</select>일
+						</td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td style="padding-left:10px;padding-right:10px;" bgcolor="#EFEFEF">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										Are you requesting a Refund or Change of Semester?<br>
+										Note: Deposit will be refunded or carried forward after damage deductions, if any. If the deposit is carried forward less than the full amount, 
+										students will be billed for the difference.
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="radio" name="refund_flag" value="Y">Refund
+										<input type="radio" name="refund_flag" value="N">Change of Semester
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" nowrap></td>
+						<td width="100%" style="padding-left:10px;padding-right:10px;">
+							<input type="radio" name="method_type" value="W" onclick="document.getElementById('wire').style.display='block';document.getElementById('money').style.display='none';">Wire transfer (to Korean bank account in Korea only)
+							<input type="radio" name="method_type" value="M" onclick="document.getElementById('wire').style.display='none';document.getElementById('money').style.display='block';">Money order
+						</td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="3" id="wire" style="display:none">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Name of bank</td>
+									<td width="10" nowrap></td>
+									<td>
+										<input type="text" name="method_info1" size="30" maxlength="100" style="color:#9B9EA3;">
+									</td>
+									<td width="9" nowrap></td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Bank account number</td>
+									<td width="10" nowrap></td>
+									<td>
+										<input type="text" name="method_info2" size="30" maxlength="100" style="color:#9B9EA3;">
+									</td>
+									<td width="9" nowrap></td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Name of beneficiary</td>
+									<td width="10" nowrap></td>
+									<td>
+										<input type="text" name="method_info3" size="30" maxlength="100" style="color:#9B9EA3;">
+									</td>
+									<td width="9" nowrap></td>
+									<td width="1" nowrap></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" id="money" style="display:none">
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Name of recipient (in English only)</td>
+									<td width="10" nowrap></td>
+									<td>
+										<input type="text" name="method_info4" size="30" maxlength="100" style="color:#9B9EA3;">
+									</td>
+									<td width="9" nowrap></td>
+									<td width="1" nowrap></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+								</tr>
+								<tr>
+									<td colspan="6" height="1"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#EFEFEF" nowrap></td>
+									<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Address</td>
+									<td width="10" nowrap></td>
+									<td>
+										<input type="text" name="method_info5" size="30" maxlength="100" style="color:#9B9EA3;"><br>
+										You are also required to write your mailing address in your home country's language on an envelope provided during your check-out inspection with Anam Global House staff.
+									</td>
+									<td width="9" nowrap></td>
+									<td width="1" nowrap></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td style="padding-left:10px;padding-right:10px;" bgcolor="#EFEFEF">
+							The Anam Global House Office will process the refund request. Residence hall charges, including damages will be deducted from the 
+							deposit. Any amount remaining from the deposit will be returned to the student in the form of a money order or via wire transfer. 
+							The money order will be mailed to the student’s mailing address, provided during the check-out procedure. Any address change 
+							requests should be directed to the Anam Global House office via email before the deposit is refunded. The refund process is generally 
+							completed within 30 days. Requests for deposit refunds will be honored up to 6 months after the student has vacated residence. After 
+							completing and signing this form, a new residence hall application with the required deposit must be submitted to reapply for 
+							residence hall.
+						</td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="3" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- END DYNAMIC BLOCK: deposit_row -->
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td colspan="5" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="3" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="5" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="10" nowrap></td>
+						<td>
+							I understand that completing an application does not guarantee housing and assignments are made on a priority date basis according to when all of 
+							the required application materials including the housing application deposit and online housing application have been received. 
+							I understand the Anam Global House Office will inform me by email confirming my residence hall reservation status, upon receiving the 
+							residence hall application and full payment. I agree to keep the Anam Global House Office informed of any 
+							changes of email address. Failure to do so could result in the loss of my unit reservation. 
+						</td>
+						<td width="10" nowrap></td>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="5" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="image" src="../../images/button/btn_submit_app.jpg" width="120" height="19" border="0"></td>
+		</tr>
+	</form>
+</table>
+<script language="javascript">
+	setSelected(document.ApplicationForm.rate1, '{APPLY_RATE1}');
+	//refreshRoomList(document.ApplicationForm.period.value, '{APPLY_GENDER}');
+	/* rate2/3 살려야 하고 세션 selected 없애야 함. 바로 위 refreshRoomList 없애야 함 */
+	setSelected(document.ApplicationForm.rate2, '{APPLY_RATE2}');
+	setSelected(document.ApplicationForm.rate3, '{APPLY_RATE3}');
+	//setChecked(document.ApplicationForm.match_pre6, '{APPLY_PREFERENCE6}');
+	//setChecked(document.ApplicationForm.match_pre1, '{APPLY_PREFERENCE1}');
+	//setChecked(document.ApplicationForm.match_pre2, '{APPLY_PREFERENCE2}');
+	//setChecked(document.ApplicationForm.match_pre3, '{APPLY_PREFERENCE3}');
+	//setChecked(document.ApplicationForm.match_pre4, '{APPLY_PREFERENCE4}');
+	//setChecked(document.ApplicationForm.match_pre5, '{APPLY_PREFERENCE5}');
+</script>

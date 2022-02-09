@@ -1,0 +1,342 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/refund.js?20210223"></script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<form name="RefundForm" action="" method="get" onSubmit="return checkSearchRefund(this);">
+		<input type="hidden" name="page" value="{SEL_PAGE}">
+		<input type="hidden" name="s_period" value="{SEARCH_PERIOD}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<input type="hidden" name="no" value="">
+		<input type="hidden" name="mode" value="">
+		<input type="hidden" name="email" value="">
+		<tr>
+			<td height="22" class="NoPrint">
+				<select name="s_kind" onChange="viewList();">
+					<option value="">학생별보기</option>
+					<option value="U">일반학생</option>
+					<option value="L">어학당학생</option>
+				</select>
+				<select name="s_new" onChange="viewList();">
+					<option value="">종류보기</option>
+					<option value="W">Wire Transfer</option>
+					<option value="M">Money Order</option>
+					<option value="O">Overseas Remittance</option>
+					<option value="C">Carried Forward</option>
+				</select>
+				<select name="s_app" onChange="viewList();">
+					<option value="">상태별보기</option>
+					<option value="Y">승인</option>
+					<option value="N">미승인</option>
+					<option value="C">취소</option>
+				</select>
+				총 {TOTAL_COUNT}명 / {TOTAL_PAGE}페이지
+			</td>
+			<td height="22" class="NoPrint">
+				<table border="0" cellpadding="0" cellspacing="0" align="right">
+					<tr>
+						<td>
+							<select name="app_yy" onChange="setDayList(document.RefundForm.app_yy, document.RefundForm.app_mm, document.RefundForm.app_dd);">
+								<option value="">----</option>
+								<!-- BEGIN DYNAMIC BLOCK: year_row -->
+								<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: year_row -->
+							</select>년
+							<select name="app_mm" onChange="setDayList(document.RefundForm.app_yy, document.RefundForm.app_mm, document.RefundForm.app_dd);">
+								<option value="">--</option>
+								<!-- BEGIN DYNAMIC BLOCK: month_row -->
+								<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+								<!-- END DYNAMIC BLOCK: month_row -->
+							</select>월
+							<select name="app_dd">
+								<option value="">--</option>
+							</select>일
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="62" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:approveRefundList();">선택승인</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:postRefund('new');">추가</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:deleteRefund('');">삭제</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="NoPrint">
+				<table border="0" cellpadding="0" cellspacing="0" align="right">
+					<tr>
+						<td>사용목적:<input type="text" name="purpose" size="20"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="74" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:showPhotoList();">사진리스트</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="82" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:downloadExcel();">엑셀다운로드</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="4" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="NoPrint">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr> 
+						<td width="2" nowrap><img src="../../images/list/list_left.jpg" width="2" height="26"></td>
+						<td height="26" align="center" background="../../images/list/list_back.jpg" nowrap><input type="checkbox" name="select_all" onClick="selectAll(document.RefundForm.list_no);"></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('refund_no');">번 호</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('a.kind');">학생종류</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('approve');">상 태</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('a.new_period');">종 류</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('a.apply_no');">지원번호</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('a.student_id');">학 번</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('a.lname');">이 름</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('a.email');">이메일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>실제환불액</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('approve_dt');">최근승인일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('post_dt');">신청일</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('old_period');">체류기간</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap><a href="javascript:sortList('room_code');">호 실</a></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="1" nowrap><img src="../../images/list/list_divide.jpg" width="1" height="26"></td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td height="26" align="center" style="padding-top:3px;" background="../../images/list/list_back.jpg" nowrap>통장</td>
+						<td width="5" background="../../images/list/list_back.jpg" nowrap></td>
+						<td width="2" nowrap><img src="../../images/list/list_right.jpg" width="2" height="26"></td>
+					</tr>
+					<!-- BEGIN DYNAMIC BLOCK: list_row -->
+					<tr onMouseover="this.style.backgroundColor='#F5F5F5';" onMouseout="this.style.backgroundColor='#FFFFFF';"> 
+						<td width="2" nowrap></td>
+						<td height="23" align="center" nowrap><input type="checkbox" name="list_no" value="{LIST_NUMBER}"></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_NUMBER}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_KIND}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_APPROVE}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_REFUND}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap><a href="javascript:viewRefund('{LIST_NUMBER}');">{LIST_APPLY}</a></td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap><a href="javascript:viewStudent('{LIST_STUDENT_NO}');">{LIST_STUDENT_ID}</a></td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center"><a href="javascript:viewRefund('{LIST_NUMBER}');">{LIST_NAME}</a></td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap><a href="javascript:sendEmail(document.RefundForm, '{LIST_EMAIL}')">{LIST_EMAIL}</a></td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="right" nowrap>{LIST_PAYMENT}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_APP_DATE}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_DATE}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_PERIOD}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_ROOM}</td>
+						<td width="5" nowrap></td>
+						<td width="1" bgcolor="#E2E4E1" nowrap></td>
+						<td width="5" nowrap></td>
+						<td height="23" align="center" nowrap>{LIST_PHOTO}</td>
+						<td width="5" nowrap></td>
+						<td width="2" nowrap></td>
+					</tr>
+					<tr> 
+						<td colspan="59" height="1" bgcolor="#E2E4E1"></td>
+					</tr>
+					<!-- END DYNAMIC BLOCK: list_row -->
+					<tr> 
+						<td colspan="59" height="1" bgcolor="#919191"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr> 
+						<td height="35">
+							<a href="javascript:gotoPage('{PRE_PAGE}');"><img src="../../images/list/page_pre.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+							<!-- BEGIN DYNAMIC BLOCK: page_row -->
+							{PAGE_VALUE}
+							<!-- END DYNAMIC BLOCK: page_row -->
+							<a href="javascript:gotoPage('{NEXT_PAGE}');"><img src="../../images/list/page_next.jpg" width="9" height="9" border="0" align="absmiddle"></a>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" class="NoPrint">
+				<!-- BEGIN DYNAMIC BLOCK: period_row -->
+				<input type="checkbox" name="list_period" value="{PERIOD_CODE}">{PERIOD_NAME}
+				<!-- END DYNAMIC BLOCK: period_row -->
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="5"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" class="NoPrint">
+				<select name="s_year1" onChange="setDayList(document.RefundForm.s_year1, document.RefundForm.s_month1, document.RefundForm.s_day1);">
+					<option value="">----</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_month1" onChange="setDayList(document.RefundForm.s_year1, document.RefundForm.s_month1, document.RefundForm.s_day1);">
+					<option value="">--</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_day1">
+					<option value="">--</option>
+				</select>일 부터
+				<select name="s_year2" onChange="setDayList(document.RefundForm.s_year2, document.RefundForm.s_month2, document.RefundForm.s_day2);">
+					<option value="">----</option>
+					<!-- BEGIN DYNAMIC BLOCK: year_row -->
+					<option value="{YEAR_VALUE}">{YEAR_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: year_row -->
+				</select>년
+				<select name="s_month2" onChange="setDayList(document.RefundForm.s_year2, document.RefundForm.s_month2, document.RefundForm.s_day2);">
+					<option value="">--</option>
+					<!-- BEGIN DYNAMIC BLOCK: month_row -->
+					<option value="{MONTH_VALUE}">{MONTH_VALUE}</option>
+					<!-- END DYNAMIC BLOCK: month_row -->
+				</select>월
+				<select name="s_day2">
+					<option value="">--</option>
+				</select>일 까지
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="5" class="NoPrint"></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="NoPrint">
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td height="22" align="center">
+							<select name="s_type">
+								<option value="1">이메일</option>
+								<option value="2">지원번호</option>
+								<option value="3">학번</option>
+								<option value="4">이름</option>
+								<option value="5">호실</option>
+							</select>
+							<input type="text" name="s_text" size="30" value="{SEARCH_TEXT}">
+						</td>
+						<td width="2"></td>
+						<td width="2"><img src="../../images/button/button_left.jpg" width="2" height="22"></td>
+						<td width="48" height="22" align="center" style="padding-top:3px;" background="../../images/button/button_back.jpg">
+							<a href="javascript:searchRefund(document.RefundForm);">검색</a>
+						</td>
+						<td width="2"><img src="../../images/button/button_right.jpg" width="2" height="22"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</form>
+</table>
+<script language="JavaScript">
+	setSelected(document.RefundForm.app_yy, '{TODAY_YEAR}');
+	setSelected(document.RefundForm.app_mm, '{TODAY_MONTH}');
+	setDayList(document.RefundForm.app_yy, document.RefundForm.app_mm, document.RefundForm.app_dd);
+	setSelected(document.RefundForm.app_dd, '{TODAY_DAY}');
+	setMultipleChecked(document.RefundForm.list_period, '{SEARCH_PERIOD}');
+	setSelected(document.RefundForm.s_kind, '{SEARCH_KIND}');
+	setSelected(document.RefundForm.s_new, '{SEARCH_NEW}');
+	setSelected(document.RefundForm.s_app, '{SEARCH_APPROVE}');
+	setSelected(document.RefundForm.s_type, '{SEARCH_TYPE}');
+	setSelected(document.RefundForm.s_year1, '{SEARCH_YEAR1}');
+	setSelected(document.RefundForm.s_month1, '{SEARCH_MONTH1}');
+	setDayList(document.RefundForm.s_year1, document.RefundForm.s_month1, document.RefundForm.s_day1);
+	setSelected(document.RefundForm.s_day1, '{SEARCH_DAY1}');
+	setSelected(document.RefundForm.s_year2, '{SEARCH_YEAR2}');
+	setSelected(document.RefundForm.s_month2, '{SEARCH_MONTH2}');
+	setDayList(document.RefundForm.s_year2, document.RefundForm.s_month2, document.RefundForm.s_day2);
+	setSelected(document.RefundForm.s_day2, '{SEARCH_DAY2}');
+</script>

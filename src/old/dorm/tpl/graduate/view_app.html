@@ -1,0 +1,809 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/grad_application.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td align="right">
+			<a href="javascript:gotoList(document.ApplicationForm);"><img src="../../images/button/btn_goto_account.jpg" width="194" height="30" border="0"></a>
+			<a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=grad_account"><img src="../../images/button/btn_logout.jpg" width="74" height="30" border="0"></a>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%">
+			<b>합격자 안내사항:</b><br>
+			기숙사 고지서를 인쇄하여 고지서 상 제공되는 정보(기숙사비, 입금계좌, 은행 주소 등)를 확인하시기 바랍니다.<br>
+			<font color="#7C0019">중요:</font> 대학원생 전용 납부 계좌는 모든 합격자가 동일한 계좌를 사용합니다. 그러므로 기숙사비 입금은 <font color="#7C0019"><b><u>반드시 학생 본인 이름</u></b></font>으로 해주시기 바랍니다. (타인 명의 입금 시 납부 내역 확인 불가능) 해외 송금 시 환차익과 해외송금수수료등을 확인하고 정확한 금액을 납부해 주시기 바랍니다.<br>
+			<font color="#7C0019">중요:</font> 지정된 기간 내 기숙사비 미납 시 선발자 명단에서 제외됩니다. 결핵검사 결과지는 반드시 기숙사 입사일 기준 한 달 이내의 것으로 업로드해야 합니다.<br>
+			<br>
+			<b>For a new applicant:</b><br>
+			Print your billing statement at the bottom of this page. The billing statement provides the total amount due and also the information needed for the wire transfer, such as Bank Name, Bank Address, Swift Code, Account No. and Name of Beneficiary, i.e., Korea University Anam Global House.<br>
+			<font color="#7C0019">NOTE:</font> The assigned bank account number for payment is same for all application. Therefore, the dormitory fee <font color="#7C0019"><b><u>must be paid by the student's name</u></b></font>. (When payment is made by another person, payment details cannot be confirmed) Please check the exchange profits and remittance fees when paying overseas.<br>
+			<font color="#7C0019">NOTE:</font> If the dormitory fee is not transferred within the specified period, you will be excluded from the candidates list. TB test result should be within one month from the check-in date.
+		</td>
+	</tr>
+	<!-- BEGIN DYNAMIC BLOCK: deposit_row -->
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td width="100%">
+			Please note that your <font color="#7C0019">deposit is due</font> when you submit the application.
+			You should make a deposit of 200,000 Korean won to:
+		</td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="0" border="0" align="center">
+				<tr>
+					<td width="4" nowrap><img src="../../images/main/info_left.jpg" width="4" height="185"></td>
+					<td height="100%">
+						<table height="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+							<tr>
+								<td colspan="5" height="1" bgcolor="#892034" nowrap></td>
+							</tr>
+							<tr>
+								<td width="1" height="9" bgcolor="#DDDDDD" nowrap></td>
+								<td colspan="3" height="9" background="../../images/main/info_bg.jpg" nowrap></td>
+								<td width="1" height="9" bgcolor="#DDDDDD" nowrap></td>
+							</tr>
+							<tr bgcolor="#F2F2F2">
+								<td width="1" nowrap></td>
+								<td width="15" nowrap></td>
+								<td style="color:#6E0010;">
+									BANK NAME: Hana Bank, Godae Branch<br>
+									Bank Address: Korea University, Anam-dong, Seongbuk-gu, Seoul 136-701, KOREA<br>
+									SWIFT CODE: KOEXKRSE<br>
+									ACCOUNT NO.: 391-910012-18304<br>
+									BENEFICIARY: Korea University Anam Global House<br>
+									Make sure to write your name and Student ID as the remittance information to Beneficiary. After transferring the money, fax wire 
+									transfer confirmation stub to the Anam Global House office at 82-2-929-3184, accompanied by a copy of your online residence hall 
+									application.
+								</td>
+								<td width="15" nowrap></td>
+								<td width="1" nowrap></td>
+							</tr>
+							<tr>
+								<td width="1" height="9" bgcolor="#DDDDDD" nowrap></td>
+								<td colspan="3" height="9" background="../../images/main/info_bg.jpg" nowrap></td>
+								<td width="1" height="9" bgcolor="#DDDDDD" nowrap></td>
+							</tr>
+							<tr>
+								<td colspan="5" height="1" bgcolor="#892034" nowrap></td>
+							</tr>
+						</table>
+					</td>
+					<td width="4" nowrap><img src="../../images/main/info_right.jpg" width="4" height="185"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10"></td>
+	</tr>
+	<tr>
+		<td width="100%">
+			Only after the deposit payment is made, your room will be assigned.
+		</td>
+	</tr>
+	<!-- END DYNAMIC BLOCK: deposit_row -->
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td><font color="#7C0019"><b>Application Status and Room Assignment Information</b></font></td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="180" bgcolor="#EFEFEF" align="center" nowrap>Application Number</td>
+					<td width="10" nowrap></td>
+					<td height="21">{APPLY_NUMBER}</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="180" bgcolor="#EFEFEF" align="center">Application Status</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_STATE}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="180" bgcolor="#EFEFEF" align="center">Session Applying</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_PERIOD}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="180" bgcolor="#EFEFEF" align="center">Type of Room and Rates</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_RATE}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="180" bgcolor="#EFEFEF" align="center">Room Number</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_ROOM}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="180" bgcolor="#EFEFEF" align="center">Room Phone No.</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_ROOM_PH}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="180" bgcolor="#EFEFEF" align="center">IP Address for Cable configuration</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_ROOM_IP}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<form name="UploadForm" action="https://reslife.korea.ac.kr:5008/v1/src/graduate/action_app.php" method="post" enctype="multipart/form-data" onSubmit="return checkUploadInfo(this);">
+		<input type="hidden" name="mode" value="upload">
+		<input type="hidden" name="s_state" value="{SEARCH_STATE}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<input type="hidden" name="email" value="{SEL_EMAIL}">
+		<input type="hidden" name="pw" value="{SEL_PASSWORD}">
+		<input type="hidden" name="no" value="{APPLY_NUMBER}">
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td><font color="#7C0019"><b>Scan(Image) File Upload</b></font></td>
+		</tr>
+		<tr>
+			<td height="5"></td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+					<tr> 
+						<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" bgcolor="#EFEFEF" align="center">Housing Fee & Deposit Transfer Receipt</td>
+						<td width="10" nowrap></td>
+						<td width="50%"><input type="file" name="fee_transfer" style="width:100%;color:#9B9EA3;"><br>{APPLY_FEE_TRANSFER}</td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" bgcolor="#EFEFEF" align="center">Housing Fee Supporting Confirmation Document (related applicant only)</td>
+						<td width="10" nowrap></td>
+						<td width="50%"><input type="file" name="fee_support" style="width:100%;color:#9B9EA3;"><br>{APPLY_FEE_SUPPORT}</td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr>
+						<td width="1" bgcolor="#EFEFEF" nowrap></td>
+						<td width="50%" bgcolor="#EFEFEF" align="center">TB Test Result Document</td>
+						<td width="10" nowrap></td>
+						<td width="50%"><input type="file" name="tb_test" style="width:100%;color:#9B9EA3;"><br>{APPLY_TB_TEST}</td>
+						<td width="9" nowrap></td>
+						<td width="1" nowrap></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="1"></td>
+					</tr>
+					<tr> 
+						<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+						<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+						<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+					</tr>
+					<tr>
+						<td colspan="6" height="3" bgcolor="#7C0019"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td><b>☞ ONLY the room assigned applicants need to upload the scan(image) files, after the official room assignment date.</b></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="image" src="../../images/button/btn_save.jpg" border="0"></td>
+		</tr>
+	</form>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td><font color="#7C0019"><b>Type of Room and Rates</b></font></td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: room_prefer_row -->
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="120" bgcolor="#EFEFEF" align="center">Room Preference</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_PREFER}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: room_prefer_row -->
+				<!-- BEGIN DYNAMIC BLOCK: preference_row -->
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="120" bgcolor="#EFEFEF" align="center" nowrap>Preference {PREFERENCE_NUMBER}.</td>
+					<td width="10" nowrap></td>
+					<td height="21">{PREFERENCE_RATE}</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				{DIVIDE_LINE}
+				<!-- END DYNAMIC BLOCK: preference_row -->
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!--
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td><font color="#7C0019"><b>Roommatee Requests</b></font></td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="120" bgcolor="#EFEFEF" align="center" nowrap>Name in Full</td>
+					<td width="10" nowrap></td>
+					<td width="100%" height="21">{APPLY_MATE_NAME}</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="120" bgcolor="#EFEFEF" align="center">KU Student ID</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_MATE_ID}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr> 
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td><font color="#7C0019"><b>Roommate Matching Criteria</b></font></td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Prefer living with a local (Korean) student</td>
+					<td width="10" nowrap></td>
+					<td height="21">{APPLY_PREFERENCE6}</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF" nowrap></td>
+					<td width="250" bgcolor="#EFEFEF" align="center" nowrap>Prefer living with a non-smoker</td>
+					<td width="10" nowrap></td>
+					<td height="21">{APPLY_PREFERENCE1}</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="250" bgcolor="#EFEFEF" align="center">Prefer going to bed early</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_PREFERENCE2}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="250" bgcolor="#EFEFEF" align="center">Prefer getting up early</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_PREFERENCE3}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="250" bgcolor="#EFEFEF" align="center">Prefer studying in silence</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_PREFERENCE4}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" bgcolor="#EFEFEF"></td>
+					<td width="250" bgcolor="#EFEFEF" align="center">Prefer studying during the day</td>
+					<td width="10"></td>
+					<td height="21">{APPLY_PREFERENCE5}</td>
+					<td width="9"></td>
+					<td width="1"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="4" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	-->
+	<!-- BEGIN DYNAMIC BLOCK: payment_use -->
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td><font color="#7C0019"><b>Payment History</b></font></td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="9" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="7" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="6" height="1"></td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: payment1_row -->
+				<tr>
+					<td width="1" nowrap></td>
+					<td width="9" nowrap></td>
+					<td width="130" height="21" nowrap>{PAYMENT1_DATE}</td>
+					<td width="10" nowrap></td>
+					<td height="21">{PAYMENT1_DETAIL}</td>
+					<td width="10" nowrap></td>
+					<td width="120" height="21" align="right" nowrap>{PAYMENT1_PRICE} KRW</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: payment1_row -->
+				<tr bgcolor="#EFEFEF">
+					<td width="1" nowrap></td>
+					<td width="9" nowrap></td>
+					<td colspan="3" height="21"><b>Deposit Total Due / (Overpaid, if negative)</b></td>
+					<td width="10" nowrap></td>
+					<td width="120" height="21" align="right" nowrap><b>{PAYMENT1_TOTAL} KRW</b></td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<!-- BEGIN DYNAMIC BLOCK: payment2_row -->
+				<tr>
+					<td width="1" nowrap></td>
+					<td width="9" nowrap></td>
+					<td width="130" height="21" nowrap>{PAYMENT2_DATE}</td>
+					<td width="10" nowrap></td>
+					<td height="21">{PAYMENT2_DETAIL}</td>
+					<td width="10" nowrap></td>
+					<td width="120" height="21" align="right" nowrap>{PAYMENT2_PRICE} KRW</td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1" background="../../images/board/board_hdot.jpg"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<!-- END DYNAMIC BLOCK: payment2_row -->
+				<tr bgcolor="#EFEFEF">
+					<td width="1" nowrap></td>
+					<td width="9" nowrap></td>
+					<td colspan="3" height="21"><b>Residence Hall Fee Total Due / (Overpaid, if negative)</b></td>
+					<td width="10" nowrap></td>
+					<td width="120" height="21" align="right" nowrap><b>{PAYMENT2_TOTAL} KRW</b></td>
+					<td width="9" nowrap></td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td colspan="7" height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="9" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!-- END DYNAMIC BLOCK: payment_use -->
+	<!-- BEGIN DYNAMIC BLOCK: deposit1_row -->
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td><font color="#7C0019"><b>Deposit Refund Information</b></font></td>
+	</tr>
+	<tr>
+		<td height="5"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" height="3" bgcolor="#7C0019"></td>
+				</tr>
+				<tr> 
+					<td width="1"><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1"><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" nowrap></td>
+					<td height="21">{REFUND_DESC}</td>
+					<td width="1" nowrap></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="1"></td>
+				</tr>
+				<tr>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_left.jpg" width="1" height="10"></td>
+					<td height="10" background="../../images/board/board_bottom_back.jpg"></td>
+					<td width="1" nowrap><img src="../../images/board/board_bottom_right.jpg" width="1" height="10"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="3" bgcolor="#7C0019"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!-- END DYNAMIC BLOCK: deposit1_row -->
+	<tr>
+		<td height="20"></td>
+	</tr>
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="0" border="0" align="center">
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner1.jpg" width="7" height="12"></td>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner2.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="11" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+					<td width="30" align="center" valign="top" nowrap><img src="../../images/main/spacer.jpg" width="1" height="3"><br><img src="../../images/main/notice_dot.jpg" width="14" height="14"></td>
+					<td style="color:#765E35;">
+						Thank you for your on-line housing application.<br>
+						Your application number is {APPLY_NUMBER}.<br>
+						Please print this page for your record.<br>
+						If you have any further questions, <br>please contact Anam Global House at <a href="mailto:{CF_EMAIL_GRADUATE}" style="color:#7C0019;">{CF_EMAIL_GRADUATE}</a>.
+					</td>
+					<td width="20" nowrap></td>
+					<td width="7" bgcolor="#D4C4A8" nowrap></td>
+				</tr>
+				<tr>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner3.jpg" width="7" height="12"></td>
+					<td colspan="3" height="11" nowrap></td>
+					<td width="7" rowspan="2" nowrap><img src="../../images/main/notice_corner4.jpg" width="7" height="12"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="1" bgcolor="#E1D6BF" nowrap></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="30"></td>
+	</tr>
+	<form name="ApplicationForm" action="" method="post">
+		<input type="hidden" name="s_state" value="{SEARCH_STATE}">
+		<input type="hidden" name="sort1" value="{SORT1_VALUE}">
+		<input type="hidden" name="sort2" value="{SORT2_VALUE}">
+		<input type="hidden" name="email" value="{SEL_EMAIL}">
+		<input type="hidden" name="pw" value="{SEL_PASSWORD}">
+		<input type="hidden" name="no" value="{APPLY_NUMBER}">
+		<tr>
+			<td align="center">
+				<a href="javascript:gotoList(document.ApplicationForm);"><img src="../../images/button/btn_view_list.jpg" width="94" height="30" border="0"></a>
+				<a href="javascript:printApplication(document.ApplicationForm);"><img src="../../images/button/btn_print.jpg" width="184" height="30" border="0"></a>
+				<!-- BEGIN DYNAMIC BLOCK: invoice_row -->
+				<a href="javascript:printInvoice(document.ApplicationForm);"><img src="../../images/button/btn_invoice.jpg" width="170" height="30" border="0"></a>
+				<!-- END DYNAMIC BLOCK: invoice_row -->
+				<!-- BEGIN DYNAMIC BLOCK: edit_row -->
+				<a href="javascript:changeApplication(document.ApplicationForm);"><img src="../../images/button/btn_change_app.jpg" width="214" height="30" border="0"></a>
+				<!-- END DYNAMIC BLOCK: edit_row -->
+				<a href="javascript:submitRefund(document.ApplicationForm, '{REFUND_FLAG}');"><img src="../../images/button/btn_goto_refund2.jpg" width="214" height="30" border="0"></a>
+			</td>
+		</tr>
+	</form>
+</table>

@@ -1,0 +1,168 @@
+<script language="javascript" src="../../js/function.js"></script>
+<script language="javascript" src="../../js/check.js"></script>
+<script language="javascript" src="../../js/application.js"></script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<form name="ApplicationForm" action="https://reslife.korea.ac.kr:5008/v1/src/apply/form_app.php" method="post" onSubmit="return checkContractInfo(this);">
+		<input type="hidden" name="email" value="{STUDENT_EMAIL}">
+		<input type="hidden" name="pw" value="{STUDENT_PASSWORD}">
+		<tr>
+			<td align="right">
+				<a href="javascript:gotoList(document.ApplicationForm);"><img src="../../images/button/btn_goto_account.jpg" width="194" height="30" border="0"></a>
+				<a href="https://reslife.korea.ac.kr:5008/v1/src/main/page.php?code=status_stu"><img src="../../images/button/btn_logout.jpg" width="74" height="30" border="0"></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<center><b>INTERNATIONAL HOUSE REGULATIONS<br>(Key Summaries)</b></center><br>
+				The following rules and regulations will be strictly enforced.<br>
+				<br>
+				Part 1: Violation of these terms once results in immediate expulsion without any refund.<br>
+				<table width="100%" cellpadding="3" cellspacing="1" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;" bgcolor="#9B9EA3">
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+								<tr>
+									<td width="25" valign="top" nowrap>1.</td>
+									<td width="100%">Violating the 'No Mixed Gender Visit Policy'. Opposite sex cannot enter the floor, suite, room, study room, kitchen and elevator. The dormitory staffs (management workers, residence life staffs) are exceptional only for official duties. They can enter rooms without notice for official duties such as resolving disputes or emergencies.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>2.</td>
+									<td width="100%">Assaulting or conducting on threatening health or safety of others.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>3.</td>
+									<td width="100%">Possession of weapons, firearms and other explosives.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>4.</td>
+									<td width="100%">Dealing in or using illegal substances or drugs. (ex marijuana, cocaine, meth, heroine etc)</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>5.</td>
+									<td width="100%">Misuse of fire equipment during ordinary times.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>6.</td>
+									<td width="100%">Theft and stealing. Financial compensation for such conduct will be imposed.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>7.</td>
+									<td width="100%">Vandalizing dormitory properties. Financial compensation will be imposed for any damages.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>8.</td>
+									<td width="100%">Disruptive behaviors that cause troubles with other residents. (ex. assault, violence, damaging properties of others).</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>9.</td>
+									<td width="100%">Those who have been warned twice for violating the rules and regulations.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>10.</td>
+									<td width="100%">Noncompliance with directives or not cooperating with Residence Life Staffs who are performing their duties.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>11.</td>
+									<td width="100%">Letting even dormitory residents after 10 pm in the other resident¡¯s room in the dormitory.</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<br>
+				Part 2 Violation of these terms twice results in immediate expulsion without any refund.<br>
+				<table width="100%" cellpadding="3" cellspacing="1" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;" bgcolor="#9B9EA3">
+					<tr>
+						<td bgcolor="#FFFFFF">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+								<tr>
+									<td width="25" valign="top" nowrap>12.</td>
+									<td width="100%">Drinking or possessing alcohol or smoking tobacco in the dormitory. (The use of alcohol and smoking is prohibited inside the dormitory. All areas of the residence are alcohol/smoke free. Misbehavior, unconsciousness, disturbance caused by drinking is prohibited.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>13.</td>
+									<td width="100%">Taking foods inside rooms (Foods are not allowed anywhere except the kitchen for hygiene reasons. Cooking is not allowed inside rooms as well for safety reasons.)</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>14.</td>
+									<td width="100%">Using unauthorized electric appliances and heating devices such as heater, electric mattress etc. (These are not permitted inside the House for safety reasons.)</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>15.</td>
+									<td width="100%">Taking unauthorized items in the dormitory. (These will be confiscated immediately)</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>16.</td>
+									<td width="100%">Making disturbances such as loud noise which cause residents¡¯ inconveniences. (Quiet hours are from 10:00pm to 6:00am. Keep the noise down during these hours)</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>17.</td>
+									<td width="100%">Keeping pets inside the dormitory (Residents cannot keep pets in any of the residence areas.)</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>18.</td>
+									<td width="100%">Uncleanness of rooms. Residents are responsible for hygiene and must keep their rooms clean. Also, residents are responsible for issued items. (Issued items should be maintained clean and undamaged.)</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>19.</td>
+									<td width="100%">Visitors are allowed only in the lobby from 9am to 10pm. (1st floor) Signing in at the information desk is required for visitors¡¯ entrance. Residents are responsible for the behavior of their guests, and bear all consequences of the violation of the Dormitory¡¯s regulations.)</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>20.</td>
+									<td width="100%">Duty to give notice of epidemics (Contact the staffs immediately when you suspect epidemics and follow the directions given to you.)</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>21.</td>
+									<td width="100%">Misusing dormitory cards. Do not lend or borrow dormitory card. Return after your stay is over.</td>
+								</tr>
+								<tr>
+									<td width="25" valign="top" nowrap>22.</td>
+									<td width="100%">Anyone unqualified for group life. (Residents should comply with the rules, maintain public etiquette, and act responsibly to avoid any accidents related to safety.)</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;">
+					<tr>
+						<td width="15" valign="top" nowrap>*</td>
+						<td width="100%">I will read and comply with all the rules and regulations in the handbook.</td>
+					</tr>
+					<tr>
+						<td width="15" valign="top" nowrap>*</td>
+						<td width="100%">The new regulation or rules may be added or changed during the session with notice in advance.</td>
+					</tr>
+				</table>
+				<br>
+				I, the undersigned, have read and understood the rules and regulations and will fully comply with the terms. If I violate these terms twice, or once in case of part 1, I agree of expulsion without any refund from the dormitory. I will pay for any damages or losses of the dormitory property for which I am responsible.<br>
+			</td>
+		</tr>
+		<tr>
+			<td height="15"></td>
+		</tr>
+		<tr>
+			<td>
+				<table cellpadding="0" cellspacing="0" border="0" style="text-align:justify;line-height:14pt;letter-spacing:0.1mm;" align="right">
+					<tr>
+						<td width="60" valign="top">Name:</td>
+						<td>{STUDENT_NAME}</td>
+					</tr>
+					<tr>
+						<td width="60" valign="top">Date:</td>
+						<td>{CURRENT_DATE}<br>(Time/Day/Month/Year)</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="right"><input type="checkbox" name="agree_flag" value="Y"> Agreed</td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="image" src="../../images/button/btn_continue.jpg" width="73" height="19" border="0"></td>
+		</tr>
+	</form>
+</table>

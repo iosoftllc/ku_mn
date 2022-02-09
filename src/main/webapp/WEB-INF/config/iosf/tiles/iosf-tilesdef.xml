@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition
+		name="layout.back.main"
+		template="/WEB-INF/jsp/iosf/com/layout/back/layout_back_main.jsp">
+		<put-attribute
+			name="title"
+			value="설정" />
+		<put-attribute
+			name="header"
+			value="/WEB-INF/jsp/iosf/com/layout/back/header_back.jsp" />
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/layout/empty.jsp" />
+		<put-attribute
+			name="footer"
+			value="/WEB-INF/jsp/iosf/com/layout/back/footer_back.jsp" />
+	</definition>
+
+	<definition
+		name="layout.back.sub"
+		template="/WEB-INF/jsp/iosf/com/layout/back/layout_back_sub.jsp">
+		<put-attribute
+			name="title"
+			value="설정" />
+		<put-attribute
+			name="header"
+			value="/WEB-INF/jsp/iosf/com/layout/back/header_back.jsp" />
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/layout/empty.jsp" />
+		<put-attribute
+			name="footer"
+			value="/WEB-INF/jsp/iosf/com/layout/back/footer_back.jsp" />
+	</definition>
+
+	<definition
+		name="layout.front.main"
+		template="/WEB-INF/jsp/iosf/com/layout/front/layout_front_main.jsp">
+		<put-attribute
+			name="title"
+			value="첫화면" />
+		<put-attribute
+			name="header"
+			value="/WEB-INF/jsp/iosf/com/layout/front/header_front.jsp" />
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/layout/empty.jsp" />
+		<put-attribute
+			name="footer"
+			value="/WEB-INF/jsp/iosf/com/layout/front/footer_front.jsp" />
+	</definition>
+
+	<definition
+		name="layout.front.sub"
+		templateExpression="/WEB-INF/jsp/iosf/com/layout/front/layout_front_sub.jsp">
+		<put-attribute
+			name="title"
+			value="서브화면" />
+		<put-attribute
+			name="header"
+			value="/WEB-INF/jsp/iosf/com/layout/front/header_front.jsp" />
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/layout/empty.jsp" />
+		<put-attribute
+			name="footer"
+			value="/WEB-INF/jsp/iosf/com/layout/front/footer_front.jsp" />
+	</definition>
+
+	<definition
+		name="layout.back.popup"
+		template="/WEB-INF/jsp/iosf/com/layout/back/layout_back_popup.jsp">
+		<put-attribute
+			name="title"
+			value="팝업" />
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/layout/layout_empty.jsp" />
+	</definition>
+
+	<definition
+		name="layout.front.popup"
+		template="/WEB-INF/jsp/iosf/com/layout/front/layout_front_popup.jsp">
+		<put-attribute
+			name="title"
+			value="팝업" />
+		<put-attribute
+			name="content"
+			value="/WEB-INF/jsp/iosf/com/layout/layout_empty.jsp" />
+	</definition>
+
+	<definition
+		name="layout.empty"
+		template="/WEB-INF/jsp/iosf/com/layout/layout_empty.jsp">
+	</definition>
+</tiles-definitions>

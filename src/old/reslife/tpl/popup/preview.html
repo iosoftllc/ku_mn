@@ -1,0 +1,39 @@
+<html>
+
+<head>
+	<title>Photo Gallery</title>
+	<meta http-equiv="ImageToolbar" content="No">
+</head>
+
+<script language="javascript">
+	function preview(img_url, FImg) {
+		var cw = document.body.clientWidth;
+		var ch = document.body.clientHeight;
+		var sw = screen.width;
+		var sh = screen.height;
+
+		if (img_url == "") FImg.src = "../../images/main/main_logo.jpg";
+		var imgw = FImg.width;
+		var imgh = FImg.height;
+		var popw, poph;
+		if (imgw > 800) popw = 800;
+		else popw = imgw;
+		if (imgh > 600) poph = 600;
+		else poph = imgh;
+
+		if ((sh - poph) / 2 < 0) window.moveTo((sw - popw) / 2, 0);
+		else window.moveTo((sw - popw)/2, (sh - poph) / 2);
+		if (popw == cw && poph == ch) return;
+		else window.resizeBy(popw - cw, poph - ch);
+	}
+</script>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onContextMenu="return false" onLoad="preview('{IMAGE_PATH}', document.all.viewimg);">
+	<table border="0" cellspacing="0" cellpadding="0">
+  	<tr>
+    	<td><a href="javascript:self.close();"><img name="viewimg" src="{IMAGE_PATH}" border="0"></td>
+  	</tr>
+	</table>
+</body>
+
+</html>
