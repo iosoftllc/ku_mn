@@ -158,11 +158,13 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.20</version>
 		</dependency>
+		
 		<!-- <dependency> <groupId>ojdbc</groupId> <artifactId>ojdbc</artifactId> 
 			<version>14</version> <scope>system</scope> <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc-14.jar</systemPath> 
 			</dependency> -->
@@ -253,24 +255,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>2.1.7</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>slf4j-api</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz-jobs</artifactId>
-			<version>2.2.1</version>
-		</dependency>
-
-		<dependency>
 			<groupId>oro</groupId>
 			<artifactId>oro</artifactId>
 			<version>2.0.8</version>
@@ -342,43 +326,15 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.twitter4j</groupId>
-			<artifactId>twitter4j-core</artifactId>
-			<version>4.0.7</version>
-		</dependency>
-
-		<dependency>
 			<groupId>net.sourceforge.ajaxtags</groupId>
 			<artifactId>ajaxtags-resources</artifactId>
 			<version>1.5.7</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.ckeditor</groupId>
-			<artifactId>ckeditor-java-core</artifactId>
-			<version>3.5.3</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.apache.xmlgraphics</groupId>
 			<artifactId>batik-ext</artifactId>
 			<version>1.7</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.social</groupId>
-			<artifactId>spring-social-facebook</artifactId>
-			<version>2.0.3.RELEASE</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-web</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-webmvc</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -465,12 +421,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>42.2.23</version>
-		</dependency>
-
-		<dependency>
 			<groupId>ojdbc</groupId>
 			<artifactId>ojdbc</artifactId>
 			<version>6-11</version>
@@ -479,51 +429,11 @@
 		</dependency>
 
 		<dependency>
-			<groupId>altibase</groupId>
-			<artifactId>altibase-jdbc-driver</artifactId>
-			<version>5.1.3.18</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/Altibase.jar</systemPath>
-		</dependency>
-
-		<dependency>
-			<groupId>com.tmax.tibero</groupId>
-			<artifactId>tibero-jdbc</artifactId>
-			<version>3.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/tibero5-jdbc.jar</systemPath>
-		</dependency>
-
-		<dependency>
-			<groupId>cubrid</groupId>
-			<artifactId>cubrid-jdbc</artifactId>
-			<version>8.4</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/cubrid_jdbc.jar</systemPath>
-		</dependency>
-
-		<dependency>
 			<groupId>kr.go.mgov</groupId>
 			<artifactId>smeapi</artifactId>
 			<version>2.7</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/smeapi_2_7.jar</systemPath>
-		</dependency>
-
-		<dependency>
-			<groupId>kr.go.gpki</groupId>
-			<artifactId>gpkisecureweb</artifactId>
-			<version>1.0.4.9</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/gpkisecureweb-1.0.4.9.jar</systemPath>
-		</dependency>
-
-		<dependency>
-			<groupId>kr.go.gpki</groupId>
-			<artifactId>libgpkiapi_jni</artifactId>
-			<version>1.4.0.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/libgpkiapi_jni-1.4.0.0.jar</systemPath>
 		</dependency>
 
 		<dependency>
@@ -579,12 +489,6 @@
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>2.3.30</version>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.supercsv</groupId>
-			<artifactId>super-csv</artifactId>
-			<version>2.4.0</version>
 		</dependency>
 
 		<dependency>
@@ -668,16 +572,6 @@
 			<version>6.18.1</version>
 
 		</dependency>
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports-fonts</artifactId>
-			<version>6.18.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.cloud</groupId>
-			<artifactId>google-cloud-translate</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -706,12 +600,7 @@
 			<artifactId>batik-bridge</artifactId>
 			<version>1.14</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-ext -->
-		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>batik-ext</artifactId>
-			<version>1.14</version>
-		</dependency>
+
 	</dependencies>
 
 	<build>
