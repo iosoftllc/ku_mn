@@ -179,6 +179,12 @@
 			<groupId>egovframework.rte</groupId>
 			<artifactId>egovframework.rte.fdl.excel</artifactId>
 			<version>${egovframework.rte.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>stax</groupId>
+					<artifactId>stax-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
