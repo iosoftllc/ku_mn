@@ -237,7 +237,9 @@
     height: 100%;
     border: 0;
 }
-
+.board_view .document div{
+    line-height: 1.3em;
+}
 .board_view .document.reply {
     padding-bottom: 0;
 }
