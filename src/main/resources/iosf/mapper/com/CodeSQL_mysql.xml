@@ -9,13 +9,10 @@
 		FROM
 			VIEW_MOBILECARD_CODE
 		<where>
-			<if test="@DbFunctions@isNotEmpty(up_cd_seq)">
-				AND UP_CD_SEQ = #{up_cd_seq}
+			<if test="@DbFunctions@isNotEmpty(cd_id)">
+				AND COLUMNNAME = #{cd_id}
 			</if>
 		</where>
-		<if test="@DbFunctions@isEmpty(up_cd_seq)">
-			GROUP BY COLUMNNAME
-		</if>
 	</select>
 	
 	<select id="getList" parameterType="Code" resultType="Code">
@@ -23,20 +20,16 @@
 			SELECT * FROM ( SELECT (ROW_NUMBER() OVER()) AS RN, TB.* FROM (
 		</if>
 		SELECT
-			CODE CD_SEQ
-			, CODENAME CD_NM
+			CODENAME CD_NM
 			, CODE CD_ID
-			, COLUMNNAME UP_CD_SEQ
 		FROM
 			VIEW_MOBILECARD_CODE
 		<where>
-			<if test="@DbFunctions@isNotEmpty(up_cd_seq)">
-				AND UP_CD_SEQ = #{up_cd_seq}
+			<if test="@DbFunctions@isNotEmpty(cd_id)">
+				AND COLUMNNAME = #{cd_id}
 			</if>
 		</where>
-		<if test="@DbFunctions@isEmpty(up_cd_seq)">
-			GROUP BY COLUMNNAME
-		</if>
+		ORDER BY CODE
 		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
 			) TB ) TBS LIMIT #{record_count_per_page} OFFSET #{first_index}
 		</if>
@@ -45,18 +38,16 @@
 	<resultMap id="list" type="Code" >
 		<!-- collection에 사용하는 파라메터값을 id로 지정해주지 않으면 그 컬럼 값을 못가져옴... -->
         <id property="cd_id" column="cd_id"/>
-		<collection property="list" ofType="Code" column="{up_cd_seq=cd_seq, search_use_yn=search_use_yn, page_use_yn=page_use_yn}" select="iosf.com.program.code.service.impl.CodeMapper.getList"/>
+		<collection property="list" ofType="Code" column="{cd_id=cd_id, page_use_yn=page_use_yn}" select="iosf.com.program.code.service.impl.CodeMapper.getList"/>
 	</resultMap>
 	
 	<select id="getCodes" parameterType="Code" resultMap="list">
 		SELECT
-			COLUMNNAME CD_SEQ
-			, COLUMNNAME CD_NM
+			COLUMNNAME CD_NM
 			, COLUMNNAME CD_ID
-			, COLUMNNAME UP_CD_SEQ
 			, 'N' PAGE_USE_YN
 		FROM
-			IOSF_CODE
+			VIEW_MOBILECARD_CODE
 		GROUP BY COLUMNNAME
 	</select>
 

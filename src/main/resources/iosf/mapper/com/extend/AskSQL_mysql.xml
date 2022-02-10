@@ -9,12 +9,8 @@
 		FROM
 			MOBILE_ONETOONE_ASK A
 		<where>
-			<if test="@DbFunctions@isNotEmpty(idno)">
-				AND IDNO = #{idno}
-			</if>
-			<if test="@DbFunctions@isNotEmpty(search_ask_type)">
-				AND ASK_TYPE = #{search_ask_type}
-			</if>
+			ASK_TYPE = #{ask_type}
+			AND IDNO = #{idno}
 			<if test="@DbFunctions@isNotEmpty(search_keyword)">
 				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
 					AND TITLE LIKE CONCAT('%', #{search_keyword}, '%')
@@ -48,12 +44,8 @@
 		FROM
 			MOBILE_ONETOONE_ASK A
 		<where>
-			<if test="@DbFunctions@isNotEmpty(idno)">
-				AND IDNO = #{idno}
-			</if>
-			<if test="@DbFunctions@isNotEmpty(search_ask_type)">
-				AND ASK_TYPE = #{search_ask_type}
-			</if>
+			ASK_TYPE = #{ask_type}
+			AND IDNO = #{idno}
 			<if test="@DbFunctions@isNotEmpty(search_keyword)">
 				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
 					AND TITLE LIKE CONCAT('%', #{search_keyword}, '%')
@@ -81,7 +73,7 @@
 			, EMAIL
 			, ANSWER_ID
 			, ANSWER_CONTENTS
-			, ANSWER_DATE
+			, DATE_FORMAT(ANSWER_DATE, '%Y%m%d%H%i%s') ANSWER_DATE
 			, STAT
 			, INID REG_ID
 			, UPID MOD_ID
@@ -126,7 +118,7 @@
 			, NULL
 			, NULL
 			, NULL
-			, #{stat}
+			, '0'
 			, #{reg_id}
 			, #{mod_id}
 			, #{user_ip}
@@ -139,8 +131,9 @@
 		UPDATE
 			MOBILE_ONETOONE_ASK
 		SET
-			MOD_ID = #{mod_id}
-			, MOD_DT = DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')
+			UPID = #{mod_id}
+			, UPDT = DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')
+			, INIP = #{user_ip}
 			<if test="title != null">
 				, TITLE = #{title}
 			</if>
@@ -152,12 +145,6 @@
 			</if>
 			<if test="email != null">
 				, EMAIL = #{email}
-			</if>
-			<if test="stat != null">
-				, STAT = #{stat}
-			</if>
-			<if test="user_ip != null">
-				, INIP = #{user_ip}
 			</if>
 		WHERE
 			SEQ = #{seq}

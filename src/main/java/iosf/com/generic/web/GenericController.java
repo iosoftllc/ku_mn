@@ -35,6 +35,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springmodules.validation.commons.DefaultBeanValidator;
 
+import egovframework.com.cmm.LoginVO;
 import egovframework.com.cmm.util.EgovDoubleSubmitHelper;
 import egovframework.com.cmm.util.EgovUserDetailsHelper;
 import egovframework.rte.fdl.property.EgovPropertyService;
@@ -168,11 +169,14 @@ public class GenericController<S extends GenericService<C>, C extends GenericCom
 	 * @return
 	 */
 	public UserCommand getUser() {
-		UserCommand cmd = (UserCommand) EgovUserDetailsHelper.getAuthenticatedUser();
-		if (cmd != null) {
-			HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-			return (UserCommand) req.getSession().getAttribute(Constants.SESSION_USERINFO);
+		Object obj = EgovUserDetailsHelper.getAuthenticatedUser();
+		if (obj != null) {
+			if (Functions.getReq().getSession().getAttribute(Constants.SESSION_USERINFO) == null) {
+				return ((LoginVO) obj).getInfo();
+			}
+			return (UserCommand) Functions.getReq().getSession().getAttribute(Constants.SESSION_USERINFO);
 		}
+
 		return null;
 	}
 

@@ -139,7 +139,7 @@ public class EgovLoginController {
 		resultVO.setIp(request.getRemoteAddr());
 		resultVO.setUniqId(resultVO.getId());
 
-		request.getSession().setAttribute(Constants.SESSION_USERINFO, resultVO);
+		request.getSession().setAttribute(Constants.SESSION_EGOVUSER, resultVO);
 
 		return SUCCESS_URL;
 	}
@@ -153,7 +153,7 @@ public class EgovLoginController {
 	@GetMapping(value = "/user/logout")
 	public String actionLogout(HttpServletRequest request, ModelMap model) throws Exception {
 
-		request.getSession().setAttribute("loginVO", null);
+		request.getSession().setAttribute(Constants.SESSION_EGOVUSER, null);
 
 		return "redirect:/user/login";
 

@@ -46,7 +46,7 @@ public class XssEscapeServletFilterWrapper extends HttpServletRequestWrapper {
 		String value = super.getParameter(paramName);
 		value = doFilter(paramName, value);
 		// 파라메터 content 가 포함되지 않으면 HTML 태그 자체를 허용하지 않는다.
-		if (!paramName.contains("content") && value != null) {
+		if (value != null) {
 			for (int i = 0; i < noTagList[0].length; i++) {
 				String text = noTagList[0][i];
 				value = value.replaceAll(text, noTagList[1][i]);
@@ -65,7 +65,7 @@ public class XssEscapeServletFilterWrapper extends HttpServletRequestWrapper {
 			values[index] = doFilter(paramName, values[index]);
 
 			// 파라메터 content 가 포함되지 않으면 HTML 태그 자체를 허용하지 않는다.
-			if (!paramName.contains("content") && values[index] != null) {
+			if (values[index] != null) {
 				for (int i = 0; i < noTagList[0].length; i++) {
 					String text = noTagList[0][i];
 					values[index] = values[index].replaceAll(text, noTagList[1][i]);
@@ -88,7 +88,7 @@ public class XssEscapeServletFilterWrapper extends HttpServletRequestWrapper {
 			for (int index = 0; index < value.length; index++) {
 				filteredValue[index] = doFilter(paramName, String.valueOf(value[index]));
 
-				if (!paramName.contains("content") && filteredValue[index] != null) {
+				if (filteredValue[index] != null) {
 					for (int i = 0; i < noTagList[0].length; i++) {
 						String text = noTagList[0][i];
 						filteredValue[index] = filteredValue[index].replaceAll(text, noTagList[1][i]);

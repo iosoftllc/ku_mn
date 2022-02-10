@@ -7,7 +7,7 @@
 		SELECT
 			COUNT(1)
 		FROM
-			VIEW_MOBILECARD_CODE
+			KU_USER01.VIEW_MOBILECARD_CODE
 		<where>
 			<if test="@DbFunctions@isNotEmpty(cd_id)">
 				AND COLUMNNAME = #{cd_id}
@@ -17,13 +17,13 @@
 	
 	<select id="getList" parameterType="Code" resultType="Code">
 		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
-			SELECT * FROM ( SELECT (ROW_NUMBER() OVER()) AS RN, TB.* FROM (
+			SELECT * FROM ( SELECT rownum rn, TB.* FROM (
 		</if>
 		SELECT
 			CODENAME CD_NM
 			, CODE CD_ID
 		FROM
-			VIEW_MOBILECARD_CODE
+			KU_USER01.VIEW_MOBILECARD_CODE
 		<where>
 			<if test="@DbFunctions@isNotEmpty(cd_id)">
 				AND COLUMNNAME = #{cd_id}
@@ -31,7 +31,7 @@
 		</where>
 		ORDER BY CODE
 		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
-			) TB ) TBS LIMIT #{record_count_per_page} OFFSET #{first_index}
+			) TB ) WHERE rn BETWEEN #{first_index} + 1 AND #{first_index} +	#{record_count_per_page}
 		</if>
 	</select>
 		
@@ -47,7 +47,7 @@
 			, COLUMNNAME CD_ID
 			, 'N' PAGE_USE_YN
 		FROM
-			VIEW_MOBILECARD_CODE
+			KU_USER01.VIEW_MOBILECARD_CODE
 		GROUP BY COLUMNNAME
 	</select>
 

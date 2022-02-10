@@ -36,6 +36,7 @@ public final class Constants {
 	public final static String ROLE_USER = "role_user";
 
 	// 로그인 세션 키
+	public final static String SESSION_EGOVUSER = "loginVO";
 	public final static String SESSION_USERINFO = "userinfo";
 	public final static String SESSION_USERINFO_ORG = "userinfo_org";
 

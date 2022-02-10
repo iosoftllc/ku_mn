@@ -24,12 +24,12 @@
 	                        <!-- login after-->
 	                        <div class="info-box">
 	                            <span class="thumb"><img src="${img_src}/iosf/front/thumbnail_userinfo_origin.png" width="22px" alt="" /></span>
-	                            <a href="#menu" class="name">${user.info.user_id } <span>님</span></a>
+	                            <a href="#menu" class="name">${user.user_id } <span>님</span></a>
 	                            <div class="info-pop">
-	                                <span class="txt1">${user.info.user_nm }</span>
-	                                <span class="txt2">${user.info.user_nm }(${user.info.user_id }) <span>님</span></span>
-	                                <p>${user.info.dept_nm }</p>
-	                                <span class="status">${user.info.pos_nm }</span>
+	                                <span class="txt1">${user.user_nm }</span>
+	                                <span class="txt2">${user.user_nm }(${user.user_id }) <span>님</span></span>
+	                                <p>${user.dept_nm }</p>
+	                                <span class="status">${user.pos_nm }</span>
 	                                <div class="bottom">
 	                                    <button class="btnlogout" onclick="location.href='${configs.CONTEXT}/user/logout';">로그아웃</button>
 	                                    <button class="btnclose">&nbsp;</button>

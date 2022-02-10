@@ -66,6 +66,7 @@ import com.drew.metadata.MetadataException;
 import com.drew.metadata.exif.ExifIFD0Directory;
 import com.ibm.icu.util.ChineseCalendar;
 
+import egovframework.com.cmm.LoginVO;
 import egovframework.com.cmm.util.EgovUserDetailsHelper;
 import freemarker.template.Configuration;
 import iosf.com.program.user.web.UserCommand;
@@ -248,14 +249,17 @@ public class Functions {
 	}
 
 	/**
-	 * 회원정보 가져오기
+	 * 사용자 정보 얻기
 	 * 
 	 * @return
 	 */
 	public static UserCommand getUser() {
-		UserCommand cmd = (UserCommand) EgovUserDetailsHelper.getAuthenticatedUser();
-		if (cmd != null) {
+		Object obj = EgovUserDetailsHelper.getAuthenticatedUser();
+		if (obj != null) {
 			HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+			if (req.getSession().getAttribute(Constants.SESSION_USERINFO) == null) {
+				return ((LoginVO) obj).getInfo();
+			}
 			return (UserCommand) req.getSession().getAttribute(Constants.SESSION_USERINFO);
 		}
 		return null;

@@ -8,7 +8,7 @@
 	request.setAttribute("lf", "\n");
 	request.setAttribute("crlf", "\n\r");
 	request.setAttribute("now", new Date());
-	request.setAttribute("user", request.getSession().getAttribute(Constants.SESSION_USERINFO));
+	request.setAttribute("user", Functions.getUser());
 	request.setAttribute("user_org", request.getSession().getAttribute(Constants.SESSION_USERINFO_ORG));
 	request.setAttribute("user_agent", request.getHeader("User-Agent"));
 
@@ -50,11 +50,9 @@
 <c:set var="img_src" value="${configs.CONTEXT_WEB}${configs.IMG_SRC}" />
 <c:set var="css_src" value="${configs.CONTEXT_WEB}${configs.CSS_SRC}" />
 <c:set var="js_src" value="${configs.CONTEXT_WEB}${configs.JS_SRC}" />
-<sec:authorize access="hasRole('ROLE_ADMIN')" var="isAdmin" /> <%-- 관리자 여부 --%>
-<sec:authorize access="hasRole('ROLE_USER')" var="isUser" /> <%-- 일반 사용자 여부 --%>
-<sec:authorize access="hasRole('ROLE_STAFF')" var="isStaff" /> <%-- 운영자 여부 --%>
-<sec:authorize access="hasRole('ROLE_FOOD')" var="isFood" /> <%-- 식단 관리자 여부 --%>
-<sec:authorize access="hasRole('ROLE_REPAIR')" var="isRepair" /> <%-- 시설 관리자 여부 --%>
+<%-- <sec:authorize access="hasRole('ROLE_ADMIN')" var="isAdmin" /> 관리자 여부 --%>
+<%-- <sec:authorize access="hasRole('ROLE_USER')" var="isUser" /> 일반 사용자 여부 --%>
+<c:set var="isUser" value="${!empty user }" /> <%-- 로그인 여부 --%>
 <c:set var="isUserLogin" value="${!empty user_org }" /> <%-- 사용자 접속 로그인 여부 --%>
 <c:set var="isLocal" value="${!configs.IS_REAL_SERVER && (fn:contains(pageContext.request.serverName, 'local') or fn:contains(pageContext.request.serverName, 'test'))}"/> <%-- 개발환경 여부 --%>
 <c:set var="isMobile" value="${fn:contains(user_agent, 'iPhone') or fn:contains(user_agent, 'iPod') or fn:contains(user_agent, 'Android')  }" /> <%-- 모바일 여부 --%>

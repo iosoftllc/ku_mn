@@ -8,5 +8,17 @@ import iosf.com.program.extend.ask.web.AskCommand;
 
 @Service("askService")
 public class AskServiceImpl extends GenericServiceImpl<AskMapper, AskCommand> implements AskService {
+	@Override
+	public AskCommand getList(AskCommand cmd) throws Exception {
+		// TODO Auto-generated method stub
+		cmd.setIdno(getUser().getUser_id());
+		return super.getList(cmd);
+	}
 
+	@Override
+	public Long insert(AskCommand cmd) throws Exception {
+		// TODO Auto-generated method stub
+		cmd.setIdno(getUser().getUser_id());
+		return super.insert(cmd);
+	}
 }

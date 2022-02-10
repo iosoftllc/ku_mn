@@ -11,13 +11,15 @@
     <link rel="stylesheet" href="../../../css/iosf/front/header.css">
     <link rel="stylesheet" href="../../../css/iosf/front/sub.css" />
     <link rel="stylesheet" href="../../../css/iosf/front/footer.css" />
-    <link rel="stylesheet" href="../../../css/iosf/front/board_view.css">
+    <link rel="stylesheet" href="../../../css/iosf/front/board_faq.css">
 
     <script type="text/javascript" src="../../../js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="../../../js/iosf/slick.js"></script>
     <script type="text/javascript" src="../../../js/iosf/front/header.js"></script>
     <script type="text/javascript" src="../../../js/iosf/front/sub.js"></script>
 
+    <script type="text/javascript" src="../../../js/iosf/front/contents/board_faq.js"></script>
+    
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico" />
     <style type="text/css">
         body{
@@ -229,7 +231,7 @@
                 -->
                 <div class="right-panel">
                     <div class="right-panel-top">
-                        <h3 class="page-title">질문게시판</h3>
+                        <h3 class="page-title">질문과 답변</h3>
                         <ul class="navi">
                             <li class="home"><a href="#">&nbsp;</a></li>
                             <li>스마트 카드</li>
@@ -239,108 +241,113 @@
                     </div>
                     <div class="component-area" style="min-height: 500px;">
 
-                        <section class="board_view">
+                        <section class="board_faq">
                             <div>
-                                <article>
-                                    <div class="status">
-                                        <!-- <small class="">공개</small>
-                                        <small class="on">비공개</small> -->
-                                        <b class="color1 on">답변대기</b>
-                                        <b class="color2 on">답변완료</b>
-                                    </div>
-                    
-                                    <div class="title new"><a href="#">스마트카드 신청 관련 문의<span></span></a></div>
-                    
-                                    <dl class="info">
-                                        <dt><small>질문자</small></dt>
-                                        <dt class="name"><p>김학생</p></dt>
-                                        <dt class="date"><p>2022-02-07 (수)</p></dt>
+                                <article class="tab">
+                                    <dl>
+                                        <dt><a href="#" class="on">전체</a></dt>
+                                        <dt><a href="#">스마트 카드</a></dt>
+                                        <dt><a href="#">모바일 신분증</a></dt>
                                     </dl>
-                    
                                 </article>
                     
-                                <article class="document">
+                                <!-- <article>
+                                    <h1>자주묻는 질문</h1>
+                                </article> -->
+                    
+                                <article class="counter">
                                     <div>
-                                        <!-- 게시글 코드 추가 부분 ▽▽▽ -->
-                                        <div>테스트 공간</div>
-                    
-                    
-                    
-                                        <!-- 게시글 코드 추가 부분 △△△ -->
+                                        <P>TOTAL</P>
+                                        <p>0,000<span>&nbsp;건</span></p>
                                     </div>
+                                    <form action="">
+                                        <select name="" id="">
+                                            <option value="">전체</option>
+                                            <option value="">스마트 카드</option>
+                                            <option value="">모바일 신분증</option>
+                                        </select>
+                                        <!-- <input type="text" placeholder="검색어를 입력하세요."> -->
+                                        <button type="submit" title="선택버튼">선택</button>
+                                    </form>
                                 </article>
                     
-                                <article class="attachment">
+                                <article class="faq_list">
                                     <dl>
                                         <dt>
-                                            <!-- <span class="doc"></span> -->
-                                            <!-- <span class="etc"></span> -->
-                                            <span class="hwp"></span>
-                                            <!-- <span class="mp4"></span> -->
-                                            <!-- <span class="pdf"></span> -->
-                                            <!-- <span class="ppt"></span> -->
-                                            <!-- <span class="xls"></span> -->
-                                            <!-- <span class="zip"></span> -->
-                                            <button type="button">스마트카드 신청 관련 서류(20220207).hwp</button>
+                                            <div>
+                                                <span>질문</span>
+                                                <small>카테고리1</small>
+                                                <p>스마트 카드를 발급하려면 어떻게 해야 하나요?</p>
+                                            </div>
+                                            <button type="button"></button>
                                         </dt>
+                                        <dd>
+                                            <div>
+                                                <span>답변</span>
+                                                <p>스마트 카드 발급 방법이 들어가는 공간</p>
+                                                <button type="button">닫기</button>
+                    
+                                            </div>
+                                        </dd>
                                     </dl>
-                                </article>
-                    
-                                <article class="reply">
-                                    <dl class="info">
-                                        <dt><small>답변자</small></dt>
-                                        <dt class="name"><p>관리자</p></dt>
-                                        <dt class="date"><p>2022-02-07 (수)</p></dt>
-                                    </dl>
-                                </article>
-                    
-                                <article class="document">
-                                    <div>
-                                        <!-- 게시글 코드 추가 부분 ▽▽▽ -->
-                                        <div>테스트 공간</div>
-                    
-                    
-                    
-                                        <!-- 게시글 코드 추가 부분 △△△ -->
-                                    </div>
-                                </article>
-                    
-                                <article class="attachment">
                                     <dl>
                                         <dt>
-                                            <!-- <span class="doc"></span> -->
-                                            <!-- <span class="etc"></span> -->
-                                            <!-- <span class="hwp"></span> -->
-                                            <!-- <span class="mp4"></span> -->
-                                            <!-- <span class="pdf"></span> -->
-                                            <span class="ppt"></span>
-                                            <!-- <span class="xls"></span> -->
-                                            <!-- <span class="zip"></span> -->
-                                            <button type="button">스마트카드_신청가이드(20220207).pptx</button>
+                                            <div>
+                                                <span>질문</span>
+                                                <small>카테고리2</small>
+                                                <p>모바일 신분증을 발급하려면 어떻게 해야 하나요?</p>
+                                            </div>
+                                            <button type="button"></button>
                                         </dt>
-                                        <dt>
-                                            <!-- <span class="doc"></span> -->
-                                            <!-- <span class="etc"></span> -->
-                                            <!-- <span class="hwp"></span> -->
-                                            <!-- <span class="mp4"></span> -->
-                                            <!-- <span class="pdf"></span> -->
-                                            <!-- <span class="ppt"></span> -->
-                                            <span class="xls"></span>
-                                            <!-- <span class="zip"></span> -->
-                                            <button type="button">스마트카드_신청가이드(20220207).xlsx</button>
-                                        </dt>
+                                        <dd>
+                                            <div>
+                                                <span>답변</span>
+                                                <p>모바일 신분증 발급 방법이 들어가는 공간</p>
+                                                <button type="button">닫기</button>
+                    
+                                            </div>
+                                        </dd>
                                     </dl>
+                                    <dl>
+                                        <dt>
+                                            <div>
+                                                <span>질문</span>
+                                                <small>카테고리3</small>
+                                                <p>스마트 카드가 없으면 어떤 불이익이 있나요?</p>
+                                            </div>
+                                            <button type="button"></button>
+                                        </dt>
+                                        <dd>
+                                            <div>
+                                                <span>답변</span>
+                                                <p>스마트 카드의 필요성에 대해 안내하는 공간</p>
+                                                <button type="button">닫기</button>
+                    
+                                            </div>
+                                        </dd>
+                                    </dl>
+                    
                                 </article>
                     
-                                <div class="btn">
+                    
+                                <div class="paging">
                                     <dl>
-                                        <dt class=""><button class="list" type="button">목록</button></dt>
-                                        <dt class="right"><button class="edit" type="button">수정</button></dt>
-                                        <dt class=""><button class="delete" type="button">삭제</button></dt>
+                                        <dt><button type="button" title="처음 페이지"></button><button type="button" title="이전 페이지"></button></dt>
+                                        <dd>
+                                            <button type="button" class="on">1</button>
+                                            <button type="button">2</button>
+                                            <button type="button">3</button>
+                                            <button type="button">4</button>
+                                            <button type="button">5</button>
+                                        </dd>
+                                        <dd class="mobile">
+                                            <p>1</p><small>/</small><p>5</p>
+                                        </dd>
+                                        <dt><button type="button" title="다음 페이지"></button><button type="button" title="마지막 페이지"></button></dt>
                                     </dl>
                                 </div>
-                    
                             </div>
+                        
                         </section>
 
                     </div>

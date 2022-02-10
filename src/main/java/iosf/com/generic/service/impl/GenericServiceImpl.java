@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.apache.commons.lang.StringUtils;
 import org.apache.ibatis.session.SqlSession;
 
+import egovframework.com.cmm.LoginVO;
 import egovframework.com.cmm.util.EgovUserDetailsHelper;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 import iosf.com.generic.service.GenericService;
@@ -33,13 +34,16 @@ public class GenericServiceImpl<M extends GenericMapper, C extends GenericComman
 	}
 
 	/**
-	 * 사용자 정보
+	 * 사용자 정보 얻기
 	 * 
 	 * @return
 	 */
 	public UserCommand getUser() {
-		UserCommand cmd = (UserCommand) EgovUserDetailsHelper.getAuthenticatedUser();
-		if (cmd != null) {
+		Object obj = EgovUserDetailsHelper.getAuthenticatedUser();
+		if (obj != null) {
+			if (Functions.getReq().getSession().getAttribute(Constants.SESSION_USERINFO) == null) {
+				return ((LoginVO) obj).getInfo();
+			}
 			return (UserCommand) Functions.getReq().getSession().getAttribute(Constants.SESSION_USERINFO);
 		}
 
