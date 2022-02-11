@@ -93,7 +93,7 @@
 				value="${Globals.oracle.UserName}" />
 			<property
 				name="password"
-				value="#{egovEnvCryptoService.getPassword()}" />
+				value="${Globals.oracle.Password}" />
 			<property
 				name="validationQuery"
 				value="select 1 from dual" />
