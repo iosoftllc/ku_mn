@@ -12,7 +12,7 @@ $(function(){
 </script>
 
                     <form name="Form_login" action="https://auth.korea.ac.kr/directLoginNew${fn:contains(pageContext.request.serverName, 'local') ? 'Test_' : ''}.jsp" method="post" onSubmit="return doSubmit(this, 'post');">
-                    	<input type="hidden" name="returnURL" value="${fn:contains(pageContext.request.serverName, 'local') ? 'local.korea.ac.kr:8080' : fn:contains(pageContext.request.serverName, 'test') ? 'testdorm.korea.ac.kr' : 'dorm.korea.ac.kr'}${configs.CONTEXT }/user/login" />
+                    	<input type="hidden" name="returnURL" value="${fn:contains(pageContext.request.serverName, 'local') ? 'local.korea.ac.kr:8080' : fn:contains(pageContext.request.serverName, 'test') ? 'local.korea.ac.kr' : 'card.korea.ac.kr'}${configs.CONTEXT }/user/login" />
                         <div class="login-comp">
                             <div class="inner">
                                 <p class="note-top">본 홈페이지의 모든 서비스를 이용하시기 위해서는 로그인이 필요합니다.</p>
