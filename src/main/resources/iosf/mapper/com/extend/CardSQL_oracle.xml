@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="iosf.com.program.extend.card.service.impl.CardMapper">
+
+	<select id="getListCount" parameterType="Card" resultType="Integer">
+		SELECT 
+			COUNT(1)
+		FROM
+			KU_USER01.VIEW_MOBILECARD_CARDLIST A
+		WHERE
+			#{idnos} LIKE '%' || IDNO || '%'
+	</select>
+
+	<select id="getList" parameterType="Card" resultType="Card">
+		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
+			SELECT * FROM ( SELECT rownum rn, TB.* FROM (
+		</if>
+		SELECT
+			IDNO
+			, ISSUEDATE
+			, ISSUEDEGREE
+			, ICCARDFLAG
+			, ICNAME
+			, ISSUEREASONCODE
+			, ISSUEREASONNAME
+			, ISSUEPLACE
+			, ISSUEPLACENAME
+			, REMARK
+		FROM
+			KU_USER01.VIEW_MOBILECARD_CARDLIST A
+		WHERE
+			#{idnos} LIKE '%' || IDNO || '%'
+		ORDER BY
+			ISSUEDATE DESC
+		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
+			) TB ) WHERE rn BETWEEN #{first_index} + 1 AND #{first_index} +	#{record_count_per_page}
+		</if>
+	</select>
+	
+</mapper>

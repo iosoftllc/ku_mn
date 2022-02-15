@@ -16,6 +16,11 @@
 		<typeAlias type="iosf.com.program.code.web.CodeCommand"
 			alias="Code" />
 
+		<typeAlias
+			type="iosf.com.program.extend.mobile.web.MobileCommand"
+			alias="Mobile" />
+		<typeAlias
+			type="iosf.com.program.extend.card.web.CardCommand" alias="Card" />
 		<typeAlias type="iosf.com.program.extend.ask.web.AskCommand"
 			alias="Ask" />
 		<typeAlias type="iosf.com.program.extend.faq.web.FaqCommand"

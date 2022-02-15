@@ -17,7 +17,7 @@ public class IosfInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 
 		// 로그인이 필요한 프로그램
-		if (uri.contains("/ask")) {
+		if (uri.contains("/ask") || uri.contains("/card") || uri.contains("/mobile")) {
 			if (Functions.getUser() == null) {
 				ModelAndView modelAndView = new ModelAndView("redirect:/front/user/login");
 				throw new ModelAndViewDefiningException(modelAndView);

@@ -15,6 +15,7 @@ public class AskCommand extends GenericCommand {
 
 	private Long seq;
 	private String idno;
+	private String idnos;
 	private String ask_type;
 	private String title;
 	private String contents;

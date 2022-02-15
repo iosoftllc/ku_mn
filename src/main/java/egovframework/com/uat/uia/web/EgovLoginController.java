@@ -119,15 +119,16 @@ public class EgovLoginController {
 		LOGGER.debug("		:: SSO Return msg enc : " + request.getParameter("msg"));
 		LOGGER.debug("		:: SSO Return msg dec : " + decrypted);
 
+		//{sEmpNos=eswing:, sDeptCd=AA08002, campus=0:, sGnm=공용, sNAME=STM, sUID=eswing, sDeptNm=전산개발부, sStdId=eswing, sGids=EC:, sDeptCds=AA08002:, sDeptNms=전산개발부:, serverIP=163.152.7.214, serverDomain=local.korea.ac.kr, sGid=EC}
 		Map<String, String> map = new HashMap<String, String>();
 		for (String p : decrypted.split("&")) {
 			map.put(p.split("=")[0], p.split("=")[1]);
 		}
 		userLoginCmd.setUser_id(map.get("sUID")); // 포털 아이디
 		userLoginCmd.setStd_id(map.get("sStdId")); // 교번
-		userLoginCmd.setUser_nm(map.get("sName"));
+		userLoginCmd.setUser_nm(map.get("sNAME"));
 		userLoginCmd.setDept_nm(map.get("sDeptNm"));
-		userLoginCmd.setPos_nm(map.get("sPosNm"));
+		userLoginCmd.setStd_ids(map.get("sEmpNos"));
 
 		if (userLoginCmd == null) {
 			return FAIL_URL;
@@ -155,7 +156,7 @@ public class EgovLoginController {
 
 		request.getSession().setAttribute(Constants.SESSION_EGOVUSER, null);
 
-		return "redirect:/user/login";
+		return "redirect:/";
 
 	}
 }

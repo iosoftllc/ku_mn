@@ -8,18 +8,17 @@
 			COUNT(1)
 		FROM
 			KU_USER01.MOBILE_ONETOONE_ASK A
-		<where>
-			ASK_TYPE = #{ask_type}
-			AND IDNO = #{idno}
+		WHERE
+			#{idnos} LIKE '%' || IDNO || '%'
+			AND ASK_TYPE = #{ask_type}
 			<if test="@DbFunctions@isNotEmpty(search_keyword)">
 				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
-					AND TITLE LIKE '%' || #{search_keyword}|| '%'
+					AND TITLE LIKE '%' || #{search_keyword} || '%'
 				</if>
 				<if test="@DbFunctions@isEqualsStr(search_field, 'CONTENT')">
-					AND CONTENTS LIKE '%' || #{search_keyword}|| '%'
+					AND CONTENTS LIKE '%' || #{search_keyword} || '%'
 				</if>
 			</if>
-		</where>
 	</select>
 
 	<select id="getList" parameterType="Ask" resultType="Ask">
@@ -43,18 +42,17 @@
 			, TO_CHAR(UPDT, 'YYYYMMDDHH24MISS') MOD_DT
 		FROM
 			KU_USER01.MOBILE_ONETOONE_ASK A
-		<where>
-			ASK_TYPE = #{ask_type}
-			AND IDNO = #{idno}
+		WHERE
+			#{idnos} LIKE '%' || IDNO || '%'
+			AND ASK_TYPE = #{ask_type}
 			<if test="@DbFunctions@isNotEmpty(search_keyword)">
 				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
-					AND TITLE LIKE '%' || #{search_keyword}|| '%'
+					AND TITLE LIKE '%' || #{search_keyword} || '%'
 				</if>
 				<if test="@DbFunctions@isEqualsStr(search_field, 'CONTENT')">
-					AND CONTENTS LIKE '%' || #{search_keyword}|| '%'
+					AND CONTENTS LIKE '%' || #{search_keyword} || '%'
 				</if>
 			</if>
-		</where>
 		ORDER BY
 			SEQ DESC
 		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">

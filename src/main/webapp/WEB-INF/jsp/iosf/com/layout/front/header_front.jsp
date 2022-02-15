@@ -29,7 +29,6 @@
 	                                <span class="txt1">${user.user_nm }</span>
 	                                <span class="txt2">${user.user_nm }(${user.user_id }) <span>님</span></span>
 	                                <p>${user.dept_nm }</p>
-	                                <span class="status">${user.pos_nm }</span>
 	                                <div class="bottom">
 	                                    <button class="btnlogout" onclick="location.href='${configs.CONTEXT}/user/logout';">로그아웃</button>
 	                                    <button class="btnclose">&nbsp;</button>
@@ -46,7 +45,7 @@
                                     <a href="#menu">이용 안내</a>
                                     <ul>
                                         <li><a href="javascript:alert('준비중입니다.');">학생증/신분증 소개</a></li>
-                                        <li><a href="javascript:alert('준비중입니다.');">국제학생증 소개</a></li>
+                                        <!-- <li><a href="javascript:alert('준비중입니다.');">국제학생증 소개</a></li> -->
                                     </ul>
                                 </li>
                                 <li>
@@ -56,7 +55,7 @@
                                         <li><a href="javascript:alert('준비중입니다.');">비대면 금융신청 안내</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:alert('준비중입니다.');">발급 내역 조회</a></li>
+                                <li><a href="${configs.CONTEXT }/front/card">발급 내역 조회</a></li>
                             </ul>
                         </li>
                         <li>
@@ -70,7 +69,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="javascript:alert('준비중입니다.');">이용 안내</a></li>
-                                <li><a href="javascript:alert('준비중입니다.');">발급 내역 조회</a></li>
+                                <li><a href="${configs.CONTEXT }/front/mobile">발급 내역 조회</a></li>
                             </ul>
                         </li>
                         <li>

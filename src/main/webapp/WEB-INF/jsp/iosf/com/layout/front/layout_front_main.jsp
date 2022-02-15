@@ -34,7 +34,7 @@
 	                        <div class="buttons">
 	                            <a href="javascript:alert('준비중입니다.');">이용 안내</a>
 	                            <a href="javascript:alert('준비중입니다.');">신청 안내</a>
-	                            <a href="javascript:alert('준비중입니다.');">발급 내역 조회</a>
+	                            <a href="${configs.CONTEXT }/front/card">발급 내역 조회</a>
 	                        </div>
 	                    </div>
 	                </div>
@@ -47,7 +47,7 @@
 	                       <div class="buttons">
 	                           <a href="javascript:alert('준비중입니다.');">가입/발급 절차</a>
 	                           <a href="javascript:alert('준비중입니다.');">이용 안내</a>
-	                           <a href="javascript:alert('준비중입니다.');">발급 내역 조회</a>
+	                           <a href="${configs.CONTEXT }/front/mobile">발급 내역 조회</a>
 	                       </div>
 	                    </div>
                     </div>

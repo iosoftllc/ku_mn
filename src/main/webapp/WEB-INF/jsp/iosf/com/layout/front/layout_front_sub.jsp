@@ -13,6 +13,12 @@
 			</c:when>
 		</c:choose>
 	</c:when>
+	<c:when test="${fn:contains(url, '/card') }">
+		<c:set var="menu_cd" value="m1.3" />
+	</c:when>
+	<c:when test="${fn:contains(url, '/mobile') }">
+		<c:set var="menu_cd" value="m2.3" />
+	</c:when>
 	<c:when test="${fn:contains(url, '/notice') }">
 		<c:set var="menu_cd" value="m4.1" />
 	</c:when>
@@ -35,9 +41,25 @@
 <c:choose>
 	<c:when test="${fn:contains(menu_cd, 'm1') }">
 		<c:set var="depth1_nm" value="스마트 카드" />
+		<c:choose>
+			<c:when test="${fn:contains(menu_cd, 'm1.1.1') }">
+				<c:set var="depth2_nm" value="학생증/신분증 소개" />
+			</c:when>
+			<c:when test="${fn:contains(menu_cd, 'm1.3') }">
+				<c:set var="depth2_nm" value="발급 내역 조회" />
+			</c:when>
+		</c:choose>
 	</c:when>
 	<c:when test="${fn:contains(menu_cd, 'm2') }">
 		<c:set var="depth1_nm" value="모바일 신분증" />
+		<c:choose>
+			<c:when test="${fn:contains(menu_cd, 'm2.1.1') }">
+				<c:set var="depth2_nm" value="initial(이니셜) 가입절차" />
+			</c:when>
+			<c:when test="${fn:contains(menu_cd, 'm2.3') }">
+				<c:set var="depth2_nm" value="발급 내역 조회" />
+			</c:when>
+		</c:choose>
 	</c:when>
 	<c:when test="${fn:contains(menu_cd, 'm3') }">
 		<c:set var="depth1_nm" value="건물 출입 권한" />
@@ -107,7 +129,7 @@
 		                            <a href="#">이용 안내</a>
 		                            <ul>
 		                                <li><a href="javascript:alert('준비중입니다');">학생증/신분증 소개</a></li>
-		                                <li><a href="javascript:alert('준비중입니다');">국제학생증 소개</a></li>
+		                                <!-- <li><a href="javascript:alert('준비중입니다');">국제학생증 소개</a></li> -->
 		                            </ul>
 		                        </li>
 		                        <li class="withsub">
@@ -117,7 +139,7 @@
 		                                <li><a href="javascript:alert('준비중입니다');">비대면 금융신청 안내</a></li>
 		                            </ul>
 		                        </li>
-		                        <li><a href="javascript:alert('준비중입니다');">발급 내역 조회</a></li>
+		                        <li><a href="${configs.CONTEXT }/front/card">발급 내역 조회</a></li>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm2') }">
 		                        <li class="withsub">
@@ -128,7 +150,7 @@
 		                            </ul>
 		                        </li>
 		                        <li><a href="javascript:alert('준비중입니다');">이용 안내</a></li>
-		                        <li><a href="javascript:alert('준비중입니다');">발급 내역 조회</a></li>
+		                        <li><a href="${configs.CONTEXT }/front/mobile">발급 내역 조회</a></li>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm3') }">
 		                        <li><a href="javascript:alert('준비중입니다');">건물 출입 이용 안내</a></li>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="iosf.com.program.extend.card.service.impl.CardMapper">
+
+	<select id="getListCount" parameterType="Card" resultType="Integer">
+		SELECT 
+			COUNT(1)
+		FROM
+			VIEW_MOBILECARD_CARDLIST A
+		WHERE
+			#{idnos} LIKE CONCAT('%', IDNO, '%')
+	</select>
+
+	<select id="getList" parameterType="Card" resultType="Card">
+		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
+			SELECT * FROM ( SELECT (ROW_NUMBER() OVER()) AS RN, TB.* FROM (
+		</if>
+		SELECT
+			IDNO
+			, ISSUEDATE
+			, ISSUEDEGREE
+			, ICCARDFLAG
+			, ICNAME
+			, ISSUEREASONCODE
+			, ISSUEREASONNAME
+			, ISSUEPLACE
+			, ISSUEPLACENAME
+			, REMARK
+		FROM
+			VIEW_MOBILECARD_CARDLIST A
+		WHERE
+			#{idnos} LIKE CONCAT('%', IDNO, '%')
+		ORDER BY
+			ISSUEDATE DESC
+		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
+			) TB ) TBS LIMIT #{record_count_per_page} OFFSET #{first_index}
+		</if>
+	</select>
+	
+</mapper>

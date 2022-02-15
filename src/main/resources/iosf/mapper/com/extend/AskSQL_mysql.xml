@@ -8,9 +8,9 @@
 			COUNT(1)
 		FROM
 			MOBILE_ONETOONE_ASK A
-		<where>
-			ASK_TYPE = #{ask_type}
-			AND IDNO = #{idno}
+		WHERE
+			#{idnos} LIKE CONCAT('%', IDNO, '%')
+			AND ASK_TYPE = #{ask_type}
 			<if test="@DbFunctions@isNotEmpty(search_keyword)">
 				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
 					AND TITLE LIKE CONCAT('%', #{search_keyword}, '%')
@@ -19,7 +19,6 @@
 					AND CONTENTS LIKE CONCAT('%', #{search_keyword}, '%')
 				</if>
 			</if>
-		</where>
 	</select>
 
 	<select id="getList" parameterType="Ask" resultType="Ask">
@@ -43,9 +42,9 @@
 			, DATE_FORMAT(UPDT, '%Y%m%d%H%i%s') MOD_DT
 		FROM
 			MOBILE_ONETOONE_ASK A
-		<where>
-			ASK_TYPE = #{ask_type}
-			AND IDNO = #{idno}
+		WHERE
+			#{idnos} LIKE CONCAT('%', IDNO, '%')
+			AND ASK_TYPE = #{ask_type}
 			<if test="@DbFunctions@isNotEmpty(search_keyword)">
 				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
 					AND TITLE LIKE CONCAT('%', #{search_keyword}, '%')
@@ -54,7 +53,6 @@
 					AND CONTENTS LIKE CONCAT('%', #{search_keyword}, '%')
 				</if>
 			</if>
-		</where>
 		ORDER BY
 			SEQ DESC
 		<if test="@DbFunctions@isEqualsStr(page_use_yn, 'Y')">
@@ -118,7 +116,7 @@
 			, NULL
 			, NULL
 			, NULL
-			, '0'
+			, #{stat}
 			, #{reg_id}
 			, #{mod_id}
 			, #{user_ip}
