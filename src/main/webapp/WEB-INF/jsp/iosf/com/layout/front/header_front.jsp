@@ -6,7 +6,7 @@
     <div id="header">
         <div class="wrap">
             <h1 class="logo"><a href="/">&nbsp;</a></h1>
-            <a href="/" id="mobile-menu-btn">&nbsp;</a>
+            <a href="#" id="mobile-menu-btn">&nbsp;</a>
             <div class="menu-holder">
                 <div class="mobile-top">
                     <span class="top-title">홈페이지 <span>메뉴</span></span>
