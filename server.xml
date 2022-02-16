@@ -110,7 +110,13 @@
         </SSLHostConfig>
     </Connector>
     -->
-
+	<!-- Define an SSL Coyote HTTP/1.1 Connector on port 8443 -->
+	<Connector
+           protocol="org.apache.coyote.http11.Http11NioProtocol"
+           port="443" maxThreads="200"
+           scheme="https" secure="true" SSLEnabled="true"
+           keystoreFile="/home/symtra/iosf/app/ssl/star.korea.ac.kr.keystore" keystorePass="korea1905"
+           clientAuth="false" sslProtocol="TLS"/>
     <!-- Define an AJP 1.3 Connector on port 8009 -->
     <!--
     <Connector protocol="AJP/1.3"

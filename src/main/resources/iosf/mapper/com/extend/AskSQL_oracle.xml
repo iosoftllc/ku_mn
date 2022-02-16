@@ -120,8 +120,8 @@
 			, #{reg_id}
 			, #{mod_id}
 			, #{user_ip}
-			, TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')
-			, TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')
+			, SYSDATE
+			, SYSDATE
 		)
 	</insert>
 	
@@ -130,7 +130,7 @@
 			KU_USER01.MOBILE_ONETOONE_ASK
 		SET
 			UPID = #{mod_id}
-			, UPDT = TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')
+			, UPDT = SYSDATE
 			, INIP = #{user_ip}
 			<if test="title != null">
 				, TITLE = #{title}

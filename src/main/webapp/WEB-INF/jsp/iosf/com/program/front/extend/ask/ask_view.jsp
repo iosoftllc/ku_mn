@@ -42,6 +42,7 @@
                 <dl>
                     <dt class="left"><button type="button" onclick="location.href = '${url_up }?${iosf:params('')}';">목록</button></dt>
                    	<dt class="right"><button class="edit ${cmd.stat == '0' ? '' : 'hide' }" type="button" onclick="location.href = '${url }/write?${iosf:params('')}';" id="btn_update">수정</button></dt>
+                    <dt class=""><button class="delete" type="button" onclick="doDelete('삭제하시겠습니까?', null, false, false);" class="${cmd.stat == '0' ? '' : 'hide' }" id="btn_delete">삭제</button></dt>
                 </dl>
             </div>
 

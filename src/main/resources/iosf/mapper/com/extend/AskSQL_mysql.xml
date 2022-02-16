@@ -120,8 +120,8 @@
 			, #{reg_id}
 			, #{mod_id}
 			, #{user_ip}
-			, DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')
-			, DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')
+			, NOW()
+			, NOW()
 		)
 	</insert>
 	
@@ -130,7 +130,7 @@
 			MOBILE_ONETOONE_ASK
 		SET
 			UPID = #{mod_id}
-			, UPDT = DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')
+			, UPDT = NOW()
 			, INIP = #{user_ip}
 			<if test="title != null">
 				, TITLE = #{title}

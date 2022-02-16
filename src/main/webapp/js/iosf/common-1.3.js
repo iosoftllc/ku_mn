@@ -14,7 +14,7 @@ $(function () {
 
 	// 로컬이 아니면 https 처리
 	if (!isLocal && window.location.protocol == 'http:') {
-		//location.href = location.href.replace('http:', 'https:');
+		location.href = location.href.replace('http:', 'https:');
 	}
 });
 
