@@ -11,7 +11,8 @@
                     <P>TOTAL</P>
                     <p><fmt:formatNumber pattern="###,###" value="${cmd.total_record_count}" /><span>&nbsp;건</span></p>
                 </div>
-                <form:form commandName="form_search" method="get" action="${url }?${iosf:params('search_field;search_keyword')}">
+                <form:form commandName="form_search" method="get" action="${url }">
+                	<input type="hidden" name="ask_type" value="${param.ask_type }"/>
 					<select name="search_field">
 						<option value="TITLE" ${param.search_field == 'TITLE' ? 'selected="selected"' : '' }>제목</option>
 						<option value="CONTENT" ${param.search_field == 'CONTENT' ? 'selected="selected"' : '' }>내용</option>
