@@ -8,6 +8,7 @@ import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,6 +16,7 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigInteger;
+import java.net.HttpURLConnection;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLDecoder;
@@ -68,6 +70,7 @@ import com.ibm.icu.util.ChineseCalendar;
 
 import egovframework.com.cmm.LoginVO;
 import egovframework.com.cmm.util.EgovUserDetailsHelper;
+import egovframework.rte.fdl.cmmn.exception.EgovBizException;
 import freemarker.template.Configuration;
 import iosf.com.program.user.web.UserCommand;
 import iosf.com.sys.Codes;
@@ -1040,6 +1043,62 @@ public class Functions {
 
 		LOGGER.debug("	:: HTTPS URL Connection Result : " + results.toString());
 		return results.toString();
+	}
+
+	/**
+	 * HTTP 커넥션
+	 * 
+	 * @param url_addr
+	 * @param param
+	 * @return
+	 * @throws Exception
+	 */
+	public static String httpURLConnection(String url_addr, String param) throws Exception {
+		return httpURLConnection(url_addr, "Mozilla/5.0", param, "POST");
+	}
+
+	public static String httpURLConnection(String url_addr, String param, String method) throws Exception {
+		return httpURLConnection(url_addr, "Mozilla/5.0", param, method);
+	}
+
+	public static String httpURLConnection(String url_addr, String user_agent, String param, String method) throws Exception {
+
+		LOGGER.debug("	:: HTTP URL Connection");
+
+		URL url = new URL(url_addr);
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+		connection.setRequestMethod(method);
+		connection.setRequestProperty("User-Agent", "Mozilla/5.0");
+
+		if ("POST".equalsIgnoreCase(method)) {
+			connection.setDoOutput(true);
+
+			DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
+			outputStream.writeBytes("");
+			outputStream.flush();
+			outputStream.close();
+		}
+
+		int responseCode = connection.getResponseCode();
+
+		if (HttpsURLConnection.HTTP_OK != responseCode) {
+			throw new EgovBizException("Failure receive reservation data : response code is " + responseCode);
+		}
+
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+		StringBuffer stringBuffer = new StringBuffer();
+		String inputLine;
+
+		while ((inputLine = bufferedReader.readLine()) != null) {
+			stringBuffer.append(inputLine);
+		}
+		bufferedReader.close();
+
+		String response = stringBuffer.toString();
+
+		LOGGER.debug("	:: HTTP URL Connection Result : " + response);
+		return response;
 	}
 
 	/**

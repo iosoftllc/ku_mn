@@ -19,6 +19,9 @@
 	<c:when test="${fn:contains(url, '/mobile') }">
 		<c:set var="menu_cd" value="m2.3" />
 	</c:when>
+	<c:when test="${fn:contains(url, '/entrance') }">
+		<c:set var="menu_cd" value="m3.2" />
+	</c:when>
 	<c:when test="${fn:contains(url, '/notice') }">
 		<c:set var="menu_cd" value="m4.1" />
 	</c:when>
@@ -63,6 +66,11 @@
 	</c:when>
 	<c:when test="${fn:contains(menu_cd, 'm3') }">
 		<c:set var="depth1_nm" value="건물 출입 권한" />
+		<c:choose>
+			<c:when test="${fn:contains(menu_cd, 'm3.2') }">
+				<c:set var="depth2_nm" value="출입 권한 조회" />
+			</c:when>
+		</c:choose>
 	</c:when>
 	<c:when test="${fn:contains(menu_cd, 'm4') }">
 		<c:set var="depth1_nm" value="커뮤니티" />
@@ -128,15 +136,15 @@
 		                        <li class="withsub">
 		                            <a href="#">이용 안내</a>
 		                            <ul>
-		                                <li><a href="javascript:alert('준비중입니다');">학생증/신분증 소개</a></li>
+		                                <li class="${fn:contains(menu_cd, 'm1.1.1') ? 'on' : '' }"><a href="javascript:alert('준비중입니다');">학생증/신분증 소개</a></li>
 		                                <!-- <li><a href="javascript:alert('준비중입니다');">국제학생증 소개</a></li> -->
 		                            </ul>
 		                        </li>
 		                        <li class="withsub">
 		                            <a href="#">신청 안내</a>
 		                            <ul>
-		                                <li><a href="javascript:alert('준비중입니다');">신입생 예약신청 안내</a></li>
-		                                <li><a href="javascript:alert('준비중입니다');">비대면 금융신청 안내</a></li>
+		                                <li class="${fn:contains(menu_cd, 'm1.1.2') ? 'on' : '' }"><a href="javascript:alert('준비중입니다');">신입생 예약신청 안내</a></li>
+		                                <!-- <li><a href="javascript:alert('준비중입니다');">비대면 금융신청 안내</a></li> -->
 		                            </ul>
 		                        </li>
 		                        <li><a href="${configs.CONTEXT }/front/card">발급 내역 조회</a></li>
@@ -145,16 +153,16 @@
 		                        <li class="withsub">
 		                            <a href="#">가입 및 발급 절차</a>
 		                            <ul>
-		                                <li><a href="javascript:alert('준비중입니다');">initial(이니셜) 가입절차</a></li>
-		                                <li><a href="javascript:alert('준비중입니다');">모바일 신분증 발급절차</a></li>
+		                                <li class="${fn:contains(menu_cd, 'm2.1.1') ? 'on' : '' }"><a href="javascript:alert('준비중입니다');">initial(이니셜) 가입절차</a></li>
+		                                <li class="${fn:contains(menu_cd, 'm2.1.2') ? 'on' : '' }"><a href="javascript:alert('준비중입니다');">모바일 신분증 발급절차</a></li>
 		                            </ul>
 		                        </li>
-		                        <li><a href="javascript:alert('준비중입니다');">이용 안내</a></li>
-		                        <li><a href="${configs.CONTEXT }/front/mobile">발급 내역 조회</a></li>
+		                        <li class="${fn:contains(menu_cd, 'm2.2') ? 'on' : '' }"><a href="javascript:alert('준비중입니다');">이용 안내</a></li>
+		                        <li class="${fn:contains(menu_cd, 'm2.3') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/mobile">발급 내역 조회</a></li>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm3') }">
-		                        <li><a href="javascript:alert('준비중입니다');">건물 출입 이용 안내</a></li>
-		                        <li><a href="javascript:alert('준비중입니다');">출입 권한 조회</a></li>
+		                        <li class="${fn:contains(menu_cd, 'm3.1') ? 'on' : '' }"><a href="javascript:alert('준비중입니다');">건물 출입 이용 안내</a></li>
+		                        <li class="${fn:contains(menu_cd, 'm3.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/entrance">출입 권한 조회</a></li>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm4') }">
 		                        <li class="${fn:contains(menu_cd, 'm4.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/notice">공지사항</a></li>

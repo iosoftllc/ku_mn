@@ -52,7 +52,7 @@
                                     <a href="#menu">신청 안내</a>
                                     <ul>
                                         <li><a href="javascript:alert('준비중입니다.');">신입생 예약신청 안내</a></li>
-                                        <li><a href="javascript:alert('준비중입니다.');">비대면 금융신청 안내</a></li>
+                                        <!-- <li><a href="javascript:alert('준비중입니다.');">비대면 금융신청 안내</a></li> -->
                                     </ul>
                                 </li>
                                 <li><a href="${configs.CONTEXT }/front/card">발급 내역 조회</a></li>
@@ -76,7 +76,7 @@
                             <a href="#menu">건물 출입 권한</a>
                             <ul>
                                 <li><a href="javascript:alert('준비중입니다.');">건물 출입 이용 안내</a></li>
-                                <li><a href="javascript:alert('준비중입니다.');">출입 권한 조회</a></li>
+                                <li><a href="${configs.CONTEXT }/front/entrance">출입 권한 조회</a></li>
                             </ul>
                         </li>
                         <li>
