@@ -93,6 +93,96 @@
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
 
+/* 임시 바로가기 버튼 패널 */
+/* 모바일 발급오류 신고 , 건물 출입오류 신고 */
+
+.board_list .infobox {
+     width: 100%; 
+     border: 1px solid #dbdbdb; 
+     box-sizing: border-box; 
+     margin-bottom: 40px;
+}
+.board_list .infobox .inner {
+     width: 100%;
+     padding: 30px; 
+     border: 5px solid #ece2d3; 
+     box-sizing: border-box; 
+     text-align: center; 
+     /* background: url("../../../images/iosf/front/icon/icon_preparing_origin.png") no-repeat 50% 40px;  */
+     /* background-size: 106px 106px;  */
+}
+.board_list .infobox .inner .text {
+     /* margin-top: 131px;  */
+     font: normal 17px/20px 'Malgun Gothic'; 
+}
+.board_list .infobox .inner .text h2{
+    text-align: left;
+}
+.board_list .infobox .inner .text h2::after{
+    content: "";
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: #910023;
+    margin-top: 15px;
+    margin-bottom: 18px;
+}
+
+
+.board_list .infobox .inner .text h2 + div{
+    margin-top: 14px;
+}
+.board_list .infobox .inner .text div{
+    display: flex;
+}
+.board_list .infobox .inner .text div ~ div{
+    margin-top: 0.8em;
+}
+
+.board_list .infobox .inner .text div span{
+    display: inline-block;
+    min-width: 17px;
+}
+
+.board_list .infobox .inner .text div p{
+    text-align: left;
+    font: 14px/1.3em "맑은 고딕";
+    color: #313131;
+}
+
+.board_list .infobox .inner .bottom {
+     margin-top: 30px; 
+     padding-top: 30px; 
+     border-top: 1px solid #ebebeb; 
+     text-align: center; 
+}
+.board_list .infobox .inner .bottom .btnhome {
+     display: inline-block; 
+     min-width: 196px;
+     /* width: 150px;  */
+     /* height: 48px;  */
+     padding: 0 15px;
+     font: bold 15px/2.3em'Malgun Gothic';
+     /* font: bold 19px/48px 'Malgun Gothic';  */
+     color: #fff; 
+     text-shadow: 1px 1px #000; 
+     background: #383838; 
+     /* border-radius: 30px;  */
+}
+/* .board_list .infobox .inner .bottom .btnhome:after {
+     display: inline-block; 
+     content: ''; 
+     width: 18px; 
+     height: 20px; 
+     margin-top: 14px; 
+     margin-left: 16px; 
+     background: url("../../../images/iosf/front/icon/icon_home_event_origin.png") no-repeat 0 0; 
+     background-size: 18px 20px; 
+     vertical-align: top; 
+} */
+
+
+
 
 
 .board_list article div{

@@ -143,7 +143,7 @@ button{
 								padding:9px 0;
 								font:normal 16px/18px 'Malgun Gothic';
 								color:#c9c9c9;
-								&:hover{
+								&:hover, &.on{
 									color:#fff;
 									text-decoration:underline;
 								}

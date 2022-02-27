@@ -30,10 +30,10 @@
                     <div class="wrap">
                         <div class="slide-inner">
 	                        <span class="catchphrase">고려대학교 스마트 카드</span>
-	                        <p class="text">강의출결, 도서관 출입, 기숙사 이용에서 금융 및 교통카드 기능까지 모두 스마트 카드 하나에!</p>
+	                        <p class="text">건물 출입, 도서관 출입, 기숙사 이용에서 금융 및 교통카드 기능까지 모두 스마트 카드 하나에!</p>
 	                        <div class="buttons">
-	                            <a href="javascript:alert('준비중입니다.');">이용 안내</a>
-	                            <a href="javascript:alert('준비중입니다.');">신청 안내</a>
+	                            <a href="${configs.CONTEXT }/front/common/m1.1.1">이용 안내</a>
+	                            <a href="${configs.CONTEXT }/front/common/m1.2.1">신청 안내</a>
 	                            <a href="${configs.CONTEXT }/front/card">발급 내역 조회</a>
 	                        </div>
 	                    </div>
@@ -45,8 +45,8 @@
 	                       <span class="catchphrase">고려대학교 모바일 신분증</span>
 	                       <p class="text">온/오프라인에서 신뢰하여 사용할 수 있는 블록체인 네트워크 기반 MOBILE ID !</p>
 	                       <div class="buttons">
-	                           <a href="javascript:alert('준비중입니다.');">가입/발급 절차</a>
-	                           <a href="javascript:alert('준비중입니다.');">이용 안내</a>
+	                           <a href="${configs.CONTEXT }/front/common/m2.2">가입/발급 절차</a>
+	                           <a href="${configs.CONTEXT }/front/common/m3.1">이용 안내</a>
 	                           <a href="${configs.CONTEXT }/front/mobile">발급 내역 조회</a>
 	                       </div>
 	                    </div>
@@ -57,15 +57,15 @@
         <div class="center-top">
             <div class="quicklinks">
                 <span class="label">QUICK LINKS</span>
-                <a href="javascript:alert('준비중입니다.');" class="link">
+                <a href="${configs.CONTEXT }/front/common/m1.2.1" class="link">
                     <span class="icon">&nbsp;</span>
                     <span class="text">스마트 카드 신청 <span>안내</span></span>
                 </a>
-                <a href="javascript:alert('준비중입니다.');" class="link">
+                <a href="${configs.CONTEXT }/front/common/m2.1.1" class="link">
                     <span class="icon icon2">&nbsp;</span>
                     <span class="text">initial(이니셜) 가입 <span>절차</span></span>
                 </a>
-                <a href="javascript:alert('준비중입니다.');" class="link">
+                <a href="${configs.CONTEXT }/front/common/m2.1.2" class="link">
                     <span class="icon icon3">&nbsp;</span>
                     <span class="text">모바일 신분증 <span>발급 절차</span></span>
                 </a>
@@ -110,9 +110,9 @@
                 <h2 class="section-title">앱 다운로드 및 설치 방법</h2>
                 <p class="bottom-note">앱스토어에서 ‘initial’ 또는 ‘이니셜’로 검색 후 다운로드 및 설치</p>
                 <div class="bottom-buttons">
-                    <a href="javascript:alert('준비중입니다.');" class="google">GET IT ON</a>
-                    <a href="javascript:alert('준비중입니다.');" class="appstore">Download on the</a>
-                    <a href="javascript:alert('준비중입니다.');" class="initial">&nbsp;</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.sktelecom.myinitial" class="google" target="_blank">GET IT ON</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.sktelecom.myinitial" class="appstore" target="_blank">Download on the</a>
+                    <a href="https://initial.id" class="initial" target="_blank">&nbsp;</a>
                 </div>
             </div>
         </div>

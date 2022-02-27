@@ -44,14 +44,14 @@
                                 <li>
                                     <a href="#menu">이용 안내</a>
                                     <ul>
-                                        <li><a href="javascript:alert('준비중입니다.');">학생증/신분증 소개</a></li>
+                                        <li><a href="${configs.CONTEXT }/front/common/m1.1.1">학생증/신분증 소개</a></li>
                                         <!-- <li><a href="javascript:alert('준비중입니다.');">국제학생증 소개</a></li> -->
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#menu">신청 안내</a>
                                     <ul>
-                                        <li><a href="javascript:alert('준비중입니다.');">신입생 예약신청 안내</a></li>
+                                        <li><a href="${configs.CONTEXT }/front/common/m1.2.1">신입생 예약신청 안내</a></li>
                                         <!-- <li><a href="javascript:alert('준비중입니다.');">비대면 금융신청 안내</a></li> -->
                                     </ul>
                                 </li>
@@ -64,18 +64,18 @@
                                 <li>
                                     <a href="#menu">가입 및 발급 절차</a>
                                     <ul>
-                                        <li><a href="javascript:alert('준비중입니다.');">initial(이니셜) 가입절차</a></li>
-                                        <li><a href="javascript:alert('준비중입니다.');">모바일 신분증 발급절차</a></li>
+                                        <li><a href="${configs.CONTEXT }/front/common/m2.1.1">initial(이니셜) 가입절차</a></li>
+                                        <li><a href="${configs.CONTEXT }/front/common/m2.1.2">모바일 신분증 발급절차</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:alert('준비중입니다.');">이용 안내</a></li>
+                                <li><a href="${configs.CONTEXT }/front/common/m2.2">이용 안내</a></li>
                                 <li><a href="${configs.CONTEXT }/front/mobile">발급 내역 조회</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#menu">건물 출입 권한</a>
                             <ul>
-                                <li><a href="javascript:alert('준비중입니다.');">건물 출입 이용 안내</a></li>
+                                <li><a href="${configs.CONTEXT }/front/common/m3.1">건물 출입 이용 안내</a></li>
                                 <li><a href="${configs.CONTEXT }/front/entrance">출입 권한 조회</a></li>
                             </ul>
                         </li>
@@ -102,8 +102,8 @@
                             	<c:if test="${!empty user }">
 	                                <li><a href="${configs.CONTEXT }/user/login">로그아웃</a></li>
                             	</c:if>
-                                <li><a href="javascript:alert('준비중입니다.');">개인정보처리방침</a></li>
-                                <li><a href="javascript:alert('준비중입니다.');">이메일무단수집거부</a></li>
+                                <li><a href="${configs.CONTEXT }/front/common/privacy">개인정보처리방침</a></li>
+                                <li><a href="${configs.CONTEXT }/front/common/nonemail">이메일무단수집거부</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -14,7 +14,7 @@ button { cursor: pointer; }
 #footer .footer-right .btns > a:first-child { border-left: 0; padding-left: 0; color: #fff; }
 #footer .footer-right .btns > a:last-child { padding-right: 0; }
 #footer .footer-right .copyright { margin-top: 8px; font-size: 15px; line-height: 20px; color: #7d7d7d; text-transform: uppercase; }
-#footer .footer-right .topbtn { position: fixed; bottom: 20px; right: 20px; width: 64px; height: 64px; border-radius: 100%; background: #080808; font-size: 13px; color: #fff; text-align: center; transition: all 200ms linear; }
+#footer .footer-right .topbtn { position: fixed; bottom: 20px; right: 20px; width: 64px; height: 64px; border-radius: 100%; background: #080808; font-size: 13px; color: #fff; text-align: center; transition: all 200ms linear; z-index: 1000; }
 #footer .footer-right .topbtn.off { opacity: 0; transition: all 200ms linear; }
 #footer .footer-right .topbtn:before { content: ''; display: block; height: 23px; margin-top: 10px; margin-bottom: 2px; background: url("../../../images/iosf/front/btn/arrow_topbtn_origin.png") no-repeat 50% 0; background-size: 22px 23px; }
 

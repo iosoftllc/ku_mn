@@ -25,7 +25,7 @@ button { cursor: pointer; }
 #container .center-box .left-panel .left-menu > li.on > ul { margin-top: 0; height: auto; }
 #container .center-box .left-panel .left-menu > li > ul { height: 66px; margin-top: -66px; padding: 12px 0 27px 28px; background: #383838; box-sizing: border-box; transition: all 200ms linear; }
 #container .center-box .left-panel .left-menu > li > ul > li > a { display: block; padding: 9px 0; font: normal 16px/18px 'Malgun Gothic'; color: #c9c9c9; }
-#container .center-box .left-panel .left-menu > li > ul > li > a:hover { color: #fff; text-decoration: underline; }
+#container .center-box .left-panel .left-menu > li > ul > li > a:hover, #container .center-box .left-panel .left-menu > li > ul > li > a.on { color: #fff; text-decoration: underline; }
 #container .center-box .right-panel { float: right; width: 1100px; padding-bottom: 120px; }
 #container .center-box .right-panel .right-panel-top { display: inline-block; width: 100%; margin-top: 47px; margin-bottom: 64px; padding-bottom: 48px; border-bottom: 1px solid #383838; }
 #container .center-box .right-panel .right-panel-top .page-title { float: left; margin-top: 3px; font: bold 34px/36px 'NanumBarun'; color: #1c1c1c; }

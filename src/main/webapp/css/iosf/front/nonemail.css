@@ -1,0 +1,102 @@
+
+
+.nonemail{
+    width: 1100px;
+}
+
+.nonemail > div{
+    border: 1px solid #dbdbdb;
+    background: #dbdbdb;
+}
+.nonemail article{
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    background: #fff;
+    border: 6px solid #ece2d3;
+    /* border: 1px solid #dbdbdb; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nonemail article div:first-of-type{
+    width: 152px;
+    height: 106px;
+    background: url(../../../../images/iosf/ko/content/nonemail/image_nonemail_152x102.png)no-repeat center;
+    background-size: 152px 102px;
+    margin-bottom: 25px;
+}
+
+.nonemail article p{
+    width: 100%;
+    height: 100%;
+    font: 17px "맑은 고딕";
+    line-height: 1.2em;
+    color: #000;
+    text-align: center;
+}
+.nonemail article .btn{
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #ebebeb;
+    margin-top: 30px;
+}
+.nonemail article .btn a,
+.nonemail article .btn button{
+    position: relative;
+    display: inline-block;
+    /* min-height: 48px; */
+    padding: 11px 64px 12px 30px;
+    font: bold 19px "맑은 고딕";
+    color: #fff;
+    background: #535353;
+    border-radius: 30px;
+    border: 1px solid #434343;
+    text-shadow: 1px 1px 0 #000;
+    margin-top: 30px;
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+.nonemail article .btn button:last-of-type{
+    margin-right: 0;
+}
+
+.nonemail article .btn a:hover,
+.nonemail article .btn button:hover{
+    background: #940034;
+    text-shadow: 1px 1px 0 #500013;
+    border: 1px solid #730028;
+    transition: all 0.2s;
+}
+
+
+.nonemail article .btn .home:after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    background: url(../../../../images/iosf/ko/content/nonemail/icon_link_22x22.png)no-repeat center;
+    background-size: 22px 22px;
+}
+
+
+@media screen and (max-width: 1140px) {
+    .nonemail{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 350px) {
+    .nonemail{
+        min-width: 310px;
+    }
+    
+}
