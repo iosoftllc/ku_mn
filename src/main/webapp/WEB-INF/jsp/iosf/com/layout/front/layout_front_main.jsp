@@ -45,8 +45,8 @@
 	                       <span class="catchphrase">고려대학교 모바일 신분증</span>
 	                       <p class="text">온/오프라인에서 신뢰하여 사용할 수 있는 블록체인 네트워크 기반 MOBILE ID !</p>
 	                       <div class="buttons">
-	                           <a href="${configs.CONTEXT }/front/common/m2.2">가입/발급 절차</a>
-	                           <a href="${configs.CONTEXT }/front/common/m3.1">이용 안내</a>
+	                           <a href="${configs.CONTEXT }/front/common/m2.1.1">가입/발급 절차</a>
+	                           <a href="${configs.CONTEXT }/front/common/m2.2">이용 안내</a>
 	                           <a href="${configs.CONTEXT }/front/mobile">발급 내역 조회</a>
 	                       </div>
 	                    </div>
@@ -111,7 +111,7 @@
                 <p class="bottom-note">앱스토어에서 ‘initial’ 또는 ‘이니셜’로 검색 후 다운로드 및 설치</p>
                 <div class="bottom-buttons">
                     <a href="https://play.google.com/store/apps/details?id=com.sktelecom.myinitial" class="google" target="_blank">GET IT ON</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.sktelecom.myinitial" class="appstore" target="_blank">Download on the</a>
+                    <a href="https://apps.apple.com/kr/app/initial-%EC%9D%B4%EB%8B%88%EC%85%9C/id1500820663" class="appstore" target="_blank">Download on the</a>
                     <a href="https://initial.id" class="initial" target="_blank">&nbsp;</a>
                 </div>
             </div>

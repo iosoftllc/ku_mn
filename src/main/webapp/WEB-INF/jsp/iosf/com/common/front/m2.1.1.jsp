@@ -45,8 +45,8 @@
                                     <span class="title">앱 다운로드 및 설치 방법</span>
                                     <p class="text">앱스토어에서 ‘initial’ 또는 ‘이니셜’로 검색 후 다운로드 및 설치</p>
                                     <span class="buttons">
-                                        <img src="${img_src}/iosf/front/icon/googleplay.png" alt="Google Play" />
-                                        <img src="${img_src}/iosf/front/icon/appstore.png" alt="App Store" />
+                                        <a href="https://play.google.com/store/apps/details?id=com.sktelecom.myinitial" target="_blank"><img src="${img_src}/iosf/front/icon/googleplay.png" alt="Google Play" /></a>
+                                        <a href="https://apps.apple.com/kr/app/initial-%EC%9D%B4%EB%8B%88%EC%85%9C/id1500820663" target="_blank"><img src="${img_src}/iosf/front/icon/appstore.png" alt="App Store" /></a>
                                     </span>
                                 </div>
                             </div>

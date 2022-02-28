@@ -11,7 +11,7 @@
                 <!-- <p>현재 진행 중인 신청 내역이 없습니다.</p> -->
                 <!-- <b>현재 모집 중인 입사 정보가 없습니다.</b> -->
                 <div class="btn">
-                    <a href="https://www.law.go.kr/LSW/lsInfoP.do?efYd=20140528&lsiSeq=154247#0000" class="home" target="_blank">해당 법률 바로가기</a>
+                    <a href="https://www.law.go.kr/LSW/lsInfoP.do?efYd=20140528&lsiSeq=154247#0000" class="home" target="_blank">해당 법률 보기</a>
                     <!-- <button class="home">HOME</button> -->
                     <!-- <button class="home">HOME</button> -->
                 </div>

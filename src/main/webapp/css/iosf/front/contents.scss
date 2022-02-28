@@ -440,6 +440,7 @@ button{
 				background:url($img + 'user_guide1.png') no-repeat 0 0;
 				& + .guide-box{
 					float:right;
+					background:url($img + 'user_guide2.png') no-repeat 0 0;
 				}
 				.guide-text{
 					margin-top:436px;
@@ -541,10 +542,7 @@ button{
 					margin-top:28px;
 					overflow:hidden;
 					.photo{
-						float:right;
-						width:182px;
-						height:182px;
-						margin-left:13px;
+						float:left;
 						img{
 							display:inline-block;
 						}

@@ -85,7 +85,7 @@ button { cursor: pointer; }
 .m2-2 .section .section-title.paper { background: url("../../../images/iosf/front/icon/paper.png") no-repeat 50% 0; }
 .m2-2 .section .guide-boxes { margin-top: 135px; overflow: hidden; }
 .m2-2 .section .guide-boxes .guide-box { float: left; width: 515px; height: 648px; padding: 0 28px; box-sizing: border-box; background: url("../../../images/iosf/front/user_guide1.png") no-repeat 0 0; }
-.m2-2 .section .guide-boxes .guide-box + .guide-box { float: right; }
+.m2-2 .section .guide-boxes .guide-box + .guide-box { float: right; background: url("../../../images/iosf/front/user_guide2.png") no-repeat 0 0; }
 .m2-2 .section .guide-boxes .guide-box .guide-text { margin-top: 436px; height: 112px; font: normal 18px/26px 'NanumBarun'; color: #fff; }
 .m2-2 .section .guide-boxes .guide-box .bottom { overflow: hidden; }
 .m2-2 .section .guide-boxes .guide-box .bottom .icon { float: left; }
@@ -108,7 +108,7 @@ button { cursor: pointer; }
 .m2-2 .section .prec-section .list li .br { display: block; margin: 12px 0 0 20px; }
 .m2-2 .section .prec-section .bottom { float: right; clear: both; }
 .m2-2 .section .prec-section .bottom .photos { margin-top: 28px; overflow: hidden; }
-.m2-2 .section .prec-section .bottom .photos .photo { float: right; width: 182px; height: 182px; margin-left: 13px; }
+.m2-2 .section .prec-section .bottom .photos .photo { float: left; }
 .m2-2 .section .prec-section .bottom .photos .photo img { display: inline-block; }
 .m2-2 .section .prec-section .bottom .note { position: relative; margin-top: 35px; font: normal 20px/30px 'NanumBarun'; color: #5d5c5d; }
 .m2-2 .section .prec-section .bottom .note:before { content: ''; float: left; width: 34px; height: 34px; margin-right: 13px; background: url("../../../images/iosf/front/icon/icon_notice.png") no-repeat 0 0; vertical-align: top; }

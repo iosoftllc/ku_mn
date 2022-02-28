@@ -39,7 +39,7 @@ public class EntranceServiceImpl extends GenericServiceImpl<EntranceMapper, Entr
 		String api_key = response.substring(response.length() - 10);
 		String url_res = "http://cafm.korea.ac.kr/archibus/api_2eca7a3d21.jsp";
 
-		response = Functions.httpURLConnection(url_res + "?key=" + key + "&id_no=2010021278"/* + getUser().getStd_id() */, null, "GET");
+		response = Functions.httpURLConnection(url_res + "?key=" + key + "&id_no=" + getUser().getStd_id(), null, "GET");
 		if (response == null) {
 			return new EntranceCommand();
 		}
