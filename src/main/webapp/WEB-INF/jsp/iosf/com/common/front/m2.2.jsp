@@ -21,7 +21,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="guide-box">
+                                    <div class="guide-box type1">
                                         <p class="guide-text">서울 안암 캠퍼스내 도서관에서<br/>스마트폰의 NFC / BLE 를 이용한 도서관 이용<br/>
                                             (출입게이트, 좌석배정,<유인대출, 스마트대출 등)<br/>인증이 가능합니다</p>
                                         <div class="bottom">
@@ -52,8 +52,10 @@
                                     </ul>
                                     <div class="bottom">
                                         <div class="photos">
-                                            <span class="photo"><img src="${img_src}/iosf/front/photo.png" alt="" /></span>
-                                            <span class="photo"><img src="${img_src}/iosf/front/photo.png" alt="" /></span>
+                                            <span class="photo"><img src="${img_src}/iosf/front/photo1.png" alt="" /></span>
+                                            <span class="photo"><img src="${img_src}/iosf/front/photo2.png" alt="" /></span>
+                                            <span class="photo"><img src="${img_src}/iosf/front/photo3.png" alt="" /></span>
+                                            <span class="photo"><img src="${img_src}/iosf/front/photo4.png" alt="" /></span>
                                         </div>
                                         <p class="note">사용시 인증이 안 되는 경우 <span class="red"><strong>백그라운드 데이터 제한</strong> 설정 해제</span></p>
                                     </div>

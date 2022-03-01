@@ -29,17 +29,17 @@ public class EntranceServiceImpl extends GenericServiceImpl<EntranceMapper, Entr
 		int date_i = ymd_i * num_i;
 		String key = Integer.toHexString(date_i) + date.substring(8, 10);
 
-		String url_key = "http://fm01.iptime.org:8080/quad/api_skg.jsp";
+		//String url_key = "http://fm01.iptime.org:8080/quad/api_skg.jsp";
 
-		String response = Functions.httpURLConnection(url_key + "?n=" + num, null, "GET");
-		if (response == null) {
-			return new EntranceCommand();
-		}
+		//String response = Functions.httpURLConnection(url_key + "?n=" + num, null, "GET");
+		//if (response == null) {
+		//	return new EntranceCommand();
+		//}
 
-		String api_key = response.substring(response.length() - 10);
+		//String api_key = response.substring(response.length() - 10);
 		String url_res = "http://cafm.korea.ac.kr/archibus/api_2eca7a3d21.jsp";
 
-		response = Functions.httpURLConnection(url_res + "?key=" + key + "&id_no=" + getUser().getStd_id(), null, "GET");
+		String response = Functions.httpURLConnection(url_res + "?key=" + key + "&id_no=" + getUser().getStd_id(), null, "GET");
 		if (response == null) {
 			return new EntranceCommand();
 		}
