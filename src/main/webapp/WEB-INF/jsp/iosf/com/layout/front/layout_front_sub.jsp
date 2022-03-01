@@ -195,8 +195,8 @@
 		                        <li class="${fn:contains(menu_cd, 'm5.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/ask?ask_type=99">건물 출입오류 신고</a></li>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm0') }">
-		                        <li class="${fn:contains(menu_cd, 'm0.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/login">로그인</a></li>
-		                        <li class="${fn:contains(menu_cd, 'm0.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/privacy">개인정보처리방침</a></li>
+		                        <li class="${fn:contains(menu_cd, 'm0.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/${isUser ? 'logout' : 'login' }">${isUser ? '로그아웃' : '로그인' }</a></li>
+		                        <li class="${fn:contains(menu_cd, 'm0.2') ? 'on' : '' }"><a href="https://www.korea.ac.kr/mbshome/mbs/university/subview.jsp?id=university_090300000000" target="_blank">개인정보처리방침</a></li>
 		                        <li class="${fn:contains(menu_cd, 'm0.3') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/nonemail">이메일무단수집거부</a></li>
 							</c:when>
 						</c:choose>
