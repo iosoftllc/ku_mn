@@ -14,7 +14,7 @@
                                     <li>· 교원, 직원 : 신분증</li>
                                 </ul>
                                 <div class="card-front">
-                                    <span class="icon"><img src="${img_src}/iosf/front/card1.png" alt="" /></span>
+                                    <span class="icon">&nbsp;</span>
                                     <div class="card-bottom">
                                         <span class="title">front</span>
                                         <div class="box-list">
@@ -47,10 +47,10 @@
                                     </div>
                                 </div>
                                 <div class="card-front">
-                                    <span class="icon center"><img src="${img_src}/iosf/front/card2.png" alt="" /></span>
+                                    <span class="icon center">&nbsp;</span>
                                     <div class="card-bottom">
                                         <span class="title">back</span>
-                                        <div class="box-list">
+                                        <div class="box-list type2">
                                             <li>
                                                 <span class="box-icon"><img src="${img_src}/iosf/front/icon/icon_jewel.png" alt="" /></span>
                                                 <span class="text">금융기능</span>
@@ -101,20 +101,28 @@
                                     <tbody>
                                         <tr>
                                             <td class="head">신청자격</td>
-                                            <td>· 당해 학기 학부 및 대학원(일반·전문·특수) 석 ·박사 신입생<br/>
-                                                · 대학원 신청은 학번 부여자에 한함</td>
+                                            <td>
+                                                <span class="txt">· 당해 학기 학부 및 대학원(일반·전문·특수) 석 ·박사 신입생</span>
+                                                <span class="txt">· 대학원 신청은 학번 부여자에 한함</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="head">신청기간</td>
-                                            <td>· 2월초(학부생 및 대학원 전기 신입생), 8월초(대학원 후기 신입생)</td>
+                                            <td>
+                                                <span class="txt">· 2월초(학부생 및 대학원 전기 신입생), 8월초(대학원 후기 신입생)</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="head">배부시기 및 장소</td>
-                                            <td>· 자세한 신청기간, 배부시기 및 장소는 입학 확정 후 별도로 공지</td>
+                                            <td>
+                                                <span class="txt">· 자세한 신청기간, 배부시기 및 장소는 입학 확정 후 별도로 공지</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="head">신청방법</td>
-                                            <td> · http://scms.korea.ac.kr/newcard.asp 에서 신청</td>
+                                            <td>
+                                                <span class="txt">· http://scms.korea.ac.kr/newcard.asp 에서 신청</span>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -131,11 +139,11 @@
                                     <tbody>
                                         <tr>
                                             <td class="head">신규발급</td>
-                                            <td> · 주민등록증과 사진을 지참하여 One-Stop서비스센터를 방문하면 즉시 발급</td>
+                                            <td><span class="txt">· 주민등록증과 사진을 지참하여 One-Stop서비스센터를 방문하면 즉시 발급</span></td>
                                         </tr>
                                         <tr>
                                             <td class="head">재발급</td>
-                                            <td>· 분실 또는 사진교체를 사유로 재발급하는 경우 수수료 5,000원 발생</td>
+                                            <td><span class="txt">· 분실 또는 사진교체를 사유로 재발급하는 경우 수수료 5,000원 발생</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -148,18 +156,13 @@
                                             <span class="title">서울캠퍼스 </span>
                                             <p class="contact">One-Stop서비스센터</p>
                                             <p class="contact">
-                                                <strong>인문사회계 :</strong> 02-3290-1141~6<br/>
-onestop1@korea.ac.kr 중앙광장 지하 1층
+                                                <strong>인문사회계 :</strong> 02-3290-1141~6<br/>onestop1@korea.ac.kr 중앙광장 지하 1층
                                             </p>
-                                            <p class="contact"><strong>자연계 :</strong> 02-3290-4090~2<br/>
-onestop2@korea.ac.kr 하나스퀘어 지하 1층
-
-                                            </p>
+                                            <p class="contact"><strong>자연계 :</strong> 02-3290-4090~2<br/>onestop2@korea.ac.kr 하나스퀘어 지하 1층</p>
                                         </div>
                                         <div class="grp">
                                             <span class="title">세종캠퍼스</span>
-                                            <p class="contact"><strong>세종학사지원본부 :</strong> 044-860-1088~9<br/>
-onestop3@korea.ac.kr 인문대 1층</p>
+                                            <p class="contact"><strong>세종학사지원본부 :</strong> 044-860-1088~9<br/>onestop3@korea.ac.kr 인문대 1층</p>
                                         </div>
                                     </div>
                                     <div class="alarm">

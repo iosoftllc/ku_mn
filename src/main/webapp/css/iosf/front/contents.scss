@@ -834,14 +834,10 @@ button{
 			padding-bottom:8px;
 			.icon{
 				display:block;
+				height:230px;
+				background:url($img + 'card1.png') no-repeat 247px 0;
 				&.center{
-					text-align:center;
-					img{
-						margin-left:0;
-					}
-				}
-				img{
-					margin-left:247px;
+					background:url($img + 'card2.png') no-repeat 50% 0;
 				}			
 			}
 			.card-bottom{
@@ -931,7 +927,7 @@ button{
 					color:#910124;
 				}
 				>p{
-					font:normal 18px/22px 'NanumBarunL';
+					font:normal 18px/23px 'NanumBarunL';
 					margin-left:13px;
 					margin-top:11px;
 					color:#191919;
@@ -958,6 +954,11 @@ button{
 							color:#191919;
 							border-right:1px solid #191919;
 						}
+						.txt{
+							display:block;
+							padding-left:10px;
+							text-indent:-10px;
+						}
 					}
 				}
 			}
@@ -966,7 +967,10 @@ button{
 			padding-top:16px;
 			li{
 				margin-top:10px;
-				font:normal 14px 'NanumBarun';
+				margin-left:6px;
+				padding-left:9px;
+				text-indent:-9px;
+				font:normal 14px/18px 'NanumBarun';
 				color:#910124;
 				strong{
 					font-weight:bold;
@@ -1055,7 +1059,8 @@ button{
 		}
 		.card-box{
 			margin-top:75px;
-			text-align:center;
+			height:206px;
+			background:url($img + 'card3.png') no-repeat 50% 0;
 			border-bottom:2px solid #dfdfdf;
 		}
 		.m1-card-list{
@@ -1084,6 +1089,11 @@ button{
 					.red{
 						color:#910124;
 					}
+					.txt{
+						display:block;
+						padding-left:12px;
+						text-indent:-12px;
+					}
 				}
 			}
 		}
@@ -1104,6 +1114,297 @@ button{
 					strong{
 						font-weight:bold;
 					}
+				}
+			}
+		}
+	}
+}
+
+/* 960px */
+@media screen and (max-width:1023px){
+	.m1{
+		.section{
+			&.bg{
+				width:calc(100% + 60px);
+				padding-left:30px;
+				padding-right:30px;
+				box-sizing:border-box;
+				margin-left:-30px;
+			}
+			.card-front{
+				.icon{
+					background-position-x:calc(50% - 54px);
+				}
+			}
+			.faq-box{
+				.location{
+					width:100%;
+					text-align:center;
+					background-position:50% 0;
+					.grp + .grp{
+						width:400px;
+						margin-left:auto;
+						margin-right:auto;
+					}
+				}
+				.alarm{
+					float:left;
+					clear:both;
+					width:calc(100% + 60px);
+					margin-top:100px;
+					margin-left:-30px;
+					margin-bottom:-120px;
+					background:url($img + 'bg/bg_alarm_mobile.png') no-repeat 50% 0;
+				}
+			}
+		}
+		.section-padding{
+			padding-left:0;
+			padding-right:0;
+			.section-title{	
+				text-align:center;
+			}
+			.title-button{
+				text-align:center;
+				margin-left:calc((100% - 210px) / 2);
+			}
+		}
+	}
+}
+
+/* 768px */
+@media screen and (max-width:959px){
+	.m1{
+		.section-padding{
+			.m1-card-list{
+				li{
+					.text-left{
+						width:158px;
+						padding-left:0;
+					}
+					.text-right{
+						width:calc(100% - 158px);
+					}
+				}
+			}
+			.gray-box{
+				width:calc(100% + 60px);
+				margin-left:-30px;
+				margin-bottom:-120px;
+				font-size: 16px;
+				line-height:25px;
+				box-sizing:border-box;
+			}
+		}
+	}
+}
+/* 640px */
+@media screen and (max-width:767px){
+	.m1{
+		.section{
+			padding-bottom:60px;
+			&.bg{
+				padding-top:60px;
+			}
+			.section-title-mid{
+				margin-top:60px
+			}
+			.card-front{
+				.icon{
+					background-image:url($img + 'card1_640.png');
+				}
+				.card-bottom{
+					.box-list{
+						width:100%;
+						margin-left:0;
+						&.type2 >li{
+							&:nth-child(2){
+								border-left-width:12px;
+								border-right:0;
+							}
+							&:first-child{
+								border-right-width:12px;
+							}
+						}
+						>li{
+							padding-left:9px;
+							border-left-width:12px;
+							border-right-width:12px;
+							border-top:0;
+							&:first-child{
+								border-left:0;
+								border-right-width:14px;
+							}
+							&:nth-child(2){
+								border-left-width:10px;
+								border-right-width:10px;
+							}
+							&:last-child{
+								border-right:0;
+								border-left-width:14px;
+							}
+							&:after{
+								content:'';
+								position:absolute;
+								top:0;
+								left:0;
+								width:calc(100% - 4px);
+								height:2px;
+								background:#ebe7e0;
+								z-index:1;
+							}
+							&:before{
+								z-index:10;
+							}
+						}
+					}
+				}
+			}
+			.faq-box .alarm{
+				margin-top:60px;
+				margin-bottom:-80px;
+			}
+		}
+		.section-padding{
+			.m1-card-list li{
+				& + li{
+					margin-top:20px;
+				}
+				.text-left{
+					width:110px;
+					font-size:16px;
+					padding-right:35px;
+					box-sizing:border-box;
+				}
+				.text-right{
+					width:calc(100% - 110px);
+					font-size:16px;
+				}
+			}
+		}
+	}
+}
+
+/* 480px */
+@media screen and (max-width:639px){
+	.m1{
+		.section{
+			.card-front{
+				.icon{
+					background:url($img + 'card1_480.png') no-repeat 50% 0;
+				}
+				.card-bottom{
+					.box-list{
+						width:280px;
+						margin-left:auto;
+						margin-right:auto;
+						>li{
+							display:block;
+							border-left:0;
+							border-right:0;
+							.box-icon{
+								display:inline-block;
+								width:100%;
+							}
+							& ~ li{
+								margin-top:78px;
+							}
+							.list.half{
+								overflow:hidden;
+							}
+						}
+					}
+				}
+			}
+			.text-list li > p{
+				font-size:16px;
+			}
+			.tbl tbody tr {
+				td{
+					font-size:15px;
+					line-height:21px;
+					padding-left:8px;
+					&.head {
+						padding-left:22px;
+						padding-right:22px;
+						font-size:16px;
+						line-height:25px;
+						font-weight:normal;
+					}
+				}	
+			}
+		}
+		.section-padding{
+			.card-box{
+				height:178px;
+				background:url($img + 'card3_480.png') no-repeat 50% 0;
+			}
+			.gray-box{
+				margin-bottom:-80px;
+			}
+		}
+	}
+}
+
+/* 320px */
+@media screen and (max-width:479px){
+	.m1{
+		.section{
+			.top-list li{
+				font-size:15px;
+				line-height:20px;
+			}
+			.card-front{
+				.icon{
+					height:187px;
+					background:url($img + 'card1_320.png') no-repeat 50% 0;
+					&.center{
+						background:url($img + 'card2_320.png') no-repeat 50% 0;
+					}
+				}
+			}
+			.text-list li > p{
+				font-size:15px;
+			}
+			.tbl tbody tr td.head{
+				padding-left:12px;
+				padding-right:12px;
+			}
+			.faq-box .location .grp{
+				.contact + .contact{
+					font-size:16px;
+				}
+				& + .grp{
+					width:100%;
+					margin-left:0;
+					.contact{
+						font-size:16px;
+						strong{
+							font-weight:normal;
+						}
+					}
+				}
+			}
+		}
+		.section-padding{
+			.card-box{
+				width:calc(100% + 40px);
+				margin-left:-20px;
+				height:147px;
+				background:url($img + 'card3_320.png') no-repeat 50% 0;
+			}
+			.m1-card-list li{
+				padding-left:20px;
+				padding-right:0px;
+				.text-left{
+					float:none;
+					width:100%;
+					display:block;
+				}
+				.text-right{
+					float:none;
+					width:100%;
+					display:block;
 				}
 			}
 		}

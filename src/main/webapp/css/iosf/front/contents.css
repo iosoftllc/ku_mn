@@ -163,10 +163,8 @@ button { cursor: pointer; }
 .m1 .section .top-list { margin-top: 15px; text-align: center; }
 .m1 .section .top-list li { margin-top: 5px; font: normal 18px/22px 'NanumBarunL'; color: #191919; }
 .m1 .section .card-front { margin-top: 75px; padding-bottom: 8px; }
-.m1 .section .card-front .icon { display: block; }
-.m1 .section .card-front .icon.center { text-align: center; }
-.m1 .section .card-front .icon.center img { margin-left: 0; }
-.m1 .section .card-front .icon img { margin-left: 247px; }
+.m1 .section .card-front .icon { display: block; height: 230px; background: url("../../../images/iosf/front/card1.png") no-repeat 247px 0; }
+.m1 .section .card-front .icon.center { background: url("../../../images/iosf/front/card2.png") no-repeat 50% 0; }
 .m1 .section .card-front .card-bottom { margin-top: 18px; }
 .m1 .section .card-front .card-bottom .title { display: block; text-align: center; font: bold 22px/25px 'NanumBarun'; color: #5e0111; }
 .m1 .section .card-front .card-bottom .box-list { display: table; width: 668px; margin-top: 33px; margin-left: calc((100% - 668px) / 2); text-align: center; table-layout: fixed; }
@@ -183,12 +181,13 @@ button { cursor: pointer; }
 .m1 .section .text-list { margin-top: 12px; }
 .m1 .section .text-list li + li { margin-top: 36px; }
 .m1 .section .text-list li .title { display: block; font: bold 18px/22px 'NanumBarun'; color: #910124; }
-.m1 .section .text-list li > p { font: normal 18px/22px 'NanumBarunL'; margin-left: 13px; margin-top: 11px; color: #191919; }
+.m1 .section .text-list li > p { font: normal 18px/23px 'NanumBarunL'; margin-left: 13px; margin-top: 11px; color: #191919; }
 .m1 .section .tbl { width: 100%; border-top: 2px solid #191919; border-bottom: 1px solid #191919; }
 .m1 .section .tbl tbody tr td { padding-left: 36px; height: 100px; border-top: 1px solid #191919; font: normal 16px/25px 'NanumBarunL'; vertical-align: middle; }
 .m1 .section .tbl tbody tr td.head { padding-left: 0; background: #eeece8; text-align: center; font: normal 20px 'NanumBarun'; color: #191919; border-right: 1px solid #191919; }
+.m1 .section .tbl tbody tr td .txt { display: block; padding-left: 10px; text-indent: -10px; }
 .m1 .section .note-list { padding-top: 16px; }
-.m1 .section .note-list li { margin-top: 10px; font: normal 14px 'NanumBarun'; color: #910124; }
+.m1 .section .note-list li { margin-top: 10px; margin-left: 6px; padding-left: 9px; text-indent: -9px; font: normal 14px/18px 'NanumBarun'; color: #910124; }
 .m1 .section .note-list li strong { font-weight: bold; }
 .m1 .section .faq-box { padding-top: 50px; border-top: 2px solid #f6f6f6; }
 .m1 .section .faq-box .location { float: left; padding-top: 50px; background: url("../../../images/iosf/front/icon/icon_location.png") no-repeat 0 0; }
@@ -206,7 +205,7 @@ button { cursor: pointer; }
 .m1 .section-padding .section-title { display: block; padding-left: 7px; font: normal 35px/45px 'NanumBarun'; }
 .m1 .section-padding .title-button { display: inline-block; width: 205px; height: 52px; margin-top: 27px; border: 2px solid #910124; border-radius: 5px; text-align: center; font: normal 20px/52px 'NanumBarun'; color: #a11232; }
 .m1 .section-padding .title-button:hover { background: #a52f4c; color: #fff; }
-.m1 .section-padding .card-box { margin-top: 75px; text-align: center; border-bottom: 2px solid #dfdfdf; }
+.m1 .section-padding .card-box { margin-top: 75px; height: 206px; background: url("../../../images/iosf/front/card3.png") no-repeat 50% 0; border-bottom: 2px solid #dfdfdf; }
 .m1 .section-padding .m1-card-list { margin-top: 44px; }
 .m1 .section-padding .m1-card-list li { overflow: hidden; }
 .m1 .section-padding .m1-card-list li + li { margin-top: 58px; }
@@ -214,9 +213,68 @@ button { cursor: pointer; }
 .m1 .section-padding .m1-card-list li .text-right { float: left; width: calc(100% - 280px); font: normal 20px/26px 'NanumBarunL'; color: #383838; }
 .m1 .section-padding .m1-card-list li .text-right strong { font-weight: bold; }
 .m1 .section-padding .m1-card-list li .text-right .red { color: #910124; }
+.m1 .section-padding .m1-card-list li .text-right .txt { display: block; padding-left: 12px; text-indent: -12px; }
 .m1 .section-padding .gray-box { padding: 25px 32px; margin-top: 44px; margin-bottom: 10px; background: #eee; font: normal 18px/24px 'NanumBarunL'; color: #191919; }
 .m1 .section-padding .gray-box ul li { padding-left: 10px; text-indent: -10px; }
 .m1 .section-padding .gray-box ul li + li { margin-top: 20px; }
 .m1 .section-padding .gray-box ul li strong { font-weight: bold; }
+
+/* 960px */
+@media screen and (max-width: 1023px) { .m1 .section.bg { width: calc(100% + 60px); padding-left: 30px; padding-right: 30px; box-sizing: border-box; margin-left: -30px; }
+  .m1 .section .card-front .icon { background-position-x: calc(50% - 54px); }
+  .m1 .section .faq-box .location { width: 100%; text-align: center; background-position: 50% 0; }
+  .m1 .section .faq-box .location .grp + .grp { width: 400px; margin-left: auto; margin-right: auto; }
+  .m1 .section .faq-box .alarm { float: left; clear: both; width: calc(100% + 60px); margin-top: 100px; margin-left: -30px; margin-bottom: -120px; background: url("../../../images/iosf/front/bg/bg_alarm_mobile.png") no-repeat 50% 0; }
+  .m1 .section-padding { padding-left: 0; padding-right: 0; }
+  .m1 .section-padding .section-title { text-align: center; }
+  .m1 .section-padding .title-button { text-align: center; margin-left: calc((100% - 210px) / 2); } }
+/* 768px */
+@media screen and (max-width: 959px) { .m1 .section-padding .m1-card-list li .text-left { width: 158px; padding-left: 0; }
+  .m1 .section-padding .m1-card-list li .text-right { width: calc(100% - 158px); }
+  .m1 .section-padding .gray-box { width: calc(100% + 60px); margin-left: -30px; margin-bottom: -120px; font-size: 16px; line-height: 25px; box-sizing: border-box; } }
+/* 640px */
+@media screen and (max-width: 767px) { .m1 .section { padding-bottom: 60px; }
+  .m1 .section.bg { padding-top: 60px; }
+  .m1 .section .section-title-mid { margin-top: 60px; }
+  .m1 .section .card-front .icon { background-image: url("../../../images/iosf/front/card1_640.png"); }
+  .m1 .section .card-front .card-bottom .box-list { width: 100%; margin-left: 0; }
+  .m1 .section .card-front .card-bottom .box-list.type2 > li:nth-child(2) { border-left-width: 12px; border-right: 0; }
+  .m1 .section .card-front .card-bottom .box-list.type2 > li:first-child { border-right-width: 12px; }
+  .m1 .section .card-front .card-bottom .box-list > li { padding-left: 9px; border-left-width: 12px; border-right-width: 12px; border-top: 0; }
+  .m1 .section .card-front .card-bottom .box-list > li:first-child { border-left: 0; border-right-width: 14px; }
+  .m1 .section .card-front .card-bottom .box-list > li:nth-child(2) { border-left-width: 10px; border-right-width: 10px; }
+  .m1 .section .card-front .card-bottom .box-list > li:last-child { border-right: 0; border-left-width: 14px; }
+  .m1 .section .card-front .card-bottom .box-list > li:after { content: ''; position: absolute; top: 0; left: 0; width: calc(100% - 4px); height: 2px; background: #ebe7e0; z-index: 1; }
+  .m1 .section .card-front .card-bottom .box-list > li:before { z-index: 10; }
+  .m1 .section .faq-box .alarm { margin-top: 60px; margin-bottom: -80px; }
+  .m1 .section-padding .m1-card-list li + li { margin-top: 20px; }
+  .m1 .section-padding .m1-card-list li .text-left { width: 110px; font-size: 16px; padding-right: 35px; box-sizing: border-box; }
+  .m1 .section-padding .m1-card-list li .text-right { width: calc(100% - 110px); font-size: 16px; } }
+/* 480px */
+@media screen and (max-width: 639px) { .m1 .section .card-front .icon { background: url("../../../images/iosf/front/card1_480.png") no-repeat 50% 0; }
+  .m1 .section .card-front .card-bottom .box-list { width: 280px; margin-left: auto; margin-right: auto; }
+  .m1 .section .card-front .card-bottom .box-list > li { display: block; border-left: 0; border-right: 0; }
+  .m1 .section .card-front .card-bottom .box-list > li .box-icon { display: inline-block; width: 100%; }
+  .m1 .section .card-front .card-bottom .box-list > li ~ li { margin-top: 78px; }
+  .m1 .section .card-front .card-bottom .box-list > li .list.half { overflow: hidden; }
+  .m1 .section .text-list li > p { font-size: 16px; }
+  .m1 .section .tbl tbody tr td { font-size: 15px; line-height: 21px; padding-left: 8px; }
+  .m1 .section .tbl tbody tr td.head { padding-left: 22px; padding-right: 22px; font-size: 16px; line-height: 25px; font-weight: normal; }
+  .m1 .section-padding .card-box { height: 178px; background: url("../../../images/iosf/front/card3_480.png") no-repeat 50% 0; }
+  .m1 .section-padding .gray-box { margin-bottom: -80px; } }
+/* 320px */
+@media screen and (max-width: 479px) { .m1 .section .top-list li { font-size: 15px; line-height: 20px; }
+  .m1 .section .card-front .icon { height: 187px; background: url("../../../images/iosf/front/card1_320.png") no-repeat 50% 0; }
+  .m1 .section .card-front .icon.center { background: url("../../../images/iosf/front/card2_320.png") no-repeat 50% 0; }
+  .m1 .section .text-list li > p { font-size: 15px; }
+  .m1 .section .tbl tbody tr td.head { padding-left: 12px; padding-right: 12px; }
+  .m1 .section .faq-box .location .grp .contact + .contact { font-size: 16px; }
+  .m1 .section .faq-box .location .grp + .grp { width: 100%; margin-left: 0; }
+  .m1 .section .faq-box .location .grp + .grp .contact { font-size: 16px; }
+  .m1 .section .faq-box .location .grp + .grp .contact strong { font-weight: normal; }
+  .m1 .section-padding .card-box { width: calc(100% + 40px); margin-left: -20px; height: 147px; background: url("../../../images/iosf/front/card3_320.png") no-repeat 50% 0; }
+  .m1 .section-padding .m1-card-list li { padding-left: 20px; padding-right: 0px; }
+  .m1 .section-padding .m1-card-list li .text-left { float: none; width: 100%; display: block; }
+  .m1 .section-padding .m1-card-list li .text-right { float: none; width: 100%; display: block; } }
 
 /*# sourceMappingURL=contents.css.map */
