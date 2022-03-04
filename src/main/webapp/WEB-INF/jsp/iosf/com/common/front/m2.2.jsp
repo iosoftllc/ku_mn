@@ -11,8 +11,7 @@
                                 <span class="section-title">모바일 신분증 이용처</span>
                                 <div class="guide-boxes">
                                     <div class="guide-box">
-                                        <p class="guide-text">서울 안암 캠퍼스내 건물 주 출입구 및 호실에서<br/>
-스마트폰의 NFC / BLE 를 이용한 출입 인증이 가능합니다</p>
+                                        <p class="guide-text">서울 캠퍼스내 건물 주 출입구 및 호실에서<br/>스마트폰의 NFC / BLE 를 이용한 출입 인증이 가능합니다</p>
                                          <div class="bottom">
                                             <span class="icon"><img src="${img_src}/iosf/front/icon/icon_guide.png" alt="" /></span>
                                             <span class="text-right">
@@ -22,8 +21,7 @@
                                         </div>
                                     </div>
                                     <div class="guide-box type1">
-                                        <p class="guide-text">서울 안암 캠퍼스내 도서관에서<br/>스마트폰의 NFC / BLE 를 이용한 도서관 이용<br/>
-                                            (출입게이트, 좌석배정,<유인대출, 스마트대출 등)<br/>인증이 가능합니다</p>
+                                        <p class="guide-text">서울 캠퍼스내 도서관에서<br/>스마트폰의 NFC / BLE 를 이용한 도서관 이용<br/>(출입게이트, 좌석배정, 유인대출, 스마트대출 등)<br/>인증이 가능합니다</p>
                                         <div class="bottom">
                                             <span class="icon"><img src="${img_src}/iosf/front/icon/icon_guide.png" alt="" /></span>
                                             <span class="text-right">
@@ -41,7 +39,7 @@
                                     <li>· NFC지원이 되는 안드로이드 7 이상 사용자는 NFC를 이용하여 출입 인증이 가능합니다</li>
                                     <li>· BLE 지원이 되는 IOS 10 이상 아이폰 사용자는 BLE를 이용하여 출입 인증이 가능합니다</li>
                                     <li>· IOS 14.0 이상 아이폰 사용자는 위젯을 이용하여 편리하게 출입 인증이 가능합니다</li>
-                                    <li>· 모바일 신분증 사진변경은 One-Stop 서비스에 사진을 가지고 가서 변경 요청을 하면 됩니다</li>
+                                    <li>· 모바일 신분증 사진변경은 ONE-STOP 서비스에 사진을 가지고 가서 변경 요청을 하면 됩니다</li>
                                 </ul>
                                 <span class="arrow">&nbsp;</span>
                                 <div class="prec-section">

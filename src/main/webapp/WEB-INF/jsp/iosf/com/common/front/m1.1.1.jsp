@@ -33,7 +33,6 @@
                                                     <li>· ID기능</li>
                                                     <li>· 출입통제</li>
                                                     <li>. 도서관 이용</li>
-                                                    <li>. 전자출결</li>
                                                 </ul>
                                             </li>
                                             <li>
@@ -102,14 +101,13 @@
                                         <tr>
                                             <td class="head">신청자격</td>
                                             <td>
-                                                <span class="txt">· 당해 학기 학부 및 대학원(일반·전문·특수) 석 ·박사 신입생</span>
-                                                <span class="txt">· 대학원 신청은 학번 부여자에 한함</span>
+                                                <span class="txt">· 당해 학기 학부 및 대학원(일반·전문·특수) 신(편)입생</span>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="head">신청기간</td>
                                             <td>
-                                                <span class="txt">· 2월초(학부생 및 대학원 전기 신입생), 8월초(대학원 후기 신입생)</span>
+                                                <span class="txt">· 2월(학부생 및 대학원 전기 신입생), 8월(대학원 후기 신입생)</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -119,16 +117,16 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="head">신청방법</td>
+                                            <td class="head">예약 및 신청방법</td>
                                             <td>
-                                                <span class="txt">· http://scms.korea.ac.kr/newcard.asp 에서 신청</span>
+                                                <span class="txt">· http://scms.korea.ac.kr/newcard.asp 에서 예약 및 신청</span>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <ul class="note-list">
-                                    <li><strong>· 외국인 학생은</strong> 입학 후 외국인등록증을 소속대학(원) 행정실에 등록, 증명사진(여권사진)1매, 외국인등록증 사본을 지참하여 One-stop서비스센터에서 발급</li>
-                                    <li><strong>· 신청기간에 신청하지 못한 학생은</strong> 증명사진 1매를 지참, One-stop서비스센터로 직접방문 후 발급</li>
+                                    <li><strong>· 외국인 학생은</strong> 입학 후 외국인등록증을 소속대학(원) 행정실에 등록, 증명사진(여권사진)1매, 외국인등록증을 지참하여 ONE-STOP서비스센터에서 발급</li>
+                                    <li><strong>· 신청기간에 신청하지 못한 학생은</strong> 증명사진(여권사진) 1매, 신분증 지참, ONE-STOP서비스센터로 직접방문 후 발급</li>
                                 </ul>
                                 <span class="sectionbg-title">교직원 신분증 발급</span>
                                 <table class="tbl">
@@ -139,7 +137,7 @@
                                     <tbody>
                                         <tr>
                                             <td class="head">신규발급</td>
-                                            <td><span class="txt">· 주민등록증과 사진을 지참하여 One-Stop서비스센터를 방문하면 즉시 발급</span></td>
+                                            <td><span class="txt">· 주민등록증과 사진을 지참하여 ONE-STOP서비스센터를 방문하면 즉시 발급</span></td>
                                         </tr>
                                         <tr>
                                             <td class="head">재발급</td>
@@ -154,7 +152,7 @@
                                     <div class="location">
                                         <div class="grp">
                                             <span class="title">서울캠퍼스 </span>
-                                            <p class="contact">One-Stop서비스센터</p>
+                                            <p class="contact">ONE-STOP서비스센터</p>
                                             <p class="contact">
                                                 <strong>인문사회계 :</strong> 02-3290-1141~6<br/>onestop1@korea.ac.kr 중앙광장 지하 1층
                                             </p>
@@ -162,12 +160,12 @@
                                         </div>
                                         <div class="grp">
                                             <span class="title">세종캠퍼스</span>
-                                            <p class="contact"><strong>세종학사지원본부 :</strong> 044-860-1088~9<br/>onestop3@korea.ac.kr 인문대 1층</p>
+                                            <p class="contact"><strong>세종학사지원본부 :</strong> 044-860-1088~9<br/>onestop3@korea.ac.kr 학생회관 2층</p>
                                         </div>
                                     </div>
                                     <div class="alarm">
                                         <span class="txt1">업무시간<br/>9:00 - 17:30</span>
-                                        <span class="txt2">콘텐츠 담당부서<br/>one-Stop서비스센터<br/>02-3290-1145, 4092</span>
+                                        <span class="txt2">콘텐츠 담당부서<br/>ONE-STOP서비스센터<br/>02-3290-1145, 4092</span>
                                     </div>
                                 </div>
                             </div>
