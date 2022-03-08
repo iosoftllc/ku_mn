@@ -64,7 +64,7 @@
                                 <li>
                                     <a href="#menu">가입 및 발급 절차</a>
                                     <ul>
-                                        <li><a href="${configs.CONTEXT }/front/common/m2.1.1">initial(이니셜) 가입절차</a></li>
+                                        <li><a href="${configs.CONTEXT }/front/common/m2.1.1">모바일 신분증 가입절차</a></li>
                                         <li><a href="${configs.CONTEXT }/front/common/m2.1.2">모바일 신분증 발급절차</a></li>
                                     </ul>
                                 </li>

@@ -184,6 +184,10 @@
 					<groupId>stax</groupId>
 					<artifactId>stax-api</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 
@@ -248,17 +252,7 @@
 			<version>1.8.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>xerces</groupId>
-			<artifactId>xercesImpl</artifactId>
-			<version>2.11.0</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.xml.stream/stax-api -->
-		<dependency>
-			<groupId>javax.xml.stream</groupId>
-			<artifactId>stax-api</artifactId>
-			<version>1.0-2</version>
-		</dependency>
 
 		<dependency>
 			<groupId>oro</groupId>
@@ -337,11 +331,6 @@
 			<version>1.5.7</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>batik-ext</artifactId>
-			<version>1.7</version>
-		</dependency>
 
 		<dependency>
 			<groupId>com.github.scribejava</groupId>
@@ -481,6 +470,12 @@
 			<groupId>xalan</groupId>
 			<artifactId>xalan</artifactId>
 			<version>2.7.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4.1 -->
@@ -605,6 +600,20 @@
 			<groupId>org.apache.xmlgraphics</groupId>
 			<artifactId>batik-bridge</artifactId>
 			<version>1.14</version>
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis-ext</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.xmlgraphics</groupId>
+					<artifactId>batik-ext</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 	</dependencies>

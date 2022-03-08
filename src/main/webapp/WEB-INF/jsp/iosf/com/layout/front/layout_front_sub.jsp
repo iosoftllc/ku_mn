@@ -28,6 +28,9 @@
 	<c:when test="${fn:contains(url, '/faq') }">
 		<c:set var="menu_cd" value="m4.2" />
 	</c:when>
+	<c:when test="${fn:contains(url, '/comm') }">
+		<c:set var="menu_cd" value="m4.3" />
+	</c:when>
 	<c:when test="${fn:contains(url, '/ask') && param.ask_type == '01' }">
 		<c:set var="menu_cd" value="m5.1" />
 	</c:when>
@@ -63,7 +66,7 @@
 		<c:choose>
 			<c:when test="${fn:contains(menu_cd, 'm2.1.1') }">
 				<c:set var="depth2_nm" value="가입 및 발급 절차" />
-				<c:set var="depth3_nm" value="initial(이니셜) 가입절차" />
+				<c:set var="depth3_nm" value="모바일 신분증 가입절차" />
 			</c:when>
 			<c:when test="${fn:contains(menu_cd, 'm2.1.2') }">
 				<c:set var="depth2_nm" value="가입 및 발급 절차" />
@@ -96,6 +99,9 @@
 			</c:when>
 			<c:when test="${fn:contains(menu_cd, 'm4.2') }">
 				<c:set var="depth2_nm" value="자주묻는 질문" />
+			</c:when>
+			<c:when test="${fn:contains(menu_cd, 'm4.3') }">
+				<c:set var="depth2_nm" value="자유게시판" />
 			</c:when>
 		</c:choose>
 	</c:when>
@@ -175,7 +181,7 @@
 		                        <li class="withsub ${fn:contains(menu_cd, 'm2.1') ? 'on' : '' }">
 		                            <a href="#">가입 및 발급 절차</a>
 		                            <ul>
-		                                <li class="${fn:contains(menu_cd, 'm2.1.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m2.1.1">initial(이니셜) 가입절차</a></li>
+		                                <li class="${fn:contains(menu_cd, 'm2.1.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m2.1.1">모바일 신분증 가입절차</a></li>
 		                                <li class="${fn:contains(menu_cd, 'm2.1.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m2.1.2">모바일 신분증 발급절차</a></li>
 		                            </ul>
 		                        </li>
@@ -189,6 +195,7 @@
 							<c:when test="${fn:contains(menu_cd, 'm4') }">
 		                        <li class="${fn:contains(menu_cd, 'm4.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/notice">공지사항</a></li>
 		                        <li class="${fn:contains(menu_cd, 'm4.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/faq">자주묻는 질문</a></li>
+		                        <%-- <li class="${fn:contains(menu_cd, 'm4.3') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/comm">자유게시판</a></li> --%>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm5') }">
 		                        <li class="${fn:contains(menu_cd, 'm5.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/ask?ask_type=01">모바일 발급오류 신고</a></li>

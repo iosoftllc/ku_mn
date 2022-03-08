@@ -165,7 +165,7 @@
                                     </div>
                                     <div class="alarm">
                                         <span class="txt1">업무시간<br/>9:00 - 17:30</span>
-                                        <span class="txt2">콘텐츠 담당부서<br/>ONE-STOP서비스센터<br/>02-3290-1145, 4092</span>
+                                        <span class="txt2">콘텐츠 담당부서<br/>ONE-STOP서비스센터<br/>02-3290-1141, 4090</span>
                                     </div>
                                 </div>
                             </div>

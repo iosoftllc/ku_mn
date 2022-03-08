@@ -101,7 +101,7 @@ button { cursor: pointer; }
 .m2-2 .section .guide-boxes .guide-box + .guide-box { float: right; background: url("../../../images/iosf/front/user_guide2.png") no-repeat 0 0; }
 .m2-2 .section .guide-boxes .guide-box .guide-text { margin-top: 436px; height: 112px; font: normal 18px/26px 'NanumBarun'; color: #fff; }
 .m2-2 .section .guide-boxes .guide-box .bottom { overflow: hidden; }
-.m2-2 .section .guide-boxes .guide-box .bottom .icon { float: left; }
+.m2-2 .section .guide-boxes .guide-box .bottom .icon { float: left; width: 167px; height: 70px; background: url("../../../images/iosf/front/icon/icon_guide.png") no-repeat 0 0; }
 .m2-2 .section .guide-boxes .guide-box .bottom .text-right { float: right; }
 .m2-2 .section .guide-boxes .guide-box .bottom .text-right .txt1 { display: block; font: bold 20px/27px 'NanumBarun'; color: #fcb5bd; }
 .m2-2 .section .guide-boxes .guide-box .bottom .text-right .txt2 { display: block; font: normal 20px/27px 'NanumBarunL', 'NanumBarun'; color: #fff; }
@@ -115,20 +115,25 @@ button { cursor: pointer; }
 .m2-2 .section .prec-section .prec-title strong { font-weight: bold; }
 .m2-2 .section .prec-section .list { margin-top: 152px; }
 .m2-2 .section .prec-section .list.nom { margin-top: 20px; }
-.m2-2 .section .prec-section .list li { margin-top: 12px; font: normal 20px 'NanumBarun'; color: #5d5c5d; }
+.m2-2 .section .prec-section .list li { margin-top: 12px; padding-left: 24px; text-indent: -24px; font: normal 20px 'NanumBarun'; color: #5d5c5d; }
 .m2-2 .section .prec-section .list li strong { font-weight: bold; }
 .m2-2 .section .prec-section .list li .red { color: #892d3f; }
 .m2-2 .section .prec-section .list li .br { display: block; margin: 12px 0 0 20px; }
 .m2-2 .section .prec-section .bottom { float: right; clear: both; }
 .m2-2 .section .prec-section .bottom .photos { margin-top: 28px; overflow: hidden; }
-.m2-2 .section .prec-section .bottom .photos .photo { float: left; }
-.m2-2 .section .prec-section .bottom .photos .photo img { display: inline-block; }
+.m2-2 .section .prec-section .bottom .photos .photo { float: left; width: 178px; height: 178px; background: url("../../../images/iosf/front/photo1.png") no-repeat 0 0; }
+.m2-2 .section .prec-section .bottom .photos .photo.photo2 { background: url("../../../images/iosf/front/photo2.png") no-repeat 0 0; }
+.m2-2 .section .prec-section .bottom .photos .photo.photo3 { background: url("../../../images/iosf/front/photo3.png") no-repeat 0 0; }
+.m2-2 .section .prec-section .bottom .photos .photo.photo4 { background: url("../../../images/iosf/front/photo4.png") no-repeat 0 0; }
 .m2-2 .section .prec-section .bottom .note { position: relative; margin-top: 35px; font: normal 20px/30px 'NanumBarun'; color: #5d5c5d; }
 .m2-2 .section .prec-section .bottom .note:before { content: ''; float: left; width: 34px; height: 34px; margin-right: 13px; background: url("../../../images/iosf/front/icon/icon_notice.png") no-repeat 0 0; vertical-align: top; }
 .m2-2 .section .prec-section .bottom .note:after { content: ''; position: absolute; bottom: -2px; width: calc(100% - 47px); left: 47px; height: 1px; background: #892d3f; }
 .m2-2 .section .prec-section .bottom .note strong { font-weight: bold; }
 .m2-2 .section .prec-section .bottom .note .red { color: #892d3f; }
 .m2-2 .section .prec-section .img { overflow: hidden; margin-top: 23px; }
+.m2-2 .section .prec-section .img .img-photo { float: left; margin-right: 13px; }
+.m2-2 .section .prec-section .img .img-photo.img1 { width: 184px; height: 184px; background: url("../../../images/iosf/front/img_01.png") no-repeat 0 0; }
+.m2-2 .section .prec-section .img .img-photo.img2 { width: 268px; height: 188px; background: url("../../../images/iosf/front/img_012.png") no-repeat 0 0; }
 .m2-2 .section .prec-section .img img { float: left; margin-right: 13px; }
 .m2-2 .section .prec-section .prec-detail { float: left; padding-top: 25px; width: calc(100% - 470px); }
 .m2-2 .section .prec-section .prec-slider { float: left; width: 470px; margin-bottom: 100px; }
@@ -241,11 +246,56 @@ button { cursor: pointer; }
   .m1 .section .faq-box .alarm { float: left; clear: both; width: calc(100% + 60px); margin-top: 100px; margin-left: -30px; margin-bottom: -120px; background: url("../../../images/iosf/front/bg/bg_alarm_mobile.png") no-repeat 50% 0; }
   .m1 .section-padding { padding-left: 0; padding-right: 0; }
   .m1 .section-padding .section-title { text-align: center; }
-  .m1 .section-padding .title-button { text-align: center; margin-left: calc((100% - 210px) / 2); } }
+  .m1 .section-padding .title-button { text-align: center; margin-left: calc((100% - 210px) / 2); }
+  .m2-2 .section + .section { padding-top: 104px; }
+  .m2-2 .section .section-title { margin-top: 0; }
+  .m2-2 .section .guide-boxes { margin-top: 65px; text-align: center; }
+  .m2-2 .section .guide-boxes .guide-box { float: none; display: inline-block; width: 445px; margin: 0 2px 0 0; text-align: left; background: url("../../../images/iosf/front/user_guide1_960.png") no-repeat 0 0; }
+  .m2-2 .section .guide-boxes .guide-box.type1 { float: none; margin: 0 0 0 2px; background: url("../../../images/iosf/front/user_guide2_960.png") no-repeat 0 0; }
+  .m2-2 .section .guide-boxes .guide-box .bottom .icon { width: 118px; height: 51px; margin-top: 14px; background: url("../../../images/iosf/front/icon/icon_guide_960.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section { margin-top: 80px; padding-left: 300px; padding-right: 0; background-position: -30px 0; }
+  .m2-2 .section .prec-section.type2 { margin-top: 112px; }
+  .m2-2 .section .prec-section.type2 .list { margin-top: 60px; }
+  .m2-2 .section .prec-section.type3 { position: relative; min-height: 850px; }
+  .m2-2 .section .prec-section.type3 .prec-title { background-position: 50% 0; }
+  .m2-2 .section .prec-section .prec-title { font-size: 30px; }
+  .m2-2 .section .prec-section .bottom .photos { float: right; }
+  .m2-2 .section .prec-section .bottom .photos .photo:nth-child(3) { clear: both; }
+  .m2-2 .section .prec-section .bottom .note { float: right; }
+  .m2-2 .section .prec-section .img { margin-top: 40px; }
+  .m2-2 .section .prec-section .prec-detail { width: 100%; text-align: center; }
+  .m2-2 .section .prec-section .prec-slider { position: absolute; top: 253px; height: 600px; margin-left: calc((100% - 438px) / 2); } }
 /* 768px */
 @media screen and (max-width: 959px) { .m1 .section-padding .m1-card-list li .text-left { width: 158px; padding-left: 0; }
   .m1 .section-padding .m1-card-list li .text-right { width: calc(100% - 158px); }
-  .m1 .section-padding .gray-box { width: calc(100% + 60px); margin-left: -30px; margin-right: -30px; margin-bottom: -120px; font-size: 16px; line-height: 25px; box-sizing: border-box; } }
+  .m1 .section-padding .gray-box { width: calc(100% + 60px); margin-left: -30px; margin-right: -30px; margin-bottom: -120px; font-size: 16px; line-height: 25px; box-sizing: border-box; }
+  .m2-2 .section + .section { padding-top: 80px; }
+  .m2-2 .section .section-title { font-size: 30px; }
+  .m2-2 .section .guide-boxes { width: 580px; margin-left: auto; margin-right: auto; }
+  .m2-2 .section .guide-boxes .guide-box { width: 100%; clear: both; height: 398px; margin: 0; padding: 0 18px 0 316px; background: #86515c url("../../../images/iosf/front/user_guide1_640.png") no-repeat 0 0; border-top-right-radius: 15px; border-bottom-right-radius: 15px; box-sizing: border-box; }
+  .m2-2 .section .guide-boxes .guide-box.type1 { margin-top: 10px; background: #86515c url("../../../images/iosf/front/user_guide2_640.png") no-repeat 0 0; }
+  .m2-2 .section .guide-boxes .guide-box .guide-text { margin: 18px 0 0 0; }
+  .m2-2 .section .guide-boxes .guide-box .guide-text br { display: none; }
+  .m2-2 .section .guide-boxes .guide-box .bottom { position: relative; height: 210px; margin-top: 40px; }
+  .m2-2 .section .guide-boxes .guide-box .bottom .icon { float: right; position: absolute; bottom: 0; right: 0; }
+  .m2-2 .section .guide-boxes .guide-box .bottom .text-right { float: left; }
+  .m2-2 .section .prec-list li { font-size: 16px; line-height: 26px; margin-top: 5px; }
+  .m2-2 .section .prec-section { position: relative; padding-left: 0; width: 580px; margin-left: calc((100% - 580px) / 2); background: url("../../../images/iosf/front/phone3_640.png") no-repeat 0 233px; }
+  .m2-2 .section .prec-section.type2 { padding-left: 0; background: url("../../../images/iosf/front/phone4_640.png") no-repeat 100% 100px; }
+  .m2-2 .section .prec-section.type2 .list { margin-top: 26px; width: 240px; }
+  .m2-2 .section .prec-section.type3 { margin-top: 30px; }
+  .m2-2 .section .prec-section.type3 .list { width: 100%; }
+  .m2-2 .section .prec-section .prec-title { padding-top: 16px; font-size: 22px; line-height: 26px; color: #a55a6d; background: url("../../../images/iosf/front/bg/bg_bar3.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .prec-title strong { display: block; font-size: 25px; line-height: 34px; color: #191919; }
+  .m2-2 .section .prec-section .list { float: left; width: 380px; margin-top: 26px; }
+  .m2-2 .section .prec-section .list li { font-size: 18px; padding-left: 0; text-indent: 0; line-height: 25px; margin-top: 10px; }
+  .m2-2 .section .prec-section .bottom { float: right; clear: none; width: 180px; padding-bottom: 70px; margin-top: -60px; }
+  .m2-2 .section .prec-section .bottom .photos .photo { margin-bottom: 10px; }
+  .m2-2 .section .prec-section .bottom .note { position: absolute; left: 20px; bottom: 0; }
+  .m2-2 .section .prec-section .img { float: left; width: 100%; margin-top: 45px; padding-bottom: 55px; }
+  .m2-2 .section .prec-section .img .img-photo { clear: both; margin-bottom: 6px; }
+  .m2-2 .section .prec-section .img .img-photo.img1 { background: url("../../../images/iosf/front/img_01_640.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .img .img-photo.img2 { width: 184px; height: 184px; background: url("../../../images/iosf/front/img_012_640.png") no-repeat 0 0; } }
 /* 640px */
 @media screen and (max-width: 767px) { .m1 .section { padding-bottom: 60px; }
   .m1 .section.bg { padding-top: 60px; }
@@ -276,7 +326,36 @@ button { cursor: pointer; }
   .m1 .section .tbl tbody tr td { font-size: 15px; line-height: 21px; padding-left: 8px; }
   .m1 .section .tbl tbody tr td.head { padding-left: 22px; padding-right: 22px; font-size: 16px; line-height: 25px; font-weight: normal; }
   .m1 .section-padding .card-box { height: 178px; background: url("../../../images/iosf/front/card3_480.png") no-repeat 50% 0; }
-  .m1 .section-padding .gray-box { margin-bottom: -80px; width: calc(100% + 40px); margin-left: -20px; margin-right: -20px; } }
+  .m1 .section-padding .gray-box { margin-bottom: -80px; width: calc(100% + 40px); margin-left: -20px; margin-right: -20px; }
+  .m2-2 .section .guide-boxes { width: 440px; margin-left: auto; }
+  .m2-2 .section .guide-boxes .guide-box { height: 398px; padding-left: 245px; background: #86515c url("../../../images/iosf/front/user_guide1_480.png") no-repeat 0 0; }
+  .m2-2 .section .guide-boxes .guide-box.type1 { background: #86515c url("../../../images/iosf/front/user_guide2_480.png") no-repeat 0 0; }
+  .m2-2 .section .guide-boxes .guide-box.type1 .bottom { height: 190px; }
+  .m2-2 .section .guide-boxes .guide-box .guide-text { font-size: 16px; line-height: 22px; font-weight: normal; height: auto; }
+  .m2-2 .section .guide-boxes .guide-box .guide-text .h { color: #ffbbc3; display: block; }
+  .m2-2 .section .guide-boxes .guide-box .bottom { height: 233px; }
+  .m2-2 .section .guide-boxes .guide-box .bottom .text-right .txt1 { font-size: 16px; line-height: 22px; }
+  .m2-2 .section .guide-boxes .guide-box .bottom .text-right .txt2 { font-size: 16px; line-height: 22px; }
+  .m2-2 .section .prec-list { width: 385px; margin-left: auto; margin-right: auto; }
+  .m2-2 .section .prec-list li { margin-top: 15px; font-size: 15px; line-height: 19px; text-align: center; }
+  .m2-2 .section .arrow { margin-top: 38px; }
+  .m2-2 .section .prec-section { width: 100%; margin-left: 0; margin-top: 40px; background: url("../../../images/iosf/front/phone3_480.png") no-repeat 0 300px; }
+  .m2-2 .section .prec-section.type2 { padding-left: 0; margin-top: 50px; background: url("../../../images/iosf/front/phone4_480.png") no-repeat 100% 248px; }
+  .m2-2 .section .prec-section.type3 { margin-top: 0; }
+  .m2-2 .section .prec-section.type3 .list li .br { margin-top: 0; }
+  .m2-2 .section .prec-section .prec-title { text-align: center; background-position: 50% 0; font-size: 20px; }
+  .m2-2 .section .prec-section .list { float: none; width: 337px; margin-left: auto; margin-right: auto; text-align: center; }
+  .m2-2 .section .prec-section .list li { margin-top: 3px; font-size: 16px; }
+  .m2-2 .section .prec-section .bottom { margin-top: 30px; padding-bottom: 50px; }
+  .m2-2 .section .prec-section .bottom .photos { width: 119px; margin-right: 32px; }
+  .m2-2 .section .prec-section .bottom .photos .photo { width: 119px; height: 119px; margin-bottom: 6px; background: url("../../../images/iosf/front/photo1_480.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .bottom .photos .photo.photo2 { background: url("../../../images/iosf/front/photo2_480.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .bottom .photos .photo.photo3 { background: url("../../../images/iosf/front/photo3_480.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .bottom .photos .photo.photo4 { background: url("../../../images/iosf/front/photo4_480.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .bottom .note { font-size: 15px; left: 0; }
+  .m2-2 .section .prec-section .img { padding-bottom: 120px; margin-top: 75px; }
+  .m2-2 .section .prec-section .img .img-photo.img1 { width: 153px; height: 153px; background: url("../../../images/iosf/front/img_01_480.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .img .img-photo.img2 { width: 153px; height: 153px; background: url("../../../images/iosf/front/img_012_480.png") no-repeat 0 0; } }
 /* 320px */
 @media screen and (max-width: 479px) { .m1 .section .top-list li { font-size: 15px; line-height: 20px; }
   .m1 .section .card-front .icon { height: 187px; background: url("../../../images/iosf/front/card1_320.png") no-repeat 50% 0; }
@@ -290,6 +369,44 @@ button { cursor: pointer; }
   .m1 .section-padding .card-box { width: calc(100% + 40px); margin-left: -20px; height: 147px; background: url("../../../images/iosf/front/card3_320.png") no-repeat 50% 0; }
   .m1 .section-padding .m1-card-list li { padding-left: 20px; padding-right: 0px; }
   .m1 .section-padding .m1-card-list li .text-left { float: none; width: 100%; display: block; }
-  .m1 .section-padding .m1-card-list li .text-right { float: none; width: 100%; display: block; } }
+  .m1 .section-padding .m1-card-list li .text-right { float: none; width: 100%; display: block; }
+  .m2-2 .section + .section { padding-top: 53px; }
+  .m2-2 .section .section-title { padding-top: 60px; font-size: 25px; background: url("../../../images/iosf/front/icon/feed_small.png") no-repeat 50% 0; }
+  .m2-2 .section .section-title.bulb { background: url("../../../images/iosf/front/icon/bulb_320.png") no-repeat 50% 0; }
+  .m2-2 .section .guide-boxes { width: calc(100% + 40px); margin-left: -20px; margin-top: 30px; }
+  .m2-2 .section .guide-boxes .guide-box { height: 398px; padding-left: 20px; padding-right: 20px; border-top-right-radius: 0; border-bottom-right-radius: 0; background-image: url("../../../images/iosf/front/user_guide1_320.png"), url("../../../images/iosf/front/user_guide1__repeat_320.png"); background-repeat: no-repeat, repeat-x; background-position: 0 0, 0 0; }
+  .m2-2 .section .guide-boxes .guide-box.type1 { margin-left: 0; background-image: url("../../../images/iosf/front/user_guide2_320.png"), url("../../../images/iosf/front/user_guide1__repeat_320.png"); background-repeat: no-repeat, repeat-x; background-position: 0 0, 0 0; }
+  .m2-2 .section .guide-boxes .guide-box.type1 .bottom { height: auto; }
+  .m2-2 .section .guide-boxes .guide-box .guide-text { height: 75px; margin-top: 260px; font-size: 14px; line-height: 19px; }
+  .m2-2 .section .guide-boxes .guide-box .bottom { height: auto; margin-top: 0; }
+  .m2-2 .section .guide-boxes .guide-box .bottom .text-right { float: right; }
+  .m2-2 .section .guide-boxes .guide-box .bottom .text-right .txt1 { font-size: 15px; line-height: 19px; }
+  .m2-2 .section .guide-boxes .guide-box .bottom .text-right .txt2 { font-size: 15px; line-height: 18px; }
+  .m2-2 .section .guide-boxes .guide-box .bottom .icon { position: static; float: left; width: 81px; height: 35px; background: url("../../../images/iosf/front/icon/icon_guide_320.png") no-repeat 0 0; }
+  .m2-2 .section .prec-list { width: 100%; margin-left: 0; margin-right: 0; box-sizing: border-box; }
+  .m2-2 .section .prec-section { background: url("../../../images/iosf/front/phone3_320.png") no-repeat -15px 212px; }
+  .m2-2 .section .prec-section.type2 { background: url("../../../images/iosf/front/phone4_320.png") no-repeat 50% 192px; }
+  .m2-2 .section .prec-section.type2 .list { width: 100%; min-height: 80px; }
+  .m2-2 .section .prec-section.type3 { min-height: 680px; }
+  .m2-2 .section .prec-section .list { width: 100%; margin-left: 0; margin-right: 0; margin-top: 16px; }
+  .m2-2 .section .prec-section .list li { font-size: 15px; line-height: 19px; }
+  .m2-2 .section .prec-section .bottom { padding-bottom: 122px; }
+  .m2-2 .section .prec-section .bottom .photos { width: 97px; margin-right: 0; margin-top: 0; }
+  .m2-2 .section .prec-section .bottom .photos .photo { width: 97px; height: 97px; margin-bottom: 4px; background: url("../../../images/iosf/front/photo1_320.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .bottom .photos .photo.photo2 { background: url("../../../images/iosf/front/photo2_320.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .bottom .photos .photo.photo3 { background: url("../../../images/iosf/front/photo3_320.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .bottom .photos .photo.photo4 { background: url("../../../images/iosf/front/photo4_320.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .bottom .note { display: block; float: none; width: 100%; padding-top: 42px; text-align: center; background: url("../../../images/iosf/front/icon/icon_notice_320.png") no-repeat 50% 0; font-size: 15px; line-height: 20px; }
+  .m2-2 .section .prec-section .bottom .note:before, .m2-2 .section .prec-section .bottom .note:after { display: none; }
+  .m2-2 .section .prec-section .bottom .note .red { display: block; }
+  .m2-2 .section .prec-section .img { margin-top: 375px; padding-bottom: 10px; }
+  .m2-2 .section .prec-section .img .img-photo { clear: none; margin-right: 0; }
+  .m2-2 .section .prec-section .img .img-photo.img2 { float: right; }
+  .m2-2 .section .prec-section .prec-slider { width: 274px; top: 240px; margin-left: calc((100% - 274px) / 2); }
+  .m2-2 .section .prec-section .prec-slider:before { width: 204px; height: 437px; left: 35px; background: url("../../../images/iosf/front/screen_frame3_320.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .prec-slider .slick-prev { left: 0; width: 18px; height: 31px; background: url("../../../images/iosf/front/btn/btn_slider_nav_320.png") no-repeat 0 0; }
+  .m2-2 .section .prec-section .prec-slider .slick-next { right: 0; width: 18px; height: 31px; background: url("../../../images/iosf/front/btn/btn_slider_nav_320.png") no-repeat -18px 0; }
+  .m2-2 .section .prec-section .prec-slider .slick-list { margin-left: 13px; }
+  .m2-2 .section .prec-section .prec-slider .prec-slider-item img { width: 227px; height: 456px; } }
 
 /*# sourceMappingURL=contents.css.map */
