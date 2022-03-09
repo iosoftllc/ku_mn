@@ -7,47 +7,72 @@
 <script type="text/javascript" src="${js_src }/iosf/front/controller.js"></script>
 
                         <div class="m2-1-1">
-                            <div class="section1">
-                                <div class="box-left">
-                                    <span class="icon-phone">&nbsp;</span>
-                                </div>
-                                <div class="box-right">
-                                    <p class="text1">고려대학교</p>
-                                    <p class="text2">모바일 신분증이란?</p>
-                                    <ul class="text-list">
-                                        <li>· 온/오프라인에서 신뢰하여 사용할 수 있는 블록체인 네트워크</li>
-                                        <li>· 기반의 initial APP을 통하여 발급된 Mobile ID 를 말합니다</li>
-                                        <li>· 교직원의 경우 신분증으로 이용이 가능합니다</li>
-                                        <li>· 안드로이드와 아이폰에서 이용이 가능합니다</li>
-                                        <li>· 본인인증이 가능한 휴대폰에서만 발급이 가능합니다</li>
-                                    </ul>
-                                    <ul class="icon-list">
-                                        <li>
-                                            <span class="icon"><img src="${img_src}/iosf/front/icon/icon_m2_01.png" alt="" /></span>
-                                            <span class="name">블록체인 네트워크를<br/>이용한 발급</span>
-                                            <p class="desc">Painwise DID 기반으로 <br/>사용자를 식별, 특정, 추정불가</p>
-                                        </li>
-                                        <li>
-                                            <span class="icon"><img src="${img_src}/iosf/front/icon/icon_m2_02.png" alt="" /></span>
-                                            <span class="name">다양한 학내<br/>서비스 연계</span>
-                                            <p class="desc">NFC 및 BLE 통신을 이용한<br/>학내 주요 건물 출입 이용</p>
-                                        </li>
-                                        <li>
-                                            <span class="icon"><img src="${img_src}/iosf/front/icon/icon_m2_03.png" alt="" /></span>
-                                            <span class="name">사진, 학적<br/>정보 Display</span>
-                                            <p class="desc">이름, 학번, 소속/학과<br/>최신 사진 데이터로 발급</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="section2">
-                                <div class="content-box">
-                                    <span class="title">앱 다운로드 및 설치 방법</span>
-                                    <p class="text">앱스토어에서 ‘initial’ 또는 ‘이니셜’로 검색 후 다운로드 및 설치</p>
-                                    <span class="buttons">
-                                        <img src="${img_src}/iosf/front/icon/googleplay.png" alt="Google Play" />
-                                        <img src="${img_src}/iosf/front/icon/appstore.png" alt="App Store" />
-                                    </span>
+                            <div class="section4">
+                                <span class="title">모바일 신분증<span>발급 증명서 선택 안내</span></span>
+                                <ul class="list">
+                                    <li>·모바일 신분증 증명서 선택 화면에서 본인 신분에 맞게 증명서를 선택 합니다.</li>
+                                    <li>·1인 1신분증만 발급가능 합니다.</li>
+                                </ul>
+                                <div class="tbl-box">
+                                    <table class="tbl">
+                                        <colgroup>
+                                            <col width="18%" />
+                                            <col />
+                                            <col width="18%" />
+                                            <col width="30%" />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>신분증명</th>
+                                                <th>발급대상자</th>
+                                                <th>용도</th>
+                                                <th>문의처</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>대학 신분증</td>
+                                                <td>스마트카드 발급이 가능한<br/>학부생,대학원생,강사,교원,직원</td>
+                                                <td>건물출입 및<br/>도서관 이용</td>
+                                                <td class="empty">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>국제동하계대학증</td>
+                                                <td>현재 수강중인 국제동하계대학 학생</td>
+                                                <td>도서관 이용</td>
+                                                <td>02-3290-1156</td>
+                                            </tr>
+                                            <tr>
+                                                <td>교환/방문학생증</td>
+                                                <td>교환학생 및 방문학생</td>
+                                                <td>건물 출입 및<br/>도서관 이용</td>
+                                                <td>02-3290-5177, 5178</td>
+                                            </tr>
+                                            <tr>
+                                                <td>국제어학원학생증</td>
+                                                <td>현재 수강중인 외국어센터<br/>고려대-맥쿼리대 통번역<br/>석사과정 수강생</td>
+                                                <td>건물 출입 및<br/>도서관 이용 </td>
+                                                <td>02-3290-2448</td>
+                                            </tr>
+                                            <tr>
+                                                <td>평생교육원증</td>
+                                                <td>현재 수강중인 평생교육원생</td>
+                                                <td>평생교육원<br/>모바일 신분증 및<br/>도서관 이용 </td>
+                                                <td>02-3290-1465</td>
+                                            </tr>
+                                            <tr>
+                                                <td>도서관 이용증</td>
+                                                <td>
+                                                	1. 본교 졸업/수료/퇴직자 중 도서관 기간제 이용자로 등록한 자
+                                                	<br/>- 연회비 이용자,  장기근속퇴직직원 등
+                                                	<br/>2. 의료원 소속 이용자
+                                                	<br/>- 의학도서관 별도 등록 필요
+                                                </td>
+                                                <td>도서관 자료<br/>/시설 이용</td>
+                                                <td>02-3290-1491~2<br/>(의학 02-2286-1254)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="section3 bg">

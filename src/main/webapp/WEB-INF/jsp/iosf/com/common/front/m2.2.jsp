@@ -13,7 +13,7 @@
                                     <div class="guide-box">
                                         <p class="guide-text">서울 캠퍼스내 건물 주 출입구 및 호실에서<br/>스마트폰의 NFC / BLE 를 이용한 출입 인증이 가능합니다</p>
                                          <div class="bottom">
-                                            <span class="icon"><img src="${img_src}/iosf/front/icon/icon_guide.png" alt="" /></span>
+                                            <span class="icon">&nbsp;</span>
                                             <span class="text-right">
                                                 <span class="txt1">카드 / NFC / BLE 리더기</span>
                                                 <span class="txt2">모바일 학생증 NFC, BLE<br/>학생증 IC 카드</span>
@@ -21,9 +21,10 @@
                                         </div>
                                     </div>
                                     <div class="guide-box type1">
-                                        <p class="guide-text">서울 캠퍼스내 도서관에서<br/>스마트폰의 NFC / BLE 를 이용한 도서관 이용<br/>(출입게이트, 좌석배정, 유인대출, 스마트대출 등)<br/>인증이 가능합니다</p>
+                                        <p class="guide-text">서울 캠퍼스내 도서관에서<br/>스마트폰의 NFC / BLE 를 이용한 도서관 이용<br/>
+                                            <span class="h">(출입게이트, 좌석배정, 유인대출, 스마트대출 등)</span><br/>인증이 가능합니다</p>
                                         <div class="bottom">
-                                            <span class="icon"><img src="${img_src}/iosf/front/icon/icon_guide.png" alt="" /></span>
+                                            <span class="icon">&nbsp;</span>
                                             <span class="text-right">
                                                 <span class="txt1">카드 / NFC / BLE 리더기</span>
                                                 <span class="txt2">모바일 학생증 NFC, BLE<br/>학생증 IC 카드</span>
@@ -50,10 +51,10 @@
                                     </ul>
                                     <div class="bottom">
                                         <div class="photos">
-                                            <span class="photo"><img src="${img_src}/iosf/front/photo1.png" alt="" /></span>
-                                            <span class="photo"><img src="${img_src}/iosf/front/photo2.png" alt="" /></span>
-                                            <span class="photo"><img src="${img_src}/iosf/front/photo3.png" alt="" /></span>
-                                            <span class="photo"><img src="${img_src}/iosf/front/photo4.png" alt="" /></span>
+                                            <span class="photo photo1">&nbsp;</span>
+                                            <span class="photo photo2">&nbsp;</span>
+                                            <span class="photo photo3">&nbsp;</span>
+                                            <span class="photo photo4">&nbsp;</span>
                                         </div>
                                         <p class="note">사용시 인증이 안 되는 경우 <span class="red"><strong>백그라운드 데이터 제한</strong> 설정 해제</span></p>
                                     </div>
@@ -65,8 +66,8 @@
                                         <li>2. 이니셜 앱 > 이니셜 출입카드 기능에 접근 후 태그</li>
                                     </ul>
                                     <div class="img">
-                                        <img src="${img_src}/iosf/front/img_01.png" alt="" />
-                                        <img src="${img_src}/iosf/front/img_012.png" alt="" />
+                                        <span class="img-photo img1">&nbsp;</span>
+                                        <span class="img-photo img2">&nbsp;</span>
                                     </div>
                                 </div>
                                 <div class="prec-section type3">

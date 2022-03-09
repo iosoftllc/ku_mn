@@ -70,7 +70,14 @@ $(function(){
             pauseOnFocus:false,
             pauseOnHover:false,
             dots:true,
-            asNavFor:'#m2_slider3_title'
+            asNavFor:'#m2_slider3_title',
+            responsive: [
+            {
+              breakpoint: 479,
+              settings: {
+                arrows:false
+              }
+            }]
         });
         $('#m2_slider3_title').slick({
             autoplay:true,
