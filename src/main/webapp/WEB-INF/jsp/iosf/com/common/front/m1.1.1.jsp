@@ -71,10 +71,6 @@
                                 <span class="sectionbg-title">주요 기능</span>
                                 <ul class="text-list">
                                     <li>
-                                        <span class="title">· 강의출결기능</span>
-                                        <p>교양관 및 대형 강의실 입구에 설치된 단말기에 카드를 접촉하여 출석을 확인</p>
-                                    </li>
-                                    <li>
                                         <span class="title">· 도서관 출입 및 좌석 배정 기능</span>
                                         <p>도서관 출입시 게이트를 통과할 때나 도서관 내 키오스크에서 좌석 배정시 카드를 접촉하여 확인</p>
                                     </li>

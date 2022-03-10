@@ -15,7 +15,7 @@
                                             <span>
                                                 <span class="btnarrow">학교포탈 KUPID</span>
                                                 <span class="btnarrow">정보생활</span>
-                                                공간 및 예약관리<br/> 접속 (서울)
+                                                <span class="txt">공간 및 예약관리<br/> 접속 (서울)</span>
                                             </span>
                                         </div>
                                     </li>
@@ -50,7 +50,51 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="section">
+                            <div class="section nopad">
+                                <span class="m3-section-title"><span class="sol">출입신청 매뉴얼</span></span>
+                                <ul class="text-list">
+                                    <li>· 출입신청을 하기 위해서는 보안카드(플라스틱, 모바일 신분증) 둘 중 하나만 발급 되어도 출입하고자 하는 호실에 출입을 할 수 있습니다.</li>
+                                    <li>· 출입용신분증 선택 후 신분증별 업데이트 정보 확인 기능 </li>
+                                </ul>
+                                <div class="manual-img">&nbsp;</div>
+                                <%-- <span class="m3-section-title"><span class="sol">포털비권한자 출입신청안내</span></span>
+                                <ul class="text-sublist">
+                                    <li>· 가입 대상
+                                        <p>평생교육원생, 국제동하계대학생, 외국어센터수강생, 도서관이용자</p>
+                                    </li>
+                                    <li>· 출입신청 페이지 안내
+                                        <ul>
+                                            <li>- 페이지 가입 링크  <strong class="txt-red">http://cafm.korea.ac.kr/archibus/none_login2.jsp</strong></li>
+                                            <li>- 가입은 누구나 가능.</li>
+                                            <li>- 가입신청 후 관리자의 승인 후 로그인 가능</li>
+                                            <li>- Initial 앱에서 모바일신분증이 발급 되어야 출입신청이 가능</li>
+                                            <li>- 로그인 후 출입신청은 [출입신청 매뉴얼] 참조</li>
+                                        </ul>
+                                    </li>
+                                    <li>· 출입신청 절차</li>
+                                </ul>
+                                <ul class="steps-box">
+                                    <li>
+                                        <span class="num">01</span>
+                                        <span class="icon"><img src="${img_src}/iosf/front/icon/step_01.png" alt="" /></span>
+                                        <span class="txt">출입관리 시스템 가입</span>
+                                    </li>
+                                    <li>
+                                        <span class="num">02</span>
+                                        <span class="icon"><img src="${img_src}/iosf/front/icon/step_02.png" alt="" /></span>
+                                        <span class="txt">소속된 부서 관리자 승인</span>
+                                    </li>
+                                    <li>
+                                        <span class="num">03</span>
+                                        <span class="icon"><img src="${img_src}/iosf/front/icon/step_03.png" alt="" /></span>
+                                        <span class="txt">출입신청 등록</span>
+                                    </li>
+                                    <li>
+                                        <span class="num">04</span>
+                                        <span class="icon"><img src="${img_src}/iosf/front/icon/step_04.png" alt="" /></span>
+                                        <span class="txt">출입 승인</span>
+                                    </li>
+                                </ul> --%>
                                 <span class="m3-section-title">신규 출입단말기<span>경비하기/해제하기 사용법 안내</span></span>
                                 <div class="phone-box">
                                     <div class="box-left">
@@ -77,15 +121,15 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <span class="box">출입하기</span>
+                                                <span class="box redmobile">출입하기</span>
                                                 <div class="bottom">
-                                                    <span class="detail">카드나 모바일을 카드접촉부에 태그하세요</span>
+                                                    <span class="detail full">카드나 모바일을 카드접촉부에 태그하세요</span>
                                                 </div>
                                             </li>
                                             <li>
-                                                <span class="box">문의사항</span>
+                                                <span class="box redmobile">문의사항</span>
                                                 <div class="bottom">
-                                                    <span class="detail"><em class="red">종합상황실</em>   02-3290-1919</span>
+                                                    <span class="detail fullbold"><em class="red">종합상황실</em>   02-3290-1919</span>
                                                 </div>
                                             </li>
                                         </ul>

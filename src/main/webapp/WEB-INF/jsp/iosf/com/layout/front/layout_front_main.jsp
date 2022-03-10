@@ -63,7 +63,7 @@
                 </a>
                 <a href="${configs.CONTEXT }/front/common/m2.1.1" class="link">
                     <span class="icon icon2">&nbsp;</span>
-                    <span class="text">initial(이니셜) 가입 <span>절차</span></span>
+                    <span class="text">모바일 신분증 가입 <span>절차</span></span>
                 </a>
                 <a href="${configs.CONTEXT }/front/common/m2.1.2" class="link">
                     <span class="icon icon3">&nbsp;</span>

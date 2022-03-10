@@ -108,10 +108,11 @@ button { cursor: pointer; }
 .m2-1-1 .section4 .tbl-box .tbl { width: 100%; table-layout: fixed; border-top: 2px solid #191919; border-bottom: 1px solid #191919; }
 .m2-1-1 .section4 .tbl-box .tbl thead tr th { padding: 14px 0; background: #f5f3ef; color: #000; font: normal 16px 'NanumBarun'; }
 .m2-1-1 .section4 .tbl-box .tbl thead tr th + th { border-left: 1px solid #191919; }
-.m2-1-1 .section4 .tbl-box .tbl tbody tr td { height: 74px; padding: 0 7px; font: normal 14px/20px 'NanumBarun'; color: #000; text-align: center; border-top: 1px solid #191919; vertical-align: middle; }
+.m2-1-1 .section4 .tbl-box .tbl tbody tr td { height: 74px; padding: 5px 7px; font: normal 14px/20px 'NanumBarun'; color: #000; text-align: center; border-top: 1px solid #191919; vertical-align: middle; box-sizing: border-box; }
 .m2-1-1 .section4 .tbl-box .tbl tbody tr td + td { border-left: 1px solid #191919; }
 
 .m2-2 .section + .section { padding-top: 134px; }
+.m2-2 .section + .section.nopad { padding-top: 70px; }
 .m2-2 .section .section-title { display: block; padding-top: 88px; margin-top: 60px; font: bold 35px/38px 'NanumBarun'; color: #191919; text-align: center; background: url("../../../images/iosf/front/icon/feed.png") no-repeat 50% 0; }
 .m2-2 .section .section-title.bulb { background: url("../../../images/iosf/front/icon/bulb.png") no-repeat 50% 0; }
 .m2-2 .section .section-title.paper { background: url("../../../images/iosf/front/icon/paper.png") no-repeat 50% 0; }
@@ -161,13 +162,15 @@ button { cursor: pointer; }
 .m2-2 .section .prec-section .prec-slider .slick-next { position: absolute; top: 252px; right: 51px; width: 30px; height: 51px; background: url("../../../images/iosf/front/btn/btn_slider_nav.png") no-repeat -30px 0; text-indent: -10000px; border: 0; }
 .m2-2 .section .prec-section .prec-slider .slick-list { margin-left: 55px; }
 .m2-2 .section .m3-section-title { display: block; padding-top: 20px; font: normal 35px 'NanumBarunL', 'NanumBarun'; color: #191919; background: url("../../../images/iosf/front/bg/bg_bar2.png") no-repeat 0 0; }
-.m2-2 .section .m3-section-title span { display: block; margin-top: 8px; font-family: "NanumBarun"; }
+.m2-2 .section .m3-section-title span { display: block; margin-top: 8px; font-family: 'NanumBarun'; }
+.m2-2 .section .m3-section-title span.sol { margin-top: 0; }
 .m2-2 .section .step-list { overflow: hidden; width: calc(100% + 13px); margin-left: -13px; margin-top: 70px; }
 .m2-2 .section .step-list li { float: left; width: calc(20% - 13px); margin-left: 13px; background: #d88183; }
 .m2-2 .section .step-list li .top { display: block; height: 72px; background: #b3595c; text-align: center; font: normal 40px/72px 'NanumSquareR'; color: #fff; }
 .m2-2 .section .step-list li .bottom { display: table; width: 100%; height: 204px; font: normal 20px/27px 'NanumSquareR'; color: #fff; text-align: center; vertical-align: middle; }
 .m2-2 .section .step-list li .bottom > span { display: table-cell; vertical-align: middle; }
 .m2-2 .section .step-list li .bottom .btnarrow { display: block; width: 100%; padding-bottom: 22px; margin-bottom: 8px; background: url("../../../images/iosf/front/btn/arrow_white.png") no-repeat 50% 100%; }
+.m2-2 .section .step-list li .bottom .txt { line-height: 32px; }
 .m2-2 .section .step-list li:nth-child(2) .top { background: #a5464a; }
 .m2-2 .section .step-list li:nth-child(2) .bottom { background: #c16165; }
 .m2-2 .section .step-list li:nth-child(3) .top { background: #963b3f; }
@@ -190,8 +193,26 @@ button { cursor: pointer; }
 .m2-2 .section .phone-box .box-right ul li .box span { font-size: 30px; color: #910124; }
 .m2-2 .section .phone-box .box-right ul li .bottom { display: table; width: 495px; margin-top: 21px; }
 .m2-2 .section .phone-box .box-right ul li .bottom .detail { diplay: table-cell; width: 235px; font: normal 18px/26px 'NanumBarunL', 'NanumSquareR'; color: #5d5c5d; }
-.m2-2 .section .phone-box .box-right ul li .bottom .detail .red { color: #a55a6d; }
+.m2-2 .section .phone-box .box-right ul li .bottom .detail .red { color: #a55a6d; margin-right: 5px; }
+.m2-2 .section .phone-box .box-right ul li .bottom .detail.fullbold { font-family: 'NanumBarun'; }
 .m2-2 .section .phone-box .box-right ul li .bottom .txt-red { display: table-cell; padding-left: 55px; box-sizing: border-box; vertical-align: middle; font: normal 20px/26px 'NanumBarunL', 'NanumBarun'; background: url("../../../images/iosf/front/btn/arrow_red.png") no-repeat 0 50%; color: #910124; }
+.m2-2 .section .text-list { margin-top: 16px; }
+.m2-2 .section .text-list li { padding-left: 14px; text-indent: -14px; font: normal 20px/32px 'NanumBarunL','NanumBarun'; color: #191919; }
+.m2-2 .section .manual-img { height: 655px; margin-top: 30px; margin-bottom: 70px; border: 1px solid #cbcbcb; background: url("../../../images/iosf/front/img.png") no-repeat 50% 50%; }
+.m2-2 .section .text-sublist { margin-top: 3px; }
+.m2-2 .section .text-sublist > li { margin-top: 17px; font: normal 20px/31px 'NanumBarun'; }
+.m2-2 .section .text-sublist > li > p { margin-left: 12px; font-family: 'NanumBarunL', 'NanumBarun'; }
+.m2-2 .section .text-sublist > li > ul { margin-left: 12px; }
+.m2-2 .section .text-sublist > li > ul > li { font-family: 'NanumBarunL', 'NanumBarun'; }
+.m2-2 .section .text-sublist > li strong { font-weight: bold; }
+.m2-2 .section .text-sublist > li .txt-red { color: #910124; }
+.m2-2 .section .steps-box { display: inline-block; width: calc(100% + 10px); margin: 28px 0 70px -10px; }
+.m2-2 .section .steps-box > li { position: relative; float: left; height: 390px; margin-left: 10px; width: calc(25% - 10px); box-sizing: border-box; border: 1px solid #eaeaea; }
+.m2-2 .section .steps-box > li:before { content: ''; position: absolute; left: 4px; bottom: -6px; width: 100%; height: 5px; background: url("../../../images/iosf/front/bg/bg_gradient2.png") repeat-x 0 0; }
+.m2-2 .section .steps-box > li:after { content: ''; position: absolute; right: -7px; top: 4px; width: 6px; height: 100%; background: url("../../../images/iosf/front/bg/bg_gradient.png") repeat-y 0 0; }
+.m2-2 .section .steps-box > li .num { display: block; margin-top: 60px; font: normal 25px/28px 'NanumSquareR'; color: #191919; text-align: center; }
+.m2-2 .section .steps-box > li .icon { display: flex; justify-content: center; align-items: center; height: 92px; margin-top: 60px; }
+.m2-2 .section .steps-box > li .txt { display: block; margin-top: 60px; text-align: center; font: normal 22px/26px 'NanumSquareR'; color: #191919; }
 
 .m1 .section { padding-bottom: 102px; }
 .m1 .section.bg { background: #f6f6f6; padding-left: 86px; padding-right: 86px; padding-top: 94px; }
@@ -280,6 +301,7 @@ button { cursor: pointer; }
   .m2-1-1 .section3.bg { width: calc(100% + 60px); margin-left: -30px; margin-bottom: 0; }
   .m2-2 .section + .section { padding-top: 104px; }
   .m2-2 .section .section-title { margin-top: 0; }
+  .m2-2 .section .section-title.paper { margin-top: 60px; }
   .m2-2 .section .guide-boxes { margin-top: 65px; text-align: center; }
   .m2-2 .section .guide-boxes .guide-box { float: none; display: inline-block; width: 445px; margin: 0 2px 0 0; text-align: left; background: url("../../../images/iosf/front/user_guide1_960.png") no-repeat 0 0; }
   .m2-2 .section .guide-boxes .guide-box.type1 { float: none; margin: 0 0 0 2px; background: url("../../../images/iosf/front/user_guide2_960.png") no-repeat 0 0; }
@@ -295,7 +317,16 @@ button { cursor: pointer; }
   .m2-2 .section .prec-section .bottom .note { float: right; }
   .m2-2 .section .prec-section .img { margin-top: 40px; }
   .m2-2 .section .prec-section .prec-detail { width: 100%; text-align: center; }
-  .m2-2 .section .prec-section .prec-slider { position: absolute; top: 253px; height: 600px; margin-left: calc((100% - 438px) / 2); } }
+  .m2-2 .section .prec-section .prec-slider { position: absolute; top: 253px; height: 600px; margin-left: calc((100% - 438px) / 2); }
+  .m2-2 .section .step-list { width: calc(100% + 27px); margin-left: -27px; }
+  .m2-2 .section .step-list li { width: calc(20% - 27px); margin-left: 27px; }
+  .m2-2 .section .step-list li .bottom { font-size: 18px; }
+  .m2-2 .section .warning-box .box-left { width: 184px; }
+  .m2-2 .section .steps-box { width: 544px; margin-left: calc((100% - 544px) / 2); position: relative; }
+  .m2-2 .section .steps-box:after { position: absolute; content: ''; width: 98px; height: 414px; top: 191px; left: 222px; background: url("../../../images/iosf/front/icon/arrows.png") no-repeat 0 0; }
+  .m2-2 .section .steps-box > li { width: 265px; margin-bottom: 7px; }
+  .m2-2 .section .steps-box > li:nth-child(odd) { margin-left: 0; }
+  .m2-2 .section .phone-box .box-right { padding-bottom: 0; } }
 /* 768px */
 @media screen and (max-width: 959px) { .m1 .section-padding .m1-card-list li .text-left { width: 158px; padding-left: 0; }
   .m1 .section-padding .m1-card-list li .text-right { width: calc(100% - 158px); }
@@ -340,7 +371,29 @@ button { cursor: pointer; }
   .m2-2 .section .prec-section .img { float: left; width: 100%; margin-top: 45px; padding-bottom: 55px; }
   .m2-2 .section .prec-section .img .img-photo { clear: both; margin-bottom: 6px; }
   .m2-2 .section .prec-section .img .img-photo.img1 { background: url("../../../images/iosf/front/img_01_640.png") no-repeat 0 0; }
-  .m2-2 .section .prec-section .img .img-photo.img2 { width: 184px; height: 184px; background: url("../../../images/iosf/front/img_012_640.png") no-repeat 0 0; } }
+  .m2-2 .section .prec-section .img .img-photo.img2 { width: 184px; height: 184px; background: url("../../../images/iosf/front/img_012_640.png") no-repeat 0 0; }
+  .m2-2 .section .step-list { width: 100%; margin-left: 0; }
+  .m2-2 .section .step-list li { width: 100%; margin-left: 0; margin-top: 4px; }
+  .m2-2 .section .step-list li .top { float: left; width: 95px; height: 86px; line-height: 86px; }
+  .m2-2 .section .step-list li .bottom { float: left; height: 86px; width: calc(100% - 95px); padding-left: 28px; text-align: left; box-sizing: border-box; }
+  .m2-2 .section .step-list li .bottom > span br { display: none; }
+  .m2-2 .section .step-list li .bottom .btnarrow { float: left; width: auto; padding-bottom: 0; padding-right: 33px; margin-bottom: 0; margin-right: 18px; line-height: 32px; background: url("../../../images/iosf/front/btn/btn_arrow_white2.png") no-repeat 100% 0; }
+  .m2-2 .section .warning-box { margin-top: 28px; }
+  .m2-2 .section .warning-box .box-right { padding: 40px 20px 40px 28px; }
+  .m2-2 .section .warning-box .box-right .title { font-size: 20px; }
+  .m2-2 .section .warning-box .box-right ul li { font-size: 18px; }
+  .m2-2 .section .warning-box .box-right ul li br { display: none; }
+  .m2-2 .section .manual-img { background-size: 708px 500px; }
+  .m2-2 .section .phone-box { margin-top: 35px; }
+  .m2-2 .section .phone-box .box-left { display: block; height: 693px; width: 100%; background-position: 50% 0; }
+  .m2-2 .section .phone-box .box-right { display: block; }
+  .m2-2 .section .phone-box .box-right ul li { overflow: hidden; }
+  .m2-2 .section .phone-box .box-right ul li .box { float: left; width: 195px; display: inline-block; font-size: 24px; }
+  .m2-2 .section .phone-box .box-right ul li .box span { font-size: 24px; }
+  .m2-2 .section .phone-box .box-right ul li .bottom { float: left; width: auto; margin-top: 0; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .detail { float: left; width: 240px; min-height: 62px; display: flex; align-items: center; justify-content: center; text-align: center; font: normal 16px/19px 'NanumBarunL'; color: #5d5c5d; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .detail.full, .m2-2 .section .phone-box .box-right ul li .bottom .detail.fullbold { width: auto; padding-left: 36px; text-align: left; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .txt-red { float: left; min-height: 62px; display: flex; align-items: center; justify-content: center; text-align: center; font: normal 16px/19px 'NanumBarunL'; } }
 /* 640px */
 @media screen and (max-width: 767px) { .m1 .section { padding-bottom: 60px; }
   .m1 .section.bg { padding-top: 60px; }
@@ -365,7 +418,22 @@ button { cursor: pointer; }
   .m2-1-1 .section4 .list { width: 340px; margin-left: auto; margin-right: auto; text-align: center; }
   .m2-1-1 .section4 .tbl-box { margin-top: 523px; }
   .m2-1-1 .section4 .tbl-box .tbl colgroup col:nth-child(3) { width: 22%; }
-  .m2-1-1 .section4 .tbl-box .tbl colgroup col:nth-child(4) { width: 23%; } }
+  .m2-1-1 .section4 .tbl-box .tbl colgroup col:nth-child(4) { width: 23%; }
+  .m2-2 .section .step-list li .top { font-size: 30px; width: 58px; }
+  .m2-2 .section .step-list li .bottom { padding-left: 20px; width: calc(100% - 58px); }
+  .m2-2 .section .warning-box { margin-top: 40px; }
+  .m2-2 .section .warning-box .box-left { width: 123px; background: #eeeeee url("../../../images/iosf/front/icon/warning_640.png") no-repeat 50% 50%; }
+  .m2-2 .section .warning-box .box-right { padding-top: 30px; padding-bottom: 30px; }
+  .m2-2 .section .warning-box .box-right ul li { font-size: 16px; line-height: 25px; color: #5d5c5d; }
+  .m2-2 .section .text-list li { font-size: 18px; line-height: 25px; }
+  .m2-2 .section .manual-img { height: 505px; background-size: 596px 400px; }
+  .m2-2 .section .text-sublist > li > p { font-size: 18px; }
+  .m2-2 .section .text-sublist > li > ul li { font-size: 18px; }
+  .m2-2 .section .phone-box .box-right ul li .box { width: 155px; font-size: 20px; }
+  .m2-2 .section .phone-box .box-right ul li .box span { font-size: 20px; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .detail { width: 205px; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .detail.full, .m2-2 .section .phone-box .box-right ul li .bottom .detail.fullbold { padding-left: 18px; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .txt-red { background-position: 18px 50%; } }
 /* 480px */
 @media screen and (max-width: 639px) { .m1 .section.bg { width: calc(100% + 40px); padding-left: 20px; padding-right: 20px; margin-left: -20px; margin-right: -20px; }
   .m1 .section .card-front .icon { background: url("../../../images/iosf/front/card1_480.png") no-repeat 50% 0; }
@@ -395,6 +463,7 @@ button { cursor: pointer; }
   .m2-1-1 .section3 .slider3-box .m2_slider3 .slick-prev { left: -38px; }
   .m2-1-1 .section3 .slider3-box .m2_slider3 .slick-next { right: -38px; }
   .m2-1-1 .section4 .tbl-box .tbl tbody tr td { line-height: 16px; }
+  .m2-2.m3 .section + .section { padding-top: 42px; }
   .m2-2 .section .guide-boxes { width: 440px; margin-left: auto; }
   .m2-2 .section .guide-boxes .guide-box { height: 398px; padding-left: 245px; background: #86515c url("../../../images/iosf/front/user_guide1_480.png") no-repeat 0 0; }
   .m2-2 .section .guide-boxes .guide-box.type1 { background: #86515c url("../../../images/iosf/front/user_guide2_480.png") no-repeat 0 0; }
@@ -423,7 +492,34 @@ button { cursor: pointer; }
   .m2-2 .section .prec-section .bottom .note { font-size: 15px; left: 0; }
   .m2-2 .section .prec-section .img { padding-bottom: 120px; margin-top: 75px; }
   .m2-2 .section .prec-section .img .img-photo.img1 { width: 153px; height: 153px; background: url("../../../images/iosf/front/img_01_480.png") no-repeat 0 0; }
-  .m2-2 .section .prec-section .img .img-photo.img2 { width: 153px; height: 153px; background: url("../../../images/iosf/front/img_012_480.png") no-repeat 0 0; } }
+  .m2-2 .section .prec-section .img .img-photo.img2 { width: 153px; height: 153px; background: url("../../../images/iosf/front/img_012_480.png") no-repeat 0 0; }
+  .m2-2 .section .step-list li .bottom { line-height: 22px; padding-right: 17px; }
+  .m2-2 .section .step-list li .bottom > span { display: flex; height: 86px; align-items: center; }
+  .m2-2 .section .step-list li .bottom .btnarrow { display: flex; align-items: center; width: 114px; min-height: 60px; line-height: 22px; box-sizing: border-box; background-position: 100% 50%; }
+  .m2-2 .section .step-list li .bottom .txt { line-height: 22px; }
+  .m2-2 .section .warning-box { margin-top: 10px; }
+  .m2-2 .section .warning-box .box-left { display: none; }
+  .m2-2 .section .warning-box .box-right { padding-left: 14px; padding-right: 14px; background: #f0f0ef; }
+  .m2-2 .section .warning-box .box-right .title { display: block; line-height: 27px; padding-left: 40px; background: url("../../../images/iosf/front/icon/warning_480.png") no-repeat 0 0; }
+  .m2-2 .section .text-list li { font-size: 15px; line-height: 19px; }
+  .m2-2 .section .manual-img { height: 346px; margin-bottom: 42px; background-size: 415px 282px; }
+  .m2-2 .section .text-sublist > li > p { font-size: 15px; line-height: 19px; }
+  .m2-2 .section .text-sublist > li > ul li { display: block; padding-left: 13px; text-indent: -13px; font-size: 15px; line-height: 22px; }
+  .m2-2 .section .text-sublist > li > ul li strong { display: block; margin-left: 13px; }
+  .m2-2 .section .steps-box { width: 395px; margin-top: 12px; margin-left: calc((100% - 395px) / 2); }
+  .m2-2 .section .steps-box:after { display: none; }
+  .m2-2 .section .steps-box > li { display: block; width: 100%; height: 390px; margin-left: 0; box-sizing: border-box; }
+  .m2-2 .section .steps-box > li + li { margin-top: 15px; }
+  .m2-2 .section .steps-box > li:last-child .txt:after { display: none; }
+  .m2-2 .section .steps-box > li .txt { position: relative; }
+  .m2-2 .section .steps-box > li .txt:after { position: absolute; content: ''; width: 13px; height: 97px; left: 190px; top: 42px; background: url("../../../images/iosf/front/icon/arrow_down.png") no-repeat 0 0; }
+  .m2-2 .section .phone-box .box-left { height: 680px; }
+  .m2-2 .section .phone-box .box-right ul li { position: relative; }
+  .m2-2 .section .phone-box .box-right ul li .box { display: block; width: 100%; height: auto; padding-bottom: 3px; border: 0; line-height: 26px; text-align: left; border-bottom: 1px solid #c8c8c8; }
+  .m2-2 .section .phone-box .box-right ul li .box.redmobile { color: #910124; }
+  .m2-2 .section .phone-box .box-right ul li .bottom { clear: both; width: 100%; margin-top: 17px; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .txt-red { padding-left: 60px; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .detail.full, .m2-2 .section .phone-box .box-right ul li .bottom .detail.fullbold { position: absolute; top: 0; right: 8px; min-height: 0; line-height: 26px; font-family: 'NanumBarun'; color: #191919; } }
 /* 320px */
 @media screen and (max-width: 479px) { .m1 .section .top-list li { font-size: 15px; line-height: 20px; }
   .m1 .section .card-front .icon { height: 187px; background: url("../../../images/iosf/front/card1_320.png") no-repeat 50% 0; }
@@ -479,19 +575,21 @@ button { cursor: pointer; }
   .m2-1-1 .section4 .tbl-box .tbl { border-top: 0; border-bottom: 0; }
   .m2-1-1 .section4 .tbl-box .tbl colgroup { display: none; }
   .m2-1-1 .section4 .tbl-box .tbl thead { display: none; }
-  .m2-1-1 .section4 .tbl-box .tbl tbody tr { position: relative; display: inline-block; width: 100%; margin-top: 100px; border-top: 2px solid #191919; border-bottom: 1px solid #191919; }
+  .m2-1-1 .section4 .tbl-box .tbl tbody tr { position: relative; display: inline-block; width: 100%; margin-top: 100px; border-top: 2px solid #191919; }
   .m2-1-1 .section4 .tbl-box .tbl tbody tr td { padding-left: 0; padding-right: 0; line-height: 17px; }
   .m2-1-1 .section4 .tbl-box .tbl tbody tr td.empty { display: none; }
   .m2-1-1 .section4 .tbl-box .tbl tbody tr td:first-child { position: absolute; top: -60px; left: 0; width: 100%; padding-top: 14px; text-align: center; font: normal 25px/28px 'NanumBarun'; border-top: 0; background: url("../../../images/iosf/front/bg/bg_bar2.png") no-repeat 50% 0; }
-  .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(2), .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(3), .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(4) { position: relative; display: flex; align-items: center; padding-right: 10px; padding-left: 113px; border-left: 0; height: 76px; text-align: left; word-wrap: break-word; }
+  .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(2), .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(3), .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(4) { position: relative; display: flex; align-items: center; padding: 5px 10px 5px 113px; border-left: 0; height: auto; min-height: 76px; text-align: left; word-wrap: break-word; box-sizing: border-box; border-bottom: 1px solid #191919; border-top: 0; }
   .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(2).empty, .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(3).empty, .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(4).empty { display: none; }
-  .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(2):before, .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(3):before, .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(4):before { position: absolute; top: 0; left: 0; height: 76px; width: 98px; margin-right: 15px; background: #f5f3ef; border-right: 1px solid #191919; text-align: center; display: flex; justify-content: center; align-items: center; }
+  .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(2):before, .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(3):before, .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(4):before { position: absolute; top: 0; left: 0; min-height: 75px; height: 100%; width: 98px; margin-right: 15px; background: #f5f3ef; border-right: 1px solid #191919; text-align: center; display: flex; justify-content: center; align-items: center; box-sizing: border-box; }
   .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(2):before { content: '발급대상자'; }
   .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(3):before { content: '용 도'; }
   .m2-1-1 .section4 .tbl-box .tbl tbody tr td:nth-child(4):before { content: '문의처'; }
   .m2-2 .section + .section { padding-top: 53px; }
   .m2-2 .section .section-title { padding-top: 60px; font-size: 25px; background: url("../../../images/iosf/front/icon/feed_small.png") no-repeat 50% 0; }
   .m2-2 .section .section-title.bulb { background: url("../../../images/iosf/front/icon/bulb_320.png") no-repeat 50% 0; }
+  .m2-2 .section .section-title.paper { background: url("../../../images/iosf/front/icon/paper_320.png") no-repeat 50% 0; }
+  .m2-2 .section .m3-section-title { font-size: 30px; text-align: center; background-position: 50% 0; }
   .m2-2 .section .guide-boxes { width: calc(100% + 40px); margin-left: -20px; margin-top: 30px; }
   .m2-2 .section .guide-boxes .guide-box { height: 398px; padding-left: 20px; padding-right: 20px; border-top-right-radius: 0; border-bottom-right-radius: 0; background-image: url("../../../images/iosf/front/user_guide1_320.png"), url("../../../images/iosf/front/user_guide1__repeat_320.png"); background-repeat: no-repeat, repeat-x; background-position: 0 0, 0 0; }
   .m2-2 .section .guide-boxes .guide-box.type1 { margin-left: 0; background-image: url("../../../images/iosf/front/user_guide2_320.png"), url("../../../images/iosf/front/user_guide1__repeat_320.png"); background-repeat: no-repeat, repeat-x; background-position: 0 0, 0 0; }
@@ -526,6 +624,24 @@ button { cursor: pointer; }
   .m2-2 .section .prec-section .prec-slider .slick-prev { left: 0; width: 18px; height: 31px; background: url("../../../images/iosf/front/btn/btn_slider_nav_320.png") no-repeat 0 0; }
   .m2-2 .section .prec-section .prec-slider .slick-next { right: 0; width: 18px; height: 31px; background: url("../../../images/iosf/front/btn/btn_slider_nav_320.png") no-repeat -18px 0; }
   .m2-2 .section .prec-section .prec-slider .slick-list { margin-left: 13px; }
-  .m2-2 .section .prec-section .prec-slider .prec-slider-item img { width: 227px; height: 456px; } }
+  .m2-2 .section .prec-section .prec-slider .prec-slider-item img { width: 227px; height: 456px; }
+  .m2-2 .section .step-list { margin-top: 14px; }
+  .m2-2 .section .step-list li .top { height: 65px; font-size: 25px; line-height: 65px; }
+  .m2-2 .section .step-list li .bottom { height: 65px; padding-left: 10px; padding-right: 0; font-size: 15px; word-wrap: break-word; }
+  .m2-2 .section .step-list li .bottom > span { height: 65px; }
+  .m2-2 .section .step-list li .bottom .btnarrow { width: 70px; padding-right: 18px; margin-right: 8px; box-sizing: border-box; background: url("../../../images/iosf/front/btn/btn_arrow_white2_320.png") no-repeat 100% 50%; }
+  .m2-2 .section .step-list li .bottom .txt { width: 63px; }
+  .m2-2 .section .warning-box .box-right ul li { font-size: 14px; line-height: 19px; padding-left: 10px; text-indent: -10px; }
+  .m2-2 .section .text-list { text-align: center; }
+  .m2-2 .section .manual-img { height: 335px; background-image: url("../../../images/iosf/front/img_320.png"); background-size: 289px 196px; }
+  .m2-2 .section .steps-box { width: 100%; margin-left: 0; }
+  .m2-2 .section .steps-box > li { width: 100%; box-sizing: border-box; }
+  .m2-2 .section .steps-box > li .txt:after { left: calc(50% - 6px); }
+  .m2-2 .section .phone-box .box-left { height: 475px; background: url("../../../images/iosf/front/phone5_320.png") no-repeat 50% 0; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .detail { width: 48%; font-size: 14px; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .detail br { display: none; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .detail.full, .m2-2 .section .phone-box .box-right ul li .bottom .detail.fullbold { position: static; padding-left: 0; margin-top: -5px; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .txt-red { width: 52%; padding-left: 36px; font-size: 14px; box-sizing: border-box; background: url("../../../images/iosf/front/btn/arrow_red_320.png") no-repeat 11px 50%; }
+  .m2-2 .section .phone-box .box-right ul li .bottom .txt-red br { display: none; } }
 
 /*# sourceMappingURL=contents.css.map */
