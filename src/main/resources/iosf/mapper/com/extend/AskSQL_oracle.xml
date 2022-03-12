@@ -10,7 +10,9 @@
 			KU_USER01.MOBILE_ONETOONE_ASK A
 		WHERE
 			#{idnos} LIKE '%' || IDNO || '%'
-			AND ASK_TYPE = #{ask_type}
+			<if test="@DbFunctions@isNotEmpty(search_ask_type)">
+				AND ASK_TYPE = #{search_ask_type}
+			</if>
 			<if test="@DbFunctions@isNotEmpty(search_keyword)">
 				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
 					AND TITLE LIKE '%' || #{search_keyword} || '%'
@@ -44,7 +46,9 @@
 			KU_USER01.MOBILE_ONETOONE_ASK A
 		WHERE
 			#{idnos} LIKE '%' || IDNO || '%'
-			AND ASK_TYPE = #{ask_type}
+			<if test="@DbFunctions@isNotEmpty(search_ask_type)">
+				AND ASK_TYPE = #{search_ask_type}
+			</if>
 			<if test="@DbFunctions@isNotEmpty(search_keyword)">
 				<if test="@DbFunctions@isEqualsStr(search_field, 'TITLE')">
 					AND TITLE LIKE '%' || #{search_keyword} || '%'

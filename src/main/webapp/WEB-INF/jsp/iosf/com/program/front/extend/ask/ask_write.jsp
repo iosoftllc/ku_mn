@@ -18,6 +18,14 @@
                         </colgroup>
                         <tbody>
                             <tr>
+                                <th>구분</th>
+                                <td colspan="3">
+                                    <select name="ask_type">
+                                    	<iosf:option object="${codes.MobileCardAskType }" select="${cmd.ask_type }"/>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
                                 <th>제목</th>
                                 <td colspan="3">
                                     <form:input path="title" cssClass="fullwidth _req" title="제목을 입력하세요" htmlEscape="false" />

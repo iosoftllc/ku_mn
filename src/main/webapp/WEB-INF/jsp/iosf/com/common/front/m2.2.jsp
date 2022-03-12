@@ -8,7 +8,7 @@
 
                         <div class="m2-2">
                             <div class="section">
-                                <span class="section-title">모바일 신분증 이용처</span>
+                                <span class="section-title">모바일 신분증 이용처 및 문의처</span>
                                 <div class="guide-boxes">
                                     <div class="guide-box">
                                         <p class="guide-text">서울 캠퍼스내 건물 주 출입구 및 호실에서<br/>스마트폰의 NFC / BLE 를 이용한 출입 인증이 가능합니다</p>
@@ -32,6 +32,11 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="section">
+                                <ul class="prec-list">
+                                    <li>· 문의처 : Tel. 02-598-0277 / E-Mail. card@korea.ac.kr</li>
+                                </ul>
                             </div>
                             <div class="section">
                                 <span class="section-title bulb">이용방법 및 유의사항</span>

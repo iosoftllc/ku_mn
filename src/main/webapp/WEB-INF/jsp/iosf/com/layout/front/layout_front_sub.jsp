@@ -31,11 +31,8 @@
 	<c:when test="${fn:contains(url, '/comm') }">
 		<c:set var="menu_cd" value="m4.3" />
 	</c:when>
-	<c:when test="${fn:contains(url, '/ask') && param.ask_type == '01' }">
+	<c:when test="${fn:contains(url, '/ask') }">
 		<c:set var="menu_cd" value="m5.1" />
-	</c:when>
-	<c:when test="${fn:contains(url, '/ask') && param.ask_type == '99' }">
-		<c:set var="menu_cd" value="m5.2" />
 	</c:when>
 	<c:when test="${fn:contains(url, '/login') }">
 		<c:set var="menu_cd" value="m0.1" />
@@ -46,7 +43,7 @@
 <c:set var="depth3_nm" value="" />
 <c:choose>
 	<c:when test="${fn:contains(menu_cd, 'm1') }">
-		<c:set var="depth1_nm" value="스마트 카드" />
+		<c:set var="depth1_nm" value="실물 신분증" />
 		<c:choose>
 			<c:when test="${fn:contains(menu_cd, 'm1.1.1') }">
 				<c:set var="depth2_nm" value="이용 안내" />
@@ -81,7 +78,7 @@
 		</c:choose>
 	</c:when>
 	<c:when test="${fn:contains(menu_cd, 'm3') }">
-		<c:set var="depth1_nm" value="건물 출입 권한" />
+		<c:set var="depth1_nm" value="건물 출입 안내" />
 		<c:choose>
 			<c:when test="${fn:contains(menu_cd, 'm3.1') }">
 				<c:set var="depth2_nm" value="건물 출입 이용 안내" />
@@ -109,10 +106,7 @@
 		<c:set var="depth1_nm" value="민원 안내" />
 		<c:choose>
 			<c:when test="${fn:contains(menu_cd, 'm5.1') }">
-				<c:set var="depth2_nm" value="모바일 발급오류 신고" />
-			</c:when>
-			<c:when test="${fn:contains(menu_cd, 'm5.2') }">
-				<c:set var="depth2_nm" value="건물 출입오류 신고" />
+				<c:set var="depth2_nm" value="1:1 문의" />
 			</c:when>
 		</c:choose>
 	</c:when>
@@ -198,8 +192,7 @@
 		                        <%-- <li class="${fn:contains(menu_cd, 'm4.3') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/comm">자유게시판</a></li> --%>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm5') }">
-		                        <li class="${fn:contains(menu_cd, 'm5.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/ask?ask_type=01">모바일 발급오류 신고</a></li>
-		                        <li class="${fn:contains(menu_cd, 'm5.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/ask?ask_type=99">건물 출입오류 신고</a></li>
+		                        <li class="${fn:contains(menu_cd, 'm5.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/ask">1:1 문의</a></li>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm0') }">
 		                        <li class="${fn:contains(menu_cd, 'm0.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/${isUser ? 'logout' : 'login' }">${isUser ? '로그아웃' : '로그인' }</a></li>

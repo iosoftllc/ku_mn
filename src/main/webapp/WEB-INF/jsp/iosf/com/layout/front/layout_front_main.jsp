@@ -29,8 +29,8 @@
                 <div class="slide-item slide1">
                     <div class="wrap">
                         <div class="slide-inner">
-	                        <span class="catchphrase">고려대학교 스마트 카드</span>
-	                        <p class="text">건물 출입, 도서관 출입, 기숙사 이용에서 금융 및 교통카드 기능까지 모두 스마트 카드 하나에!</p>
+	                        <span class="catchphrase">고려대학교 실물 신분증</span>
+	                        <p class="text">건물 출입, 도서관 출입, 기숙사 이용에서 금융 및 교통카드 기능까지 모두 실물 신분증 하나에!</p>
 	                        <div class="buttons">
 	                            <a href="${configs.CONTEXT }/front/common/m1.1.1">이용 안내</a>
 	                            <a href="${configs.CONTEXT }/front/common/m1.2.1">신청 안내</a>
@@ -59,7 +59,7 @@
                 <span class="label">QUICK LINKS</span>
                 <a href="${configs.CONTEXT }/front/common/m1.2.1" class="link">
                     <span class="icon">&nbsp;</span>
-                    <span class="text">스마트 카드 신청 <span>안내</span></span>
+                    <span class="text">실물 신분증 신청 <span>안내</span></span>
                 </a>
                 <a href="${configs.CONTEXT }/front/common/m2.1.1" class="link">
                     <span class="icon icon2">&nbsp;</span>

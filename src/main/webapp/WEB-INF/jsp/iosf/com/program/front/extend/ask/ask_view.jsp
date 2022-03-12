@@ -10,7 +10,7 @@
                 <div class="status">
                     <b class="color${cmd.stat == '2' ? '2' : '1' } on"><iosf:code upcd="MobileCardAskStat" cd="${cmd.stat }"/></b>
                 </div>
-                <div class="title ${empty isNew ? '' : 'new' }"><a>${cmd.title }<span></span></a></div>
+                <div class="title ${empty isNew ? '' : 'new' }"><a>[<iosf:code upcd="MobileCardAskType" cd="${cmd.ask_type }"/>] ${cmd.title }<span></span></a></div>
 
                 <dl class="info view">
                     <dt class="date"><p><iosf:date format="${configs.FORMAT_DATEE}" value="${cmd.reg_dt }" /></p></dt>

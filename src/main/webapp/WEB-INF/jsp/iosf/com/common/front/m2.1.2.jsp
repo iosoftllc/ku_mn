@@ -12,6 +12,7 @@
                                 <ul class="list">
                                     <li>·모바일 신분증 증명서 선택 화면에서 본인 신분에 맞게 증명서를 선택 합니다.</li>
                                     <li>·1인 1신분증만 발급가능 합니다.</li>
+                                    <li>·한국어센터, 기숙사 등은 절차 및 정책상의 문제로 모바일 신분증을 지원하지 않습니다.</li>
                                 </ul>
                                 <div class="tbl-box">
                                     <table class="tbl">
@@ -92,7 +93,7 @@
                                     </div>
                                     <div class="slider3-title-item">
                                         <span class="num">04</span>
-                                        <span class="text">기관 선택에서 고려대학교 선택</span>
+                                        <span class="text">기관 선택에서 대학 신분증 선택</span>
                                     </div>
                                     <div class="slider3-title-item">
                                         <span class="num">05</span>

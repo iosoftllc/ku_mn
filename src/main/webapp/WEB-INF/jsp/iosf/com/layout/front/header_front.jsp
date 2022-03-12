@@ -39,7 +39,7 @@
                     </div>
                     <ul id="main-menu">
                         <li>
-                            <a href="#menu">스마트 카드</a>
+                            <a href="#menu">실물 신분증</a>
                             <ul>
                                 <li>
                                     <a href="#menu">이용 안내</a>
@@ -73,7 +73,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#menu">건물 출입 권한</a>
+                            <a href="#menu">건물 출입 안내</a>
                             <ul>
                                 <li><a href="${configs.CONTEXT }/front/common/m3.1">건물 출입 이용 안내</a></li>
                                 <li><a href="${configs.CONTEXT }/front/entrance">출입 권한 조회</a></li>
@@ -89,8 +89,7 @@
                          <li>
                             <a href="#menu">민원 안내</a>
                             <ul>
-                                <li><a href="${configs.CONTEXT }/front/ask?ask_type=01">모바일 발급오류 신고</a></li>
-                                <li><a href="${configs.CONTEXT }/front/ask?ask_type=99">건물 출입오류 신고</a></li>
+                                <li><a href="${configs.CONTEXT }/front/ask">1:1 문의</a></li>
                             </ul>
                         </li>
                         <li class="mobile-only">

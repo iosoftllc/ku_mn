@@ -95,7 +95,7 @@
                                         <span class="txt">출입 승인</span>
                                     </li>
                                 </ul> --%>
-                                <span class="m3-section-title">신규 출입단말기<span>경비하기/해제하기 사용법 안내</span></span>
+                                <span class="m3-section-title">신규 출입단말기 사용안내<span>경비하기/해제하기 사용법 안내</span></span>
                                 <div class="phone-box">
                                     <div class="box-left">
                                         &nbsp;
@@ -123,7 +123,12 @@
                                             <li>
                                                 <span class="box redmobile">출입하기</span>
                                                 <div class="bottom">
-                                                    <span class="detail full">카드나 모바일을 카드접촉부에 태그하세요</span>
+                                                    <span class="detail full">
+                                                    	카드나 모바일을 카드접촉부에 태그하세요
+                                                    	<br/>· 태그를 해도 소리가 나지 않으며 반응이 없는 경우 > 종합상황실 문의
+                                                    	<br/>· ‘출입권한이 없습니다’ 메시지가 나오는 경우 > 공간 및 예약관리 접속 후 출입신청 등록
+                                                    	<br/>· ‘분실된 카드 입니다’ 메시지가 나오는 경우 > 공간 및 예약관리 접속 후 출입신청 메뉴에서 재전송 처리                                                    	
+                                                    </span>
                                                 </div>
                                             </li>
                                             <li>

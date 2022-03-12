@@ -124,6 +124,30 @@
                                     <li><strong>· 외국인 학생은</strong> 입학 후 외국인등록증을 소속대학(원) 행정실에 등록, 증명사진(여권사진)1매, 외국인등록증을 지참하여 ONE-STOP서비스센터에서 발급</li>
                                     <li><strong>· 신청기간에 신청하지 못한 학생은</strong> 증명사진(여권사진) 1매, 신분증 지참, ONE-STOP서비스센터로 직접방문 후 발급</li>
                                 </ul>
+                                <span class="sectionbg-title">학생증 재발급</span>
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col width="26%" />
+                                        <col />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td class="head">학생증/신분증 재발급</td>
+                                            <td>
+                                                <span class="txt">· 분실이나 훼손 시 주민등록증 지참하고 해당지역 ONE-STOP서비스센터 방문</span>
+                                                <span class="txt">· 재발급신청하면 30분 이내로 발급</span>
+                                                <span class="txt">· 수수료 5,000원 발생</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="head">칩 또는 마그네틱 손상 시</td>
+                                            <td>
+                                                <span class="txt">· 주민등록증과 손상된 학생증을 지참하고 해당지역 ONE-STOP 서비스센터 방문</span>
+                                                <span class="txt">· 수수료 면제</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <span class="sectionbg-title">교직원 신분증 발급</span>
                                 <table class="tbl">
                                      <colgroup>
