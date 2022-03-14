@@ -123,12 +123,21 @@
                                             <li>
                                                 <span class="box redmobile">출입하기</span>
                                                 <div class="bottom">
-                                                    <span class="detail full">
-                                                    	카드나 모바일을 카드접촉부에 태그하세요
-                                                    	<br/>· 태그를 해도 소리가 나지 않으며 반응이 없는 경우 > 종합상황실 문의
-                                                    	<br/>· ‘출입권한이 없습니다’ 메시지가 나오는 경우 > 공간 및 예약관리 접속 후 출입신청 등록
-                                                    	<br/>· ‘분실된 카드 입니다’ 메시지가 나오는 경우 > 공간 및 예약관리 접속 후 출입신청 메뉴에서 재전송 처리                                                    	
-                                                    </span>
+                                                    <span class="detail full">카드나 모바일을 카드접촉부에 태그하세요</span>
+                                                    <ul class="detail-row">
+                                                        <li>
+                                                            <span class="txt1">태그를 해도 소리가 나지<br/>않으며 반응이 없는 경우</span>
+                                                            <span class="txt2">종합상황실 문의</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="txt1">‘출입권한이 없습니다’<br/>메시지가 나오는 경우</span>
+                                                            <span class="txt2">공간 및 예약관리<br/>접속 후 출입신청 등록</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="txt1">‘분실된 카드 입니다’<br/>메시지가 나오는 경우</span>
+                                                            <span class="txt2">공간 및 예약관리 접속 후<br/>출입신청 메뉴에서 재전송 처리</span>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </li>
                                             <li>

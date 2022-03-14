@@ -32,13 +32,18 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="section">
-                                <ul class="prec-list">
-                                    <li>· 문의처 : Tel. 02-598-0277 / E-Mail. card@korea.ac.kr</li>
-                                </ul>
-                            </div>
-                            <div class="section">
+                                <div class="contact-boxes">
+                                    <div class="contact-box">
+                                        <span class="icon-box">&nbsp;</span>
+                                        <span class="tit">문의처 </span>
+                                        <span class="contact">Tel. 02-598-0277</span>
+                            		</div>
+                                    <div class="contact-box">
+                                        <span class="icon-box email">&nbsp;</span>
+                                        <span class="tit">E-Mail</span>
+                                        <span class="contact">card@korea.ac.kr</span>
+                                    </div>
+	                            </div>
                                 <span class="section-title bulb">이용방법 및 유의사항</span>
                                 <ul class="prec-list">
                                     <li>· 변경 및 initial 앱 삭제 후 재설치 시 initial(이니셜) 가입에서 발급까지 다시 진행하셔야 이용이 가능합니다</li>
