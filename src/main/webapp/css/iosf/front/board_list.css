@@ -492,8 +492,9 @@ table,tr,th,td{
 
 .board_list article table tr .title{
     text-align: left;
-    width: 44%;
+    width: 100%;
 }
+
 
 .board_list article table tr .title.new span{
     display: inline-flex;
@@ -516,9 +517,16 @@ table,tr,th,td{
     margin: auto;
 } */
 
-.board_list article table tr td.name,
+/* .board_list article table tr td.name,
 .board_list article table tr td.date{
     width: 13%;
+} */
+.board_list article table tr td.name{
+    min-width: 120px;
+}
+
+.board_list article table tr td.date{
+    min-width: 152px;
 }
 
 .board_list article table tr td a{
@@ -1243,6 +1251,7 @@ section .paging .mobile small{
     .board_list article table tr td.name,
     .board_list article table tr td.date{
         width:auto;
+        min-width: auto;
     }
     
     

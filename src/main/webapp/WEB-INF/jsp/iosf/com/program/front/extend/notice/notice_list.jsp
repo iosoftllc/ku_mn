@@ -24,10 +24,10 @@
             <article>
                 <table>
                     <colgroup>
-                        <col width="8%">
                         <col width="">
-                        <col width="12%">
-                        <col width="10%">
+                        <col width="">
+                        <col width="">
+                        <col width="">
                     </colgroup>
                     <thead>
 						<tr>

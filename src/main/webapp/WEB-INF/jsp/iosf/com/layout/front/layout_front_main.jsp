@@ -73,11 +73,11 @@
                     <span class="icon icon4">&nbsp;</span>
                     <span class="text">자주묻는 질문</span>
                 </a>
-                <a href="${configs.CONTEXT }/front/ask?ask_type=01" class="link">
+                <a href="${configs.CONTEXT }/front/ask" class="link">
                     <span class="icon icon5">&nbsp;</span>
                     <span class="text">모바일 발급오류 <span>신고</span></span>
                 </a>
-                <a href="${configs.CONTEXT }/front/ask?ask_type=99" class="link">
+                <a href="${configs.CONTEXT }/front/ask" class="link">
                     <span class="icon icon6">&nbsp;</span>
                     <span class="text">건물 출입오류 <span>신고</span></span>
                 </a>
