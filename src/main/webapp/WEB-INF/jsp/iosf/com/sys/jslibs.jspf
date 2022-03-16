@@ -37,6 +37,7 @@
 <script type="text/javascript" src="${js_src}/iosf/control/validation.js" charset="UTF-8"></script>
 <script type="text/javascript" src="${js_src}/iosf/control/number.js" charset="UTF-8"></script>
 <script type="text/javascript" src="${js_src}/iosf/slick/slick.js" charset="UTF-8"></script>
+<script type="text/javascript" src="${js_src}/iosf/imagemap/jquery.rwdImageMaps.min.js" charset="UTF-8"></script>
 
 <c:if test="${isFront }">
 	<script type="text/javascript" src="${js_src}/iosf/front/header.js" charset="UTF-8"></script>

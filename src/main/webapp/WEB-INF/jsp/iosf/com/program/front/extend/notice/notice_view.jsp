@@ -15,7 +15,7 @@
                 </dl>
             </article>
 
-            <article class="document">
+            <article class="document editor-content">
                 <div>
                     ${cmd.html == '0' ? fn:replace(cmd.contents, lf, '<br/>') : cmd.contents }
                 </div>

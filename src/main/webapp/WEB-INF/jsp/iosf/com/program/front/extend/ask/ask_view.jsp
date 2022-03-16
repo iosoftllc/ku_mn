@@ -17,7 +17,7 @@
                 </dl>
             </article>
 
-            <article class="document">
+            <article class="document editor-content">
                 <div>
                     ${fn:replace(cmd.contents, lf, '<br/>') }
                 </div>
@@ -31,7 +31,7 @@
 	                </dl>
 	            </article>
 	            
-	            <article class="document">
+	            <article class="document editor-content">
 	                <div>
 	                    ${fn:replace(cmd.answer_contents, lf, '<br/>') }
 	                </div>
