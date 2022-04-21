@@ -23,7 +23,7 @@
 	</login-config>
 
 	<session-config>
-		<session-timeout>1200</session-timeout>
+		<session-timeout>30</session-timeout>
 		<tracking-mode>COOKIE</tracking-mode>
 	</session-config>
 

@@ -86,6 +86,9 @@
 			MOBILE_ONETOONE_ASK A
 		WHERE
 			SEQ = #{seq}
+			<if test="@DbFunctions@isNotEmpty(idno)">
+				AND IDNO = #{idno}
+			</if>
 	</select>
 	
 	<insert id="insert" parameterType="Ask">

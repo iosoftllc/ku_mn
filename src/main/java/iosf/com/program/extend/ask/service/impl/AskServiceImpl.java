@@ -16,6 +16,13 @@ public class AskServiceImpl extends GenericServiceImpl<AskMapper, AskCommand> im
 	}
 
 	@Override
+	public AskCommand getView(AskCommand cmd) throws Exception {
+		// TODO Auto-generated method stub
+		cmd.setIdno(getUser().getStd_id());
+		return super.getView(cmd);
+	}
+
+	@Override
 	public Long insert(AskCommand cmd) throws Exception {
 		// TODO Auto-generated method stub
 		cmd.setIdno(getUser().getStd_id());
