@@ -49,6 +49,10 @@
 				<c:set var="depth2_nm" value="이용 안내" />
 				<c:set var="depth3_nm" value="학생증/신분증 소개" />
 			</c:when>
+			<c:when test="${fn:contains(menu_cd, 'm1.1.2') }">
+				<c:set var="depth2_nm" value="이용 안내" />
+				<c:set var="depth3_nm" value="학생증/신분증 발급대상" />
+			</c:when>
 			<c:when test="${fn:contains(menu_cd, 'm1.2.1') }">
 				<c:set var="depth2_nm" value="신청 안내" />
 				<c:set var="depth3_nm" value="신입생 예약신청 안내" />
@@ -80,8 +84,13 @@
 	<c:when test="${fn:contains(menu_cd, 'm3') }">
 		<c:set var="depth1_nm" value="건물 출입 안내" />
 		<c:choose>
-			<c:when test="${fn:contains(menu_cd, 'm3.1') }">
-				<c:set var="depth2_nm" value="건물 출입 이용 안내" />
+			<c:when test="${fn:contains(menu_cd, 'm3.1.1') }">
+				<c:set var="depth2_nm" value="출입 이용 안내" />
+				<c:set var="depth3_nm" value="건물 출입 이용 안내" />
+			</c:when>
+			<c:when test="${fn:contains(menu_cd, 'm3.1.2') }">
+				<c:set var="depth2_nm" value="출입 이용 안내" />
+				<c:set var="depth3_nm" value="출입신청대상" />
 			</c:when>
 			<c:when test="${fn:contains(menu_cd, 'm3.2') }">
 				<c:set var="depth2_nm" value="출입 권한 조회" />
@@ -159,7 +168,7 @@
 		                            <a href="#">이용 안내</a>
 		                            <ul>
 		                                <li class="${fn:contains(menu_cd, 'm1.1.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m1.1.1">학생증/신분증 소개</a></li>
-		                                <!-- <li><a href="javascript:alert('준비중입니다');">국제학생증 소개</a></li> -->
+                                		<li class="${fn:contains(menu_cd, 'm1.1.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m1.1.2">학생증/신분증 발급대상</a></li>
 		                            </ul>
 		                        </li>
 		                        <li class="withsub ${fn:contains(menu_cd, 'm1.2') ? 'on' : '' }">
@@ -183,7 +192,13 @@
 		                        <li class="${fn:contains(menu_cd, 'm2.3') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/mobile">발급 내역 조회</a></li>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm3') }">
-		                        <li class="${fn:contains(menu_cd, 'm3.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m3.1">건물 출입 이용 안내</a></li>
+		                        <li class="withsub ${fn:contains(menu_cd, 'm3.1') ? 'on' : '' }">
+		                            <a href="#">출입 이용 안내</a>
+		                            <ul>
+		                                <li class="${fn:contains(menu_cd, 'm3.1.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m3.1.1">건물 출입 이용 안내</a></li>
+                                		<li class="${fn:contains(menu_cd, 'm3.1.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m3.1.2">출입신청 대상</a></li>
+		                            </ul>
+		                        </li>
 		                        <li class="${fn:contains(menu_cd, 'm3.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/entrance">출입 권한 조회</a></li>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm4') }">
@@ -195,7 +210,7 @@
 		                        <li class="${fn:contains(menu_cd, 'm5.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/ask">1:1 문의</a></li>
 							</c:when>
 							<c:when test="${fn:contains(menu_cd, 'm0') }">
-		                        <li class="${fn:contains(menu_cd, 'm0.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/${isUser ? 'logout' : 'login' }">${isUser ? '로그아웃' : '로그인' }</a></li>
+		                        <li class="${fn:contains(menu_cd, 'm0.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/user/${isUser ? 'logout' : 'login' }">${isUser ? '로그아웃' : '로그인' }</a></li>
 		                        <li class="${fn:contains(menu_cd, 'm0.2') ? 'on' : '' }"><a href="https://www.korea.ac.kr/mbshome/mbs/university/subview.jsp?id=university_090300000000" target="_blank">개인정보처리방침</a></li>
 		                        <li class="${fn:contains(menu_cd, 'm0.3') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/nonemail">이메일무단수집거부</a></li>
 							</c:when>

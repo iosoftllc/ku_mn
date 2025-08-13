@@ -39,26 +39,6 @@
                     </div>
                     <ul id="main-menu">
                         <li>
-                            <a href="#menu">실물 신분증</a>
-                            <ul>
-                                <li>
-                                    <a href="#menu">이용 안내</a>
-                                    <ul>
-                                        <li><a href="${configs.CONTEXT }/front/common/m1.1.1">학생증/신분증 소개</a></li>
-                                        <!-- <li><a href="javascript:alert('준비중입니다.');">국제학생증 소개</a></li> -->
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#menu">신청 안내</a>
-                                    <ul>
-                                        <li><a href="${configs.CONTEXT }/front/common/m1.2.1">신입생 예약신청 안내</a></li>
-                                        <!-- <li><a href="javascript:alert('준비중입니다.');">비대면 금융신청 안내</a></li> -->
-                                    </ul>
-                                </li>
-                                <li><a href="${configs.CONTEXT }/front/card">발급 내역 조회</a></li>
-                            </ul>
-                        </li>
-                        <li>
                             <a href="#menu">모바일 신분증</a>
                             <ul>
                                 <li>
@@ -73,9 +53,35 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="#menu">실물 신분증</a>
+                            <ul>
+                                <li>
+                                    <a href="#menu">이용 안내</a>
+                                    <ul>
+                                        <li><a href="${configs.CONTEXT }/front/common/m1.1.1">학생증/신분증 소개</a></li>
+                                		<li><a href="${configs.CONTEXT }/front/common/m1.1.2">학생증/신분증 발급대상</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#menu">신청 안내</a>
+                                    <ul>
+                                        <li><a href="${configs.CONTEXT }/front/common/m1.2.1">신입생 예약신청 안내</a></li>
+                                        <!-- <li><a href="javascript:alert('준비중입니다.');">비대면 금융신청 안내</a></li> -->
+                                    </ul>
+                                </li>
+                                <li><a href="${configs.CONTEXT }/front/card">발급 내역 조회</a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#menu">건물 출입 안내</a>
                             <ul>
-                                <li><a href="${configs.CONTEXT }/front/common/m3.1">건물 출입 이용 안내</a></li>
+                                <li>
+                                    <a href="#menu">출입 이용 안내</a>
+                                    <ul>
+                                        <li><a href="${configs.CONTEXT }/front/common/m3.1.1">건물 출입 이용 안내</a></li>
+                                        <li><a href="${configs.CONTEXT }/front/common/m3.1.2">출입신청 대상</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="${configs.CONTEXT }/front/entrance">출입 권한 조회</a></li>
                             </ul>
                         </li>

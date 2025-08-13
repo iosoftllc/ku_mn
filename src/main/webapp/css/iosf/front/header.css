@@ -17,7 +17,7 @@ button { cursor: pointer; }
 #header .header-mask { display: none; position: absolute; top: 250px; left: 0; width: 100%; min-width: 1400px; height: 100%; background: url("../../../images/iosf/front/bg/bg_03.png") repeat 0 0; z-index: 1; }
 #header .header-mask.show { display: block; }
 #header .logo { float: left; margin-top: 35px; }
-#header .logo > a { float: left; width: 280px; height: 40px; background: url("../../../images/iosf/front/logo_origin.png") no-repeat 0 0; background-size: 280px 40px; }
+#header .logo > a { float: left; width: 280px; height: 40px; background: url("../../../images/iosf/front/logo_origin.png") no-repeat 0 0; background-size: 246px 40px; }
 #header #mobile-menu-btn { display: none; float: right; width: 22px; height: 22px; margin-top: 30px; background: url("../../../images/iosf/front/btn/btn_mobilemenu_open_origin.png") no-repeat 0 0; background-size: 22px 22px; }
 #header .menu-holder .mobile-top { display: none; overflow: hidden; height: 80px; background: #fff; }
 #header .menu-holder .mobile-top .top-title { float: left; margin: 26px 0 0 25px; font: bold 25px/28px 'NanumBarun'; color: #44010d; }
