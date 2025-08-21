@@ -1182,8 +1182,8 @@ button{
 			padding-bottom:8px;
 			.icon{
 				display:block;
-				height:230px;
-				background:url($img + 'card1.png') no-repeat 247px 0;
+				height:530px;
+				background:url($img + 'card1.png') no-repeat 217px 0;
 				&.center{
 					background:url($img + 'card2.png') no-repeat 50% 0;
 				}			
@@ -1482,7 +1482,7 @@ button{
 			}
 			.card-front{
 				.icon{
-					background-position-x:calc(50% - 54px);
+					background-position-x:calc(50%);
 				}
 			}
 			.faq-box{
@@ -2069,6 +2069,7 @@ button{
 			}
 			.card-front{
 				.icon{
+					height: 478px;
 					background-image:url($img + 'card1_640.png');
 				}
 				.card-bottom{
@@ -2280,6 +2281,7 @@ button{
 			}
 			.card-front{
 				.icon{
+					height: 1142px;
 					background:url($img + 'card1_480.png') no-repeat 50% 0;
 				}
 				.card-bottom{
@@ -2734,7 +2736,7 @@ button{
 			}
 			.card-front{
 				.icon{
-					height:187px;
+					height:814px;
 					background:url($img + 'card1_320.png') no-repeat 50% 0;
 					&.center{
 						background:url($img + 'card2_320.png') no-repeat 50% 0;

@@ -47,11 +47,11 @@
 		<c:choose>
 			<c:when test="${fn:contains(menu_cd, 'm1.1.1') }">
 				<c:set var="depth2_nm" value="이용 안내" />
-				<c:set var="depth3_nm" value="학생증/신분증 소개" />
+				<c:set var="depth3_nm" value="학생증/교직원증 소개" />
 			</c:when>
 			<c:when test="${fn:contains(menu_cd, 'm1.1.2') }">
 				<c:set var="depth2_nm" value="이용 안내" />
-				<c:set var="depth3_nm" value="학생증/신분증 발급대상" />
+				<c:set var="depth3_nm" value="학생증/교직원증 발급대상" />
 			</c:when>
 			<c:when test="${fn:contains(menu_cd, 'm1.2.1') }">
 				<c:set var="depth2_nm" value="신청 안내" />
@@ -167,8 +167,8 @@
 		                        <li class="withsub ${fn:contains(menu_cd, 'm1.1') ? 'on' : '' }">
 		                            <a href="#">이용 안내</a>
 		                            <ul>
-		                                <li class="${fn:contains(menu_cd, 'm1.1.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m1.1.1">학생증/신분증 소개</a></li>
-                                		<li class="${fn:contains(menu_cd, 'm1.1.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m1.1.2">학생증/신분증 발급대상</a></li>
+		                                <li class="${fn:contains(menu_cd, 'm1.1.1') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m1.1.1">학생증/교직원증 소개</a></li>
+                                		<li class="${fn:contains(menu_cd, 'm1.1.2') ? 'on' : '' }"><a href="${configs.CONTEXT }/front/common/m1.1.2">학생증/교직원증 발급대상</a></li>
 		                            </ul>
 		                        </li>
 		                        <li class="withsub ${fn:contains(menu_cd, 'm1.2') ? 'on' : '' }">
@@ -220,6 +220,9 @@
                 <div class="right-panel">
                     <div class="right-panel-top">
                         <h3 class="page-title">${empty depth3_nm ? depth2_nm : depth3_nm }</h3>
+                        <div class="btn">
+                            <button type="button" class="printbtn" onclick="doPrint('pdf');"></button>
+                        </div>
                         <ul class="navi">
                             <li class="home"><a href="/">&nbsp;</a></li>
                             <li>${depth1_nm }</li>

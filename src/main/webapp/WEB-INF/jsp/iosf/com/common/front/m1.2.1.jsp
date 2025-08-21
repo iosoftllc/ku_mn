@@ -7,7 +7,6 @@
                         <div class="m1">
                             <div class="section-padding">
                                 <span class="section-title">신입생<br/>예약 신청 안내</span>
-                                <a href="http://scms.korea.ac.kr/newcard.asp" class="title-button" target="_blank">예약 및 신청 하러 가기</a>
                                 <div class="card-box">&nbsp;</div>
                                 <ul class="m1-card-list">
                                     <li>
@@ -26,12 +25,22 @@
                                     </li>
                                     <li> 
                                         <span class="text-left">예약 및 신청방법</span>
-                                        <span class="text-right"><span class="txt"><strong class="red">· http://scms.korea.ac.kr/newcard.asp</strong> 에서 예약 및 신청</span></span>
+                                    </li>
+                                    <li> 
+                                       	<img src="${img_src }/iosf/1.png" width="90%"/>
+                                       	<br/>
+                                       	<br/>
+                                       	<br/>
+                                       	<img src="${img_src }/iosf/2.png" width="90%"/>
+                                       	<br/>
+                                       	<br/>
+                                       	<br/>
+                                       	<img src="${img_src }/iosf/3.png" width="90%"/>
                                     </li>
                                 </ul>
                                 <div class="gray-box">
                                     <ul>
-                                        <li><strong>· 외국인 학생은</strong> 입학 후 외국인등록증을 소속대학(원) 행정실에 등록, 증명사진(여권사진)1매, 외국인등록증을 지참하여 ONE-STOP서비스센터에서 발급</li>
+                                        <li><strong>· 사전 신청한 외국인 학생은 개강 후 소속 학과 행정실에서 학생증 수령<</li>
                                         <li><strong>· 신청기간에 신청하지 못한 학생은</strong> 증명사진(여권사진) 1매, 신분증 지참, ONE-STOP서비스센터로 직접방문 후 발급</li>
                                     </ul>
                                 </div>

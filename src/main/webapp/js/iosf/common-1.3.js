@@ -1,29 +1,34 @@
+let _iosf_name_no_img_ = 'no_image.jpg';
+let _iosf_debug_ = false;
+
 /**
  * init
  */
 $(function () {
 	// 디버깅 활성
-	gbDebug = true;
+	_iosf_debug_ = true;
+	_iosf_no_img_name_ = false;
 	try {
 		doDragSort();
 		fnCalendar('.calendar');
+		fnCalendarMonth('.monthcalendar');
 		fnTime('.time');
 		doNumber();
 	} catch (e) {
 	}
 
 	// 로컬이 아니면 https 처리
-	if (!isLocal && window.location.protocol == 'http:') {
+	if (!isLocal && window.location.protocol == 'http:' && window.location.href.indexOf('://test') < 0) {
 		location.href = location.href.replace('http:', 'https:');
 	}
 });
 
-$(document).ready(function () {
+$(function () {
 	var content_size = $('.subcontent-right').width();
 
 	$('img').each(function (v) {
 		if (typeof $(this).attr('onerror') === 'undefined') {
-			//$(this).attr('onerror', 'this.src=\'' + img_src + '/iosf/component' + theme + '/back/' + language + '/thumbnail_no_image.jpg\'');
+			$(this).attr('onerror', 'this.src=\'' + img_src + '/' + _iosf_name_no_img_ +'\'');
 		}
 	});
 
@@ -36,17 +41,18 @@ $(document).ready(function () {
 		}
 	});
 	// 이미지맵 좌표 반응형으로 변환 (이미지에 width가 있으면 오류 style에서 너비 지정해야함)
-	// $('img[usemap]').rwdImageMaps();
+	if ($('img[usemap]').length > 0) {
+		$('img[usemap]').rwdImageMaps();
+	}
 });
 
-var gbDebug = false;
 
 log = function (v) {
-	if (gbDebug) {
+	if (_iosf_debug_) {
 		try {
 			console.log(v);
 		} catch (err) {
-			gbDebug = false;
+			_iosf_debug_ = false;
 		}
 	}
 };
@@ -701,3 +707,61 @@ doShow = function(target, isShow) {
 		$(target).find('.calendar').datepicker('option', 'disabled', !isShow);
 	}
 };
+
+doDownload = function(form_id, url, name) {
+	if (!confirm('일괄 다운로드 하시겠습니까?')) {
+		return;
+	}
+
+	var o_action = $('#' + form_id).attr('action')
+	var o_target = $('#' + form_id).attr('target')
+	
+	$('#' + form_id).attr('action', url + '/download?name=' + name)
+	$('#' + form_id).attr('target', 'iframehidden')
+    $('#' + form_id).submit();	
+	
+	$('#' + form_id).attr('action', o_action)
+	$('#' + form_id).attr('target', o_target)
+}
+
+
+doPrint = function(t) {
+	if (t == 'pdf') {
+		// 현재 document.body의 html을 A4 크기에 맞춰 PDF로 변환
+		html2canvas($('.right-panel').length > 0 ? $('.right-panel')[0] : window.body).then(function(canvas) { //저장 영역 div id
+           
+           // 캔버스를 이미지로 변환
+           var imgData = canvas.toDataURL('image/png');
+                
+           var imgWidth = 190; // 이미지 가로 길이(mm) / A4 기준 210mm
+           var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
+           var imgHeight = canvas.height * imgWidth / canvas.width;
+           var heightLeft = imgHeight;
+           var margin = 10; // 출력 페이지 여백설정
+           var doc = new jspdf.jsPDF('p', 'mm');
+           var position = 0;
+              
+           // 첫 페이지 출력
+           doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
+           heightLeft -= pageHeight;
+                
+           // 한 페이지 이상일 경우 루프 돌면서 출력
+           while (heightLeft >= 20) {
+               position = heightLeft - imgHeight;
+               doc.addPage();
+               doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+               heightLeft -= pageHeight;
+           }
+        
+           // 파일 저장
+           doc.save(document.title + '.pdf');
+		});
+	} else {
+		window.print();
+	}    
+}
+
+//찾기 팝업 리턴값
+var FIND_POPUP_OK = 0; // OK (popup close)
+var FIND_POPUP_ONLY_ONE = 1; // 한개만 선택 가능
+var FIND_POPUP_NEED_REMOVE = 2; // 기존 데이터 삭제

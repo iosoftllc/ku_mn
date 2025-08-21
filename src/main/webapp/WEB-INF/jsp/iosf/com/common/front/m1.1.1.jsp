@@ -6,31 +6,33 @@
 
                         <div class="m1">
                             <div class="section">
-                                <span class="section-title">고려대학교<strong>학생증 / 신분증</strong></span>
+                                <span class="section-title">고려대학교<strong>학생증 / 교직원증</strong></span>
                                 <ul class="top-list">
-                                    <li>· 고려대학교 ID카드 브랜드명 학생증,신분증</li>
-                                    <li>· 고려대학교는 모바일 학생증을 기본 학생증으로 운영하고 있습니다.</li>
-                                    <li>· 2025학년도 이후에 입학한 신입생들은 실물 학생증이 필요한 경우, 재학생은 하나은행에서 금융기능이 포함된 학생증(금융 신분증)만 발급받을 수 있습니다.</li>
+                                    <li>· 고려대학교 ID카드 브랜드명 학생증,교직원증</li>
+                                    <li style="font-weight: bold;color: #810020;">· 고려대학교는 모바일 학생증을 기본 학생증으로 운영하고 있습니다.</li>
+                                    <li>· 2025학년도 이후에 입학한 신입생들은 실물 학생증이 필요한 경우,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>하나은행에서 금융기능이 포함된 학생증(금융 신분증)만 발급 받을 수 있습니다.</li>
                                     <li>· 학부생, 대학원생 : 학생증</li>
-                                    <li>· 교원, 직원 : 신분증</li>
+                                    <li>· 교원, 직원 : 교직원증</li>
                                 </ul>
                                 <div class="card-front">
                                     <span class="icon">&nbsp;</span>
                                     <div class="card-bottom">
-                                        <span class="title">front</span>
                                         <div class="box-list">
                                             <li>
                                                 <span class="box-icon"><img src="${img_src}/iosf/front/icon/icon_jewel.png" alt="" /></span>
-                                                <span class="text">금융기능</span>
+                                                <span class="text">금융기능 (트래블로그)</span>
                                                 <ul class="list">
                                                     <li>· 현금카드</li>
-                                                    <li>· 체크 / 신용카드</li>
+                                                    <li>· 체크 (학부생/대학원생)<br/> / 신용카드 (교직원)</li>
+                                                    <li>· 후불교통기능</li>
+                                                    <li>· 환율 최대 100% 우대 환전</li>
+                                                    <li>· 해외가맹점 이용수수료 및 해외 ATM 인출수수료 면제</li>
                                                 </ul>
                                             </li>
                                             <li>
                                                 <span class="box-icon"><img src="${img_src}/iosf/front/icon/icon_user.png" alt="" /></span>
                                                 <span class="text">ID기능</span>
-                                                <ul class="list half">
+                                                <ul class="list">
                                                     <li>· ID기능</li>
                                                     <li>· 출입통제</li>
                                                     <li>. 도서관 이용</li>
@@ -41,23 +43,6 @@
                                                 <span class="text">RF 안테나 기능</span>
                                                 <ul class="list">
                                                     <li>· 인증단말기와 비접촉 통신</li>
-                                                </ul>
-                                            </li>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-front">
-                                    <span class="icon center">&nbsp;</span>
-                                    <div class="card-bottom">
-                                        <span class="title">back</span>
-                                        <div class="box-list type2">
-                                            <li>
-                                                <span class="box-icon"><img src="${img_src}/iosf/front/icon/icon_jewel.png" alt="" /></span>
-                                                <span class="text">금융기능</span>
-                                                <ul class="list">
-                                                    <li>· 현금카드</li>
-                                                    <li>· 체크 / 신용카드</li>
-                                                    <li>· TMoney (선불교통)</li>
                                                 </ul>
                                             </li>
                                             <li>
@@ -85,7 +70,7 @@
                                     </li>
                                     <li>
                                         <span class="title">· 금융 및 교통카드 기능</span>
-                                        <p>학생증/신분증의 금융기능은 발급된 카드의 종류에 따라 다르므로, 금융기능에 대한 설명은 해당 카드사 홈페이지에서 확인</p>
+                                        <p>학생증/교직원증의 금융기능은 발급된 카드의 종류에 따라 다르므로, 금융기능에 대한 설명은 해당 카드사 홈페이지에서 확인</p>
                                     </li>
                                 </ul>
                                 <span class="sectionbg-title">학생증 신규발급</span>
@@ -116,13 +101,13 @@
                                         <tr>
                                             <td class="head">예약 및 신청방법</td>
                                             <td>
-                                                <span class="txt">· http://scms.korea.ac.kr/newcard.asp 에서 예약 및 신청</span>
+                                                <span class="txt">· <a href="${configs.CONTEXT }/front/common/m1.2.1">신청안내 > 신입생 예약신청 안내</a> 메뉴 참고</span>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <ul class="note-list">
-                                    <li><strong>· 외국인 학생은</strong> 입학 후 외국인등록증을 소속대학(원) 행정실에 등록, 증명사진(여권사진)1매, 외국인등록증을 지참하여 ONE-STOP서비스센터에서 발급</li>
+                                    <li>· 사전 신청한 외국인 학생은 개강 후 소속 학과 행정실에서 학생증 수령</li>
                                     <li><strong>· 신청기간에 신청하지 못한 학생은</strong> 증명사진(여권사진) 1매, 신분증 지참, ONE-STOP서비스센터로 직접방문 후 발급</li>
                                 </ul>
                                 <span class="sectionbg-title">학생증 재발급</span>
@@ -133,23 +118,21 @@
                                     </colgroup>
                                     <tbody>
                                         <tr>
-                                            <td class="head">학생증/신분증 재발급</td>
+                                            <td class="head">24학번 이전</td>
                                             <td>
-                                                <span class="txt">· 분실이나 훼손 시 주민등록증 지참하고 해당지역 ONE-STOP서비스센터 방문</span>
-                                                <span class="txt">· 재발급신청하면 30분 이내로 발급</span>
-                                                <span class="txt">· 수수료 5,000원 발생</span>
+                                                <span class="txt">· 금융신분증 재발급은 교내 하나은행 방문</span>
+                                                <span class="txt">· 비금융신분증 재발급은 ONE-STOP서비스센터 방문 (수수료 5,000원)</span>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="head">칩 또는 마그네틱 손상 시</td>
+                                            <td class="head">25학번 이후</td>
                                             <td>
-                                                <span class="txt">· 주민등록증과 손상된 학생증을 지참하고 해당지역 ONE-STOP 서비스센터 방문</span>
-                                                <span class="txt">· 수수료 면제</span>
+                                                <span class="txt">· 교내 하나은행 방문</span>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <span class="sectionbg-title">교직원 신분증 발급</span>
+                                <span class="sectionbg-title">교직원증 발급</span>
                                 <table class="tbl">
                                      <colgroup>
                                         <col width="26%" />
@@ -158,11 +141,18 @@
                                     <tbody>
                                         <tr>
                                             <td class="head">신규발급</td>
-                                            <td><span class="txt">· 주민등록증과 사진을 지참하여 ONE-STOP서비스센터를 방문하면 즉시 발급</span></td>
+                                            <td>
+                                            	<span class="txt">· 신분증과 사진을 지찹하여</span>
+                                            	<span class="txt">&nbsp;&nbsp;- 금융신분증 발급은 교내 하나은행 방문</span>
+                                            	<span class="txt">&nbsp;&nbsp;- 비금융신분증 재발급은 ONE-STOP서비스센터 방문 (수수료 5,000원)</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="head">재발급</td>
-                                            <td><span class="txt">· 분실 또는 사진교체를 사유로 재발급하는 경우 수수료 5,000원 발생</span></td>
+                                            <td>
+                                            	<span class="txt">· 금융신분증 발급은 교내 하나은행 방문</span>
+                                            	<span class="txt">· 비금융신분증 재발급은 ONE-STOP서비스센터 방문 (수수료 5,000원)</span>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

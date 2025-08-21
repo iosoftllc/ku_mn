@@ -8,7 +8,7 @@
                             <div class="section4" style="background-image: none;">
                                 <span class="title">건물 출입신청 대상</span></span>
                                 <div class="tbl-box">
-                                    <table class="tbl">
+                                    <table class="tbl" style="width: 100%;">
                                         <colgroup>
                                             <col width="25%" />
                                             <col />
@@ -65,6 +65,9 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <br/>
+                                    <br/>
+                                    <span style="color: #810020;">· 대학원 수료생 중 연구실 출입이 필요한 경우, 학과 행정실에 요청하셔서 별도의 출입카드(세콤)를 수령하시기 바랍니다.</span>
                                 </div>
                             </div>
                          </div>

@@ -58,8 +58,8 @@
                                 <li>
                                     <a href="#menu">이용 안내</a>
                                     <ul>
-                                        <li><a href="${configs.CONTEXT }/front/common/m1.1.1">학생증/신분증 소개</a></li>
-                                		<li><a href="${configs.CONTEXT }/front/common/m1.1.2">학생증/신분증 발급대상</a></li>
+                                        <li><a href="${configs.CONTEXT }/front/common/m1.1.1">학생증/교직원증 소개</a></li>
+                                		<li><a href="${configs.CONTEXT }/front/common/m1.1.2">학생증/교직원증 발급대상</a></li>
                                     </ul>
                                 </li>
                                 <li>
