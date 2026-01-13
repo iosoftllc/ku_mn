@@ -23,10 +23,10 @@
                                                 <span class="text">금융기능 (트래블로그)</span>
                                                 <ul class="list">
                                                     <li>· 현금카드</li>
-                                                    <li>· 체크 (학부생/대학원생)<br/> / 신용카드 (교직원)</li>
+                                                    <li>· 체크 (학부생/대학원생)<br/>&nbsp;&nbsp; / 신용카드 (교직원)</li>
                                                     <li>· 후불교통기능</li>
                                                     <li>· 환율 최대 100% 우대 환전</li>
-                                                    <li>· 해외가맹점 이용수수료 및 해외 ATM 인출수수료 면제</li>
+                                                    <li>· 해외가맹점 이용수수료 및<br/>&nbsp;&nbsp; 해외 ATM 인출수수료 면제</li>
                                                 </ul>
                                             </li>
                                             <li>
@@ -35,7 +35,7 @@
                                                 <ul class="list">
                                                     <li>· ID기능</li>
                                                     <li>· 출입통제</li>
-                                                    <li>. 도서관 이용</li>
+                                                    <li>· 도서관 이용</li>
                                                 </ul>
                                             </li>
                                             <li>
@@ -89,7 +89,7 @@
                                         <tr>
                                             <td class="head">신청기간</td>
                                             <td>
-                                                <span class="txt">· 2월(학부생 및 대학원 전기 신입생), 8월(대학원 후기 신입생)</span>
+                                                <span class="txt">· 2월(학부생 및 대학원 전기 신입생), 8월(학부생 및 대학원 후기 신입생)</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -142,7 +142,7 @@
                                         <tr>
                                             <td class="head">신규발급</td>
                                             <td>
-                                            	<span class="txt">· 신분증과 사진을 지찹하여</span>
+                                            	<span class="txt">· 신분증과 사진을 지참하여</span>
                                             	<span class="txt">&nbsp;&nbsp;- 금융신분증 발급은 교내 하나은행 방문</span>
                                             	<span class="txt">&nbsp;&nbsp;- 비금융신분증 재발급은 ONE-STOP서비스센터 방문 (수수료 5,000원)</span>
                                             </td>
@@ -165,7 +165,7 @@
                                             <span class="title">서울캠퍼스 </span>
                                             <p class="contact">ONE-STOP서비스센터</p>
                                             <p class="contact">
-                                                <strong>인문사회계 :</strong> 02-3290-1141~6<br/>onestop1@korea.ac.kr 중앙광장 지하 1층
+                                                <strong>인문사회계 :</strong> 02-3290-1141~5<br/>onestop1@korea.ac.kr 중앙광장 지하 1층
                                             </p>
                                             <p class="contact"><strong>자연계 :</strong> 02-3290-4090~2<br/>onestop2@korea.ac.kr 하나스퀘어 지하 1층</p>
                                         </div>

@@ -51,7 +51,7 @@
                                             </tr>
                                             <tr>
                                                 <td>국제 동/하계 대학증</td>
-                                                <td>현재 수강중인 국제동하계대학 학생</td>
+                                                <td>현재 수강중인 국제 동/하계 대학 학생</td>
                                                 <td>도서관 이용</td>
                                                 <td>02-3290-5177~8</td>
                                             </tr>
@@ -92,7 +92,7 @@
 			                                    <div class="contact-box">
 			                                        <span class="icon-box">&nbsp;</span>
 			                                        <span class="tit">인문사회계 원스탑서비스센터</span>
-			                                        <span class="contact">02-3290-1141~4</span>
+			                                        <span class="contact">02-3290-1141~5</span>
 			                            		</div>
 			                                    <div class="contact-box">
 			                                        <span class="icon-box">&nbsp;</span>
